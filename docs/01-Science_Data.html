@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.258">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Danielle J. Navarro">
 
-<title>Answering questions with data - 1&nbsp; Why Statistics?</title>
+<title>1&nbsp; Why Statistics? – Answering questions with data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -67,7 +68,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -76,8 +83,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1116FZ99DZ"></script>
@@ -90,17 +99,41 @@ gtag('js', new Date());
 gtag('config', 'G-1116FZ99DZ', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Answering questions with data - 1&nbsp; Why Statistics?">
-<meta property="og:description" content="A free textbook teaching introductory statistics for undergraduates in psychology, including a lab manual, and course website. Licensed on CC BY SA 4.0">
-<meta property="og:image" content="https://crumplab.com/statistics/imgs/figures/1Simpson.png">
-<meta property="og:site-name" content="Answering questions with data">
-<meta property="og:image:height" content="924">
-<meta property="og:image:width" content="962">
-<meta name="twitter:title" content="Answering questions with data - 1&nbsp; Why Statistics?">
-<meta name="twitter:description" content="Adapted nearly verbatim from Chapters 1 and 2 in Navarro, D. J. “Learning Statistics with R.” https://compcogscisydney.org/learning-statistics-with-r/">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="1&nbsp; Why Statistics? – Answering questions with data">
+<meta property="og:description" content="Adapted nearly verbatim from Chapters 1 and 2 in Navarro, D. J. “Learning Statistics with R.” https://compcogscisydney.org/learning-statistics-with-r/">
+<meta property="og:site_name" content="Answering questions with data">
+<meta name="twitter:title" content="1&nbsp; Why Statistics? – Answering questions with data">
+<meta name="twitter:description" content="A free textbook teaching introductory statistics for undergraduates in psychology, including a lab manual, and course website. Licensed on CC BY SA 4.0">
 <meta name="twitter:image" content="https://crumplab.com/statistics/imgs/TextbookCover.png">
 <meta name="twitter:site" content="@MattCrumpLab">
 <meta name="twitter:card" content="summary">
@@ -114,12 +147,12 @@ gtag('config', 'G-1116FZ99DZ', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-Science_Data.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Statistics?</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-Science_Data.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Statistics?</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -129,7 +162,7 @@ gtag('config', 'G-1116FZ99DZ', { 'anonymize_ip': true});
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Answering questions with data</a> 
@@ -238,7 +271,7 @@ gtag('config', 'G-1116FZ99DZ', { 'anonymize_ip': true});
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -304,7 +337,7 @@ gtag('config', 'G-1116FZ99DZ', { 'anonymize_ip': true});
   <li><a href="#terms-of-statistics" id="toc-terms-of-statistics" class="nav-link" data-scroll-target="#terms-of-statistics"><span class="header-section-number">1.15.1</span> Terms of Statistics</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/CrumpLab/statistics/edit/master/01-Science_Data.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/CrumpLab/statistics/edit/master/01-Science_Data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -331,12 +364,14 @@ gtag('config', 'G-1116FZ99DZ', { 'anonymize_ip': true});
   
 <div>
   <div class="abstract">
-    <div class="abstract-title">Chapter notes</div>
+    <div class="block-title">Chapter notes</div>
     Adapted nearly verbatim from Chapters 1 and 2 in Navarro, D. J. “Learning Statistics with R.” <a href="https://compcogscisydney.org/learning-statistics-with-r/" class="uri">https://compcogscisydney.org/learning-statistics-with-r/</a>
   </div>
 </div>
 
+
 </header>
+
 
 <blockquote class="blockquote">
 <p>To call in statisticians after the experiment is done may be no more than asking them to perform a post-mortem examination: They may be able to say what the experiment died of. —Sir Ronald Fisher</p>
@@ -378,7 +413,7 @@ gtag('config', 'G-1116FZ99DZ', { 'anonymize_ip': true});
 <li>Therefore, some cigarettes are not addictive (Conclusion)</li>
 </ul>
 <p>Now, suppose that people really are perfectly able to set aside their pre-existing biases about what is true and what isn’t, and purely evaluate an argument on its logical merits. We’d expect 100% of people to say that the valid arguments are valid, and 0% of people to say that the invalid arguments are valid. So if you ran an experiment looking at this, you’d expect to see data like this:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th></th>
@@ -400,8 +435,8 @@ gtag('config', 'G-1116FZ99DZ', { 'anonymize_ip': true});
 </tbody>
 </table>
 <p>If the psychological data looked like this (or even a good approximation to this), we might feel safe in just trusting our gut instincts. That is, it’d be perfectly okay just to let scientists evaluate data based on their common sense, and not bother with all this murky statistics stuff. However, you guys have taken psych classes, and by now you probably know where this is going.</p>
-<p>In a classic study, <span class="citation" data-cites="Evans1983">Evans, Barston, and Pollard (<a href="#ref-Evans1983" role="doc-biblioref">1983</a>)</span> ran an experiment looking at exactly this. What they found is that when pre-existing biases (i.e., beliefs) were in agreement with the structure of the data, everything went the way you’d hope:</p>
-<table class="table">
+<p>In a classic study, <span class="citation" data-cites="Evans1983">Evans, Barston, and Pollard (<a href="references.html#ref-Evans1983" role="doc-biblioref">1983</a>)</span> ran an experiment looking at exactly this. What they found is that when pre-existing biases (i.e., beliefs) were in agreement with the structure of the data, everything went the way you’d hope:</p>
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th></th>
@@ -423,7 +458,7 @@ gtag('config', 'G-1116FZ99DZ', { 'anonymize_ip': true});
 </tbody>
 </table>
 <p>Not perfect, but that’s pretty good. But look what happens when our intuitive feelings about the truth of the conclusion run against the logical structure of the argument:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th></th>
@@ -451,7 +486,7 @@ gtag('config', 'G-1116FZ99DZ', { 'anonymize_ip': true});
 <section id="the-cautionary-tale-of-simpsons-paradox" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="the-cautionary-tale-of-simpsons-paradox"><span class="header-section-number">1.2</span> The cautionary tale of Simpson’s paradox</h2>
 <p>The following is a true story (I think…). In 1973, the University of California, Berkeley had some worries about the admissions of students into their postgraduate courses. Specifically, the thing that caused the problem was that the gender breakdown of their admissions, which looked like this:</p>
-<table class="table">
+<table class="caption-top table">
 <tbody>
 <tr class="odd">
 <td></td>
@@ -484,8 +519,8 @@ Extra
 <p>Earlier versions of these notes incorrectly suggested that they actually were sued – apparently that’s not true. There’s a nice commentary on this here: <a href="https://www.refsmmat.com/posts/2016-05-08-simpsons-paradox-berkeley.html" class="uri">https://www.refsmmat.com/posts/2016-05-08-simpsons-paradox-berkeley.html</a>. A big thank you to Wilfried Van Hirtum for pointing this out to me!</p>
 </div>
 </div>
-<p>When people started looking more carefully at the admissions data <span class="citation" data-cites="Bickel1975">(<a href="#ref-Bickel1975" role="doc-biblioref">Bickel, Hammel, and O’Connell 1975</a>)</span> they told a rather different story. Specifically, when they looked at it on a department by department basis, it turned out that most of the departments actually had a slightly <em>higher</em> success rate for female applicants than for male applicants. The table below shows the admission figures for the six largest departments (with the names of the departments removed for privacy reasons):</p>
-<table class="table">
+<p>When people started looking more carefully at the admissions data <span class="citation" data-cites="Bickel1975">(<a href="references.html#ref-Bickel1975" role="doc-biblioref">Bickel, Hammel, and O’Connell 1975</a>)</span> they told a rather different story. Specifically, when they looked at it on a department by department basis, it turned out that most of the departments actually had a slightly <em>higher</em> success rate for female applicants than for male applicants. The table below shows the admission figures for the six largest departments (with the names of the departments removed for privacy reasons):</p>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -546,13 +581,17 @@ Extra
 </tbody>
 </table>
 <p>Remarkably, most departments had a <em>higher</em> rate of admissions for females than for males! Yet the overall rate of admission across the university for females was <em>lower</em> than for males. How can this be? How can both of these statements be true at the same time?</p>
-<p>Here’s what’s going on. Firstly, notice that the departments are <em>not</em> equal to one another in terms of their admission percentages: some departments (e.g., engineering, chemistry) tended to admit a high percentage of the qualified applicants, whereas others (e.g., English) tended to reject most of the candidates, even if they were high quality. So, among the six departments shown above, notice that department A is the most generous, followed by B, C, D, E and F in that order. Next, notice that males and females tended to apply to different departments. If we rank the departments in terms of the total number of male applicants, we get <strong>A</strong><span class="math inline">\(&gt;\)</span><strong>B</strong><span class="math inline">\(&gt;\)</span>D<span class="math inline">\(&gt;\)</span>C<span class="math inline">\(&gt;\)</span>F<span class="math inline">\(&gt;\)</span>E (the “easy” departments are in bold). On the whole, males tended to apply to the departments that had high admission rates. Now compare this to how the female applicants distributed themselves. Ranking the departments in terms of the total number of female applicants produces a quite different ordering C<span class="math inline">\(&gt;\)</span>E<span class="math inline">\(&gt;\)</span>D<span class="math inline">\(&gt;\)</span>F<span class="math inline">\(&gt;\)</span><strong>A</strong><span class="math inline">\(&gt;\)</span><strong>B</strong>. In other words, what these data seem to be suggesting is that the female applicants tended to apply to “harder” departments. And in fact, if we look at <a href="#fig-simpson">Figure&nbsp;<span>1.1</span></a> we see that this trend is systematic, and quite striking. This effect is known as <strong>Simpson’s paradox</strong>. It’s not common, but it does happen in real life, and most people are very surprised by it when they first encounter it, and many people refuse to even believe that it’s real. It is very real. And while there are lots of very subtle statistical lessons buried in there, I want to use it to make a much more important point …doing research is hard, and there are <em>lots</em> of subtle, counter intuitive traps lying in wait for the unwary. That’s reason #2 why scientists love statistics, and why we teach research methods. Because science is hard, and the truth is sometimes cunningly hidden in the nooks and crannies of complicated data.</p>
-<div class="cell" data-hash="01-Science_Data_cache/html/fig-simpson_7c8a8cad8690819f7fa3450062ffc191">
+<p>Here’s what’s going on. Firstly, notice that the departments are <em>not</em> equal to one another in terms of their admission percentages: some departments (e.g., engineering, chemistry) tended to admit a high percentage of the qualified applicants, whereas others (e.g., English) tended to reject most of the candidates, even if they were high quality. So, among the six departments shown above, notice that department A is the most generous, followed by B, C, D, E and F in that order. Next, notice that males and females tended to apply to different departments. If we rank the departments in terms of the total number of male applicants, we get <strong>A</strong><span class="math inline">\(&gt;\)</span><strong>B</strong><span class="math inline">\(&gt;\)</span>D<span class="math inline">\(&gt;\)</span>C<span class="math inline">\(&gt;\)</span>F<span class="math inline">\(&gt;\)</span>E (the “easy” departments are in bold). On the whole, males tended to apply to the departments that had high admission rates. Now compare this to how the female applicants distributed themselves. Ranking the departments in terms of the total number of female applicants produces a quite different ordering C<span class="math inline">\(&gt;\)</span>E<span class="math inline">\(&gt;\)</span>D<span class="math inline">\(&gt;\)</span>F<span class="math inline">\(&gt;\)</span><strong>A</strong><span class="math inline">\(&gt;\)</span><strong>B</strong>. In other words, what these data seem to be suggesting is that the female applicants tended to apply to “harder” departments. And in fact, if we look at <a href="#fig-simpson" class="quarto-xref">Figure&nbsp;<span>1.1</span></a> we see that this trend is systematic, and quite striking. This effect is known as <strong>Simpson’s paradox</strong>. It’s not common, but it does happen in real life, and most people are very surprised by it when they first encounter it, and many people refuse to even believe that it’s real. It is very real. And while there are lots of very subtle statistical lessons buried in there, I want to use it to make a much more important point …doing research is hard, and there are <em>lots</em> of subtle, counter intuitive traps lying in wait for the unwary. That’s reason #2 why scientists love statistics, and why we teach research methods. Because science is hard, and the truth is sometimes cunningly hidden in the nooks and crannies of complicated data.</p>
+<div class="cell">
 <div class="cell-output-display">
-<div id="fig-simpson" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="imgs/figures/1Simpson.png" class="quarto-discovered-preview-image img-fluid figure-img" style="width:75.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1.1: The Berkeley 1973 college admissions data. This figure plots the admission rate for the 85 departments that had at least one female applicant, as a function of the percentage of applicants that were female. The plot is a redrawing of Figure 1 from Bickel et al.&nbsp;(1975). Circles plot departments with more than 40 applicants; the area of the circle is proportional to the total number of applicants. The crosses plot department with fewer than 40 applicants.</figcaption><p></p>
+<div id="fig-simpson" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-simpson-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imgs/figures/1Simpson.png" class="img-fluid figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simpson-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: The Berkeley 1973 college admissions data. This figure plots the admission rate for the 85 departments that had at least one female applicant, as a function of the percentage of applicants that were female. The plot is a redrawing of Figure 1 from Bickel et al.&nbsp;(1975). Circles plot departments with more than 40 applicants; the area of the circle is proportional to the total number of applicants. The crosses plot department with fewer than 40 applicants.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -601,7 +640,7 @@ but we are starved for knowledge”</em><br>
 </section>
 <section id="a-brief-introduction-to-research-design" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="a-brief-introduction-to-research-design"><span class="header-section-number">1.6</span> A brief introduction to research design</h2>
-<p>In this chapter, we’re going to start thinking about the basic ideas that go into designing a study, collecting data, checking whether your data collection works, and so on. It won’t give you enough information to allow you to design studies of your own, but it will give you a lot of the basic tools that you need to assess the studies done by other people. However, since the focus of this book is much more on data analysis than on data collection, I’m only giving a very brief overview. Note that this chapter is “special” in two ways. Firstly, it’s much more psychology-specific than the later chapters. Secondly, it focuses much more heavily on the scientific problem of research methodology, and much less on the statistical problem of data analysis. Nevertheless, the two problems are related to one another, so it’s traditional for stats textbooks to discuss the problem in a little detail. This chapter relies heavily on <span class="citation" data-cites="Campbell1963">Campbell and Stanley (<a href="#ref-Campbell1963" role="doc-biblioref">1963</a>)</span> for the discussion of study design, and <span class="citation" data-cites="Stevens1946">Stevens (<a href="#ref-Stevens1946" role="doc-biblioref">1946</a>)</span> for the discussion of scales of measurement. Later versions will attempt to be more precise in the citations.</p>
+<p>In this chapter, we’re going to start thinking about the basic ideas that go into designing a study, collecting data, checking whether your data collection works, and so on. It won’t give you enough information to allow you to design studies of your own, but it will give you a lot of the basic tools that you need to assess the studies done by other people. However, since the focus of this book is much more on data analysis than on data collection, I’m only giving a very brief overview. Note that this chapter is “special” in two ways. Firstly, it’s much more psychology-specific than the later chapters. Secondly, it focuses much more heavily on the scientific problem of research methodology, and much less on the statistical problem of data analysis. Nevertheless, the two problems are related to one another, so it’s traditional for stats textbooks to discuss the problem in a little detail. This chapter relies heavily on <span class="citation" data-cites="Campbell1963">Campbell and Stanley (<a href="references.html#ref-Campbell1963" role="doc-biblioref">1963</a>)</span> for the discussion of study design, and <span class="citation" data-cites="Stevens1946">Stevens (<a href="references.html#ref-Stevens1946" role="doc-biblioref">1946</a>)</span> for the discussion of scales of measurement. Later versions will attempt to be more precise in the citations.</p>
 </section>
 <section id="introduction-to-psychological-measurement" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="introduction-to-psychological-measurement"><span class="header-section-number">1.7</span> Introduction to psychological measurement</h2>
@@ -657,7 +696,7 @@ but we are starved for knowledge”</em><br>
 <h3 data-number="1.8.1" class="anchored" data-anchor-id="nominal-scale"><span class="header-section-number">1.8.1</span> Nominal scale</h3>
 <p>A <strong>nominal scale</strong> variable (also referred to as a <strong>categorical</strong> variable) is one in which there is no particular relationship between the different possibilities: for these kinds of variables it doesn’t make any sense to say that one of them is ``bigger’ or “better” than any other one, and it absolutely doesn’t make any sense to average them. The classic example for this is “eye color”. Eyes can be blue, green and brown, among other possibilities, but none of them is any “better” than any other one. As a result, it would feel really weird to talk about an “average eye color”. Similarly, gender is nominal too: male isn’t better or worse than female, neither does it make sense to try to talk about an “average gender”. In short, nominal scale variables are those for which the only thing you can say about the different possibilities is that they are different. That’s it.</p>
 <p>Let’s take a slightly closer look at this. Suppose I was doing research on how people commute to and from work. One variable I would have to measure would be what kind of transportation people use to get to work. This “transport type” variable could have quite a few possible values, including: “train”, “bus”, “car”, “bicycle”, etc. For now, let’s suppose that these four are the only possibilities, and suppose that when I ask 100 people how they got to work today, and I get this:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Transportation</th>
@@ -684,7 +723,7 @@ but we are starved for knowledge”</em><br>
 </tbody>
 </table>
 <p>So, what’s the average transportation type? Obviously, the answer here is that there isn’t one. It’s a silly question to ask. You can say that travel by car is the most popular method, and travel by train is the least popular method, but that’s about all. Similarly, notice that the order in which I list the options isn’t very interesting. I could have chosen to display the data like this and nothing really changes.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Transportation</th>
@@ -740,7 +779,7 @@ but we are starved for knowledge”</em><br>
 </blockquote>
 <p>…because it seems to violate the natural “structure” to the question.</p>
 <p>So, let’s suppose I asked 100 people these questions, and got the following answers:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th></th>
@@ -788,7 +827,7 @@ but we are starved for knowledge”</em><br>
 </ul>
 <p>These definitions probably seem a bit abstract, but they’re pretty simple once you see some examples. For instance, response time is continuous. If Alan takes 3.1 seconds and Ben takes 2.3 seconds to respond to a question, then it’s possible for Cameron’s response time to lie in between, by taking 3.0 seconds. And of course it would also be possible for David to take 3.031 seconds to respond, meaning that his RT would lie in between Cameron’s and Alan’s. And while in practice it might be impossible to measure RT that precisely, it’s certainly possible in principle. Because we can always find a new value for RT in between any two other ones, we say that RT is continuous.</p>
 <p>Discrete variables occur when this rule is violated. For example, nominal scale variables are always discrete: there isn’t a type of transportation that falls “in between” trains and bicycles, not in the strict mathematical way that 2.3 falls in between 2 and 3. So transportation type is discrete. Similarly, ordinal scale variables are always discrete: although “2nd place” does fall between “1st place” and “3rd place”, there’s nothing that can logically fall in between “1st place” and “2nd place”. Interval scale and ratio scale variables can go either way. As we saw above, response time (a ratio scale variable) is continuous. Temperature in degrees Celsius (an interval scale variable) is also continuous. However, the year you went to school (an interval scale variable) is discrete. There’s no year in between 2002 and 2003. The number of questions you get right on a true-or-false test (a ratio scale variable) is also discrete: since a true-or-false question doesn’t allow you to be “partially correct”, there’s nothing in between 5/10 and 6/10. The table summarizes the relationship between the scales of measurement and the discrete/continuity distinction. Cells with a tick mark correspond to things that are possible. I’m trying to hammer this point home, because (a) some textbooks get this wrong, and (b) people very often say things like “discrete variable” when they mean “nominal scale variable”. It’s very unfortunate.</p>
-<table class="table">
+<table class="caption-top table">
 <caption>The relationship between the scales of measurement and the discrete/continuity distinction. Cells with an x correspond to things that are possible.</caption>
 <thead>
 <tr class="header">
@@ -866,7 +905,7 @@ but we are starved for knowledge”</em><br>
 <p>Okay, I’ve got one last piece of terminology that I need to explain to you before moving away from variables. Normally, when we do some research we end up with lots of different variables. Then, when we analyse our data we usually try to explain some of the variables in terms of some of the other variables. It’s important to keep the two roles “thing doing the explaining” and “thing being explained” distinct. So let’s be clear about this now. Firstly, we might as well get used to the idea of using mathematical symbols to describe variables, since it’s going to happen over and over again. Let’s denote the “to be explained” variable <span class="math inline">\(Y\)</span>, and denote the variables “doing the explaining” as <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, etc.</p>
 <p>Now, when we doing an analysis, we have different names for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, since they play different roles in the analysis. The classical names for these roles are <strong>independent variable</strong> (IV) and <strong>dependent variable</strong> (DV). The IV is the variable that you use to do the explaining (i.e., <span class="math inline">\(X\)</span>) and the DV is the variable being explained (i.e., <span class="math inline">\(Y\)</span>). The logic behind these names goes like this: if there really is a relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> then we can say that <span class="math inline">\(Y\)</span> depends on <span class="math inline">\(X\)</span>, and if we have designed our study “properly” then <span class="math inline">\(X\)</span> isn’t dependent on anything else. However, I personally find those names horrible: they’re hard to remember and they’re highly misleading, because (a) the IV is never actually “independent of everything else” and (b) if there’s no relationship, then the DV doesn’t actually depend on the IV. And in fact, because I’m not the only person who thinks that IV and DV are just awful names, there are a number of alternatives that I find more appealing.</p>
 <p>For example, in an experiment the IV refers to the <strong>manipulation</strong>, and the DV refers to the <strong>measurement</strong>. So, we could use <strong>manipulated variable</strong> (independent variable) and <strong>measured variable</strong> (dependent variable).</p>
-<table class="table">
+<table class="caption-top table">
 <caption>The terminology used to distinguish between different roles that a variable can play when analyzing a data set.</caption>
 <thead>
 <tr class="header">
@@ -889,7 +928,7 @@ but we are starved for knowledge”</em><br>
 </tbody>
 </table>
 <p>We could also use <strong>predictors</strong> and <strong>outcomes</strong>. The idea here is that what you’re trying to do is use <span class="math inline">\(X\)</span> (the predictors) to make guesses about <span class="math inline">\(Y\)</span> (the outcomes). This is summarized in the table:</p>
-<table class="table">
+<table class="caption-top table">
 <caption>The terminology used to distinguish between different roles that a variable can play when analyzing a data set.</caption>
 <thead>
 <tr class="header">
@@ -1030,16 +1069,16 @@ but we are starved for knowledge”</em><br>
 <h3 data-number="1.13.7" class="anchored" data-anchor-id="regression-to-the-mean"><span class="header-section-number">1.13.7</span> Regression to the mean</h3>
 <p><strong>Regression to the mean</strong> is a curious variation on selection bias. It refers to any situation where you select data based on an extreme value on some measure. Because the measure has natural variation, it almost certainly means that when you take a subsequent measurement, that later measurement will be less extreme than the first one, purely by chance.</p>
 <p>Here’s an example. Suppose I’m interested in whether a psychology education has an adverse effect on very smart kids. To do this, I find the 20 psych I students with the best high school grades and look at how well they’re doing at university. It turns out that they’re doing a lot better than average, but they’re not topping the class at university, even though they did top their classes at high school. What’s going on? The natural first thought is that this must mean that the psychology classes must be having an adverse effect on those students. However, while that might very well be the explanation, it’s more likely that what you’re seeing is an example of “regression to the mean”. To see how it works, let’s take a moment to think about what is required to get the best mark in a class, regardless of whether that class be at high school or at university. When you’ve got a big class, there are going to be <em>lots</em> of very smart people enrolled. To get the best mark you have to be very smart, work very hard, and be a bit lucky. The exam has to ask just the right questions for your idiosyncratic skills, and you have to not make any dumb mistakes (we all do that sometimes) when answering them. And that’s the thing: intelligence and hard work are transferable from one class to the next. Luck isn’t. The people who got lucky in high school won’t be the same as the people who get lucky at university. That’s the very definition of “luck”. The consequence of this is that, when you select people at the very extreme values of one measurement (the top 20 students), you’re selecting for hard work, skill and luck. But because the luck doesn’t transfer to the second measurement (only the skill and work), these people will all be expected to drop a little bit when you measure them a second time (at university). So their scores fall back a little bit, back towards everyone else. This is regression to the mean.</p>
-<p>Regression to the mean is surprisingly common. For instance, if two very tall people have kids, their children will tend to be taller than average, but not as tall as the parents. The reverse happens with very short parents: two very short parents will tend to have short children, but nevertheless those kids will tend to be taller than the parents. It can also be extremely subtle. For instance, there have been studies done that suggested that people learn better from negative feedback than from positive feedback. However, the way that people tried to show this was to give people positive reinforcement whenever they did good, and negative reinforcement when they did bad. And what you see is that after the positive reinforcement, people tended to do worse; but after the negative reinforcement they tended to do better. But! Notice that there’s a selection bias here: when people do very well, you’re selecting for “high” values, and so you should <em>expect</em> (because of regression to the mean) that performance on the next trial should be worse, regardless of whether reinforcement is given. Similarly, after a bad trial, people will tend to improve all on their own. The apparent superiority of negative feedback is an artifact caused by regression to the mean <span class="citation" data-cites="Kahneman1973">(<a href="#ref-Kahneman1973" role="doc-biblioref">Kahneman and Tversky 1973</a>)</span></p>
+<p>Regression to the mean is surprisingly common. For instance, if two very tall people have kids, their children will tend to be taller than average, but not as tall as the parents. The reverse happens with very short parents: two very short parents will tend to have short children, but nevertheless those kids will tend to be taller than the parents. It can also be extremely subtle. For instance, there have been studies done that suggested that people learn better from negative feedback than from positive feedback. However, the way that people tried to show this was to give people positive reinforcement whenever they did good, and negative reinforcement when they did bad. And what you see is that after the positive reinforcement, people tended to do worse; but after the negative reinforcement they tended to do better. But! Notice that there’s a selection bias here: when people do very well, you’re selecting for “high” values, and so you should <em>expect</em> (because of regression to the mean) that performance on the next trial should be worse, regardless of whether reinforcement is given. Similarly, after a bad trial, people will tend to improve all on their own. The apparent superiority of negative feedback is an artifact caused by regression to the mean <span class="citation" data-cites="Kahneman1973">(<a href="references.html#ref-Kahneman1973" role="doc-biblioref">Kahneman and Tversky 1973</a>)</span></p>
 </section>
 <section id="experimenter-bias" class="level3" data-number="1.13.8">
 <h3 data-number="1.13.8" class="anchored" data-anchor-id="experimenter-bias"><span class="header-section-number">1.13.8</span> Experimenter bias</h3>
-<p><strong>Experimenter bias</strong> can come in multiple forms. The basic idea is that the experimenter, despite the best of intentions, can accidentally end up influencing the results of the experiment by subtly communicating the “right answer” or the “desired behavior” to the participants. Typically, this occurs because the experimenter has special knowledge that the participant does not – either the right answer to the questions being asked, or knowledge of the expected pattern of performance for the condition that the participant is in, and so on. The classic example of this happening is the case study of “Clever Hans”, which dates back to 1907, <span class="citation" data-cites="Pfungst1911 Hothersall2004">(<a href="#ref-Pfungst1911" role="doc-biblioref">Pfungst 1911</a>; <a href="#ref-Hothersall2004" role="doc-biblioref">Hothersall 2004</a>)</span>. Clever Hans was a horse that apparently was able to read and count, and perform other human like feats of intelligence. After Clever Hans became famous, psychologists started examining his behavior more closely. It turned out that – not surprisingly – Hans didn’t know how to do maths. Rather, Hans was responding to the human observers around him. Because they did know how to count, and the horse had learned to change its behavior when people changed theirs.</p>
+<p><strong>Experimenter bias</strong> can come in multiple forms. The basic idea is that the experimenter, despite the best of intentions, can accidentally end up influencing the results of the experiment by subtly communicating the “right answer” or the “desired behavior” to the participants. Typically, this occurs because the experimenter has special knowledge that the participant does not – either the right answer to the questions being asked, or knowledge of the expected pattern of performance for the condition that the participant is in, and so on. The classic example of this happening is the case study of “Clever Hans”, which dates back to 1907, <span class="citation" data-cites="Pfungst1911 Hothersall2004">(<a href="references.html#ref-Pfungst1911" role="doc-biblioref">Pfungst 1911</a>; <a href="references.html#ref-Hothersall2004" role="doc-biblioref">Hothersall 2004</a>)</span>. Clever Hans was a horse that apparently was able to read and count, and perform other human like feats of intelligence. After Clever Hans became famous, psychologists started examining his behavior more closely. It turned out that – not surprisingly – Hans didn’t know how to do maths. Rather, Hans was responding to the human observers around him. Because they did know how to count, and the horse had learned to change its behavior when people changed theirs.</p>
 <p>The general solution to the problem of experimenter bias is to engage in double blind studies, where neither the experimenter nor the participant knows which condition the participant is in, or knows what the desired behavior is. This provides a very good solution to the problem, but it’s important to recognize that it’s not quite ideal, and hard to pull off perfectly. For instance, the obvious way that I could try to construct a double blind study is to have one of my Ph.D.&nbsp;students (one who doesn’t know anything about the experiment) run the study. That feels like it should be enough. The only person (me) who knows all the details (e.g., correct answers to the questions, assignments of participants to conditions) has no interaction with the participants, and the person who does all the talking to people (the Ph.D.&nbsp;student) doesn’t know anything. Except, that last part is very unlikely to be true. In order for the Ph.D.&nbsp;student to run the study effectively, they need to have been briefed by me, the researcher. And, as it happens, the Ph.D.&nbsp;student also knows me, and knows a bit about my general beliefs about people and psychology (e.g., I tend to think humans are much smarter than psychologists give them credit for). As a result of all this, it’s almost impossible for the experimenter to avoid knowing a little bit about what expectations I have. And even a little bit of knowledge can have an effect: suppose the experimenter accidentally conveys the fact that the participants are expected to do well in this task. Well, there’s a thing called the “Pygmalion effect”: if you expect great things of people, they’ll rise to the occasion; but if you expect them to fail, they’ll do that too. In other words, the expectations become a self-fulfilling prophesy.</p>
 </section>
 <section id="demand-effects-and-reactivity" class="level3" data-number="1.13.9">
 <h3 data-number="1.13.9" class="anchored" data-anchor-id="demand-effects-and-reactivity"><span class="header-section-number">1.13.9</span> Demand effects and reactivity</h3>
-<p>When talking about experimenter bias, the worry is that the experimenter’s knowledge or desires for the experiment are communicated to the participants, and that these effect people’s behavior <span class="citation" data-cites="Rosenthal1966">Rosenthal (<a href="#ref-Rosenthal1966" role="doc-biblioref">1966</a>)</span>. However, even if you manage to stop this from happening, it’s almost impossible to stop people from knowing that they’re part of a psychological study. And the mere fact of knowing that someone is watching/studying you can have a pretty big effect on behavior. This is generally referred to as <strong>reactivity</strong> or <strong>demand effects</strong>. The basic idea is captured by the Hawthorne effect: people alter their performance because of the attention that the study focuses on them. The effect takes its name from a the “Hawthorne Works” factory outside of Chicago <span class="citation" data-cites="Adair1984">(<a href="#ref-Adair1984" role="doc-biblioref">Adair 1984</a>)</span>. A study done in the 1920s looking at the effects of lighting on worker productivity at the factory turned out to be an effect of the fact that the workers knew they were being studied, rather than the lighting.</p>
+<p>When talking about experimenter bias, the worry is that the experimenter’s knowledge or desires for the experiment are communicated to the participants, and that these effect people’s behavior <span class="citation" data-cites="Rosenthal1966">Rosenthal (<a href="references.html#ref-Rosenthal1966" role="doc-biblioref">1966</a>)</span>. However, even if you manage to stop this from happening, it’s almost impossible to stop people from knowing that they’re part of a psychological study. And the mere fact of knowing that someone is watching/studying you can have a pretty big effect on behavior. This is generally referred to as <strong>reactivity</strong> or <strong>demand effects</strong>. The basic idea is captured by the Hawthorne effect: people alter their performance because of the attention that the study focuses on them. The effect takes its name from a the “Hawthorne Works” factory outside of Chicago <span class="citation" data-cites="Adair1984">(<a href="references.html#ref-Adair1984" role="doc-biblioref">Adair 1984</a>)</span>. A study done in the 1920s looking at the effects of lighting on worker productivity at the factory turned out to be an effect of the fact that the workers knew they were being studied, rather than the lighting.</p>
 <p>To get a bit more specific about some of the ways in which the mere fact of being in a study can change how people behave, it helps to think like a social psychologist and look at some of the <em>roles</em> that people might adopt during an experiment, but might not adopt if the corresponding events were occurring in the real world:</p>
 <ul>
 <li><p>The <em>good participant</em> tries to be too helpful to the researcher: he or she seeks to figure out the experimenter’s hypotheses and confirm them.</p></li>
@@ -1070,7 +1109,7 @@ but we are starved for knowledge”</em><br>
 <li><p><strong>Data misrepresentation</strong>. While fraud gets most of the headlines, it’s much more common in my experience to see data being misrepresented. When I say this, I’m not referring to newspapers getting it wrong (which they do, almost always). I’m referring to the fact that often, the data don’t actually say what the researchers think they say. My guess is that, almost always, this isn’t the result of deliberate dishonesty, it’s due to a lack of sophistication in the data analyses. For instance, think back to the example of Simpson’s paradox that I discussed in the beginning of these notes. It’s very common to see people present “aggregated” data of some kind; and sometimes, when you dig deeper and find the raw data yourself, you find that the aggregated data tell a different story to the disaggregated data. Alternatively, you might find that some aspect of the data is being hidden, because it tells an inconvenient story (e.g., the researcher might choose not to refer to a particular variable). There’s a lot of variants on this; many of which are very hard to detect.</p></li>
 <li><p><strong>Study “misdesign”</strong>. Okay, this one is subtle. Basically, the issue here is that a researcher designs a study that has built-in flaws, and those flaws are never reported in the paper. The data that are reported are completely real, and are correctly analysed, but they are produced by a study that is actually quite wrongly put together. The researcher really wants to find a particular effect, and so the study is set up in such a way as to make it “easy” to (artifactually) observe that effect. One sneaky way to do this – in case you’re feeling like dabbling in a bit of fraud yourself – is to design an experiment in which it’s obvious to the participants what they’re “supposed” to be doing, and then let reactivity work its magic for you. If you want, you can add all the trappings of double blind experimentation etc. It won’t make a difference, since the study materials themselves are subtly telling people what you want them to do. When you write up the results, the fraud won’t be obvious to the reader: what’s obvious to the participant when they’re in the experimental context isn’t always obvious to the person reading the paper. Of course, the way I’ve described this makes it sound like it’s always fraud: probably there are cases where this is done deliberately, but in my experience the bigger concern has been with unintentional misdesign. The researcher <em>believes</em> …and so the study just happens to end up with a built in flaw, and that flaw then magically erases itself when the study is written up for publication.</p></li>
 <li><p><strong>Data mining &amp; post hoc hypothesizing</strong>. Another way in which the authors of a study can more or less lie about what they found is by engaging in what’s referred to as “data mining”. As we’ll discuss later in the class, if you keep trying to analyse your data in lots of different ways, you’ll eventually find something that “looks” like a real effect but isn’t. This is referred to as “data mining”. It used to be quite rare because data analysis used to take weeks, but now that everyone has very powerful statistical software on their computers, it’s becoming very common. Data mining per se isn’t “wrong”, but the more that you do it, the bigger the risk you’re taking. The thing that is wrong, and I suspect is very common, is <em>unacknowledged</em> data mining. That is, the researcher run every possible analysis known to humanity, finds the one that works, and then pretends that this was the only analysis that they ever conducted. Worse yet, they often “invent” a hypothesis after looking at the data, to cover up the data mining. To be clear: it’s not wrong to change your beliefs after looking at the data, and to reanalyze your data using your new “post hoc” hypotheses. What is wrong (and, I suspect, common) is failing to acknowledge that you’ve done so. If you acknowledge that you did it, then other researchers are able to take your behavior into account. If you don’t, then they can’t. And that makes your behavior deceptive. Bad!</p></li>
-<li><p><strong>Publication bias &amp; self-censoring</strong>. Finally, a pervasive bias is “non-reporting” of negative results. This is almost impossible to prevent. Journals don’t publish every article that is submitted to them: they prefer to publish articles that find “something”. So, if 20 people run an experiment looking at whether reading <em>Finnegans Wake</em> causes insanity in humans, and 19 of them find that it doesn’t, which one do you think is going to get published? Obviously, it’s the one study that did find that <em>Finnegans Wake</em> causes insanity. This is an example of a <em>publication bias</em>: since no-one ever published the 19 studies that didn’t find an effect, a naive reader would never know that they existed. Worse yet, most researchers “internalize” this bias, and end up <em>self-censoring</em> their research. Knowing that negative results aren’t going to be accepted for publication, they never even try to report them. As a friend of mine says “for every experiment that you get published, you also have 10 failures”. And she’s right. The catch is, while some (maybe most) of those studies are failures for boring reasons (e.g.&nbsp;you stuffed something up) others might be genuine “null” results that you ought to acknowledge when you write up the “good” experiment. And telling which is which is often hard to do. A good place to start is a paper by <span class="citation" data-cites="Ioannidis2005">Ioannidis (<a href="#ref-Ioannidis2005" role="doc-biblioref">2005</a>)</span> with the depressing title “Why most published research findings are false”. I’d also suggest taking a look at work by <span class="citation" data-cites="Kuhberger2014">Kühberger, Fritz, and Scherndl (<a href="#ref-Kuhberger2014" role="doc-biblioref">2014</a>)</span> presenting statistical evidence that this actually happens in psychology.</p></li>
+<li><p><strong>Publication bias &amp; self-censoring</strong>. Finally, a pervasive bias is “non-reporting” of negative results. This is almost impossible to prevent. Journals don’t publish every article that is submitted to them: they prefer to publish articles that find “something”. So, if 20 people run an experiment looking at whether reading <em>Finnegans Wake</em> causes insanity in humans, and 19 of them find that it doesn’t, which one do you think is going to get published? Obviously, it’s the one study that did find that <em>Finnegans Wake</em> causes insanity. This is an example of a <em>publication bias</em>: since no-one ever published the 19 studies that didn’t find an effect, a naive reader would never know that they existed. Worse yet, most researchers “internalize” this bias, and end up <em>self-censoring</em> their research. Knowing that negative results aren’t going to be accepted for publication, they never even try to report them. As a friend of mine says “for every experiment that you get published, you also have 10 failures”. And she’s right. The catch is, while some (maybe most) of those studies are failures for boring reasons (e.g.&nbsp;you stuffed something up) others might be genuine “null” results that you ought to acknowledge when you write up the “good” experiment. And telling which is which is often hard to do. A good place to start is a paper by <span class="citation" data-cites="Ioannidis2005">Ioannidis (<a href="references.html#ref-Ioannidis2005" role="doc-biblioref">2005</a>)</span> with the depressing title “Why most published research findings are false”. I’d also suggest taking a look at work by <span class="citation" data-cites="Kuhberger2014">Kühberger, Fritz, and Scherndl (<a href="references.html#ref-Kuhberger2014" role="doc-biblioref">2014</a>)</span> presenting statistical evidence that this actually happens in psychology.</p></li>
 </ul>
 <p>There’s probably a lot more issues like this to think about, but that’ll do to start with. What I really want to point out is the blindingly obvious truth that real world science is conducted by actual humans, and only the most gullible of people automatically assumes that everyone else is honest and impartial. Actual scientists aren’t usually <em>that</em> naive, but for some reason the world likes to pretend that we are, and the textbooks we usually write seem to reinforce that stereotype.</p>
 </section>
@@ -1086,7 +1125,7 @@ but we are starved for knowledge”</em><br>
 <li><p><strong>Experimental and non-experimental research designs</strong>: What makes an experiment an experiment? Is it a nice white lab coat, or does it have something to do with researcher control over variables?</p></li>
 <li><p><strong>Validity and its threats</strong>: Does your study measure what you want it to? How might things go wrong? And is it my imagination, or was that a very long list of possible ways in which things can go wrong?</p></li>
 </ul>
-<p>All this should make clear to you that study design is a critical part of research methodology. I built this chapter from the classic little book by <span class="citation" data-cites="Campbell1963">Campbell and Stanley (<a href="#ref-Campbell1963" role="doc-biblioref">1963</a>)</span>, but there are of course a large number of textbooks out there on research design. Spend a few minutes with your favorite search engine and you’ll find dozens.</p>
+<p>All this should make clear to you that study design is a critical part of research methodology. I built this chapter from the classic little book by <span class="citation" data-cites="Campbell1963">Campbell and Stanley (<a href="references.html#ref-Campbell1963" role="doc-biblioref">1963</a>)</span>, but there are of course a large number of textbooks out there on research design. Spend a few minutes with your favorite search engine and you’ll find dozens.</p>
 </section>
 <section id="videos" class="level2" data-number="1.15">
 <h2 data-number="1.15" class="anchored" data-anchor-id="videos"><span class="header-section-number">1.15</span> Videos</h2>
@@ -1096,7 +1135,7 @@ but we are starved for knowledge”</em><br>
 </iframe>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Adair1984" class="csl-entry" role="listitem">
 Adair, G. 1984. <span>“The <span>Hawthorne</span> Effect: <span>A</span> Reconsideration of the Methodological Artifact.”</span> <em>Journal of Applied Psychology</em> 69: 334–45. <a href="https://doi.org/10.1037/0021-9010.69.2.334">https://doi.org/10.1037/0021-9010.69.2.334</a>.
 </div>
@@ -1170,18 +1209,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1213,11 +1241,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/crumplab\.com\/statistics\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1227,8 +1294,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1240,7 +1316,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1284,6 +1483,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1309,6 +1509,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1370,12 +1596,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-Describing_Data.html" class="pagination-link">
+      <a href="./02-Describing_Data.html" class="pagination-link" aria-label="Describing Data">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Describing Data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1384,4 +1610,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/CrumpLab/statistics/edit/master/01-Science_Data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
