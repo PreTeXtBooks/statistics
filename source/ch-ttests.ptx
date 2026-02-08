@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-ttests" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>t-tests</title>
+
+  <introduction>
+    <p>
+      <alert>Note:</alert> This chapter contains placeholder content. The full chapter content from the original Quarto document (06-ttests.qmd) needs to be converted to PreTeXt format.
+    </p>
+  </introduction>
+
+  <section xml:id="sec-ttests-intro">
+    <title>Introduction to t-tests</title>
+    <p>
+      Content to be added from 06-ttests.qmd
+    </p>
+  </section>
+</chapter>

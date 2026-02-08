@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-samples-populations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Probability, Sampling, and Estimation</title>
+
+  <introduction>
+    <p>
+      <alert>Note:</alert> This chapter contains placeholder content. The full chapter content from the original Quarto document (04-SamplesPopulations.qmd) needs to be converted to PreTeXt format.
+    </p>
+    <p>
+      <alert>Adapted from:</alert> Danielle J. Navarro - Adapted and expanded from Chapters 9 and 10, Navarro D.
+    </p>
+  </introduction>
+
+  <section xml:id="sec-samples-populations-intro">
+    <title>Introduction to Sampling and Estimation</title>
+    <p>
+      Content to be added from 04-SamplesPopulations.qmd
+    </p>
+  </section>
+</chapter>

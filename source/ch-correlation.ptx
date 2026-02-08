@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-correlation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Correlation</title>
+
+  <introduction>
+    <p>
+      <alert>Note:</alert> This chapter contains placeholder content. The full chapter content from the original Quarto document (03-Correlation.qmd) needs to be converted to PreTeXt format.
+    </p>
+  </introduction>
+
+  <section xml:id="sec-correlation-intro">
+    <title>Introduction to Correlation</title>
+    <p>
+      Content to be added from 03-Correlation.qmd
+    </p>
+  </section>
+</chapter>

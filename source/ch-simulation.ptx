@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-simulation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Simulation</title>
+
+  <introduction>
+    <p>
+      <alert>Note:</alert> This chapter contains placeholder content. The full chapter content from the original Quarto document (11-Simulation.qmd) needs to be converted to PreTeXt format.
+    </p>
+  </introduction>
+
+  <section xml:id="sec-simulation-intro">
+    <title>Introduction to Simulation</title>
+    <p>
+      Content to be added from 11-Simulation.qmd
+    </p>
+  </section>
+</chapter>
