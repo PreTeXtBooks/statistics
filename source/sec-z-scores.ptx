@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="sec-z-scores">
+  <title>z-scores</title>
+  
+  <p>
+    We are now in a position to combine some of things we've been talking about in this chapter, and introduce you to a new tool, <term>z-scores</term>. It turns out we won't use <em>z-scores</em> very much in this textbook. However, you can't take a class on statistics and not learn about <em>z-scores</em>.
+  </p>
+
+  <p>
+    We are going to look at a normal distribution in <xref ref="fig-4normalSDspercents"/>, and draw lines through the distribution at 0, +/- 1, +/-2, and +/- 3 standard deviations from the mean:
+  </p>
+
+  <figure xml:id="fig-4normalSDspercents">
+    <caption>A normal distribution. Each line represents a standard deviation from the mean. The labels show the proportions of scores that fall between each bar.</caption>
+    <image source="imgs/generated/fig-4normalSDspercents.png"/>
+  </figure>
+
+  <p>
+    The figure shows a normal distribution with mean = 0, and standard deviation = 1. We've drawn lines at each of the standard deviations: -3, -2, -1, 0, 1, 2, and 3. We also show some numbers in the labels, in between each line. These numbers are proportions. For example, we see the proportion is .341 for scores that fall between the range 0 and 1. Scores between 0 and 1 occur 34.1% of the time. Scores in between -1 and 1, occur 68.2% of the time, that's more than half of the scores. Scores between 1 and occur about 13.6% of the time, and scores between 2 and 3 occur even less, only 2.1% of the time.
+  </p>
+
+  <p>
+    Normal distributions always have these properties, even when they have different means and standard deviations. For example, take a look at the normal distribution in <xref ref="fig-4normalSDspercentsB"/> that has a mean = 100, and standard deviation = 25.
+  </p>
+
+  <figure xml:id="fig-4normalSDspercentsB">
+    <caption>A normal distribution. Each line represents a standard deviation from the mean. The labels show the proportions of scores that fall between each bar.</caption>
+    <image source="imgs/generated/fig-4normalSDspercentsB.png"/>
+  </figure>
+
+  <p>
+    Now we are looking at a normal distribution with mean = 100 and standard deviation = 25. Notice that the region between 100 and 125 contains 34.1% of the scores. This region is 1 standard deviation away from the mean (the standard deviation is 25, the mean is 100, so 25 is one whole standard deviation away from 100). As you can see, the very same proportions occur between each of the standard deviations, as they did when our standard deviation was set to 1 (with a mean of 0).
+  </p>
+
+  <subsection xml:id="subsec-idea-z-scores">
+    <title>Idea behind z-scores</title>
+    
+    <p>
+      Sometimes it can be convenient to transform your original scores into different scores that are easier to work with. For example, if you have a bunch of proportions, like .3, .5, .6, .7, you might want to turn them into percentages like 30%, 50%, 60%, and 70%. To do that you multiply the proportions by a constant of 100. If you want to turn percentages back into proportions, you divide by a constant of 100. This kind of transformation just changes the scale of the numbers from between 0-1, and between 0-100. Otherwise, the pattern in the numbers stays the same.
+    </p>
+
+    <p>
+      The idea behind z-scores is a similar kind of transformation. The idea is to express each raw score in terms of it's standard deviation. For example, if I told you I got a 75% on test, you wouldn't know how well I did compared to the rest of the class. But, if I told you that I scored 2 standard deviations above the mean, you'd know I did quite well compared to the rest of the class, because you know that most scores (if they are distributed normally) fall below 2 standard deviations of the mean.
+    </p>
+
+    <p>
+      We also know, now thanks to the central limit theorem, that many of our measures, such as sample means, will be distributed normally. So, it can often be desirable to express the raw scores in terms of their standard deviations.
+    </p>
+
+    <p>
+      Let's see how this looks in a table without showing you any formulas. We will look at some scores that come from a normal distribution with mean = 100, and standard deviation = 25. We will list some raw scores, along with the z-scores
+    </p>
+
+    <table xml:id="table-z-scores">
+      <title>Raw scores and z-scores</title>
+      <tabular>
+        <row bottom="minor">
+          <cell>raw</cell>
+          <cell>25</cell>
+          <cell>50</cell>
+          <cell>75</cell>
+          <cell>100</cell>
+          <cell>125</cell>
+          <cell>150</cell>
+          <cell>175</cell>
+        </row>
+        <row>
+          <cell>z</cell>
+          <cell>-3</cell>
+          <cell>-2</cell>
+          <cell>-1</cell>
+          <cell>0</cell>
+          <cell>1</cell>
+          <cell>2</cell>
+          <cell>3</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Remember, the mean is 100, and the standard deviation is 25. How many standard deviations away from the mean is a score of 100? The answer is 0, it's right on the mean. You can see the z-score for 100, is 0. How many standard deviations is 125 away from the mean? Well the standard deviation is 25, 125 is one whole 25 away from 100, that's a total of 1 standard deviation, so the z-score for 125 is 1. The z-score for 150 is 2, because 150 is two 25s away from 100. The z-score for 50 is -2, because 50 is two 25s away from 100 in the opposite direction. All we are doing here is re-expressing the raw scores in terms of how many standard deviations they are from the mean. Remember, the mean is always right on target, so the center of the z-score distribution is always 0.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-calc-z-scores">
+    <title>Calculating z-scores</title>
+    
+    <p>
+      To calculate z-scores all you have to do is figure out how many standard deviations from the mean each number is. Let's say the mean is 100, and the standard deviation is 25. You have a score of 97. How many standard deviations from the mean is 97?
+    </p>
+
+    <p>
+      First compute the difference between the score and the mean:
+    </p>
+
+    <me>97-100 = -3</me>
+
+    <p>
+      Alright, we have a total difference of -3. How many standard deviations does -3 represent if 1 standard deviation is 25? Clearly -3 is much smaller than 25, so it's going to be much less than 1. To figure it out, just divide -3 by the standard deviation.
+    </p>
+
+    <me>\frac{-3}{25} = -.12</me>
+
+    <p>
+      Our z-score for 97 is -.12.
+    </p>
+
+    <p>
+      Here's the general formula:
+    </p>
+
+    <me>z = \frac{\text{raw score} - \text{mean}}{\text{standard deviation}}</me>
+
+    <p>
+      So, for example if we had these 10 scores from a normal distribution with mean = 100, and standard deviation =25
+    </p>
+
+    <pre>
+[1] 109.02  85.81  96.67 101.82  75.26 114.58 117.22 123.98  87.65  90.82
+    </pre>
+
+    <p>
+      The z-scores would be:
+    </p>
+
+    <pre>
+[1]  0.36080000 -0.56760000 -0.13320000  0.07280000 -0.98960000  0.58320000
+[7]  0.68880000  0.95920000 -0.49400000 -0.36720000
+    </pre>
+
+    <p>
+      Once you have the z-scores, you could use them as another way to describe your data. For example, now just by looking at a score you know if it is likely or unlikely to occur, because you know how the area under the normal curve works. z-scores between -1 and 1 happen pretty often, scores greater than 1 or -1 still happen fairly often, but not as often. And, scores bigger than 2 or -2 don't happen very often. This is a convenient thing to do if you want to look at your numbers and get a general sense of how often they happen.
+    </p>
+
+    <p>
+      Usually you do not know the mean or the standard deviation of the population that you are drawing your sample scores from. So, you could use the mean and standard deviation of your sample as an estimate, and then use those to calculate z-scores.
+    </p>
+
+    <p>
+      Finally, z-scores are also called <term>standardized scores</term>, because each raw score is described in terms of it's standard deviation. This may well be the last time we talk about z-scores in this book. You might wonder why we even bothered telling you about them. First, it's worth knowing they are a thing. Second, they become important as your statistical prowess becomes more advanced. Third, some statistical concepts, like correlation, can be re-written in terms of z-scores, and this illuminates aspects of those statistics. Finally, they are super useful when you are dealing with a normal distribution that has a known mean and standard deviation.
+    </p>
+  </subsection>
+
+</section>
