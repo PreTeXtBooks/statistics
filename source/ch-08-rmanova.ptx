@@ -252,18 +252,20 @@
   <section xml:id="sec-08-calculating-rm-anova">
     <title>Calculating the RM ANOVA</title>
     
-    <p>
-      Now that you are familiar with the concept of an ANOVA table (remember the table from last chapter where we reported all of the parts to calculate the <m>F</m>-value?), we can take a look at the things we need to find out to make the ANOVA table. <xref ref="fig-8rmtable"/> presents an abstract for the repeated-measures ANOVA table. It shows us all the thing we need to calculate to get the <m>F</m>-value for our data.
-    </p>
+    <introduction>
+      <p>
+        Now that you are familiar with the concept of an ANOVA table (remember the table from last chapter where we reported all of the parts to calculate the <m>F</m>-value?), we can take a look at the things we need to find out to make the ANOVA table. <xref ref="fig-8rmtable"/> presents an abstract for the repeated-measures ANOVA table. It shows us all the thing we need to calculate to get the <m>F</m>-value for our data.
+      </p>
 
-    <figure xml:id="fig-8rmtable">
-      <caption>Equations for computing the ANOVA table for a repeated measures design</caption>
-      <image source="imgs/figures/RMANOVA_table.png" width="100%"/>
-    </figure>
+      <figure xml:id="fig-8rmtable">
+        <caption>Equations for computing the ANOVA table for a repeated measures design</caption>
+        <image source="imgs/figures/RMANOVA_table.png" width="100%"/>
+      </figure>
 
-    <p>
-      So, what we need to do is calculate all the <m>SS</m>es that we did before for the between-subjects ANOVA. That means the next three steps are identical to the ones you did before. In fact, I will just basically copy the next three steps to find <m>SS_\text{TOTAL}</m>, <m>SS_\text{Effect}</m>, and <m>SS_\text{Error (within-conditions)}</m>. After that we will talk about splitting up <m>SS_\text{Error (within-conditions)}</m> into two parts, this is the new thing for this chapter. Here we go!
-    </p>
+      <p>
+        So, what we need to do is calculate all the <m>SS</m>es that we did before for the between-subjects ANOVA. That means the next three steps are identical to the ones you did before. In fact, I will just basically copy the next three steps to find <m>SS_\text{TOTAL}</m>, <m>SS_\text{Effect}</m>, and <m>SS_\text{Error (within-conditions)}</m>. After that we will talk about splitting up <m>SS_\text{Error (within-conditions)}</m> into two parts, this is the new thing for this chapter. Here we go!
+      </p>
+    </introduction>
 
     <subsection xml:id="subsec-08-ss-total">
       <title>SS Total</title>
@@ -953,21 +955,23 @@
   <section xml:id="sec-08-things-worth-knowing">
     <title>Things worth knowing</title>
     
-    <p>
-      Repeated Measures ANOVAs have some special properties that are worth knowing about. The main special property is that the error term used to for the <m>F</m>-value (the MSE in the denominator) will always be smaller than the error term used for the <m>F</m>-value the ANOVA for a between-subjects design. We discussed this earlier. It is smaller, because we subtract out the error associated with the subject means.
-    </p>
+    <introduction>
+      <p>
+        Repeated Measures ANOVAs have some special properties that are worth knowing about. The main special property is that the error term used to for the <m>F</m>-value (the MSE in the denominator) will always be smaller than the error term used for the <m>F</m>-value the ANOVA for a between-subjects design. We discussed this earlier. It is smaller, because we subtract out the error associated with the subject means.
+      </p>
 
-    <p>
-      This can have the consequence of generally making <m>F</m>-values in repeated measures designs larger than <m>F</m>-values in between-subjects designs. When the number in the bottom of the <m>F</m> formula is generally smaller, it will generally make the resulting ratio a larger number. That's what happens when you make the number in the bottom smaller.
-    </p>
+      <p>
+        This can have the consequence of generally making <m>F</m>-values in repeated measures designs larger than <m>F</m>-values in between-subjects designs. When the number in the bottom of the <m>F</m> formula is generally smaller, it will generally make the resulting ratio a larger number. That's what happens when you make the number in the bottom smaller.
+      </p>
 
-    <p>
-      Because big <m>F</m> values usually let us reject the idea that differences in our means are due to chance, the repeated-measures ANOVA becomes a more sensitive test of the differences (its <m>F</m>-values are usually larger).
-    </p>
+      <p>
+        Because big <m>F</m> values usually let us reject the idea that differences in our means are due to chance, the repeated-measures ANOVA becomes a more sensitive test of the differences (its <m>F</m>-values are usually larger).
+      </p>
 
-    <p>
-      At the same time, there is a trade-off here. The repeated measures ANOVA uses different degrees of freedom for the error term, and these are typically a smaller number of degrees of freedom. So, the <m>F</m>-distributions for the repeated measures and between-subjects designs are actually different <m>F</m>-distributions, because they have different degrees of freedom.
-    </p>
+      <p>
+        At the same time, there is a trade-off here. The repeated measures ANOVA uses different degrees of freedom for the error term, and these are typically a smaller number of degrees of freedom. So, the <m>F</m>-distributions for the repeated measures and between-subjects designs are actually different <m>F</m>-distributions, because they have different degrees of freedom.
+      </p>
+    </introduction>
 
     <subsection xml:id="subsec-08-repeated-vs-between">
       <title>Repeated vs between-subjects ANOVA</title>

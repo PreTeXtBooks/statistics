@@ -14,13 +14,9 @@ INFO    : verifying and expanding input directory: /home/runner/work/statistics/
 INFO    : input directory expanded to absolute path: /home/runner/work/statistics/statistics/generated-assets
 INFO    : verifying and expanding input directory: /home/runner/work/statistics/statistics/source/../imgs
 INFO    : input directory expanded to absolute path: /home/runner/work/statistics/statistics/imgs
-INFO    : converting /home/runner/work/statistics/statistics/source/main.ptx to HTML in /tmp/tmpagpc_kut
+INFO    : converting /home/runner/work/statistics/statistics/source/main.ptx to HTML in /tmp/tmp1bmoc89t
 INFO    : XSL conversion of /home/runner/work/statistics/statistics/source/main.ptx by /home/runner/.ptx/xsl/pretext-html.xsl
 INFO    : comprehensive messages, warnings, and errors:
-INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
-INFO    :     *              located within: "sec-08-calculating-rm-anova" (xml:id), "Calculating the RM ANOVA" (title)
-INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
-INFO    :     *              located within: "sec-08-things-worth-knowing" (xml:id), "Things worth knowing" (title)
 INFO    : successful application of /home/runner/.ptx/xsl/pretext-html.xsl
 INFO    : 
 Success! Run `pretext view html` to see the results.
