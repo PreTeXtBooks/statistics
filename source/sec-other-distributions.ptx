@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="sec-other-distributions">
+  <title>Other useful distributions</title>
+  
+  <p>
+    There are many other useful distributions, these include the <c>t</c> distribution, the <c>F</c> distribution, and the chi squared distribution. We will soon discover more about the <c>t</c> and <c>F</c> distributions when we discuss t-tests and ANOVAs in later chapters.
+  </p>
+
+</section>

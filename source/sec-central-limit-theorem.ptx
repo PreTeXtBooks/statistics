@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="sec-central-limit-theorem">
+  <title>The central limit theorem</title>
+  
+  <p>
+    OK, so now you've seen lots of sampling distributions, and you know what the sampling distribution of the mean is. Here, we'll focus on <em>how the sampling distribution of the mean changes as a function of sample size.</em>
+  </p>
+
+  <p>
+    Intuitively, you already know part of the answer: if you only have a few observations, the sample mean is likely to be quite inaccurate (you've already seen it bounce around): if you replicate a small experiment and recalculate the mean you'll get a very different answer. In other words, the sampling distribution is quite wide. If you replicate a large experiment and recalculate the sample mean you'll probably get the same answer you got last time, so the sampling distribution will be very narrow.
+  </p>
+
+  <p>
+    Let's give ourselves a nice movie to see everything in action. We're going to sample numbers from a normal distribution. <xref ref="fig-4samplingmean"/> has four panels, each panel represents a different sample size (n), including sample-sizes of 10, 50, 100, and 1000. The red line shows the shape of the normal distribution. The grey bars show a histogram of each of the samples that we take. The red line shows the mean of an individual sample (the middle of the grey bars). As you can see, the red line moves around a lot, especially when the sample size is small (10).
+  </p>
+
+  <p>
+    The new bits are the blue bars and the blue lines. The blue bars represent the sampling distribution of the sample mean. For example, in the panel for sample-size 10, we see a bunch of blue bars. This is a histogram of 10 sample means, taken from 10 samples of size 10. In the 50 panel, we see a histogram of 50 sample means, taken from 50 samples of size 50, and so on. The blue line in each panel is the mean of the sample means ("aaagh, it's a mean of means", yes it is).
+  </p>
+
+  <figure xml:id="fig-4samplingmean">
+    <caption>Animation of samples (grey histogram shows frequency counts of data in each sample), and the sampling distribution of the mean (histogram of the sampling means for many samples). Each sample is taken from the normal distribution shown in red. The moving red line is the mean of an individual sample. The blue line is the mean of the blue histogram, which represents the sampling distribution of the mean for many samples</caption>
+    <image source="imgs/gifs/sampleDistNormal-1.gif"/>
+  </figure>
+
+  <p>
+    What should you notice? Notice that the range of the blue bars shrinks as sample size increases. The sampling distribution of the mean is quite wide when the sample-size is 10, it narrows as sample-size increases to 50 and 100, and it's just one bar, right in the middle when sample-size goes to 1000. What we are seeing is that the mean of the sampling distribution approaches the mean of the population as sample-size increases.
+  </p>
+
+  <p>
+    So, the sampling distribution of the mean is another distribution, and it has some variance. It varies more when sample-size is small, and varies less when sample-size is large. We can quantify this effect by calculating the standard deviation of the sampling distribution, which is referred to as the <term>standard error</term>. The standard error of a statistic is often denoted SE, and since we're usually interested in the standard error of the sample <em>mean</em>, we often use the acronym SEM. As you can see just by looking at the movie, as the sample size <m>N</m> increases, the SEM decreases.
+  </p>
+
+  <p>
+    Okay, so that's one part of the story. However, there's something we've been glossing over a little bit. We've seen it already, but it's worth looking at it one more time. Here's the thing: <em>no matter what shape your population distribution is</em>, as <m>N</m> increases the sampling distribution of the mean starts to look more like a normal distribution. This is the central limit theorem.
+  </p>
+
+  <p>
+    To see the central limit theorem in action, we are going to look at some histograms of sample means from different kinds of distributions. It is very important to recognize that you are looking at distributions of sample means, not distributions of individual samples.
+  </p>
+
+  <p>
+    Here we go, <xref ref="fig-4sampledistmeannorm"/> shows sampling from a normal distribution. The red line is the normal distribution where each sample is drawn from. The mean for each sample of numbers is computed, and the distribution of sample means is shown by the blue bars. Note that the shape of red line and the blue bars are similar, they both look like a normal distribution.
+  </p>
+
+  <figure xml:id="fig-4sampledistmeannorm">
+    <caption>Comparison of two normal distributions, and histograms for the sampling distribution of the mean for different samples-sizes. The range  of sampling distribution of the mean shrinks as sample-size increases</caption>
+    <image source="imgs/generated/fig-4sampledistmeannorm.png"/>
+  </figure>
+
+  <p>
+    Let's do it again. This time we will sample from a flat uniform distribution shown by the red line. However, <xref ref="fig-4samplemeanunif"/> shows the distribution of sample means represented by the blue bars is not flat, it looks like a normal distribution.
+  </p>
+
+  <figure xml:id="fig-4samplemeanunif">
+    <caption>Illustration that the shape of the sampling distribution of the mean is normal, even when the samples come from a non-normal (uniform in this case) distribution</caption>
+    <image source="imgs/generated/fig-4samplemeanunif.png" width="100%"/>
+  </figure>
+
+  <p>
+    One more time with an exponential distribution (shown in red) where smaller numbers are more likely to be sampled than larger numbers. Even though way more of the numbers in a given sample will be smaller than larger, according to <xref ref="fig-4samplemeanExp"/> the sampling distribution of the mean does not look the red line. Instead, the sampling distribution of the mean looks like a bell-shaped normal curve. This is the central limit theorem in action.
+  </p>
+
+  <figure xml:id="fig-4samplemeanExp">
+    <caption>Illustration that the shape of the sampling distribution of the mean is normal, even when the samples come from an exponential distribution</caption>
+    <image source="imgs/generated/fig-4samplemeanExp.png"/>
+  </figure>
+
+  <p>
+    On the basis of these figures, it seems like we have evidence for all of the following claims about the sampling distribution of the mean:
+  </p>
+
+  <ul>
+    <li><p>The mean of the sampling distribution is the same as the mean of the population</p></li>
+    <li><p>The standard deviation of the sampling distribution (i.e., the standard error) gets smaller as the sample size increases</p></li>
+    <li><p>The shape of the sampling distribution becomes normal as the sample size increases</p></li>
+  </ul>
+
+  <p>
+    As it happens, not only are all of these statements true, there is a very famous theorem in statistics that proves all three of them, known as the <term>central limit theorem</term>. Among other things, the central limit theorem tells us that if the population distribution has mean <m>\mu</m> and standard deviation <m>\sigma</m>, then the sampling distribution of the mean also has mean <m>\mu</m>, and the standard error of the mean is 
+    <me>\mbox{SEM} = \frac{\sigma}{ \sqrt{N} }</me>
+    Because we divide the population standard deviation <m>\sigma</m> by the square root of the sample size <m>N</m>, the SEM gets smaller as the sample size increases. It also tells us that the shape of the sampling distribution becomes normal.
+  </p>
+
+  <p>
+    This result is useful for all sorts of things. It tells us why large experiments are more reliable than small ones, and because it gives us an explicit formula for the standard error it tells us <em>how much</em> more reliable a large experiment is. It tells us why the normal distribution is, well, <em>normal</em>. In real experiments, many of the things that we want to measure are actually averages of lots of different quantities (e.g., arguably, "general" intelligence as measured by IQ is an average of a large number of "specific" skills and abilities), and when that happens, the averaged quantity should follow a normal distribution. Because of this mathematical law, the normal distribution pops up over and over again in real data.
+  </p>
+
+</section>
