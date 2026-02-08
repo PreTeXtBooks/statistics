@@ -57,13 +57,7 @@
         </p>
       </introduction>
       
-      <section xml:id="section-placeholder">
-        <title>Getting Started</title>
-        <p>
-          Content from the Quarto source files will be converted to PreTeXt format.
-          This is a placeholder chapter to enable initial builds.
-        </p>
-      </section>
+      <xi:include href="sec-why-statistics.ptx" />
     </chapter>
 
     <backmatter xml:id="backmatter">
