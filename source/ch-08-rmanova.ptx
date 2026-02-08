@@ -271,7 +271,7 @@
       <title>SS Total</title>
       
       <p>
-        The total sums of squares, or <m>SS\text{Total}</m> measures the total variation in a set of data. All we do is find the difference between each score and the grand mean, then we square the differences and add them all up.
+        The total sums of squares, or <m>SS_\text{Total}</m> measures the total variation in a set of data. All we do is find the difference between each score and the grand mean, then we square the differences and add them all up.
       </p>
 
       <table xml:id="tbl-8sstotal">

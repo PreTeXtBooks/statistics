@@ -14,7 +14,7 @@ INFO    : verifying and expanding input directory: /home/runner/work/statistics/
 INFO    : input directory expanded to absolute path: /home/runner/work/statistics/statistics/generated-assets
 INFO    : verifying and expanding input directory: /home/runner/work/statistics/statistics/source/../imgs
 INFO    : input directory expanded to absolute path: /home/runner/work/statistics/statistics/imgs
-INFO    : converting /home/runner/work/statistics/statistics/source/main.ptx to HTML in /tmp/tmp1bmoc89t
+INFO    : converting /home/runner/work/statistics/statistics/source/main.ptx to HTML in /tmp/tmph_haliiw
 INFO    : XSL conversion of /home/runner/work/statistics/statistics/source/main.ptx by /home/runner/.ptx/xsl/pretext-html.xsl
 INFO    : comprehensive messages, warnings, and errors:
 INFO    : successful application of /home/runner/.ptx/xsl/pretext-html.xsl
