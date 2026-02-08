@@ -61,6 +61,7 @@ jobs:
           fi
       
       - name: Upload artifact
+        if: github.event_name == 'push'
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'output/html'
