@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-anova" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>ANOVA</title>
+
+  <introduction>
+    <p>
+      <alert>Note:</alert> This chapter contains placeholder content. The full chapter content from the original Quarto document (07-ANOVA.qmd) needs to be converted to PreTeXt format.
+    </p>
+  </introduction>
+
+  <section xml:id="sec-anova-intro">
+    <title>Introduction to ANOVA</title>
+    <p>
+      Content to be added from 07-ANOVA.qmd
+    </p>
+  </section>
+</chapter>

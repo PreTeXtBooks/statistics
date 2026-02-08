@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<publication>
+  <!-- HTML-Specific Options -->
+  <common>
+    <tableofcontents level="2"/>
+    <chunking level="1"/>
+  </common>
+
+  <html>
+    <calculator model="none"/>
+    <index-page ref="frontmatter"/>
+    <baseurl href="https://crumplab.com/statistics/"/>
+    <knowl example="no" remark="no"/>
+  </html>
+</publication>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<references xml:id="references" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>References</title>
+  
+  <introduction>
+    <p>
+      <alert>Note:</alert> This section contains placeholder content. The references from the original Quarto document (references.qmd) and bibliography file (StatisticsTextbook.bib) need to be converted to PreTeXt format.
+    </p>
+  </introduction>
+</references>

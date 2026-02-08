@@ -6,3 +6,8 @@
 /cache
 
 /.quarto/
+
+# PreTeXt build artifacts
+/output/
+.error_schema.log
+cli.log

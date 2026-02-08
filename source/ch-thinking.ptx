@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-thinking" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Thinking about Answering Questions with Data</title>
+
+  <introduction>
+    <p>
+      <alert>Note:</alert> This chapter contains placeholder content. The full chapter content from the original Quarto document (12-Thinking.qmd) needs to be converted to PreTeXt format.
+    </p>
+  </introduction>
+
+  <section xml:id="sec-thinking-intro">
+    <title>Introduction to Critical Thinking about Data</title>
+    <p>
+      Content to be added from 12-Thinking.qmd
+    </p>
+  </section>
+</chapter>

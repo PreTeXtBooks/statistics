@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-describing-data" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Describing Data</title>
+
+  <introduction>
+    <blockquote>
+      <p>
+        Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise. <mdash/>John W. Tukey
+      </p>
+    </blockquote>
+    <p>
+      This chapter is about <term>descriptive statistics</term>. These are tools for describing data. Some things to keep in mind as we go along are:
+    </p>
+    <p><ol>
+      <li><p>There are lots of different ways to describe data</p></li>
+      <li><p>There is more than one <q>correct</q> way, and you get to choose the most <q>useful</q> way for the data that you are describing</p></li>
+      <li><p>It is possible to invent new ways of describing data, all of the ways we discuss were previously invented by other people, and they are commonly used because they are useful.</p></li>
+      <li><p>Describing data is necessary because there is usually too much of it, so it doesn't make any sense by itself.</p></li>
+    </ol></p>
+  </introduction>
+
+  <section xml:id="sec-too-many-numbers">
+    <title>This is what too many numbers looks like</title>
+    <p>
+      Let's say you wanted to know how happy people are. So, you ask thousands of people on the street how happy they are. You let them pick any number they want from negative infinity to positive infinity. Then you record all the numbers. Now what?
+    </p>
+    <p>
+      Well, how about you look at the numbers and see if that helps you determine anything about how happy people are. What could the numbers look like. Perhaps something like this:
+    </p>
+    <p>
+      <alert>Note:</alert> This chapter contains placeholder content. The full chapter content from the original Quarto document needs to be converted to PreTeXt format, including data visualizations and R code examples.
+    </p>
+    <p>
+      Now, what are you going to with that big pile of numbers? Look at it all day long? When you deal with data, it will deal so many numbers to you that you will be overwhelmed by them. That is why we need ways to describe the data in a more manageable fashion.
+    </p>
+    <p>
+      The complete description of the data is always the data itself. <term>Descriptive statistics</term> and other tools for describing data go one step further to summarize aspects of the data. Summaries are a way to compress the important bits of a thing down to a useful and manageable tidbit. It's like telling your friends why they should watch a movie: you don't replay the entire movie for them, instead you hit the highlights. Summarizing the data is just like a movie preview, only for data.
+    </p>
+  </section>
+
+  <section xml:id="sec-look-at-data">
+    <title>Look at the data</title>
+    
+    <introduction>
+    <p>
+      We already tried one way of looking at the numbers, and it wasn't useful. Let's look at some other ways of looking at the numbers, using graphs.
+    </p>
+    </introduction>
+
+    <subsection xml:id="subsec-plotting">
+      <title>Stop, plotting time</title>
+      <p>
+        Let's turn all of the numbers into dots, then show them in a graph. Note, when we do this, we have not yet summarized anything about the data. Instead, we just look at all of the data in a visual format, rather than looking at the numbers.
+      </p>
+      <p>
+        <alert>Note:</alert> Figures and visualizations from the original document need to be converted and included here.
+      </p>
+    </subsection>
+  </section>
+</chapter>
