@@ -413,7 +413,7 @@
       </p>
 
       <p>
-        <me>\text{SEM} = \frac{s}{\sqrt{N}} = \frac{17.92}{10} = 5.67</me>
+        <me>\text{SEM} = \frac{s}{\sqrt{N}} = \frac{17.92}{\sqrt{10}} = 5.67</me>
       </p>
 
       <p>
@@ -601,12 +601,12 @@
           <row>
             <cell>3</cell>
             <cell>0.54</cell>
-            <cell>0.62</cell>
+            <cell>0.70</cell>
           </row>
           <row>
             <cell>4</cell>
             <cell>0.56</cell>
-            <cell>0.54</cell>
+            <cell>0.58</cell>
           </row>
           <row>
             <cell>5</cell>
@@ -671,14 +671,14 @@
           <row>
             <cell>3</cell>
             <cell>0.54</cell>
-            <cell>0.62</cell>
-            <cell>0.08</cell>
+            <cell>0.70</cell>
+            <cell>0.16</cell>
           </row>
           <row>
             <cell>4</cell>
             <cell>0.56</cell>
-            <cell>0.54</cell>
-            <cell>-0.02</cell>
+            <cell>0.58</cell>
+            <cell>0.02</cell>
           </row>
           <row>
             <cell>5</cell>
@@ -743,14 +743,14 @@
           <row>
             <cell>Sums</cell>
             <cell>2.58</cell>
-            <cell>2.73</cell>
-            <cell>0.15</cell>
+            <cell>2.85</cell>
+            <cell>0.27</cell>
           </row>
           <row>
             <cell>Means</cell>
             <cell>0.516</cell>
-            <cell>0.546</cell>
-            <cell>0.03</cell>
+            <cell>0.570</cell>
+            <cell>0.054</cell>
           </row>
         </tabular>
       </table>
