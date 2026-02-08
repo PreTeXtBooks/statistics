@@ -71,6 +71,8 @@
 
 <xi:include href="ch-probability-sampling-estimation.ptx" />
     </chapter>
+
+    <xi:include href="ch-ttests.ptx" />
     
 <backmatter xml:id="backmatter">
       <title>Back Matter</title>
