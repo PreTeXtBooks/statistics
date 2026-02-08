@@ -69,7 +69,7 @@
     </p>
 
     <figure xml:id="fig-4sample20unif">
-      <caption>Animiation showing histograms for different samples of size 20 from the uniform distribution. The red line shows the mean of each sample.</caption>
+      <caption>Animation showing histograms for different samples of size 20 from the uniform distribution. The red line shows the mean of each sample.</caption>
       <image source="imgs/gifs/sampleHistUnif-1.gif"/>
     </figure>
 
