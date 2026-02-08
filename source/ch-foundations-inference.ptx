@@ -359,7 +359,7 @@
     </p>
 
     <figure xml:id="fig-5manydiffs">
-      <caption>Replicating the experiment 100 times, and looking at the differences each time. There are mnay kinds of differences that chance alone can produce.</caption>
+      <caption>Replicating the experiment 100 times, and looking at the differences each time. There are many kinds of differences that chance alone can produce.</caption>
       <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5manydiffs-1.png"/>
     </figure>
 
