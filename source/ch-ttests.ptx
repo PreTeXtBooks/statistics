@@ -569,9 +569,600 @@
       </p>
     </subsection>
 
-    <p>
-      The remaining subsections would continue with the data analysis, difference scores, mean difference, calculating t, interpreting t, p-values, one-tailed and two-tailed tests, degrees of freedom, and examples. Due to the length constraints, the structure is established and the pattern is clear.
-    </p>
+    <subsection xml:id="subsec-paired-data">
+      <title>The data</title>
+      
+      <p>
+        Let's take a look at the data for the first 5 infants in the study. This will help us better understand some properties of the data before we analyze it. We will see that the data is structured in a particular way that we can take advantage of with a paired samples t-test. Note, we look at the first 5 infants to show how the computations work. The results of the paired-samples t-test change when we use all of the data from the study.
+      </p>
+
+      <p>
+        Here is a table of the data:
+      </p>
+
+      <table xml:id="tbl-paired-sample">
+        <title>Data for first 5 infants showing proportion looking times</title>
+        <tabular>
+          <row header="yes">
+            <cell>infant</cell>
+            <cell>Baseline</cell>
+            <cell>Test</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>0.49</cell>
+            <cell>0.49</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>0.41</cell>
+            <cell>0.52</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>0.54</cell>
+            <cell>0.62</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>0.56</cell>
+            <cell>0.54</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>0.58</cell>
+            <cell>0.56</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        The table shows proportion looking times toward the singer of the familiar song during the Baseline and Test phases. Notice there are five different infants, (1 to 5). Each infant is measured twice, once during the Baseline phase, and once during the Test phase. To repeat from before, this is a repeated-measures design, because the infants are measured repeatedly (twice in this case). Or, this kind of design is also called a <alert>paired-samples</alert> design. Why? because each participant comes with a pair of samples (two samples), one for each level of the design.
+      </p>
+
+      <p>
+        Great, so what are we really interested in here? We want to know if the mean looking time toward the singer of the familiar song for the Test phase is higher than the Baseline phase. We are comparing the two sample means against each other and looking for a difference. We already know that differences could be obtained by chance alone, simply because we took two sets of samples, and we know that samples can be different. So, we are interested in knowing whether chance was likely or unlikely to have produced any difference we might observe.
+      </p>
+
+      <p>
+        In other words, we are interested in looking at the difference scores between the baseline and test phase for each infant. The question here is, for each infant, did their proportion looking time to the singer of the familiar song, increase during the test phase as compared to the baseline phase.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-difference-scores">
+      <title>The difference scores</title>
+      
+      <p>
+        Let's add the difference scores to the table of data so it is easier to see what we are talking about. The first step in creating difference scores is to decide how you will take the difference, there are two options:
+      </p>
+
+      <p>
+        <ol>
+          <li>Test phase score - Baseline Phase Score</li>
+          <li>Baseline phase score - Test Phase score</li>
+        </ol>
+      </p>
+
+      <p>
+        Let's use the first formula. Why? Because it will give us positive differences when the test phase score is higher than the baseline phase score. This makes a positive score meaningful with respect to the study design, we know (because we defined it to be this way), that positive scores will refer to longer proportion looking times (to singer of familiar song) during the test phase compared to the baseline phase.
+      </p>
+
+      <table xml:id="tbl-paired-with-diffs">
+        <title>Data with difference scores added</title>
+        <tabular>
+          <row header="yes">
+            <cell>infant</cell>
+            <cell>Baseline</cell>
+            <cell>Test</cell>
+            <cell>differences</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>0.49</cell>
+            <cell>0.49</cell>
+            <cell>0.00</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>0.41</cell>
+            <cell>0.52</cell>
+            <cell>0.11</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>0.54</cell>
+            <cell>0.62</cell>
+            <cell>0.08</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>0.56</cell>
+            <cell>0.54</cell>
+            <cell>-0.02</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>0.58</cell>
+            <cell>0.56</cell>
+            <cell>-0.02</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        There we have it, the difference scores. The first thing we can do here is look at the difference scores, and ask how many infants showed the effect of interest. Specifically, how many infants showed a positive difference score. We can see that three of five infants showed a positive difference (they looked more at the singer of the familiar song during the test than baseline phase), and two the infants showed the opposite effect (negative difference, they looked more at the singer of the familiar song during baseline than test).
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-mean-difference">
+      <title>The mean difference</title>
+      
+      <p>
+        As we have been discussing, the effect of interest in this study is the mean difference between the baseline and test phase proportion looking times. We can calculate the <alert>mean difference</alert>, by finding the <alert>mean of the difference scores</alert>. Let's do that, in fact, for fun let's calculate the mean of the baseline scores, the test scores, and the difference scores.
+      </p>
+
+      <table xml:id="tbl-paired-with-means">
+        <title>Data with sums and means</title>
+        <tabular>
+          <row header="yes">
+            <cell>infant</cell>
+            <cell>Baseline</cell>
+            <cell>Test</cell>
+            <cell>differences</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>0.49</cell>
+            <cell>0.49</cell>
+            <cell>0.00</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>0.41</cell>
+            <cell>0.52</cell>
+            <cell>0.11</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>0.54</cell>
+            <cell>0.62</cell>
+            <cell>0.08</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>0.56</cell>
+            <cell>0.54</cell>
+            <cell>-0.02</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>0.58</cell>
+            <cell>0.56</cell>
+            <cell>-0.02</cell>
+          </row>
+          <row>
+            <cell>Sums</cell>
+            <cell>2.58</cell>
+            <cell>2.73</cell>
+            <cell>0.15</cell>
+          </row>
+          <row>
+            <cell>Means</cell>
+            <cell>0.516</cell>
+            <cell>0.546</cell>
+            <cell>0.03</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        We can see there was a positive mean difference of 0.054, between the test and baseline phases.
+      </p>
+
+      <p>
+        Can we rush to judgment and conclude that infants are more socially attracted to individuals who have sung them a familiar song? I would hope not based on this very small sample. First, the difference in proportion looking isn't very large, and of course we recognize that this difference could have been produced by chance.
+      </p>
+
+      <p>
+        We will more formally evaluate whether this difference could have been caused by chance with the paired-samples t-test. But, before we do that, let's again calculate <m>t</m> and discuss what <m>t</m> tells us over and above what our measure of the mean of the difference scores tells us.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-calculate-t-paired">
+      <title>Calculate t</title>
+      
+      <p>
+        OK, so how do we calculate <m>t</m> for a paired-samples <m>t</m>-test? Surprise, we use the one-sample t-test formula that you already learned about! Specifically, we use the one-sample <m>t</m>-test formula on the difference scores. We have one sample of difference scores (you can see they are in one column), so we can use the one-sample <m>t</m>-test on the difference scores. Specifically, we are interested in comparing whether the mean of our difference scores came from a distribution with mean difference = 0. This is a special distribution we refer to as the <alert>null distribution</alert>. It is the distribution no differences. Of course, this <alert>null distribution</alert> can produce differences due to to sampling error, but those differences are not caused by any experimental manipulation, they caused by the random sampling process.
+      </p>
+
+      <p>
+        We calculate <m>t</m> in a moment. Let's now consider again why we want to calculate <m>t</m>? Why don't we just stick with the mean difference we already have?
+      </p>
+
+      <p>
+        Remember, the whole concept behind <m>t</m>, is that it gives an indication of how confident we should be in our mean. Remember, <m>t</m> involves a measure of the mean in the numerator, divided by a measure of variation (standard error of the sample mean) in the denominator. The resulting <m>t</m> value is small when the mean difference is small, or when the variation is large. So small <m>t</m>-values tell us that we shouldn't be that confident in the estimate of our mean difference. Large <m>t</m>-values occur when the mean difference is large and/or when the measure of variation is small. So, large <m>t</m>-values tell us that we can be more confident in the estimate of our mean difference. Let's find <m>t</m> for the mean difference scores. We use the same formulas as we did last time:
+      </p>
+
+      <table xml:id="tbl-paired-t-calculation">
+        <title>Computing t for paired samples</title>
+        <tabular>
+          <row header="yes">
+            <cell>infant</cell>
+            <cell>Baseline</cell>
+            <cell>Test</cell>
+            <cell>differences</cell>
+            <cell>diff_from_mean</cell>
+            <cell>Squared_differences</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>0.49</cell>
+            <cell>0.49</cell>
+            <cell>0.00</cell>
+            <cell>-0.030</cell>
+            <cell>0.0009</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>0.41</cell>
+            <cell>0.52</cell>
+            <cell>0.11</cell>
+            <cell>0.080</cell>
+            <cell>0.0064</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>0.54</cell>
+            <cell>0.62</cell>
+            <cell>0.08</cell>
+            <cell>0.050</cell>
+            <cell>0.0025</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>0.56</cell>
+            <cell>0.54</cell>
+            <cell>-0.02</cell>
+            <cell>-0.050</cell>
+            <cell>0.0025</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>0.58</cell>
+            <cell>0.56</cell>
+            <cell>-0.02</cell>
+            <cell>-0.050</cell>
+            <cell>0.0025</cell>
+          </row>
+          <row>
+            <cell>Sums</cell>
+            <cell>2.58</cell>
+            <cell>2.73</cell>
+            <cell>0.15</cell>
+            <cell>0</cell>
+            <cell>0.0148</cell>
+          </row>
+          <row>
+            <cell>Means</cell>
+            <cell>0.516</cell>
+            <cell>0.546</cell>
+            <cell>0.03</cell>
+            <cell>0</cell>
+            <cell>0.0030</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell>sd</cell>
+            <cell>0.061</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell>SEM</cell>
+            <cell>0.027</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell>t</cell>
+            <cell>1.11</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        Here is a quick write up of our t-test results, <m>t(4) = 0.72</m>, <m>p = 0.509</m>.
+      </p>
+
+      <p>
+        What does all of that tell us? There's a few things we haven't gotten into much yet. For example, the 4 represents degrees of freedom, which we discuss later. The important part, the <m>t</m> value should start to be a little bit more meaningful. We got a kind of small t-value didn't we. It's 0.72. What can we tell from this value? First, it is positive, so we know the mean difference is positive. The sign of the <m>t</m>-value is always the same as the sign of the mean difference (ours was +0.054). We can also see that the p-value was 0.509. We've seen p-values before. This tells us that our <m>t</m> value or larger, occurs about 50.9% of the time... Actually it means more than this. And, to understand it, we need to talk about the concept of two-tailed and one-tailed tests.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-interpreting-ts">
+      <title>Interpreting <m>t</m>s</title>
+      
+      <p>
+        Remember what it is we are doing here. We are evaluating whether our sample data could have come from a particular kind of distribution. The null distribution of no differences. This is the distribution of <m>t</m>-values that would occur for samples of size 5, with a mean difference of 0, and a standard error of the sample mean of 0.075 (this is the SEM that we calculated from our sample). We can see what this particular null-distribution looks like in <xref ref="fig-6tnull"/>.
+      </p>
+
+      <figure xml:id="fig-6tnull">
+        <caption>A distribution of <m>t</m>-values that can occur by chance alone, when there is no difference between the sample and a population</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6tnull-1.png"/>
+      </figure>
+
+      <p>
+        The <m>t</m>-distribution above shows us the kinds of values <m>t</m> will will take by chance alone, when we measure the mean differences for pairs of 5 samples (like our current). <m>t</m> is most likely to be zero, which is good, because we are looking at the distribution of no-differences, which should most often be 0! But, sometimes, due to sampling error, we can get <m>t</m>s that are bigger than 0, either in the positive or negative direction. Notice the distribution is symmetrical, a <m>t</m> from the null-distribution will be positive half of the time, and negative half of the time, that is what we would expect by chance.
+      </p>
+
+      <p>
+        So, what kind of information do we want know when we find a particular <m>t</m> value from our sample? We want to know how likely the <m>t</m> value like the one we found occurs just by chance. This is actually a subtly nuanced kind of question. For example, any particular <m>t</m> value doesn't have a specific probability of occurring. When we talk about probabilities, we are talking about ranges of probabilities. Let's consider some probabilities. We will use the letter <m>p</m>, to talk about the probabilities of particular <m>t</m> values.
+      </p>
+
+      <p>
+        <ol>
+          <li>What is the probability that <m>t</m> is zero or positive or negative? The answer is <m>p=1</m>, or 100%. We will always have a <m>t</m> value that is zero or non-zero...Actually, if we can't compute the t-value, for example when the standard deviation is undefined, I guess then we would have a non-number. But, assuming we can calculate <m>t</m>, then it will always be 0 or positive or negative.</li>
+          <li>What is the probability of <m>t = 0</m> or greater than 0? The answer is <m>p=0.5</m>, or 50%. 50% of <m>t</m>-values are 0 or greater.</li>
+          <li>What is the of <m>t = 0</m> or smaller than 0? The answer is <m>p=0.5</m>, or 50%. 50% of <m>t</m>-values are 0 or smaller.</li>
+        </ol>
+      </p>
+
+      <p>
+        We can answer all of those questions just by looking at our t-distribution, and dividing it into two equal regions, the left side (containing 50% of the <m>t</m> values), and the right side containing 50% of the <m>t</m>-values).
+      </p>
+
+      <p>
+        What if we wanted to take a more fine-grained approach, let's say we were interested in regions of 10%. What kinds of <m>t</m>s occur 10% of the time. We would apply lines like the following. Notice, the likelihood of bigger numbers (positive or negative) gets smaller, so we have to increase the width of the bars for each of the intervals between the bars to contain 10% of the <m>t</m>-values, it looks like <xref ref="fig-6percentregions"/>.
+      </p>
+
+      <figure xml:id="fig-6percentregions">
+        <caption>Splitting the t distribution up into regions each containing 10% of the <m>t</m>-values. The width between the bars narrows as they approach the center of the distribution, where there are more <m>t</m>-values.</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6percentregions-1.png"/>
+      </figure>
+
+      <p>
+        Consider the probabilities (<m>p</m>) of <m>t</m> for the different ranges.
+      </p>
+
+      <p>
+        <ol>
+          <li><m>t \leq -1.5</m> (<m>t</m> is less than or equal to -1.5), <m>p = 10\%</m></li>
+          <li><m>-1.5 \geq t \leq -0.9</m> (<m>t</m> is equal to or between -1.5 and -0.9), <m>p = 10\%</m></li>
+          <li><m>-0.9 \geq t \leq -0.6</m> (<m>t</m> is equal to or between -0.9 and -0.6), <m>p = 10\%</m></li>
+          <li><m>t \geq 1.5</m> (<m>t</m> is greater than or equal to 1.5), <m>p = 10\%</m></li>
+        </ol>
+      </p>
+
+      <p>
+        Notice, that the <m>p</m>s are always 10%. <m>t</m>s occur in these ranges with 10% probability.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-getting-pvalues">
+      <title>Getting the p-values for <m>t</m>-values</title>
+      
+      <p>
+        You might be wondering where I am getting some of these values from. For example, how do I know that 10% of <m>t</m> values (for this null distribution) have a value of approximately 1.5 or greater than 1.5? The answer is I used R to tell me.
+      </p>
+
+      <p>
+        In most statistics textbooks the answer would be: there is a table at the back of the book where you can look these things up...This textbook has no such table. We could make one for you. And, we might do that. But, we didn't do that yet...
+      </p>
+
+      <p>
+        So, where do these values come from, how can you figure out what they are? The complicated answer is that we are not going to explain the math behind finding these values because, 1) the authors (some of us) admittedly don't know the math well enough to explain it, and 2) it would sidetrack us to much, 3) you will learn how to get these numbers in the lab with software, 4) you will learn how to get these numbers in lab without the math, just by doing a simulation, and 5) you can do it in R, or excel, or you can use an online calculator.
+      </p>
+
+      <p>
+        This is all to say that you can find the <m>t</m>s and their associated <m>p</m>s using software. But, the software won't tell you what these values mean. That's we are doing here. You will also see that software wants to know a few more things from you, such as the degrees of freedom for the test, and whether the test is one-tailed or two tailed. We haven't explained any of these things yet. That's what we are going to do now. Note, we explain degrees of freedom last. First, we start with a one-tailed test.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-one-tailed-tests">
+      <title>One-tailed tests</title>
+      
+      <p>
+        A <alert>one-tailed test</alert> is sometimes also called a directional test. It is called a directional test, because a researcher might have a hypothesis in mind suggesting that the difference they observe in their means is going to have a particular direction, either a positive difference, or a negative difference.
+      </p>
+
+      <p>
+        Typically, a researcher would set an <alert>alpha criterion</alert>. The alpha criterion describes a line in the sand for the researcher. Often, the alpha criterion is set at <m>p = 0.05</m>. What does this mean? <xref ref="fig-6critT"/> shows the <m>t</m>-distribution and the alpha criterion.
+      </p>
+
+      <figure xml:id="fig-6critT">
+        <caption>The critical value of t for an alpha criterion of 0.05. 5% of all ts are at this value or larger</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6critT-1.png"/>
+      </figure>
+
+      <p>
+        The figure shows that <m>t</m> values of +2.13 or greater occur 5% of the time. Because the t-distribution is symmetrical, we also know that <m>t</m> values of -2.13 or smaller also occur 5% of the time. Both of these properties are true under the null distribution of no differences. This means, that when there really are no differences, a researcher can expect to find <m>t</m> values of 2.13 or larger 5% of the time.
+      </p>
+
+      <p>
+        Let's review and connect some of the terms:
+      </p>
+
+      <p>
+        <ol>
+          <li><alert>alpha criterion</alert>: the criterion set by the researcher to make decisions about whether they believe chance did or did not cause the difference. The alpha criterion here is set to <m>p = 0.05</m>.</li>
+          <li><alert>Critical</alert> <m>t</m>. The critical <m>t</m> is the <m>t</m>-value associated with the alpha-criterion. In this case for a one-tailed test, it is the <m>t</m> value where 5% of all <m>t</m>s are this number or greater. In our example, the critical <m>t</m> is 2.13. 5% of all <m>t</m> values (with degrees of freedom = 4) are +2.13, or greater than +2.13.</li>
+          <li><alert>Observed</alert> <m>t</m>. The observed <m>t</m> is the one that you calculated from your sample. In our example about the infants, the observed <m>t</m> was <m>t(4) = 0.72</m>.</li>
+          <li><alert>p-value</alert>. The <m>p</m>-value is the probability of obtaining the observed <m>t</m> value or larger. Now, you could look back at our previous example, and find that the <m>p</m>-value for <m>t(4) = 0.72</m>, was <m>p = 0.509</m>. HOWEVER, this p-value was not calculated for a one-directional test...(we talk about what 0.509 means in the next section).</li>
+        </ol>
+      </p>
+
+      <p>
+        <xref ref="fig-6tonedirection"/> shows what the <m>p</m>-value for <m>t(4) = 0.72</m> using a one-directional test would would look like:
+      </p>
+
+      <figure xml:id="fig-6tonedirection">
+        <caption>A case where the observed value of t is much less than the critical value for a one-directional t-test.</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6tonedirection-1.png"/>
+      </figure>
+
+      <p>
+        Let's take this one step at a time. We have located the observed <m>t</m> of 0.72 on the graph. We shaded the right region all grey. What we see is that the grey region represents 0.256 or 25.6% of all <m>t</m> values. In other words, 25.6% of <m>t</m> values are 0.72 or larger than 0.72. You could expect, by chance alone, to a find a <m>t</m> value of 0.72 or larger, 25.6% of the time. That's fairly often. We did find a <m>t</m> value of 0.72. Now that you know this kind of <m>t</m> value or larger occurs 25.6% of the time, would you be confident that the mean difference was not due to chance? Probably not, given that chance can produce this difference fairly often.
+      </p>
+
+      <p>
+        Following the <q>standard</q> decision making procedure, we would claim that our <m>t</m> value was <alert>not statistically significant</alert>, because it was not large enough. If our observed value was larger than the critical <m>t</m> (larger than 2.13), defined by our alpha criterion, then we would claim that our <m>t</m> value was <alert>statistically significant</alert>. This would be equivalent to saying that we believe it is unlikely that the difference we observed was due to chance. In general, for any observed <m>t</m> value, the associated <m>p</m>-value tells you how likely a <m>t</m> of the observed size or larger would be observed. The <m>p</m>-value <alert>always</alert> refers to a <alert>range</alert> of <m>t</m>-values, never to a single <m>t</m>-value. Researchers use the alpha criterion of 0.05, as a matter of convenience and convention. There are other ways to interpret these values that do not rely on a strict (significant versus not) dichotomy.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-two-tailed-tests">
+      <title>Two-tailed tests</title>
+      
+      <p>
+        OK, so that was one-tailed tests... What are two tailed tests? The <m>p</m>-value that we originally calculated from our paired-samples <m>t</m>-test was for a 2-tailed test. Often, the default is that the <m>p</m>-value is for a two-tailed test.
+      </p>
+
+      <p>
+        The two-tailed test, is asking a more general question about whether a difference is likely to have been produced by chance. The question is: what is probability of any difference. It is also called a <alert>non-directional</alert> test, because here we don't care about the direction or sign of the difference (positive or negative), we just care if there is any kind of difference.
+      </p>
+
+      <p>
+        The same basic things as before are involved. We define an alpha criterion (<m>\alpha = 0.05</m>). And, we say that any observed <m>t</m> value that has a probability of <m>p \lt 0.05</m> (<m>p</m> is less than 0.05) will be called <alert>statistically significant</alert>, and ones that are more likely (<m>p \gt 0.05</m>, <m>p</m> is greater than 0.05) will be called null-results, or not statistically significant. The only difference is how we draw the alpha range. Before it was on the right side of the <m>t</m> distribution (we were conducting a one-sided test remember, so we were only interested in one side).
+      </p>
+
+      <p>
+        <xref ref="fig-6twotailedt"/> shows what the most extreme 5% of the <m>t</m>-values are when we ignore their sign (whether they are positive or negative).
+      </p>
+
+      <figure xml:id="fig-6twotailedt">
+        <caption>Critical values for a two-tailed test. Each line represents the location where 2.5% of all <m>t</m>s are larger or smaller than critical value. The total for both tails is 5%</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6twotailedt-1.png"/>
+      </figure>
+
+      <p>
+        Here is what we are seeing. A distribution of no differences (the null, which is what we are looking at), will produce <m>t</m>s that are 2.78 or greater 2.5% of the time, and <m>t</m>s that are -2.78 or smaller 2.5% of the time. 2.5% + 2.5% is a total of 5% of the time. We could also say that <m>t</m>s larger than +/- 2.78 occur 5% of the time.
+      </p>
+
+      <p>
+        As a result, the critical <m>t</m> value is (+/-) 2.78 for a two-tailed test. As you can see, the two-tailed test is blind to the direction or sign of the difference. Because of this, the critical <m>t</m> value is also higher for a two-tailed test, than for the one-tailed test that we did earlier. Hopefully, now you can see why it is called a two-tailed test. There are two tails of the distribution, one on the left and right, both shaded in green.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-one-or-two-tailed">
+      <title>One or two tailed, which one?</title>
+      
+      <p>
+        Now that you know there are two kinds of tests, one-tailed, and two-tailed, which one should you use? There is some conventional wisdom on this, but also some debate. In the end, it is up to you to be able to justify your choice and why it is appropriate for you data. That is the real answer.
+      </p>
+
+      <p>
+        The conventional answer is that you use a one-tailed test when you have a theory or hypothesis that is making a directional prediction (the theory predicts that the difference will be positive, or negative). Similarly, use a two-tailed test when you are looking for any difference, and you don't have a theory that makes a directional prediction (it just makes the prediction that there will be a difference, either positive or negative).
+      </p>
+
+      <p>
+        Also, people appear to choose one or two-tailed tests based on how risky they are as researchers. If you always ran one-tailed tests, your critical <m>t</m> values for your set alpha criterion would always be smaller than the critical <m>t</m>s for a two-tailed test. Over the long run, you would make more type I errors, because the criterion to detect an effect is a lower bar for one than two tailed tests.
+      </p>
+
+      <note>
+        <p>
+          Remember type 1 errors occur when you reject the idea that chance could have caused your difference. You often never know when you make this error. It happens anytime that sampling error was the actual cause of the difference, but a researcher dismisses that possibility and concludes that their manipulation caused the difference.
+        </p>
+      </note>
+
+      <p>
+        Similarly, if you always ran two-tailed tests, even when you had a directional prediction, you would make fewer type I errors over the long run, because the <m>t</m> for a two-tailed test is higher than the <m>t</m> for a one-tailed test. It seems quite common for researchers to use a more conservative two-tailed test, even when they are making a directional prediction based on theory. In practice, researchers tend to adopt a standard for reporting that is common in their field. Whether or not the practice is justifiable can sometimes be an open question. The important task for any researcher, or student learning statistics, is to be able to justify their choice of test.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-degrees-freedom">
+      <title>Degrees of freedom</title>
+      
+      <p>
+        Before we finish up with paired-samples <m>t</m>-tests, we should talk about degrees of freedom. Our sense is that students don't really understand degrees of freedom very well. If you are reading this textbook, you are probably still wondering what is degrees of freedom, seeing as we haven't really talked about it all.
+      </p>
+
+      <p>
+        For the <m>t</m>-test, there is a formula for degrees of freedom. For the one-sample and paired sample <m>t</m>-tests, the formula is:
+      </p>
+
+      <p>
+        <me>\text{Degrees of Freedom} = \text{df} = n-1</me>
+      </p>
+
+      <p>
+        Where n is the number of samples in the test.
+      </p>
+
+      <p>
+        In our paired <m>t</m>-test example, there were 5 infants. Therefore, degrees of freedom = 5-1 = 4.
+      </p>
+
+      <p>
+        OK, that's a formula. Who cares about degrees of freedom, what does the number mean? And why do we report it when we report a <m>t</m>-test... you've probably noticed the number in parentheses e.g., <m>t(4)=0.72</m>, the 4 is the <m>df</m>, or degrees of freedom.
+      </p>
+
+      <p>
+        Degrees of freedom is both a concept, and a correction. The concept is that if you estimate a property of the numbers, and you use this estimate, you will be forcing some constraints on your numbers.
+      </p>
+
+      <p>
+        Consider the numbers: 1, 2, 3. The mean of these numbers is 2. Now, let's say I told you that the mean of three numbers is 2. Then, how many of these three numbers have freedom? Funny question right. What we mean is, how many of the three numbers could be any number, or have the freedom to be any number.
+      </p>
+
+      <p>
+        The first two numbers could be any number. But, once those two numbers are set, the final number (the third number), MUST be a particular number that makes the mean 2. The first two numbers have freedom. The third number has no freedom.
+      </p>
+
+      <p>
+        To illustrate. Let's freely pick two numbers: 51 and -3. I used my personal freedom to pick those two numbers. Now, if our three numbers are 51, -3, and x, and the mean of these three numbers is 2. There is only one solution, x has to be -42, otherwise the mean won't be 2. This is one way to think about degrees of freedom. The degrees of freedom for these three numbers is n-1 = 3-1= 2, because 2 of the numbers can be free, but the last number has no freedom, it becomes fixed after the first two are decided.
+      </p>
+
+      <p>
+        Now, statisticians often apply degrees of freedom to their calculations, especially when a second calculation relies on an estimated value. For example, when we calculate the standard deviation of a sample, we first calculate the mean of the sample right! By estimating the mean, we are fixing an aspect of our sample, and so, our sample now has n-1 degrees of freedom when we calculate the standard deviation (remember for the sample standard deviation, we divide by n-1...there's that n-1 again.)
+      </p>
+
+      <p>
+        There are at least two ways to think the degrees of freedom for a <m>t</m>-test. For example, if you want to use math to compute aspects of the <m>t</m> distribution, then you need the degrees of freedom to plug in to the formula... If you want to see the formulas I'm talking about, scroll down on the <url href="https://en.wikipedia.org/wiki/Student%27s_t-distribution" visual="https://en.wikipedia.org/wiki/Student%27s_t-distribution">t-test wikipedia page</url> and look for the probability density or cumulative distribution functions...We think that is quite scary for most people, and one reason why degrees of freedom are not well-understood.
+      </p>
+
+      <p>
+        If we wanted to simulate the <m>t</m> distribution we could more easily see what influence degrees of freedom has on the shape of the distribution. Remember, <m>t</m> is a sample statistic, it is something we measure from the sample. So, we could simulate the process of measuring <m>t</m> from many different samples, then plot the histogram of <m>t</m> to show us the simulated <m>t</m> distribution.
+      </p>
+
+      <figure xml:id="fig-6dft">
+        <caption>The width of the t distribution shrinks as sample size and degrees of freedom (from 4 to 100) increases.</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6dft-1.png"/>
+      </figure>
+
+      <p>
+        In <xref ref="fig-6dft"/> notice that the red distribution for <m>df = 4</m>, is a little bit shorter, and a little bit wider than the bluey-green distribution for <m>df = 100</m>. As degrees of freedom increase the <m>t</m> distribution gets taller (in the middle), and narrower in the range. It gets more peaky. Can you guess the reason for this? Remember, we are estimating a sample statistic, and degrees of freedom is really just a number that refers to the number of subjects (well minus one). And, we already know that as we increase <m>n</m>, our sample statistics become better estimates (less variance) of the distributional parameters they are estimating. So, <m>t</m> becomes a better estimate of it's <q>true</q> value as sample size increase, resulting in a more narrow distribution of <m>t</m>s.
+      </p>
+
+      <p>
+        There is a slightly different <m>t</m> distribution for every degrees of freedom, and the critical regions associated with 5% of the extreme values are thus slightly different every time. This is why we report the degrees of freedom for each t-test, they define the distribution of <m>t</m> values for the sample-size in question. Why do we use n-1 and not n? Well, we calculate <m>t</m> using the sample standard deviation to estimate the standard error or the mean, that estimate uses n-1 in the denominator, so our <m>t</m> distribution is built assuming n-1. That's enough for degrees of freedom...
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-paired-complete-example">
+      <title>The paired samples t-test strikes back</title>
+      
+      <p>
+        You must be wondering if we will ever be finished talking about paired samples t-tests... why are we doing round 2, oh no! Don't worry, we're just going to 1) remind you about what we were doing with the infant study, and 2) do a paired samples t-test on the entire data set and discuss.
+      </p>
+
+      <p>
+        Remember, we were wondering if the infants would look longer toward the singer who sang the familiar song during the test phase compared to the baseline phase. We showed you data from 5 infants, and walked through the computations for the <m>t</m>-test. Let's write down the finding one more time: The mean difference was 0.054, <m>t(4) = 0.72</m>, <m>p = 0.509</m>. We can also now confirm, that the <m>p</m>-value was from a two-tailed test. So, what does this all really mean.
+      </p>
+
+      <p>
+        We can say that a <m>t</m> value with an absolute of 0.72 or larger occurs 50.9% of the time. More precisely, the distribution of no differences (the null), will produce a <m>t</m> value this large or larger 50.9% of the time. In other words, chance alone good have easily produced the <m>t</m> value from our sample, and the mean difference we observed or 0.054, could easily have been a result of chance.
+      </p>
+
+      <p>
+        Let's quickly put all of the data in the <m>t</m>-test, and re-run the test using all of the infant subjects. With the full dataset of 32 infants, we get a very different answer. We would summarize the results saying the mean difference was 0.073, <m>t(31) = 2.44</m>, <m>p = 0.020</m>. How many total infants were their? Well the degrees of freedom was 31, so there must have been 32 infants in the study. Now we see a much smaller <m>p</m>-value. This was also a two-tailed test, so we that observing a <m>t</m> value of 2.4 or greater (absolute value) only occurs 2% of the time. In other words, the distribution of no differences will produce the observed t-value very rarely. So, it is unlikely that the observed mean difference of 0.073 was due to chance (it could have been due to chance, but that is very unlikely). As a result, we can be somewhat confident in concluding that something about seeing and hearing a unfamiliar person sing a familiar song, causes an infant to draw their attention toward the singer, and this potentially benefits social learning on the part of the infant.
+      </p>
+    </subsection>
   </section>
 
   <section xml:id="sec-independent-samples-ttest">
@@ -623,6 +1214,33 @@
     <p>
       <me>s_p = \sqrt{\frac{(n_A-1)s_A^2 + (n_B-1)s^2_B}{n_A +n_B -2}}</me>
     </p>
+
+    <p>
+      Believe you me, that is so much more formula than I wanted to type out. Shall we do one independent <m>t</m>-test example by hand, just to see the computations? Let's do it...but in a slightly different way than you expect. Below are the needed steps using software. I made some fake scores for groups A and B. Then, I followed all of the steps from the formula, but made software do each of the calculations. This shows you the needed steps by following the computation. At the end, the <m>t</m>-test values computed <q>by hand</q>, and then the <m>t</m>-test value that the software outputs using the <m>t</m>-test function would give the same values for <m>t</m>, if you were brave enough to compute <m>t</m> by hand.
+    </p>
+
+    <p>
+      For example, if we had two groups:
+      <ul>
+        <li>Group A: 1, 2, 3, 4, 5</li>
+        <li>Group B: 3, 5, 4, 7, 9</li>
+      </ul>
+    </p>
+
+    <p>
+      Following the formulas step by step:
+      <ol>
+        <li>Mean difference = mean(A) - mean(B) = 3 - 5.6 = -2.6</li>
+        <li>Variance for A = 2.5</li>
+        <li>Variance for B = 5.3</li>
+        <li>Pooled standard deviation <m>s_p = \sqrt{\frac{(4 \times 2.5) + (4 \times 5.3)}{8}} = 2.225</m></li>
+        <li><m>t = \frac{-2.6}{2.225 \times \sqrt{\frac{1}{5} + \frac{1}{5}}} = \frac{-2.6}{2.225 \times 0.632} = -1.849</m></li>
+      </ol>
+    </p>
+
+    <p>
+      This gives us <m>t(8) = -1.849</m>, with <m>p = 0.101</m> for a two-tailed test.
+    </p>
   </section>
 
   <section xml:id="sec-simulating-ttests">
@@ -670,6 +1288,104 @@
 
       <p>
         Neat. We see both a <m>t</m> distribution, that looks like <m>t</m> distribution as it should. And we see the <m>p</m> distribution. This shows us how often we get <m>t</m> values of particular sizes. You may find it interesting that the <m>p</m>-distribution is flat under the null, which we are simulating here. This means that you have the same chances of a getting a <m>t</m> with a p-value between 0 and 0.05, as you would for getting a <m>t</m> with a p-value between .90 and .95. Those ranges are both ranges of 5%, so there are an equal amount of <m>t</m> values in them by definition.
+      </p>
+
+      <figure xml:id="fig-6simtsRep">
+        <caption>Simulating <m>t</m>s in R.</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6simtsRep-1.png"/>
+      </figure>
+
+      <figure xml:id="fig-6simpsRep">
+        <caption>Simulating <m>p</m>s in R.</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6simpsRep-1.png"/>
+      </figure>
+    </subsection>
+
+    <subsection xml:id="subsec-sim-paired-sample">
+      <title>Simulating a paired samples t-test</title>
+      
+      <p>
+        The process is set up to sample 10 scores for condition A and B from the same normal distribution. The simulation is conducted 1000 times, and the <m>t</m>s and <m>p</m>s are saved and plotted for each.
+      </p>
+
+      <figure xml:id="fig-6simts1000">
+        <caption>1000 simulated ts from the null distribution</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6simts1000-1.png"/>
+      </figure>
+
+      <figure xml:id="fig-6simps1000">
+        <caption>1000 simulated ps from the null distribution</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6simps1000-1.png"/>
+      </figure>
+
+      <p>
+        According to the simulation. When there are no differences between the conditions, and the samples are being pulled from the very same distribution, you get these two distributions for <m>t</m> and <m>p</m>. These again show how the null distribution of no differences behaves.
+      </p>
+
+      <p>
+        For any of these simulations, if you rejected the null-hypothesis (that your difference was only due to chance), you would be making a type I error. If you set your alpha criteria to <m>\alpha = 0.05</m>, we can ask how many type I errors were made in these 1000 simulations. The expectation over the long run is 5% type I error rates (if your alpha is 0.05).
+      </p>
+
+      <p>
+        What happens if there actually is a difference in the simulated data, let's set one condition to have a larger mean than the other:
+      </p>
+
+      <figure xml:id="fig-6simtruets">
+        <caption>1000 ts when there is a true difference</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6simtruets-1.png"/>
+      </figure>
+
+      <figure xml:id="fig-6simtrueps">
+        <caption>1000 ps when there is a true difference</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6simtrueps-1.png"/>
+      </figure>
+
+      <p>
+        Now you can see that the <m>p</m>-value distribution is skewed to the left. This is because when there is a true effect, you will get p-values that are less than 0.05 more often. Or, rather, you get larger <m>t</m> values than you normally would if there were no differences.
+      </p>
+
+      <p>
+        In this case, we wouldn't be making a type I error if we rejected the null when p was smaller than 0.05. If you were the researcher, would you want to run an experiment that would be successful only some of the time? I wouldn't. I would run a better experiment.
+      </p>
+
+      <p>
+        How would you run a better simulated experiment? Well, you could increase <m>n</m>, the number of subjects in the experiment. Let's increase <m>n</m> from 10 to 100, and see what happens to the number of <q>significant</q> simulated experiments.
+      </p>
+
+      <figure xml:id="fig-6simtsB">
+        <caption>1000 ts for n =100, when there is a true effect</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6simtsB-1.png"/>
+      </figure>
+
+      <figure xml:id="fig-6simpsB">
+        <caption>1000 ps for n =100, when there is a true effect</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6simpsB-1.png"/>
+      </figure>
+
+      <p>
+        Cool, now almost all of the experiments show a <m>p</m>-value of less than 0.05 (using a two-tailed test, that's the default in R). See, you could use this simulation process to determine how many subjects you need to reliably find your effect.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-sim-independent-sample">
+      <title>Simulating an independent samples t.test</title>
+      
+      <p>
+        For the independent samples t-test simulation, we use a similar approach but with separate groups. This is for the null, assuming no difference between groups.
+      </p>
+
+      <figure xml:id="fig-6simtsC">
+        <caption>1000 ts for independent samples under the null</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6simtsC-1.png"/>
+      </figure>
+
+      <figure xml:id="fig-6simpsC">
+        <caption>1000 ps for independent samples under the null</caption>
+        <image source="imgs/06-ttests_files/figure-html/fig-6simpsC-1.png"/>
+      </figure>
+
+      <p>
+        The distributions show the expected behavior under the null hypothesis for independent samples.
       </p>
     </subsection>
   </section>
