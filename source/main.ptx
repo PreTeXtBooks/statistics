@@ -60,6 +60,8 @@
       <xi:include href="sec-why-statistics.ptx" />
     </chapter>
 
+    <xi:include href="ch-probability-sampling-estimation.ptx" />
+
     <backmatter xml:id="backmatter">
       <title>Back Matter</title>
       
