@@ -1,5 +1,7 @@
 name: Build and Deploy PreTeXt to GitHub Pages
 
+# This workflow validates and builds the PreTeXt book on every pull request
+# and deploys it to GitHub Pages on pushes to master
 on:
   push:
     branches:
@@ -44,6 +46,19 @@ jobs:
       - name: Build PreTeXt book
         run: |
           pretext build html
+      
+      - name: Check for build errors
+        run: |
+          if [ -f cli.log ]; then
+            echo "=== Checking build logs for errors ==="
+            if grep -q "PTX:ERROR" cli.log; then
+              echo "❌ Build contains errors!"
+              grep "PTX:ERROR" cli.log
+              exit 1
+            else
+              echo "✅ No errors found in build"
+            fi
+          fi
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
