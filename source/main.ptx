@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+  <docinfo>
+    <brandlogo url="https://pretextbook.org" source="imgs/TextbookCover.png" />
+    
+    <macros>
+    \newcommand{\R}{\mathbb{R}}
+    </macros>
+    
+    <covers front="imgs/TextbookCover.png"/>
+  </docinfo>
+
+  <book xml:id="statistics-textbook">
+    <title>Answering Questions with Data</title>
+    <subtitle>Introductory Statistics for Psychology Students</subtitle>
+
+    <frontmatter xml:id="frontmatter">
+      <titlepage>
+        <author>
+          <personname>Matthew J. C. Crump</personname>
+        </author>
+        <author>
+          <personname>Danielle J. Navarro</personname>
+        </author>
+        <author>
+          <personname>Jeffrey Suzuki</personname>
+        </author>
+        <date>September 1, 2018</date>
+      </titlepage>
+
+      <preface xml:id="preface">
+        <title>About This Book</title>
+        <p>
+          This is a free textbook teaching introductory statistics for undergraduates in Psychology. 
+          This textbook is part of a larger OER course package for teaching undergraduate statistics 
+          in Psychology, including this textbook, a lab manual, and a course website. All of the 
+          materials are free and copiable, with source code maintained in Github repositories.
+        </p>
+        <p>
+          This textbook was primarily written by Matthew J. C. Crump. Two of the chapters were 
+          adapted from Danielle Navarro's wonderful (and bigger) free textbook, also licensed 
+          under the same creative commons license. Jeff Suzuki contributed the YouTube videos 
+          peppered throughout the textbook.
+        </p>
+        <p>
+          All resources are released under a creative commons license CC BY-SA 4.0.
+        </p>
+      </preface>
+    </frontmatter>
+
+    <chapter xml:id="science-data">
+      <title>Science and Data</title>
+      <introduction>
+        <p>
+          This chapter introduces the relationship between science and data.
+        </p>
+      </introduction>
+      
+      <section xml:id="section-placeholder">
+        <title>Getting Started</title>
+        <p>
+          Content from the Quarto source files will be converted to PreTeXt format.
+          This is a placeholder chapter to enable initial builds.
+        </p>
+      </section>
+    </chapter>
+
+    <backmatter xml:id="backmatter">
+      <title>Back Matter</title>
+      
+      <index>
+        <title>Index</title>
+        <index-list />
+      </index>
+
+      <colophon>
+        <p>
+          This book was authored in PreTeXt.
+        </p>
+      </colophon>
+    </backmatter>
+
+  </book>
+
+</pretext>

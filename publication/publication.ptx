@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<publication>
+  <!-- Set source directory for images, etc. -->
+  <source>
+    <directories external="../imgs" generated="../generated-assets"/>
+  </source>
+
+  <!-- HTML-Specific Options -->
+  <html>
+    <calculator model="none"/>
+    <index-page ref="frontmatter"/>
+    <video privacy="yes"/>
+    <baseurl href="https://pretextbooks.github.io/statistics/"/>
+  </html>
+</publication>
