@@ -59,10 +59,20 @@
       
       <xi:include href="sec-why-statistics.ptx" />
     </chapter>
+    
+        <chapter xml:id="ch-foundations-inference-1">
+      <title>Science and Data</title>
 
-    <xi:include href="ch-probability-sampling-estimation.ptx" />
+    <xi:include href="ch-foundations-inference.ptx" />
+    </chapter>
 
-    <backmatter xml:id="backmatter">
+    <chapter xml:id="ch-probability-sampling-1">
+      <title>Science and Data</title>
+
+<xi:include href="ch-probability-sampling-estimation.ptx" />
+    </chapter>
+    
+<backmatter xml:id="backmatter">
       <title>Back Matter</title>
       
       <index>
