@@ -1204,7 +1204,7 @@ sims &lt;- 5000
 all_df &lt;- data.frame(sample = c(replicate(sims,mean(rnorm(ns[1], 100, 20)) - mean(rnorm(ns[1], 100, 20))),
                                 replicate(sims,mean(rnorm(ns[2], 100, 20)) - mean(rnorm(ns[2], 100, 20))),
                                 replicate(sims,mean(rnorm(ns[3], 100, 20)) - mean(rnorm(ns[3], 100, 20))),
-                                replicate(sims,mean(rnorm(ns[3], 100, 20)) - mean(rnorm(ns[3], 100, 20)))),
+                                replicate(sims,mean(rnorm(ns[4], 100, 20)) - mean(rnorm(ns[4], 100, 20)))),
                      sample_size = rep(ns, each = sims)
 )
 
