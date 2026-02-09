@@ -65,7 +65,7 @@
                 <li>website: <url href="https://crumplab.github.io/statistics/" visual="crumplab.github.io/statistics"/></li>
                 <li>OSF: <url href="https://osf.io/jze52/" visual="osf.io/jze52"/></li>
                 <li>Github: <url href="https://github.com/CrumpLab/statistics" visual="github.com/CrumpLab/statistics"/></li>
-                <li>DOI: 10.17605/OSF.IO/JZE52</li>
+                <li>DOI: <url href="https://doi.org/10.17605/OSF.IO/JZE52" visual="10.17605/OSF.IO/JZE52">10.17605/OSF.IO/JZE52</url></li>
               </ul>
             </p>
           </subsubsection>
@@ -77,7 +77,7 @@
                 <li>website: <url href="https://crumplab.github.io/statisticsLab/" visual="crumplab.github.io/statisticsLab"/></li>
                 <li>OSF: <url href="https://osf.io/m2npj/" visual="osf.io/m2npj"/></li>
                 <li>Github: <url href="https://github.com/CrumpLab/statisticsLab" visual="github.com/CrumpLab/statisticsLab"/></li>
-                <li>DOI: 10.17605/OSF.IO/M2NPJ</li>
+                <li>DOI: <url href="https://doi.org/10.17605/OSF.IO/M2NPJ" visual="10.17605/OSF.IO/M2NPJ">10.17605/OSF.IO/M2NPJ</url></li>
               </ul>
             </p>
           </subsubsection>
@@ -89,7 +89,7 @@
                 <li>website: <url href="https://crumplab.github.io/psyc3400/" visual="crumplab.github.io/psyc3400"/></li>
                 <li>OSF: <url href="https://osf.io/awxu9/" visual="osf.io/awxu9"/></li>
                 <li>Github: <url href="https://github.com/CrumpLab/psyc3400" visual="github.com/CrumpLab/psyc3400"/></li>
-                <li>DOI: 10.17605/OSF.IO/AWXU9</li>
+                <li>DOI: <url href="https://doi.org/10.17605/OSF.IO/AWXU9" visual="10.17605/OSF.IO/AWXU9">10.17605/OSF.IO/AWXU9</url></li>
               </ul>
             </p>
           </subsubsection>
