@@ -1168,4 +1168,35 @@
     </subsection>
   </section>
 
+  <section xml:id="subsec-chapter-summary">
+    <title>Summary</title>
+    
+    <p>
+      This chapter isn't really meant to provide a comprehensive discussion of psychological research methods: it would require another volume just as long as this one to do justice to the topic. However, in real life statistics and study design are tightly intertwined, so it's very handy to discuss some of the key topics. In this chapter, I've briefly discussed the following topics:
+    </p>
+
+    <ul>
+      <li><p><term>Introduction to psychological measurement</term>: What does it mean to operationalize a theoretical construct? What does it mean to have variables and take measurements?</p></li>
+      <li><p><term>Scales of measurement and types of variables</term>: Remember that there are <em>two</em> different distinctions here: there's the difference between discrete and continuous data, and there's the difference between the four different scale types (nominal, ordinal, interval and ratio).</p></li>
+      <li><p><term>Reliability of a measurement</term>: If I measure the "same"" thing twice, should I expect to see the same result? Only if my measure is reliable. But what does it mean to talk about doing the "same" thing? Well, that's why we have different types of reliability. Make sure you remember what they are.</p></li>
+      <li><p><term>Terminology: predictors and outcomes</term>: What roles do variables play in an analysis? Can you remember the difference between predictors and outcomes? Dependent and independent variables? Etc.</p></li>
+      <li><p><term>Experimental and non-experimental research designs</term>: What makes an experiment an experiment? Is it a nice white lab coat, or does it have something to do with researcher control over variables?</p></li>
+      <li><p><term>Validity and its threats</term>: Does your study measure what you want it to? How might things go wrong? And is it my imagination, or was that a very long list of possible ways in which things can go wrong?</p></li>
+    </ul>
+
+    <p>
+      All this should make clear to you that study design is a critical part of research methodology. I built this chapter from the classic little book by @Campbell1963, but there are of course a large number of textbooks out there on research design. Spend a few minutes with your favorite search engine and you'll find dozens.
+    </p>
+  </section>
+
+  <section xml:id="subsec-videos">
+    <title>Videos</title>
+    
+    <subsection xml:id="subsubsec-terms-statistics">
+      <title>Terms of Statistics</title>
+      
+      <video youtube="HgtnpOtk350" />
+    </subsection>
+  </section>
+
 </chapter>
