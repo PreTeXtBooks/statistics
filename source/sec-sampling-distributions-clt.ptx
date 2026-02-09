@@ -59,6 +59,27 @@
       Let's do those four things. We will sample numbers from the uniform distribution. <xref ref="fig-4Unif"/> shows the uniform distribution for sampling the set of integers from 1 to 10:
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+a&lt;-seq(1,10,1)
+b&lt;-rep(1,10)
+plot(a,b,ylim=c(0,1),
+     main="Uniform distribution for numbers 1 to 10",
+     ylab="Probability",
+     xlab="Number")+
+  geom_point(color="white")+
+  geom_hline(yintercept=.1)+
+  scale_y_continuous(limits=c(0,1), breaks=seq(0,1, by = .1))+
+  theme_classic()+
+  ylab("Probability")+
+  xlab("Number")+
+  ggtitle("Uniform distribution for numbers 1 to 10")
+        </input>
+      </program>
+    </remark>
+
     <figure xml:id="fig-4Unif">
       <caption>A uniform distribution illustrating the probabilites of sampling the numbers 1 to 10. In a uniform distribution, all numbers have an equal probability of being sampled, so the line is flat indicating all numbers have the same probability</caption>
       <image source="imgs/generated/fig-4Unif.png"/>
@@ -68,10 +89,46 @@
       <xref ref="fig-4sample20unif"/> animates the process of taking a bunch of samples from the uniform distribution. We will set our sample-size to 20. It's easier to see how the sample mean behaves in a movie. Each histogram shows a new sample. The red line shows where the mean of the sample is. The samples are all very different from each other, but the red line doesn't move around very much, it always stays near the middle. However, the red line does move around a little bit, and this variance is what we call the sampling distribution of the sample mean.
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+knitr::include_graphics(path="imgs/gifs/sampleHistUnif-1.gif")
+        </input>
+      </program>
+    </remark>
+
     <figure xml:id="fig-4sample20unif">
       <caption>Animation showing histograms for different samples of size 20 from the uniform distribution. The red line shows the mean of each sample.</caption>
       <image source="imgs/gifs/sampleHistUnif-1.gif"/>
     </figure>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+a&lt;-round(runif(20*10,1,10))
+df&lt;-data.frame(a,sample=rep(1:10,each=20))
+df2&lt;-aggregate(a~sample,df,mean)
+df&lt;-cbind(df,mean_loc=rep(df2$a,each=20))
+
+library(gganimate)
+
+ggplot(df,aes(x=a, group=sample,frame=sample)) +
+  geom_histogram() +
+  geom_vline(aes(xintercept=mean_loc,frame = sample),color="red")+
+  scale_x_continuous(breaks=seq(1,10,1))+
+  theme_classic()+
+  transition_states(
+    sample,
+    transition_length = 2,
+    state_length = 1
+  )+enter_fade() + 
+  exit_shrink() +
+  ease_aes('sine-in-out')
+        </input>
+      </program>
+    </remark>
 
     <p>
       OK, what have we got here? We have an animation of 10 different samples. Each sample has 20 observations and these are summarized in each of histograms that show up in the animation. Each histogram has a red line. The red line shows you where the mean of each sample is located. So, we have found the sample means for the 10 different samples from a uniform distribution.
@@ -84,6 +141,23 @@
     <p>
       Second question. What should we do with the means of our samples? Well, how about we collect them them all, and then plot a histogram of them. This would allow us to see what the distribution of the sample means looks like. The next histogram is just this. Except, rather than taking 10 samples, we will take 10,000 samples. For each of them we will compute the means. So, we will have 10,000 means. <xref ref="fig-4unifmany"/> shows the histogram of the sample means:
     </p>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+a&lt;-round(runif(20*10000,1,10))
+df&lt;-data.frame(a,sample=rep(1:10000,each=20))
+df2&lt;-aggregate(a~sample,df,mean)
+
+ggplot(df2, aes(x=a))+
+  geom_histogram(color="white")+
+  theme_classic(base_size=15)+
+  ggtitle("Histogram of 10,000 sample means")+
+  xlab("value")
+        </input>
+      </program>
+    </remark>
 
     <figure xml:id="fig-4unifmany">
       <caption>A histogram showing the sample means for 10,000 samples, each size 20, from the uniform distribution of numbers from 1 to 10. The expected mean is 5.5, and the histogram is centered on 5.5. The mean of each sample is not always 5.5 because of sampling error or chance</caption>
@@ -121,6 +195,41 @@
     <p>
       Just for fun here are some different sampling distributions for different statistics. We will take a normal distribution with mean = 100, and standard deviation =20. Then, we'll take lots of samples with n = 50 (50 observations per sample). We'll save all of the sample statistics, then plot their histograms in <xref ref="fig-4samplestats"/>. Let's do it:
     </p>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+all_df&lt;-data.frame()
+for(i in 1:10000){
+  sample&lt;-rnorm(50,100,20)
+  sample_mean&lt;-mean(sample)
+  sample_sd&lt;-sd(sample)
+  sample_max&lt;-max(sample)
+  sample_median&lt;-median(sample)
+  t_df&lt;-data.frame(i,sample_mean,sample_sd,sample_max,sample_median)
+  all_df&lt;-rbind(all_df,t_df)
+}
+
+library(ggpubr)
+a&lt;-ggplot(all_df,aes(x=sample_mean))+
+  geom_histogram(color="white")+
+  theme_classic(base_size=20)
+b&lt;-ggplot(all_df,aes(x=sample_sd))+
+  geom_histogram(color="white")+
+  theme_classic(base_size=20)
+c&lt;-ggplot(all_df,aes(x=sample_max))+
+  geom_histogram(color="white")+
+  theme_classic(base_size=20)
+d&lt;-ggplot(all_df,aes(x=sample_median))+
+  geom_histogram(color="white")+
+  theme_classic(base_size=20)
+
+ggarrange(a,b,c,d,
+          ncol = 2, nrow = 2)
+        </input>
+      </program>
+    </remark>
 
     <figure xml:id="fig-4samplestats">
       <caption>Each panel shows a histogram of a different sampling statistic</caption>

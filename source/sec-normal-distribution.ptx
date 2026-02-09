@@ -7,6 +7,15 @@
     While the binomial distribution is conceptually the simplest distribution to understand, it's not the most important one. That particular honor goes to the <term>normal distribution</term>, which is also referred to as "the bell curve" or a "Gaussian distribution".
   </p>
 
+  <remark>
+    <title>R Code</title>
+    <program language="r">
+      <input>
+knitr::include_graphics("imgs/navarro_img/probability/standardNormal-eps-converted-to.png")
+      </input>
+    </program>
+  </remark>
+
   <figure xml:id="fig-4normal">
     <caption>The normal distribution with mean = 0 and standard deviation = 1. The x-axis corresponds to the value of some variable, and the y-axis tells us something about how likely we are to observe that value. However, notice that the y-axis is labelled Probability Density and not Probability. There is a subtle and somewhat frustrating characteristic of continuous distributions that makes the y axis behave a bit oddly: the height of the curve here isn't actually the probability of observing a particular x value. On the other hand, it is true that the heights of the curve tells you which x values are more likely (the higher ones!).</caption>
     <image source="imgs/navarro_img/probability/standardNormal-eps-converted-to.png"/>
@@ -21,6 +30,15 @@
   <p>
     Of course, that's just notation. It doesn't tell us anything interesting about the normal distribution itself. The mathematical formula for the normal distribution is:
   </p>
+
+  <remark>
+    <title>R Code</title>
+    <program language="r">
+      <input>
+knitr::include_graphics("imgs/navarro_img/probability/Normal_formula.png")
+      </input>
+    </program>
+  </remark>
 
   <figure xml:id="fig-4normalformula">
     <caption>Formula for the normal distribution</caption>
@@ -39,6 +57,15 @@
     With this in mind, let's see if we can get an intuition for how the normal distribution works. First, let's have a look at what happens when we play around with the parameters of the distribution. One parameter we can change is the mean. This will shift the distribution to the right or left. The animation in <xref ref="fig-4normalMeanShift"/> shows a normal distribution with mean = 0, moving up and down from mean = 0 to mean = 5. Note, when you change the mean the whole shape of the distribution does not change, it just shifts from left to right. In the animation the normal distribution bounces up and down a little, but that's just a quirk of the animation (plus it looks fun that way).
   </p>
 
+  <remark>
+    <title>R Code</title>
+    <program language="r">
+      <input>
+knitr::include_graphics(path="imgs/gifs/normalMovingMean-1.gif")
+      </input>
+    </program>
+  </remark>
+
   <figure xml:id="fig-4normalMeanShift">
     <caption>A normal distribution with a moving mean</caption>
     <image source="imgs/gifs/normalMovingMean-1.gif" width="50%"/>
@@ -47,6 +74,15 @@
   <p>
     In contrast, if we increase the standard deviation while keeping the mean constant, the peak of the distribution stays in the same place, but the distribution gets wider. The animation in <xref ref="fig-4normalSDShift"/> shows what happens when you start with a small standard deviation (sd = 0.5), and move to larger and larger standard deviation (up to sd = 5). As you can see, the distribution spreads out and becomes wider as the standard deviation increases.
   </p>
+
+  <remark>
+    <title>R Code</title>
+    <program language="r">
+      <input>
+knitr::include_graphics(path="imgs/gifs/normalMovingSD-1.gif")
+      </input>
+    </program>
+  </remark>
 
   <figure xml:id="fig-4normalSDShift">
     <caption>A normal distribution with a shifting sd.</caption>
@@ -67,6 +103,15 @@
     <p>
       Throughout my discussion of the normal distribution, there's been one or two things that don't quite make sense. Perhaps you noticed that the <m>y</m>-axis in these figures is labelled "Probability Density" rather than density. Maybe you noticed that I used <m>p(X)</m> instead of <m>P(X)</m> when giving the formula for the normal distribution. Maybe you're wondering why R uses the "d" prefix for functions like <c>dnorm()</c>. And maybe, just maybe, you've been playing around with the <c>dnorm()</c> function, and you accidentally typed in a command like this:
     </p>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+dnorm( x = 1, mean = 1, sd = 0.1 )
+        </input>
+      </program>
+    </remark>
 
     <program language="r">
       <input>

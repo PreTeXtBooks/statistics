@@ -19,10 +19,70 @@
     The new bits are the blue bars and the blue lines. The blue bars represent the sampling distribution of the sample mean. For example, in the panel for sample-size 10, we see a bunch of blue bars. This is a histogram of 10 sample means, taken from 10 samples of size 10. In the 50 panel, we see a histogram of 50 sample means, taken from 50 samples of size 50, and so on. The blue line in each panel is the mean of the sample means ("aaagh, it's a mean of means", yes it is).
   </p>
 
+  <remark>
+    <title>R Code</title>
+    <program language="r">
+      <input>
+knitr::include_graphics(path="imgs/gifs/sampleDistNormal-1.gif")
+      </input>
+    </program>
+  </remark>
+
   <figure xml:id="fig-4samplingmean">
     <caption>Animation of samples (grey histogram shows frequency counts of data in each sample), and the sampling distribution of the mean (histogram of the sampling means for many samples). Each sample is taken from the normal distribution shown in red. The moving red line is the mean of an individual sample. The blue line is the mean of the blue histogram, which represents the sampling distribution of the mean for many samples</caption>
     <image source="imgs/gifs/sampleDistNormal-1.gif"/>
   </figure>
+
+  <remark>
+    <title>R Code</title>
+    <program language="r">
+      <input>
+get_sampling_means&lt;-function(m,sd,s_size){
+  save_means&lt;-length(s_size)
+  for(i in 1:s_size){
+    save_means[i]&lt;-mean(rnorm(s_size,m,sd))
+  }
+  return(save_means)
+}
+
+all_df&lt;-data.frame()
+for(sims in 1:10){
+  for(n in c(10,50,100,1000)){
+    sample&lt;-rnorm(n,0,1)
+    sample_means&lt;-get_sampling_means(0,1,n)
+    t_df&lt;-data.frame(sims=rep(sims,n),
+                     sample,
+                     sample_means,
+                     sample_size=rep(n,n),
+                     sample_mean=rep(mean(sample),n),
+                     sampling_mean=rep(mean(sample_means),n)
+                     )
+    all_df&lt;-rbind(all_df,t_df)
+  }
+}
+
+ggplot(all_df, aes(x=sample))+
+  geom_histogram(aes(y=(..density..)/max(..density..)^.8),color="white",fill="grey")+
+  geom_histogram(aes(x=sample_means,y=(..density..)/max(..density..)),fill="blue",color="white",alpha=.5)+
+  stat_function(fun = dnorm, 
+                args = list(mean = 0, sd = 1), 
+                lwd = .75, 
+                col = 'red')+
+  geom_vline(aes(xintercept=sample_mean,frame=sims),color="red")+
+  geom_vline(aes(xintercept=sampling_mean,frame=sims),color="blue")+
+  facet_wrap(~sample_size)+xlim(-3,3)+
+  theme_classic()+ggtitle("Population (red), Samples (grey), \n and Sampling distribution of the mean (blue)")+ylab("Rough likelihoods")+
+  xlab("value")+
+  transition_states(
+    sims,
+    transition_length = 2,
+    state_length = 1
+  )+enter_fade() + 
+  exit_shrink() +
+  ease_aes('sine-in-out')
+      </input>
+    </program>
+  </remark>
 
   <p>
     What should you notice? Notice that the range of the blue bars shrinks as sample size increases. The sampling distribution of the mean is quite wide when the sample-size is 10, it narrows as sample-size increases to 50 and 100, and it's just one bar, right in the middle when sample-size goes to 1000. What we are seeing is that the mean of the sampling distribution approaches the mean of the population as sample-size increases.
@@ -44,6 +104,48 @@
     Here we go, <xref ref="fig-4sampledistmeannorm"/> shows sampling from a normal distribution. The red line is the normal distribution where each sample is drawn from. The mean for each sample of numbers is computed, and the distribution of sample means is shown by the blue bars. Note that the shape of red line and the blue bars are similar, they both look like a normal distribution.
   </p>
 
+  <remark>
+    <title>R Code</title>
+    <program language="r">
+      <input>
+get_sampling_means&lt;-function(m,sd,s_size,iter){
+  save_means&lt;-length(iter)
+  for(i in 1:iter){
+    save_means[i]&lt;-mean(rnorm(s_size,m,sd))
+  }
+  return(save_means)
+}
+
+all_df&lt;-data.frame()
+sims&lt;-1
+n&lt;-50
+
+for(n in c(10,50)){
+    sample&lt;-rnorm(n,0,1)
+    sample_means&lt;-get_sampling_means(0,1,n,1000)
+    t_df&lt;-data.frame(sims=rep(sims,1000),
+                     sample,
+                     sample_means,
+                     sample_size=rep(n,1000),
+                     sample_mean=rep(mean(sample),1000),
+                     sampling_mean=rep(mean(sample_means),1000)
+                     )
+    all_df&lt;-rbind(all_df,t_df)
+}
+
+ggplot(all_df, aes(x=sample))+
+  geom_histogram(aes(x=sample_means,y=(..density..)/max(..density..)),fill="blue",color="white",alpha=.5,bins=75)+
+  stat_function(fun = dnorm, 
+                args = list(mean = 0, sd = 1), 
+                lwd = .75, 
+                col = 'red')+
+  facet_wrap(~sample_size)+xlim(-3,3)+
+  theme_classic()+ggtitle("Sampling distribution of mean \n for Normal Distribution")+ylab("Rough likelihoods")+
+  xlab("value")
+      </input>
+    </program>
+  </remark>
+
   <figure xml:id="fig-4sampledistmeannorm">
     <caption>Comparison of two normal distributions, and histograms for the sampling distribution of the mean for different samples-sizes. The range  of sampling distribution of the mean shrinks as sample-size increases</caption>
     <image source="imgs/generated/fig-4sampledistmeannorm.png"/>
@@ -53,6 +155,47 @@
     Let's do it again. This time we will sample from a flat uniform distribution shown by the red line. However, <xref ref="fig-4samplemeanunif"/> shows the distribution of sample means represented by the blue bars is not flat, it looks like a normal distribution.
   </p>
 
+  <remark>
+    <title>R Code</title>
+    <program language="r">
+      <input>
+get_sampling_means&lt;-function(mn,mx,s_size,iter){
+  save_means&lt;-length(iter)
+  for(i in 1:iter){
+    save_means[i]&lt;-mean(runif(s_size,mn,mx))
+  }
+  return(save_means)
+}
+
+all_df&lt;-data.frame()
+sims&lt;-1
+n&lt;-50
+
+for(n in c(10,50)){
+    sample&lt;-rnorm(n,0,1)
+    sample_means&lt;-get_sampling_means(0,1,n,1000)
+    t_df&lt;-data.frame(sims=rep(sims,1000),
+                     sample,
+                     sample_means,
+                     sample_size=rep(n,1000),
+                     sample_mean=rep(mean(sample),1000),
+                     sampling_mean=rep(mean(sample_means),1000)
+                     )
+    all_df&lt;-rbind(all_df,t_df)
+}
+
+ggplot(all_df, aes(x=sample))+
+  geom_histogram(aes(x=sample_means,y=(..density..)/max(..density..)),fill="blue",color="white",alpha=.5,bins=75)+
+  geom_hline(yintercept=.1,color="red")+
+  facet_wrap(~sample_size)+xlim(0,1)+
+  theme_classic(base_size = 20)+
+  ggtitle("Sampling distribution of mean \n for samples taken from Uniform Distribution")+
+  ylab("Rough likelihoods")+
+  xlab("value")
+      </input>
+    </program>
+  </remark>
+
   <figure xml:id="fig-4samplemeanunif">
     <caption>Illustration that the shape of the sampling distribution of the mean is normal, even when the samples come from a non-normal (uniform in this case) distribution</caption>
     <image source="imgs/generated/fig-4samplemeanunif.png" width="100%"/>
@@ -61,6 +204,48 @@
   <p>
     One more time with an exponential distribution (shown in red) where smaller numbers are more likely to be sampled than larger numbers. Even though way more of the numbers in a given sample will be smaller than larger, according to <xref ref="fig-4samplemeanExp"/> the sampling distribution of the mean does not look the red line. Instead, the sampling distribution of the mean looks like a bell-shaped normal curve. This is the central limit theorem in action.
   </p>
+
+  <remark>
+    <title>R Code</title>
+    <program language="r">
+      <input>
+get_sampling_means&lt;-function(s_size,r,iter){
+  save_means&lt;-length(iter)
+  for(i in 1:iter){
+    save_means[i]&lt;-mean(rexp(s_size,r))
+  }
+  return(save_means)
+}
+
+all_df&lt;-data.frame()
+sims&lt;-1
+n&lt;-50
+
+for(n in c(10,50)){
+    sample&lt;-rnorm(n,0,1)
+    sample_means&lt;-get_sampling_means(n,2,1000)
+    t_df&lt;-data.frame(sims=rep(sims,1000),
+                     sample,
+                     sample_means,
+                     sample_size=rep(n,1000),
+                     sample_mean=rep(mean(sample),1000),
+                     sampling_mean=rep(mean(sample_means),1000)
+                     )
+    all_df&lt;-rbind(all_df,t_df)
+}
+
+ggplot(all_df, aes(x=sample))+
+  geom_histogram(aes(x=sample_means,y=(..density..)/max(..density..)),fill="blue",color="white",alpha=.5,bins=75)+
+  stat_function(fun = dexp, 
+                args = list(rate=2), 
+                lwd = .75, 
+                col = 'red')+
+  facet_wrap(~sample_size)+xlim(0,1)+
+  theme_classic()+ggtitle("Sampling distribution of mean \n for samples from exponential Distribution")+ylab("Rough likelihoods")+
+  xlab("value")
+      </input>
+    </program>
+  </remark>
 
   <figure xml:id="fig-4samplemeanExp">
     <caption>Illustration that the shape of the sampling distribution of the mean is normal, even when the samples come from an exponential distribution</caption>

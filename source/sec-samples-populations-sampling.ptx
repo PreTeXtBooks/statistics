@@ -53,6 +53,15 @@
       To keep things simple, imagine we have a bag containing 10 chips. Each chip has a unique letter printed on it, so we can distinguish between the 10 chips. The chips come in two colors, black and white.
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+knitr::include_graphics("imgs/navarro_img/estimation/srs1.png")
+        </input>
+      </program>
+    </remark>
+
     <figure xml:id="fig-srs1">
       <caption>Simple random sampling without replacement from a finite population</caption>
       <image source="imgs/navarro_img/estimation/srs1.png"/>
@@ -70,6 +79,15 @@
       To help make sure you understand the importance of the sampling procedure, consider an alternative way in which the experiment could have been run. Suppose that my 5-year old son had opened the bag, and decided to pull out four black chips without putting any of them back in the bag. This <em>biased</em> sampling scheme is depicted in <xref ref="fig-brs"/>.
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+knitr::include_graphics("imgs/navarro_img/estimation/brs.png")
+        </input>
+      </program>
+    </remark>
+
     <figure xml:id="fig-brs">
       <caption>Biased sampling without replacement from a finite populations.</caption>
       <image source="imgs/navarro_img/estimation/brs.png"/>
@@ -82,6 +100,15 @@
     <p>
       A third procedure is worth mentioning. This time around we close our eyes, shake the bag, and pull out a chip. This time, however, we record the observation and then put the chip back in the bag. Again we close our eyes, shake the bag, and pull out a chip. We then repeat this procedure until we have 4 chips. Data sets generated in this way are still simple random samples, but because we put the chips back in the bag immediately after drawing them it is referred to as a sample <term>with replacement</term>. The difference between this situation and the first one is that it is possible to observe the same population member multiple times, as illustrated in <xref ref="fig-srs2"/>.
     </p>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+knitr::include_graphics("imgs/navarro_img/estimation/srs2.png")
+        </input>
+      </program>
+    </remark>
 
     <figure xml:id="fig-srs2">
       <caption>Simple random sampling with replacement from a finite population.</caption>
