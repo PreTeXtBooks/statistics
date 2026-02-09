@@ -66,6 +66,8 @@
       </section>
     </chapter>
 
+    <xi:include href="correlation.ptx" />
+
     <backmatter xml:id="backmatter">
       <title>Back Matter</title>
       
