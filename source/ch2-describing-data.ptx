@@ -672,6 +672,66 @@ knitr::kable(the_df)
           </program>
         </remark>
 
+        <table xml:id="table-variance-deviations">
+          <title>Variance: Deviations from the Mean</title>
+          <tabular>
+            <row header="yes">
+              <cell>scores</cell>
+              <cell>values</cell>
+              <cell>mean</cell>
+              <cell>Difference_from_Mean</cell>
+            </row>
+            <row>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>4.5</cell>
+              <cell>-3.5</cell>
+            </row>
+            <row>
+              <cell>2</cell>
+              <cell>6</cell>
+              <cell>4.5</cell>
+              <cell>1.5</cell>
+            </row>
+            <row>
+              <cell>3</cell>
+              <cell>4</cell>
+              <cell>4.5</cell>
+              <cell>-0.5</cell>
+            </row>
+            <row>
+              <cell>4</cell>
+              <cell>2</cell>
+              <cell>4.5</cell>
+              <cell>-2.5</cell>
+            </row>
+            <row>
+              <cell>5</cell>
+              <cell>6</cell>
+              <cell>4.5</cell>
+              <cell>1.5</cell>
+            </row>
+            <row>
+              <cell>6</cell>
+              <cell>8</cell>
+              <cell>4.5</cell>
+              <cell>3.5</cell>
+            </row>
+            <row>
+              <cell>Sums</cell>
+              <cell>27</cell>
+              <cell>27</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>Means</cell>
+              <cell>4.5</cell>
+              <cell>4.5</cell>
+              <cell>0</cell>
+            </row>
+          </tabular>
+        </table>
+
         <p>
           The first column shows we have 6 scores in the data set, and the <c>value</c> columns shows each score. The sum of the values, and the mean is presented on the last two rows. The sum and the mean were obtained by:
         </p>
@@ -760,6 +820,75 @@ knitr::kable(the_df)
           </program>
         </remark>
 
+        <table xml:id="table-squared-deviations">
+          <title>Squared Deviations</title>
+          <tabular>
+            <row header="yes">
+              <cell>scores</cell>
+              <cell>values</cell>
+              <cell>mean</cell>
+              <cell>Difference_from_Mean</cell>
+              <cell>Squared_Deviations</cell>
+            </row>
+            <row>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>4.5</cell>
+              <cell>-3.5</cell>
+              <cell>12.25</cell>
+            </row>
+            <row>
+              <cell>2</cell>
+              <cell>6</cell>
+              <cell>4.5</cell>
+              <cell>1.5</cell>
+              <cell>2.25</cell>
+            </row>
+            <row>
+              <cell>3</cell>
+              <cell>4</cell>
+              <cell>4.5</cell>
+              <cell>-0.5</cell>
+              <cell>0.25</cell>
+            </row>
+            <row>
+              <cell>4</cell>
+              <cell>2</cell>
+              <cell>4.5</cell>
+              <cell>-2.5</cell>
+              <cell>6.25</cell>
+            </row>
+            <row>
+              <cell>5</cell>
+              <cell>6</cell>
+              <cell>4.5</cell>
+              <cell>1.5</cell>
+              <cell>2.25</cell>
+            </row>
+            <row>
+              <cell>6</cell>
+              <cell>8</cell>
+              <cell>4.5</cell>
+              <cell>3.5</cell>
+              <cell>12.25</cell>
+            </row>
+            <row>
+              <cell>Sums</cell>
+              <cell>27</cell>
+              <cell>27</cell>
+              <cell>0</cell>
+              <cell>35.5</cell>
+            </row>
+            <row>
+              <cell>Means</cell>
+              <cell>4.5</cell>
+              <cell>4.5</cell>
+              <cell>0</cell>
+              <cell>5.91666666666667</cell>
+            </row>
+          </tabular>
+        </table>
+
         <p>
           OK, now we have a new column called <c>squared_deviations</c>. These are just the difference scores squared. So, <m>-3.5^2 = 12.25</m>, etc. You can confirm for yourself with your cellphone calculator.
         </p>
@@ -839,6 +968,75 @@ knitr::kable(the_df)
         Don't let those big square root signs put you off. Now, you know what they are doing there. Just bringing our measure of the variance back down to the original size of the data.
       </p>
 
+      <table xml:id="table-standard-deviations">
+        <title>The Standard Deviations</title>
+        <tabular>
+          <row header="yes">
+            <cell>scores</cell>
+            <cell>values</cell>
+            <cell>mean</cell>
+            <cell>Difference_from_Mean</cell>
+            <cell>Squared_Deviations</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>4.5</cell>
+            <cell>-3.5</cell>
+            <cell>12.25</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>6</cell>
+            <cell>4.5</cell>
+            <cell>1.5</cell>
+            <cell>2.25</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>4</cell>
+            <cell>4.5</cell>
+            <cell>-0.5</cell>
+            <cell>0.25</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>2</cell>
+            <cell>4.5</cell>
+            <cell>-2.5</cell>
+            <cell>6.25</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>6</cell>
+            <cell>4.5</cell>
+            <cell>1.5</cell>
+            <cell>2.25</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>8</cell>
+            <cell>4.5</cell>
+            <cell>3.5</cell>
+            <cell>12.25</cell>
+          </row>
+          <row>
+            <cell>Sums</cell>
+            <cell>27</cell>
+            <cell>27</cell>
+            <cell>0</cell>
+            <cell>35.5</cell>
+          </row>
+          <row>
+            <cell>Means</cell>
+            <cell>4.5</cell>
+            <cell>4.5</cell>
+            <cell>0</cell>
+            <cell>5.91666666666667</cell>
+          </row>
+        </tabular>
+      </table>
+
       <p>
         We measured the standard deviation as 2.432. Notice this number fits right in the with differences scores from the mean. All of the scores are kind of in and around + or - 2.432. Whereas, if we looked at the variance, 5.916 is just too big, it doesn't summarize the actual differences very well.
       </p>
@@ -898,6 +1096,75 @@ knitr::kable(the_df)
           </input>
         </program>
       </remark>
+
+      <table xml:id="table-absolute-deviations">
+        <title>Absolute Deviations</title>
+        <tabular>
+          <row header="yes">
+            <cell>scores</cell>
+            <cell>values</cell>
+            <cell>mean</cell>
+            <cell>Difference_from_Mean</cell>
+            <cell>Absolute_Deviations</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>4.5</cell>
+            <cell>-3.5</cell>
+            <cell>3.5</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>6</cell>
+            <cell>4.5</cell>
+            <cell>1.5</cell>
+            <cell>1.5</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>4</cell>
+            <cell>4.5</cell>
+            <cell>-0.5</cell>
+            <cell>0.5</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>2</cell>
+            <cell>4.5</cell>
+            <cell>-2.5</cell>
+            <cell>2.5</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>6</cell>
+            <cell>4.5</cell>
+            <cell>1.5</cell>
+            <cell>1.5</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>8</cell>
+            <cell>4.5</cell>
+            <cell>3.5</cell>
+            <cell>3.5</cell>
+          </row>
+          <row>
+            <cell>Sums</cell>
+            <cell>27</cell>
+            <cell>27</cell>
+            <cell>0</cell>
+            <cell>13</cell>
+          </row>
+          <row>
+            <cell>Means</cell>
+            <cell>4.5</cell>
+            <cell>4.5</cell>
+            <cell>0</cell>
+            <cell>2.16666666666667</cell>
+          </row>
+        </tabular>
+      </table>
 
       <p>
         This works pretty well too. By converting the difference scores from the mean to positive values, we can now add them up and get a non-zero value (if there are differences). Then, we can find the mean of the sum of the absolute deviations. If we were to map the terms sum of squares (SS), variance and standard deviation onto these new measures based off of the absolute deviation, how would the mapping go? For example, what value in the table corresponds to the SS? That would be the sum of absolute deviations in the last column. How about the variance and standard deviation, what do those correspond to? Remember that the variance is mean (<m>SS/N</m>), and the standard deviation is a square-rooted mean (<m>\sqrt{SS/N}</m>). In the table above we only have one corresponding mean, the mean of the sum of the absolute deviations. So, we have a <term>variance</term> measure that does not need to be square rooted. We might say the mean absolute deviation, is doing double-duty as a variance and a standard-deviation. Neat.
@@ -977,6 +1244,47 @@ knitr::kable(ac_long_summary)
           </input>
         </program>
       </remark>
+
+      <table xml:id="table-anscombe-quartet">
+        <title>Anscombe's Quartet Statistics</title>
+        <tabular>
+          <row header="yes">
+            <cell>quartet</cell>
+            <cell>mean_x</cell>
+            <cell>var_x</cell>
+            <cell>mean_y</cell>
+            <cell>var_y</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>9</cell>
+            <cell>11</cell>
+            <cell>7.500909</cell>
+            <cell>4.127269</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>9</cell>
+            <cell>11</cell>
+            <cell>7.500909</cell>
+            <cell>4.127629</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>9</cell>
+            <cell>11</cell>
+            <cell>7.500000</cell>
+            <cell>4.122620</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>9</cell>
+            <cell>11</cell>
+            <cell>7.500909</cell>
+            <cell>4.123249</cell>
+          </row>
+        </tabular>
+      </table>
 
       <p>
         The descriptives are all the same! Anscombe put these special numbers together to illustrate the point of graphing your numbers. If you only look at your descriptives, you don't know what patterns in the data they are hiding. If you look at the graph, then you can get a better understanding.

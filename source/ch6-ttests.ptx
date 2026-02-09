@@ -784,28 +784,28 @@ knitr::kable(paired_sample_df)
           </row>
           <row>
             <cell>1</cell>
-            <cell>0.49</cell>
-            <cell>0.49</cell>
+            <cell>0.44</cell>
+            <cell>0.60</cell>
           </row>
           <row>
             <cell>2</cell>
             <cell>0.41</cell>
-            <cell>0.52</cell>
+            <cell>0.68</cell>
           </row>
           <row>
             <cell>3</cell>
-            <cell>0.54</cell>
-            <cell>0.70</cell>
+            <cell>0.75</cell>
+            <cell>0.72</cell>
           </row>
           <row>
             <cell>4</cell>
-            <cell>0.56</cell>
-            <cell>0.58</cell>
+            <cell>0.44</cell>
+            <cell>0.28</cell>
           </row>
           <row>
             <cell>5</cell>
-            <cell>0.58</cell>
-            <cell>0.56</cell>
+            <cell>0.47</cell>
+            <cell>0.50</cell>
           </row>
         </tabular>
       </table>
@@ -864,33 +864,33 @@ knitr::kable(paired_sample_df)
           </row>
           <row>
             <cell>1</cell>
-            <cell>0.49</cell>
-            <cell>0.49</cell>
-            <cell>0.00</cell>
+            <cell>0.44</cell>
+            <cell>0.60</cell>
+            <cell>0.16</cell>
           </row>
           <row>
             <cell>2</cell>
             <cell>0.41</cell>
-            <cell>0.52</cell>
-            <cell>0.11</cell>
+            <cell>0.68</cell>
+            <cell>0.27</cell>
           </row>
           <row>
             <cell>3</cell>
-            <cell>0.54</cell>
-            <cell>0.70</cell>
-            <cell>0.16</cell>
+            <cell>0.75</cell>
+            <cell>0.72</cell>
+            <cell>-0.03</cell>
           </row>
           <row>
             <cell>4</cell>
-            <cell>0.56</cell>
-            <cell>0.58</cell>
-            <cell>0.02</cell>
+            <cell>0.44</cell>
+            <cell>0.28</cell>
+            <cell>-0.16</cell>
           </row>
           <row>
             <cell>5</cell>
-            <cell>0.58</cell>
-            <cell>0.56</cell>
-            <cell>-0.02</cell>
+            <cell>0.47</cell>
+            <cell>0.50</cell>
+            <cell>0.03</cell>
           </row>
         </tabular>
       </table>
