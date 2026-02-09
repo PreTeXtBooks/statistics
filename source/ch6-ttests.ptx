@@ -495,6 +495,19 @@ t.test(scores, mu=50)
           </input>
         </program>
       </remark>
+
+      <pre>
+	One Sample t-test
+
+data:  scores
+t = 1.9412, df = 9, p-value = 0.08415
+alternative hypothesis: true mean is not equal to 50
+95 percent confidence interval:
+ 48.18111 73.81889
+sample estimates:
+mean of x 
+       61
+      </pre>
     </subsection>
 
     <subsection xml:id="subsec-how-t-behaves">
@@ -1797,8 +1810,21 @@ t.test(a,b, paired=FALSE, var.equal = TRUE)
       </program>
     </remark>
 
+    <pre>
+	Two Sample t-test
+
+data:  a and b
+t = -2.018, df = 8, p-value = 0.07826
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -5.571078  0.371078
+sample estimates:
+mean of a mean of b 
+      3.0       5.6
+    </pre>
+
     <p>
-      This gives us <m>t(8) = -1.849</m>, with <m>p = 0.101</m> for a two-tailed test.
+      This gives us <m>t(8) = -2.018</m>, with <m>p = 0.078</m> for a two-tailed test.
     </p>
   </section>
 
