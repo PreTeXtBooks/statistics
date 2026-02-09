@@ -59,17 +59,17 @@
       
       <xi:include href="sec-why-statistics.ptx" />
     </chapter>
-    
-        <chapter xml:id="ch-foundations-inference-1">
-      <title>Science and Data</title>
 
-    <xi:include href="ch-foundations-inference.ptx" />
+    <xi:include href="correlation.ptx" />
+    
+    <chapter xml:id="ch-foundations-inference-1">
+      <title>Science and Data</title>
+      <xi:include href="ch-foundations-inference.ptx" />
     </chapter>
 
     <chapter xml:id="ch-probability-sampling-1">
       <title>Science and Data</title>
-
-<xi:include href="ch-probability-sampling-estimation.ptx" />
+      <xi:include href="ch-probability-sampling-estimation.ptx" />
     </chapter>
 
     <xi:include href="ch-ttests.ptx" />
@@ -80,6 +80,7 @@
     
     <xi:include href="ch-10-more-factorial-designs.ptx" />
     
+
     <xi:include href="ch-anova.ptx" />
     
 <backmatter xml:id="backmatter">
