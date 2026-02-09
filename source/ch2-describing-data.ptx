@@ -520,7 +520,7 @@ qplot(exp_num, col=I("grey"), fill=I("white")) +
       </p>
     </subsection>
 
-    <subsection xml:id="subsec-difference-scores">
+    <subsection xml:id="ch2-subsec-difference-scores">
       <title>The Difference Scores</title>
       
       <p>
