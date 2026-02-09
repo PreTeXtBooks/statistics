@@ -950,17 +950,13 @@
     <subsection xml:id="subsec-null-alternate-hypotheses">
       <title>Null and Alternate Hypotheses</title>
       
-      <p>
-        Video content available online at: <url href="https://www.youtube.com/embed/gJ38qX0ihPc">https://www.youtube.com/embed/gJ38qX0ihPc</url>
-      </p>
+      <video youtube="gJ38qX0ihPc" width="75%"/>
     </subsection>
 
     <subsection xml:id="subsec-types-of-errors">
       <title>Types of Errors</title>
       
-      <p>
-        Video content available online at: <url href="https://www.youtube.com/embed/zhhDCFPzlkw">https://www.youtube.com/embed/zhhDCFPzlkw</url>
-      </p>
+      <video youtube="zhhDCFPzlkw" width="75%"/>
     </subsection>
   </section>
 
