@@ -1675,7 +1675,25 @@ ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
       </p>
 
       <p>
-        Let's quickly put all of the data in the <m>t</m>-test, and re-run the test using all of the infant subjects. With the full dataset of 32 infants, we get a very different answer. We would summarize the results saying the mean difference was 0.073, <m>t(31) = 2.44</m>, <m>p = 0.020</m>. How many total infants were their? Well the degrees of freedom was 31, so there must have been 32 infants in the study. Now we see a much smaller <m>p</m>-value. This was also a two-tailed test, so we that observing a <m>t</m> value of 2.4 or greater (absolute value) only occurs 2% of the time. In other words, the distribution of no differences will produce the observed t-value very rarely. So, it is unlikely that the observed mean difference of 0.073 was due to chance (it could have been due to chance, but that is very unlikely). As a result, we can be somewhat confident in concluding that something about seeing and hearing a unfamiliar person sing a familiar song, causes an infant to draw their attention toward the singer, and this potentially benefits social learning on the part of the infant.
+        Let's quickly put all of the data in the <m>t</m>-test, and re-run the test using all of the infant subjects.
+      </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+paired_sample_df &lt;-  data.frame(infant=1:32, 
+                               Baseline = round(experiment_one$Baseline_Proportion_Gaze_to_Singer[1:32],digits=2), 
+                               Test = round(experiment_one$Test_Proportion_Gaze_to_Singer[1:32], digits=2))
+
+differences &lt;-  paired_sample_df$Test-paired_sample_df$Baseline
+t.test(differences,mu=0)
+          </input>
+        </program>
+      </remark>
+
+      <p>
+        With the full dataset of 32 infants, we get a very different answer. We would summarize the results saying the mean difference was 0.073, <m>t(31) = 2.44</m>, <m>p = 0.020</m>. How many total infants were their? Well the degrees of freedom was 31, so there must have been 32 infants in the study. Now we see a much smaller <m>p</m>-value. This was also a two-tailed test, so we that observing a <m>t</m> value of 2.4 or greater (absolute value) only occurs 2% of the time. In other words, the distribution of no differences will produce the observed t-value very rarely. So, it is unlikely that the observed mean difference of 0.073 was due to chance (it could have been due to chance, but that is very unlikely). As a result, we can be somewhat confident in concluding that something about seeing and hearing a unfamiliar person sing a familiar song, causes an infant to draw their attention toward the singer, and this potentially benefits social learning on the part of the infant.
       </p>
     </subsection>
   </section>
@@ -1753,6 +1771,39 @@ ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
       </ol>
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+## By "hand" using R r code
+a &lt;- c(1,2,3,4,5)
+b &lt;- c(3,5,4,7,9)
+
+mean_difference &lt;- mean(a)-mean(b) # compute mean difference
+
+variance_a &lt;- var(a) # compute variance for A
+variance_b &lt;- var(b) # compute variance for B
+
+# Compute top part and bottom part of sp formula
+
+sp_numerator &lt;- (4*variance_a + 4* variance_b) 
+sp_denominator &lt;- 5+5-2
+sp &lt;- sqrt(sp_numerator/sp_denominator) # compute sp
+
+
+# compute t following formulat
+
+t &lt;- mean_difference / ( sp * sqrt( (1/5) +(1/5) ) )
+
+t # print results
+
+
+# using the R function t.test
+t.test(a,b, paired=FALSE, var.equal = TRUE)
+        </input>
+      </program>
+    </remark>
+
     <p>
       This gives us <m>t(8) = -1.849</m>, with <m>p = 0.101</m> for a two-tailed test.
     </p>
@@ -1791,10 +1842,46 @@ ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
         Let's do this a couple different times. First, let's simulate samples with N = 30, taken from a normal (mean= 50, sd = 25). We'll do a simulation with 1000 simulations. For each simulation, we will compare the sample mean with a population mean of 50. There should be no difference on average here. <xref ref="fig-6nullt"/> is the null distribution that we are simulating.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+# steps to create fake data from a distribution
+# and conduct t-tests on the simulated data
+save_ps &lt;- length(1000)
+save_ts &lt;- length(1000)
+for (i in 1:1000) {
+  my_sample &lt;- rnorm(n = 30, mean = 50, sd = 25)
+  t_test &lt;- t.test (my_sample, mu = 50)
+  save_ps[i] &lt;- t_test$p.value
+  save_ts[i] &lt;- t_test$statistic
+}
+          </input>
+        </program>
+      </remark>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ts)
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-6nullt">
         <caption>The distribution of <m>t</m>-values under the null. These are the <m>t</m> values that are produced by chance alone.</caption>
         <image source="imgs/06-ttests_files/figure-html/fig-6nullt-1.png"/>
       </figure>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ps)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6flatp">
         <caption>The distribution of <m>p</m>-values that are observed is flat under the null.</caption>
@@ -1805,10 +1892,32 @@ ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
         Neat. We see both a <m>t</m> distribution, that looks like <m>t</m> distribution as it should. And we see the <m>p</m> distribution. This shows us how often we get <m>t</m> values of particular sizes. You may find it interesting that the <m>p</m>-distribution is flat under the null, which we are simulating here. This means that you have the same chances of a getting a <m>t</m> with a p-value between 0 and 0.05, as you would for getting a <m>t</m> with a p-value between .90 and .95. Those ranges are both ranges of 5%, so there are an equal amount of <m>t</m> values in them by definition.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+simulated_ts &lt;- replicate(1000,
+                          t.test(rnorm(30, 50, 25), mu = 50)$statistic)
+hist(simulated_ts)
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-6simtsRep">
         <caption>Simulating <m>t</m>s in R.</caption>
         <image source="imgs/06-ttests_files/figure-html/fig-6simtsRep-1.png"/>
       </figure>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+simulated_ps &lt;- replicate(1000,
+                          t.test(rnorm(30, 50, 25), mu = 50)$p.value)
+hist(simulated_ps)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simpsRep">
         <caption>Simulating <m>p</m>s in R.</caption>
@@ -1823,10 +1932,46 @@ ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
         The process is set up to sample 10 scores for condition A and B from the same normal distribution. The simulation is conducted 1000 times, and the <m>t</m>s and <m>p</m>s are saved and plotted for each.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+save_ps &lt;- length(1000)
+save_ts &lt;- length(1000)
+for ( i in 1:1000 ){
+  condition_A &lt;- rnorm(10,10,5)
+  condition_B &lt;- rnorm(10,10,5)
+  differences &lt;- condition_A - condition_B
+  t_test &lt;- t.test(differences, mu=0)
+  save_ps[i] &lt;- t_test$p.value
+  save_ts[i] &lt;- t_test$statistic
+}
+          </input>
+        </program>
+      </remark>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ts)
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-6simts1000">
         <caption>1000 simulated ts from the null distribution</caption>
         <image source="imgs/06-ttests_files/figure-html/fig-6simts1000-1.png"/>
       </figure>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ps)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simps1000">
         <caption>1000 simulated ps from the null distribution</caption>
@@ -1841,14 +1986,60 @@ ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
         For any of these simulations, if you rejected the null-hypothesis (that your difference was only due to chance), you would be making a type I error. If you set your alpha criteria to <m>\alpha = 0.05</m>, we can ask how many type I errors were made in these 1000 simulations. The expectation over the long run is 5% type I error rates (if your alpha is 0.05).
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+length(save_ps[save_ps&lt;.05])
+length(save_ps[save_ps&lt;.05])/1000
+          </input>
+        </program>
+      </remark>
+
       <p>
         What happens if there actually is a difference in the simulated data, let's set one condition to have a larger mean than the other:
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+save_ps &lt;- length(1000)
+save_ts &lt;- length(1000)
+for ( i in 1:1000 ){
+  condition_A &lt;- rnorm(10,10,5)
+  condition_B &lt;- rnorm(10,13,5)
+  differences &lt;- condition_A - condition_B
+  t_test &lt;- t.test(differences, mu=0)
+  save_ps[i] &lt;- t_test$p.value
+  save_ts[i] &lt;- t_test$statistic
+}
+          </input>
+        </program>
+      </remark>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ts)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simtruets">
         <caption>1000 ts when there is a true difference</caption>
         <image source="imgs/06-ttests_files/figure-html/fig-6simtruets-1.png"/>
       </figure>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ps)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simtrueps">
         <caption>1000 ps when there is a true difference</caption>
@@ -1863,14 +2054,63 @@ ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
         In this case, we wouldn't be making a type I error if we rejected the null when p was smaller than 0.05. If you were the researcher, would you want to run an experiment that would be successful only some of the time? I wouldn't. I would run a better experiment.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+length(save_ps[save_ps&lt;.05])
+length(save_ps[save_ps&lt;.05])/1000
+          </input>
+        </program>
+      </remark>
+
       <p>
         How would you run a better simulated experiment? Well, you could increase <m>n</m>, the number of subjects in the experiment. Let's increase <m>n</m> from 10 to 100, and see what happens to the number of <q>significant</q> simulated experiments.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+save_ps &lt;- length(1000)
+save_ts &lt;- length(1000)
+for ( i in 1:1000 ){
+  condition_A &lt;- rnorm(100,10,5)
+  condition_B &lt;- rnorm(100,13,5)
+  differences &lt;- condition_A - condition_B
+  t_test &lt;- t.test(differences, mu=0)
+  save_ps[i] &lt;- t_test$p.value
+  save_ts[i] &lt;- t_test$statistic
+}
+          </input>
+        </program>
+      </remark>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ts)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simtsB">
         <caption>1000 ts for n =100, when there is a true effect</caption>
         <image source="imgs/06-ttests_files/figure-html/fig-6simtsB-1.png"/>
       </figure>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ps)
+
+length(save_ps[save_ps&lt;.05])
+length(save_ps[save_ps&lt;.05])/1000
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simpsB">
         <caption>1000 ps for n =100, when there is a true effect</caption>
@@ -1889,10 +2129,48 @@ ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
         For the independent samples t-test simulation, we use a similar approach but with separate groups. This is for the null, assuming no difference between groups.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+save_ps &lt;- length(1000)
+save_ts &lt;- length(1000)
+for ( i in 1:1000 ){
+  group_A &lt;- rnorm(10,10,5)
+  group_B &lt;- rnorm(10,10,5)
+  t_test &lt;- t.test(group_A, group_B, paired=FALSE, var.equal=TRUE)
+  save_ps[i] &lt;- t_test$p.value
+  save_ts[i] &lt;- t_test$statistic
+}
+          </input>
+        </program>
+      </remark>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ts)
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-6simtsC">
         <caption>1000 ts for independent samples under the null</caption>
         <image source="imgs/06-ttests_files/figure-html/fig-6simtsC-1.png"/>
       </figure>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ps)
+
+length(save_ps[save_ps&lt;.05])
+length(save_ps[save_ps&lt;.05])/1000
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simpsC">
         <caption>1000 ps for independent samples under the null</caption>
