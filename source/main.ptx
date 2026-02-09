@@ -30,45 +30,242 @@
       </titlepage>
 
       <preface xml:id="preface">
-        <title>About This Book</title>
+        <title>Preface</title>
+        
         <p>
-          This is a free textbook teaching introductory statistics for undergraduates in Psychology. 
-          This textbook is part of a larger OER course package for teaching undergraduate statistics 
-          in Psychology, including this textbook, a lab manual, and a course website. All of the 
-          materials are free and copiable, with source code maintained in Github repositories.
-        </p>
-        <p>
-          This textbook was primarily written by Matthew J. C. Crump. Two of the chapters were 
-          adapted from Danielle Navarro's wonderful (and bigger) free textbook, also licensed 
-          under the same creative commons license. Jeff Suzuki contributed the YouTube videos 
-          peppered throughout the textbook.
-        </p>
-        <p>
-          All resources are released under a creative commons license CC BY-SA 4.0.
+          First Draft (version 0.9 = August 7th, 2018)
         </p>
         
         <p>
-          <alert>About This PreTeXt Version:</alert> This book has been converted to PreTeXt format 
-          to make it more accessible and easier to use across different platforms. The original textbook 
-          was written in R Markdown by Matthew J. C. Crump, Danielle J. Navarro, and Jeffrey Suzuki. 
-          The full citation for the original work is: Crump, M. J. C., Navarro, D. J., <ampersand/> Suzuki, J. (2019, June 5). 
+          <alert>Online Textbook:</alert> <url href="https://crumplab.github.io/statistics/" visual="crumplab.github.io/statistics"/>
+        </p>
+        
+        <p>
+          <alert>Citation:</alert> Crump, M. J. C., Navarro, D. J., <ampersand/> Suzuki, J. (2019, June 5). 
           Answering Questions with Data (Textbook): Introductory Statistics for Psychology Students. 
           <url href="https://doi.org/10.17605/OSF.IO/JZE52" visual="doi.org/10.17605/OSF.IO/JZE52"/>
         </p>
         
-        <p>
-          The original source code is available at 
-          <url href="https://github.com/CrumpLab/statistics" visual="github.com/CrumpLab/statistics"/>, 
-          and the original online textbook can be found at 
-          <url href="https://crumplab.github.io/statistics/" visual="crumplab.github.io/statistics"/>.
-        </p>
+        <subsection xml:id="important-notes">
+          <title>Important notes</title>
+          
+          <p>
+            This is a free textbook teaching introductory statistics for undergraduates in Psychology. 
+            This textbook is part of a larger OER course package for teaching undergraduate statistics 
+            in Psychology, including this textbook, a lab manual, and a course website. All of the 
+            materials are free and copiable, with source code maintained in Github repositories. 
+            The links below connect to various components of the project. The main OSF project link is 
+            <url href="https://osf.io/3s68c/" visual="osf.io/3s68c"/>.
+          </p>
+          
+          <subsubsection xml:id="textbook-links">
+            <title>Textbook</title>
+            <p>
+              <ul>
+                <li>website: <url href="https://crumplab.github.io/statistics/" visual="crumplab.github.io/statistics"/></li>
+                <li>OSF: <url href="https://osf.io/jze52/" visual="osf.io/jze52"/></li>
+                <li>Github: <url href="https://github.com/CrumpLab/statistics" visual="github.com/CrumpLab/statistics"/></li>
+                <li>DOI: 10.17605/OSF.IO/JZE52</li>
+              </ul>
+            </p>
+          </subsubsection>
+          
+          <subsubsection xml:id="lab-manual-links">
+            <title>Lab Manual</title>
+            <p>
+              <ul>
+                <li>website: <url href="https://crumplab.github.io/statisticsLab/" visual="crumplab.github.io/statisticsLab"/></li>
+                <li>OSF: <url href="https://osf.io/m2npj/" visual="osf.io/m2npj"/></li>
+                <li>Github: <url href="https://github.com/CrumpLab/statisticsLab" visual="github.com/CrumpLab/statisticsLab"/></li>
+                <li>DOI: 10.17605/OSF.IO/M2NPJ</li>
+              </ul>
+            </p>
+          </subsubsection>
+          
+          <subsubsection xml:id="course-website-links">
+            <title>Course website</title>
+            <p>
+              <ul>
+                <li>website: <url href="https://crumplab.github.io/psyc3400/" visual="crumplab.github.io/psyc3400"/></li>
+                <li>OSF: <url href="https://osf.io/awxu9/" visual="osf.io/awxu9"/></li>
+                <li>Github: <url href="https://github.com/CrumpLab/psyc3400" visual="github.com/CrumpLab/psyc3400"/></li>
+                <li>DOI: 10.17605/OSF.IO/AWXU9</li>
+              </ul>
+            </p>
+          </subsubsection>
+          
+          <p>
+            All resources are released under a creative commons licence 
+            <url href="https://creativecommons.org/licenses/by-sa/4.0/" visual="CC BY-SA 4.0">CC BY-SA 4.0</url>. 
+            Click the link to read more about the license, or read more below in the license section.
+          </p>
+        </subsection>
         
-        <p>
-          The source code for this PreTeXt version is maintained at 
-          <url href="https://github.com/PreTeXtBooks/statistics" visual="github.com/PreTeXtBooks/statistics"/>. 
-          If you encounter any issues with this version, please report them at 
-          <url href="https://github.com/PreTeXtBooks/statistics/issues" visual="github.com/PreTeXtBooks/statistics/issues">the issues page</url>.
-        </p>
+        <subsection xml:id="contributors">
+          <title>Contributors</title>
+          
+          <p>
+            Team members contributing new content include, Matthew Crump, Alla Chavarga, Anjali Krishnan, 
+            Jeffrey Suzuki, and Stephen Volz. This textbook was primarily written by Matthew J. C. Crump. 
+            Jeff contributed the YouTube videos peppered throughout the textbook. All of Jeff's statistics 
+            videos are available on his Youtube channel: 
+            <url href="https://www.youtube.com/playlist?list=PLKXdxQAT3tCvuex_E1ZnQYaw897ELUSaI" visual="YouTube">Statistics Video playlist</url>.
+          </p>
+          
+          <p>
+            Alla, Anjali, and Stephen wrote the lab manual exercises for SPSS, JAMOVI, and Excel. 
+            Matt Crump wrote the lab manual exercises for R.
+          </p>
+          
+          <p>
+            Matt Crump wrote a free and copiable 
+            <url href="https://crumplab.github.io/psyc3400/" visual="crumplab.github.io/psyc3400">course website</url>, 
+            in R Markdown. The course website also contains slide decks for the lectures.
+          </p>
+        </subsection>
+        
+        <subsection xml:id="attributions">
+          <title>Attributions</title>
+          
+          <p>
+            Two of the chapters were adapted from Danielle Navarro's wonderful (and bigger) free textbook, 
+            also licensed under the same creative commons license. The citation for that textbook is: 
+            Navarro, D. (2018). Learning statistics with R: A tutorial for psychology students and other 
+            beginners (version 0.6). The website is 
+            <url href="https://compcogscisydney.org/learning-statistics-with-r/" visual="compcogscisydney.org/learning-statistics-with-r"/>.
+          </p>
+          
+          <p>
+            Chapter notes within the book are provided to indicate sections where material from Navarro 
+            was included. A short summary is here:
+          </p>
+          
+          <p>
+            <alert>Chapter 1: Why statistics</alert>, Adapted nearly verbatim with some editorial changes 
+            from Chapters 1 and 2, Navarro, D.
+          </p>
+          
+          <p>
+            <alert>Chapter 4: Probability, Sampling, and Estimation</alert>, Adapted and expanded from 
+            Chapters 9 and 10, Navarro D.
+          </p>
+        </subsection>
+        
+        <subsection xml:id="cc-by-sa-license">
+          <title>CC BY-SA 4.0 license</title>
+          
+          <p>
+            This license means that you are free to:
+          </p>
+          
+          <p>
+            <ul>
+              <li>Share: copy and redistribute the material in any medium or format</li>
+              <li>Adapt: remix, transform, and build upon the material for any purpose, even commercially.</li>
+            </ul>
+          </p>
+          
+          <p>
+            The licensor cannot revoke these freedoms as long as you follow the license terms.
+          </p>
+          
+          <p>
+            Under the following terms:
+          </p>
+          
+          <p>
+            <ul>
+              <li>Attribution: You must give appropriate credit, provide a link to the license, and indicate 
+              if changes were made. You may do so in any reasonable manner, but not in any way that suggests 
+              the licensor endorses you or your use.</li>
+              <li>ShareAlike: If you remix, transform, or build upon the material, you must distribute your 
+              contributions under the same license as the original.</li>
+              <li>No additional restrictions: You may not apply legal terms or technological measures that 
+              legally restrict others from doing anything the license permits.</li>
+            </ul>
+          </p>
+        </subsection>
+        
+        <subsection xml:id="copying-textbook">
+          <title>Copying the textbook</title>
+          
+          <p>
+            This textbook was written in R-Studio, using R Markdown, and compiled into a web-book format 
+            using the bookdown package. In general, I thank the larger R community for all of the amazing 
+            tools they made, and for making those tools open, so that I could use them to make this thing.
+          </p>
+          
+          <p>
+            All of the source code for compiling the book is available in the GitHub repository for this book:
+          </p>
+          
+          <p>
+            <url href="https://github.com/CrumpLab/statistics" visual="github.com/CrumpLab/statistics"/>
+          </p>
+          
+          <p>
+            In principle, anybody could fork or otherwise download this repository. Load the Rproj file in 
+            R-studio, and then compile the entire book. Then, the individual .rmd files for each chapter 
+            could be edited for content and style to better suit your needs.
+          </p>
+          
+          <p>
+            If you want to contribute to this version of the textbook, you could make pull requests on 
+            GitHub, or discuss issues and request on the issues tab.
+          </p>
+        </subsection>
+        
+        <subsection xml:id="acknowledgments">
+          <title>Acknowledgments</title>
+          
+          <p>
+            Thanks to the librarians at Brooklyn College of CUNY, especially Miriam Deutch, and Emily Fairey, 
+            for their support throughout the process. Thanks to CUNY for supporting OER development, and for 
+            the grant we received to develop this work. Thanks to Jenn Richler for letting me talk about 
+            statistics all summer long.
+          </p>
+        </subsection>
+        
+        <subsection xml:id="why-we-did-this">
+          <title>Why we did this</title>
+          
+          <p>
+            Why write another statistics textbook, aren't there already loads of those? Yes, there are. 
+            We had a couple reasons. First, we would like to make R more accessible for the undergraduate 
+            population, and we wrote this textbook around the capabilities of R. The textbook was written 
+            entirely in R-Studio, and most of the examples have associated R-code. R is not much of a focus 
+            in the textbook, but there is an introduction to using R to solve data-analysis problems in the 
+            lab manual. Many instructors still use SPSS, Excel, or newer free GUIs like JAMOVI, so we also 
+            made lab exercises for each of those as well.
+          </p>
+          
+          <p>
+            This is a mildly opinionated, non-traditional introduction to statistics. It acknowledges some 
+            of the major ideas from traditional frequentist approaches, and some Bayesian approaches. Much 
+            of the conceptual foundation is rooted in simulations that can be conducted in R. We use some 
+            formulas, but mostly explain things without formulas. The textbook was written with math-phobia 
+            in mind, and attempts to reduce the phobia associated with arithmetic computations. There are 
+            many things missing that should probably be added. We will do our best to add necessary things 
+            as we update the textbook.
+          </p>
+        </subsection>
+        
+        <subsection xml:id="pretext-version">
+          <title>About This PreTeXt Version</title>
+          
+          <p>
+            This book has been converted to PreTeXt format to make it more accessible and easier to use 
+            across different platforms. The original textbook was written in R Markdown by Matthew J. C. Crump, 
+            Danielle J. Navarro, and Jeffrey Suzuki.
+          </p>
+          
+          <p>
+            The source code for this PreTeXt version is maintained at 
+            <url href="https://github.com/PreTeXtBooks/statistics" visual="github.com/PreTeXtBooks/statistics"/>. 
+            If you encounter any issues with this version, please report them at 
+            <url href="https://github.com/PreTeXtBooks/statistics/issues" visual="github.com/PreTeXtBooks/statistics/issues">the issues page</url>.
+          </p>
+        </subsection>
       </preface>
     </frontmatter>
 
