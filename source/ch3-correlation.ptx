@@ -82,6 +82,24 @@
         Here is some sample data from the first 10 imaginary subjects.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+subject &lt;- 1:100
+chocolate &lt;- round(1:100*runif(100,.5,1))
+happiness &lt;- round(1:100*runif(100,.5,1))
+
+the_df_CC &lt;- data.frame(subject,chocolate,happiness)
+
+
+the_df_short &lt;- the_df_CC[1:10,]
+
+knitr::kable(the_df_short)
+          </input>
+        </program>
+      </remark>
+
       <p>
         We asked each subject two questions so there are two scores for each subject, one for their chocolate supply, and one for their level of happiness. You might already notice some relationships between amount of chocolate and level of happiness in the table. To make those relationships even more clear, let's plot all of the data in a graph.
       </p>
@@ -94,6 +112,18 @@
       <p>
         When you have two measurements worth of data, you can always turn them into dots and plot them in a scatter plot. A scatter plot has a horizontal x-axis, and a vertical y-axis. You get to choose which measurement goes on which axis. Let's put chocolate supply on the x-axis, and happiness level on the y-axis. Figure <xref ref="fig-3scatter1"/> shows 100 dots for each subject.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+library(ggplot2)
+ggplot(the_df_CC,aes(x=chocolate,y=happiness))+
+  geom_point()+
+  theme_classic()
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-3scatter1">
         <caption>Imaginary data showing a positive correlation between amount of chocolate and amount happiness</caption>
@@ -120,6 +150,41 @@
       <p>
         Seeing as we are in the business of imagining data, let's imagine some more. We've already imagined what data would look like if larger chocolate supplies increase happiness. We'll show that again in a bit. What do you imagine the scatter plot would look like if the relationship was reversed, and larger chocolate supplies decreased happiness. Or, what do you imagine the scatter plot would look like if there was no relationship, and the amount of chocolate that you have doesn't do anything to your happiness. We invite your imagination to look at Figure <xref ref="fig-3posnegrand"/>:
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+subject_x&lt;-1:100
+chocolate_x&lt;-round(1:100*runif(100,.5,1))
+happiness_x&lt;-round(1:100*runif(100,.5,1))
+
+df_positive&lt;-data.frame(subject_x,chocolate_x,happiness_x)
+
+subject_x&lt;-1:100
+chocolate_x&lt;-round(1:100*runif(100,.5,1))
+happiness_x&lt;-round(100:1*runif(100,.5,1))
+
+df_negative&lt;-data.frame(subject_x,chocolate_x,happiness_x)
+
+subject_x&lt;-1:100
+chocolate_x&lt;-round(runif(100,0,100))
+happiness_x&lt;-round(runif(100,0,100))
+
+df_random&lt;-data.frame(subject_x,chocolate_x,happiness_x)
+
+all_data&lt;-rbind(df_positive,df_negative,df_random)
+all_data&lt;-cbind(all_data,correlation=rep(c("positive","negative","random"),each=100))
+
+ggplot(all_data,aes(x=chocolate_x,y=happiness_x))+
+  geom_point()+
+  theme_classic()+
+  facet_wrap(~correlation)+
+  xlab("chocolate supply")+
+  ylab("happiness")
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-3posnegrand">
         <caption>Three scatterplots showing negative, positive, and zero correlation</caption>
@@ -161,6 +226,20 @@
       How does Pearson's <m>r</m> work? Let's look again at the first 10 subjects in our fake experiment:
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+library(dplyr)
+
+the_df_short &lt;- the_df_short %&gt;%
+  rbind(c("Sums",colSums(the_df_short[1:10,2:3]))) %&gt;%
+  rbind(c("Means",colMeans(the_df_short[1:10,2:3])))
+knitr::kable(the_df_short)
+        </input>
+      </program>
+    </remark>
+
     <p>
       What could we do to these numbers to produce a single summary value that represents the relationship between the chocolate supply and happiness?
     </p>
@@ -195,6 +274,22 @@
       "OK, so if you are saying that co-variance is just another word for correlation or relationship between two measures, I'm good with that. I suppose we would need some way to measure that." Correct, back to our table...notice anything new?
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+the_df_temp &lt;- data.frame(subject,chocolate,happiness,Chocolate_X_Happiness=chocolate*happiness)
+
+the_df_short &lt;- the_df_temp[1:10,]
+
+the_df_short &lt;- the_df_short %&gt;%
+  rbind(c("Sums",colSums(the_df_short[1:10,2:4]))) %&gt;%
+  rbind(c("Means",colMeans(the_df_short[1:10,2:4])))
+knitr::kable(the_df_short)
+        </input>
+      </program>
+    </remark>
+
     <p>
       We've added a new column called `Chocolate_X_Happiness`, which translates to Chocolate scores multiplied by Happiness scores. Each row in the new column, is the product, or multiplication of the chocolate and happiness score for that row. Yes, but why would we do this?
     </p>
@@ -223,6 +318,20 @@
       Then next step is to think about how the products of two measures sum together, depending on how they line up. Let's look at another table:
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+the_df_short &lt;- data.frame(scores=1:10,X=1:10, Y=1:10, A=1:10, B=10:1, XY = 1:10*1:10, AB=1:10*10:1)
+
+the_df_short &lt;- the_df_short %&gt;%
+  rbind(c("Sums",colSums(the_df_short[1:10,2:7]))) %&gt;%
+  rbind(c("Means",colMeans(the_df_short[1:10,2:7])))
+knitr::kable(the_df_short)
+        </input>
+      </program>
+    </remark>
+
     <p>
       Look at the <m>X</m> and <m>Y</m> column. The scores for <m>X</m> and <m>Y</m> perfectly co-vary. When <m>X</m> is 1, <m>Y</m> is 1; when <m>X</m> is 2, <m>Y</m> is 2, etc. They are perfectly aligned. The scores for <m>A</m> and <m>B</m> also perfectly co-vary, just in the opposite manner. When <m>A</m> is 1, <m>B</m> is 10; when <m>A</m> is 2, <m>B</m> is 9, etc. <m>B</m> is a reversed copy of <m>A</m>.
     </p>
@@ -234,6 +343,26 @@
     <p>
       Now, look at the `Sums` for the <m>XY</m> and <m>AB</m> columns. Not the same. The sum of the <m>XY</m> products is 385, and the sum of the <m>AB</m> products is 220. For this specific set of data, the numbers 385 and 220 are very important. They represent the biggest possible sum of products (385), and the smallest possible sum of products (220). There is no way of re-ordering the numbers 1 to 10, say for <m>X</m>, and the numbers 1 to 10 for <m>Y</m>, that would ever produce larger or smaller numbers. Don't believe me? Check this out:
     </p>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+simulated_sums&lt;-length(0)
+for(sim in 1:1000){
+X&lt;-sample(1:10)
+Y&lt;-sample(1:10)
+simulated_sums[sim]&lt;-sum(X*Y)
+}
+sim_df&lt;-data.frame(sims=1:1000,simulated_sums)
+ggplot(sim_df,aes(x=sims,y=simulated_sums))+
+  geom_point()+
+  theme_classic()+
+  geom_hline(yintercept = 385)+
+  geom_hline(yintercept = 220)
+        </input>
+      </program>
+    </remark>
 
     <figure xml:id="fig-3simsum">
       <caption>Simulated sums of products showing the kinds of values than can be produced by randomly ordering the numbers in X and Y.</caption>
@@ -270,6 +399,28 @@
       <p>
         Let's see what this look like in a table:
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+the_df&lt;-the_df_CC
+
+the_df_short&lt;-the_df[1:10,]
+
+the_df_short&lt;-cbind(the_df_short,
+                    C_d = round((chocolate[1:10]-mean(chocolate[1:10])),digits=2),
+                    H_d = round((happiness[1:10]-mean(happiness[1:10])),digits=2),
+                    Cd_x_Hd = round(((chocolate[1:10]-mean(chocolate[1:10]))* (happiness[1:10]-mean(happiness[1:10]))),digits=2))
+
+the_df_short &lt;- the_df_short %&gt;%
+  rbind(c("Sums",round(colSums(the_df_short[1:10,2:6])),digits=2)) %&gt;%
+  rbind(c("Means",round(colMeans(the_df_short[1:10,2:6]),digits=2)))
+
+knitr::kable(the_df_short)
+          </input>
+        </program>
+      </remark>
 
       <p>
         We have computed the deviations from the mean for the chocolate scores (column `C_d`), and the deviations from the mean for the happiness scores (column `H_d`). Then, we multiplied them together (last column). Finally, you can see the mean of the products listed in the bottom right corner of the table, the official <term>the covariance</term>.
@@ -332,6 +483,29 @@
         Does Pearson's <m>r</m> really stay between -1 and 1 no matter what? It's true, take a look at the following simulation. Here I randomly ordered the numbers 1 to 10 for an X measure, and did the same for a Y measure. Then, I computed Pearson's <m>r</m>, and repeated this process 1000 times. As you can see from Figure <xref ref="fig-3onethousandr"/> all of the dots are between -1 and 1. Neat huh.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+simulated_sums &lt;- length(0)
+for(sim in 1:1000){
+  X &lt;- sample(1:10)
+  Y &lt;- sample(1:10)
+  simulated_sums[sim] &lt;- cor(X,Y)
+}
+
+sim_df &lt;- data.frame(sims=1:1000,simulated_sums)
+
+ggplot(sim_df, aes(x = sims, y = simulated_sums))+
+  geom_point()+
+  theme_classic()+
+  geom_hline(yintercept = -1)+
+  geom_hline(yintercept = 1)+
+  ggtitle("Simulation of 1000 r values")
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-3onethousandr">
         <caption>A simulation of correlations. Each dot represents the r-value for the correlation between an X and Y variable that each contain the numbers 1 to 10 in random orders. The figure illustrates that many r-values can be obtained by this random process</caption>
         <image source="placeholder.png" width="70%"/>
@@ -352,6 +526,34 @@
       This report measured various attitudes across people from different countries. For example, one question asked about how much freedom people thought they had to make life choices. Another question asked how confident people were in their national government. Figure <xref ref="fig-3hsrdata"/> is a scatterplot showing the relationship between these two measures. Each dot represents means for different countries.
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+library(data.table)
+library(dplyr)
+whr_data &lt;- fread('data/WHR2018.csv')
+
+# select DVs and filter for NAs
+
+smaller_df &lt;- whr_data %&gt;%
+               dplyr::select(country,
+                      `Freedom to make life choices`,
+                      `Confidence in national government`) %&gt;%
+               dplyr::filter(!is.na(`Freedom to make life choices`),
+                      !is.na(`Confidence in national government`))
+
+# plot the data with best fit line
+
+ggplot(smaller_df, aes(x=`Freedom to make life choices`,
+                     y=`Confidence in national government`))+
+  geom_point(alpha=.5)+
+  geom_smooth(method=lm, se=FALSE)+
+  theme_classic()
+        </input>
+      </program>
+    </remark>
+
     <figure xml:id="fig-3hsrdata">
       <caption>Relationship between freedom to make life choices and confidence in national government. Data from the world happiness report for 2018</caption>
       <image source="placeholder.png" width="70%"/>
@@ -364,6 +566,18 @@
     <p>
       The actual correlation, as measured by Pearson's <m>r</m> is:
     </p>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+# calculate correlation
+
+cor(smaller_df$`Freedom to make life choices`,
+    smaller_df$`Confidence in national government`)
+        </input>
+      </program>
+    </remark>
 
     <p>
       You will do a lot more of this kind of thing in the lab. Looking at the graph you might start to wonder: Does freedom to make life choices cause changes how confident people are in their national government? Our does it work the other way? Does being confident in your national government give you a greater sense of freedom to make life choices? Or, is this just a random relationship that doesn't mean anything? All good questions. These data do not provide the answers, they just suggest a possible relationship.
@@ -381,6 +595,42 @@
     <p>
       First, let's look at a linear regression. This way we can see what we're trying to learn about. Figure <xref ref="fig-3regression"/> shows the same scatter plots as before with something new: lines!
     </p>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+subject_x&lt;-1:100
+chocolate_x&lt;-round(1:100*runif(100,.5,1))
+happiness_x&lt;-round(1:100*runif(100,.5,1))
+
+df_positive&lt;-data.frame(subject_x,chocolate_x,happiness_x)
+
+subject_x&lt;-1:100
+chocolate_x&lt;-round(1:100*runif(100,.5,1))
+happiness_x&lt;-round(100:1*runif(100,.5,1))
+
+df_negative&lt;-data.frame(subject_x,chocolate_x,happiness_x)
+
+subject_x&lt;-1:100
+chocolate_x&lt;-round(runif(100,0,100))
+happiness_x&lt;-round(runif(100,0,100))
+
+df_random&lt;-data.frame(subject_x,chocolate_x,happiness_x)
+
+all_data&lt;-rbind(df_positive,df_negative,df_random)
+all_data&lt;-cbind(all_data,correlation=rep(c("positive","negative","random"),each=100))
+
+ggplot(all_data,aes(x=chocolate_x,y=happiness_x))+
+  geom_point()+
+  theme_classic()+
+  geom_smooth(method="lm",se=F)+
+  facet_wrap(~correlation)+
+  xlab("chocolate supply")+
+  ylab("happiness")
+        </input>
+      </program>
+    </remark>
 
     <figure xml:id="fig-3regression">
       <caption>Three scatterplots showing negative, positive, and a random correlation (where the r-value is expected to be 0), along with the best fit regression line</caption>
@@ -410,6 +660,31 @@
         Check out this next plot, it shows a line through some dots. But, it also shows some teeny tiny lines. These lines drop down from each dot, and they land on the line. Each of these little lines is called a <term>residual</term>. They show you how far off the line is for different dots. It's measure of error, it shows us just how wrong the line is. After all, it's pretty obvious that not all of the dots are on the line. This means the line does not actually represent all of the dots. The line is wrong. But, the best fit line is the least wrong of all the wrong lines.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+d &lt;- mtcars
+fit &lt;- lm(mpg ~ hp, data = d)
+d$predicted &lt;- predict(fit)   # Save the predicted values
+d$residuals &lt;- residuals(fit) # Save the residual values
+
+ggplot(d, aes(x = hp, y = mpg)) +
+  geom_smooth(method = "lm", se = FALSE, color = "lightblue") +  # Plot regression slope
+  geom_segment(aes(xend = hp, yend = predicted, color="red"), alpha = .5) +  # alpha to fade lines
+  geom_point() +
+  geom_point(aes(y = predicted), shape = 1) +
+  theme_classic()+
+  theme(legend.position="none")+
+  xlab("X")+ylab("Y")
+
+# Quick look at the actual, predicted, and residual values
+#library(dplyr)
+#d %&gt;% select(mpg, predicted, residuals) %&gt;% head()
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-3regressionResiduals">
         <caption>Black dots represent data points. The blue line is the best fit regression line. The white dots are represent the predicted location of each black dot. The red lines show the error between each black dot and the regression line. The blue line is the best fit line because it minimizes the error shown by the red lines.</caption>
         <image source="placeholder.png" width="70%"/>
@@ -427,9 +702,14 @@
         Figure <xref ref="fig-3regressionGIF"/> is an animation to see this in action. The animations compares the best fit line in blue, to some other possible lines in black. The black line moves up and down. The red lines show the error between the black line and the data points. As the black line moves toward the best fit line, the total error, depicted visually by the grey area shrinks to it's minimum value. The total error expands as the black line moves away from the best fit line.
       </p>
 
-      <p>
-        ::: {.content-visible when-format="html"}
-      </p>
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+knitr::include_graphics(path="imgs/gifs/regression-1.gif")
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-3regressionGIF">
         <caption>The blue line is the best fit regression line explaining the co-variation among the black dots. The black line moves up and down showing alternative lines that could be drawn. The red lines show the amount of error between each data point and the black line. The total amount of error is depicted by the shaded grey area. The size of the grey area expands as the black line moves away from the best fit line, and shrinks to a minimum as the black line moves toward the best fit line.</caption>
@@ -443,6 +723,39 @@
       <p>
         Figure <xref ref="fig-3minimizeSS"/> shows how the sum of squared deviations (the sum of the squared lengths of the red lines) behaves as we move the line up and down. What's going on here is that we are computing a measure of the total error as the black line moves through the best fit line. This represents the sum of the squared deviations. In other words, we square the length of each red line from the above animation, then we add up all of the squared red lines, and get the total error (the total sum of the squared deviations). The graph below shows what the total error looks like as the black line approaches then moves away from the best fit line. Notice, the dots in this graph start high on the left side, then they swoop down to a minimum at the bottom middle of the graph. When they reach their minimum point, we have found a line that minimizes the total error. This is the best fit regression line.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+d &lt;- mtcars
+fit &lt;- lm(mpg ~ hp, data = d)
+d$predicted &lt;- predict(fit)   # Save the predicted values
+d$residuals &lt;- residuals(fit) # Save the residual values
+
+coefs&lt;-coef(lm(mpg ~ hp, data = mtcars))
+#coefs[1]
+#coefs[2]
+
+x&lt;-d$hp
+move_line&lt;-seq(-5,5,.5)
+total_error&lt;-c(length(move_line))
+cnt&lt;-0
+for(i in move_line){
+  cnt&lt;-cnt+1
+  predicted_y &lt;- coefs[2]*x + coefs[1]+i
+  error_y &lt;- (predicted_y-d$mpg)^2
+  total_error[cnt]&lt;-sum(error_y)
+}
+df&lt;-data.frame(move_line,total_error)
+ggplot(df,aes(x=move_line,y=total_error))+
+  geom_point()+
+  theme_classic()+
+  ylab("sum of squared deviations")+
+  xlab("change to y-intercept")
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-3minimizeSS">
         <caption>A plot of the sum of the squared deviations for different lines moving up and down, through the best fit line. The best fit line occurs at the position that minimizes the sum of the squared deviations.</caption>
