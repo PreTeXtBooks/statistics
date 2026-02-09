@@ -59,22 +59,17 @@
       
       <xi:include href="sec-why-statistics.ptx" />
     </chapter>
-    
-        <chapter xml:id="ch-foundations-inference-1">
-      <title>Science and Data</title>
 
-<<<<<<< copilot/populate-section-3-correlation
     <xi:include href="correlation.ptx" />
-
-    <backmatter xml:id="backmatter">
-=======
-    <xi:include href="ch-foundations-inference.ptx" />
+    
+    <chapter xml:id="ch-foundations-inference-1">
+      <title>Science and Data</title>
+      <xi:include href="ch-foundations-inference.ptx" />
     </chapter>
 
     <chapter xml:id="ch-probability-sampling-1">
       <title>Science and Data</title>
-
-<xi:include href="ch-probability-sampling-estimation.ptx" />
+      <xi:include href="ch-probability-sampling-estimation.ptx" />
     </chapter>
 
     <xi:include href="ch-ttests.ptx" />
@@ -83,8 +78,7 @@
     
     <xi:include href="ch-08-rmanova.ptx" />
     
-<backmatter xml:id="backmatter">
->>>>>>> master
+    <backmatter xml:id="backmatter">
       <title>Back Matter</title>
       
       <index>
