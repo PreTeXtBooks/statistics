@@ -11,6 +11,50 @@
     We are going to look at a normal distribution in <xref ref="fig-4normalSDspercents"/>, and draw lines through the distribution at 0, +/- 1, +/-2, and +/- 3 standard deviations from the mean:
   </p>
 
+  <remark>
+    <title>R Code</title>
+    <program language="r">
+      <input>
+dnorm_vec &lt;- dnorm(seq(-5,5,.1),mean=0,sd=1)
+x_range   &lt;- seq(-5,5,.1)
+t_df&lt;-data.frame(x_range,dnorm_vec)
+
+ggplot(t_df, aes(x=x_range,y=dnorm_vec))+
+  geom_line()+
+  geom_vline(xintercept = 0)+
+  geom_vline(xintercept = c(-3,-2,-1,1,2,3))+
+  theme_classic()+
+  ylab("Density")+
+  xlab("score") +
+  scale_x_continuous(breaks=seq(-5,5,1))+
+  geom_label(data = data.frame(x=-.5, y=.3,
+            label=round(pnorm(c(0,1),0,1)[2]-pnorm(c(0,1),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))+
+  geom_label(data = data.frame(x=.5, y=.3,
+            label=round(pnorm(c(0,1),0,1)[2]-pnorm(c(0,1),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))+
+    geom_label(data = data.frame(x=-1.5, y=.3,
+            label=round(pnorm(c(1,2),0,1)[2]-pnorm(c(1,2),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))+
+  geom_label(data = data.frame(x=1.5, y=.3,
+            label=round(pnorm(c(1,2),0,1)[2]-pnorm(c(1,2),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label)) + 
+  geom_label(data = data.frame(x=-2.5, y=.3,
+            label=round(pnorm(c(2,3),0,1)[2]-pnorm(c(2,3),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))+
+  geom_label(data = data.frame(x=2.5, y=.3,
+            label=round(pnorm(c(2,3),0,1)[2]-pnorm(c(2,3),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))+ 
+  geom_label(data = data.frame(x=-3.5, y=.3,
+            label=round(pnorm(c(3,4),0,1)[2]-pnorm(c(3,4),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))+
+  geom_label(data = data.frame(x=3.5, y=.3,
+            label=round(pnorm(c(3,4),0,1)[2]-pnorm(c(3,4),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))
+      </input>
+    </program>
+  </remark>
+
   <figure xml:id="fig-4normalSDspercents">
     <caption>A normal distribution. Each line represents a standard deviation from the mean. The labels show the proportions of scores that fall between each bar.</caption>
     <image source="images/generated/fig-4normalSDspercents.png"/>
@@ -23,6 +67,50 @@
   <p>
     Normal distributions always have these properties, even when they have different means and standard deviations. For example, take a look at the normal distribution in <xref ref="fig-4normalSDspercentsB"/> that has a mean = 100, and standard deviation = 25.
   </p>
+
+  <remark>
+    <title>R Code</title>
+    <program language="r">
+      <input>
+dnorm_vec &lt;- dnorm(seq(0,200,.1),mean=100,sd=25)
+x_range   &lt;- seq(0,200,.1)
+t_df&lt;-data.frame(x_range,dnorm_vec)
+
+ggplot(t_df, aes(x=x_range,y=dnorm_vec))+
+  geom_line()+
+  geom_vline(xintercept = 100)+
+  geom_vline(xintercept = c(25,50,75,125,150,175))+
+  theme_classic()+
+  ylab("Density")+
+  xlab("score") +
+  scale_x_continuous(breaks=seq(0,200,25))+
+  geom_label(data = data.frame(x=87.5, y=0.01,
+            label=round(pnorm(c(0,1),0,1)[2]-pnorm(c(0,1),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))+
+  geom_label(data = data.frame(x=112.5, y=0.01,
+            label=round(pnorm(c(0,1),0,1)[2]-pnorm(c(0,1),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))+
+    geom_label(data = data.frame(x=62.5, y=0.01,
+            label=round(pnorm(c(1,2),0,1)[2]-pnorm(c(1,2),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))+
+  geom_label(data = data.frame(x=137.5, y=0.01,
+            label=round(pnorm(c(1,2),0,1)[2]-pnorm(c(1,2),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label)) + 
+  geom_label(data = data.frame(x=37.5, y=0.01,
+            label=round(pnorm(c(2,3),0,1)[2]-pnorm(c(2,3),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))+
+  geom_label(data = data.frame(x=162.5, y=0.01,
+            label=round(pnorm(c(2,3),0,1)[2]-pnorm(c(2,3),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))+ 
+  geom_label(data = data.frame(x=12.5, y=0.01,
+            label=round(pnorm(c(3,4),0,1)[2]-pnorm(c(3,4),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))+
+  geom_label(data = data.frame(x=187.5, y=0.01,
+            label=round(pnorm(c(3,4),0,1)[2]-pnorm(c(3,4),0,1)[1], digits=3)), 
+            aes(x = x, y = y, label = label))
+      </input>
+    </program>
+  </remark>
 
   <figure xml:id="fig-4normalSDspercentsB">
     <caption>A normal distribution. Each line represents a standard deviation from the mean. The labels show the proportions of scores that fall between each bar.</caption>
@@ -51,6 +139,18 @@
     <p>
       Let's see how this looks in a table without showing you any formulas. We will look at some scores that come from a normal distribution with mean = 100, and standard deviation = 25. We will list some raw scores, along with the z-scores
     </p>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+raw &lt;- c(25, 50,75, 100,125,150,175)
+z   &lt;- c(-3,-2,-1,0,1,2,3)
+df&lt;-data.frame(raw,z)
+knitr::kable(df)
+        </input>
+      </program>
+    </remark>
 
     <table xml:id="table-z-scores">
       <title>Raw scores and z-scores</title>
@@ -116,6 +216,16 @@
       So, for example if we had these 10 scores from a normal distribution with mean = 100, and standard deviation =25
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+scores &lt;- round(rnorm(10,100,25),digits=2)
+print(scores)
+        </input>
+      </program>
+    </remark>
+
     <pre>
 [1] 109.02  85.81  96.67 101.82  75.26 114.58 117.22 123.98  87.65  90.82
     </pre>
@@ -123,6 +233,15 @@
     <p>
       The z-scores would be:
     </p>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+(scores-100)/25
+        </input>
+      </program>
+    </remark>
 
     <pre>
 [1]  0.36080000 -0.56760000 -0.13320000  0.07280000 -0.98960000  0.58320000

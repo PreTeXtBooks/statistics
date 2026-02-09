@@ -242,6 +242,24 @@
         In <xref ref="fig-6sampleMSEM"/>, I pulled 1,000 samples of <m>N = 10</m> from a normal distribution (mean = 0, sd = 1). Each time I measured the mean and standard error of the sample. That gave two descriptive statistics for each sample, letting us plot each sample as dot in a scatter plot.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+sample_mean &lt;- length(1000)
+sample_se &lt;- length(1000)
+
+for (i in 1:1000) {
+  s &lt;- rnorm(10, 0, 1)
+  sample_mean[i] &lt;- mean(s)
+  sample_se[i] &lt;- sd(s) / sqrt(length(s))
+}
+
+plot(sample_mean, sample_se)
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-6sampleMSEM">
         <caption>A scatter plot with sample mean on the x-axis, and standard error of the mean on the y-axis</caption>
         <image source="images/06-ttests_files/figure-html/fig-6sampleMSEM-1.png"/>
@@ -254,6 +272,15 @@
       <p>
         We can look at the same data a different way. For example, rather than using a scatter plot, we can divide the mean for each dot by the standard error for each dot. <xref ref="fig-6thisexample"/> shows the result in a histogram.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(sample_mean/sample_se, breaks=30)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6thisexample">
         <caption>A histogram of the sample means divided by the sample standard errors, this is a t-distribution.</caption>
@@ -275,6 +302,36 @@
       <p>
         Every student completes the 5 questions, we grade them, and then we find their performance (mean percent correct). What we want to know is whether the students were guessing. If they were all guessing, then the sample mean should be about 50%, it shouldn't be different from chance, which is 50%. Let's look at <xref ref="tbl-tsmall"/>.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+library(dplyr)
+students &lt;- 1:10
+scores &lt;- c(50, 70, 60, 40, 80, 30, 90, 60, 70, 60)
+
+mean_scores &lt;- mean(scores)
+Difference_from_Mean &lt;- scores - mean_scores
+Squared_Deviations &lt;- Difference_from_Mean ^ 2
+the_df &lt;- data.frame(students,
+                     scores,
+                     mean = rep(mean_scores, 10),
+                     Difference_from_Mean,
+                     Squared_Deviations)
+
+the_df &lt;- the_df %&gt;%
+  rbind(c("Sums", colSums(the_df[1:10, 2:5]))) %&gt;%
+  rbind(c("Means", colMeans(the_df[1:10, 2:5]))) %&gt;%
+  rbind(c(" ", " ", " ", "sd ", round(sd(the_df[1:10, 2]), digits = 2))) %&gt;%
+  rbind(c(" ", " ", " ", "SEM ", round(sd(the_df[1:10, 2]) / sqrt(10), digits =
+                                         2))) %&gt;%
+  rbind(c(" ", " ", " ", "t", (61 - 50) / round(sd(the_df[1:10, 2]) / sqrt(10), digits =
+                                                  2)))
+knitr::kable(the_df)
+          </input>
+        </program>
+      </remark>
 
       <table xml:id="tbl-tsmall">
         <title>Calculating the t-value for a one-sample test.</title>
@@ -429,6 +486,15 @@
       <p>
         And, that is you how calculate <m>t</m>, by hand. It's a pain. I was annoyed doing it this way. In the lab, you learn how to calculate <m>t</m> using software, so it will just spit out <m>t</m>.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+t.test(scores, mu=50)
+          </input>
+        </program>
+      </remark>
     </subsection>
 
     <subsection xml:id="subsec-how-t-behaves">
@@ -445,6 +511,41 @@
       <p>
         This is exactly what I did, and the results are shown in the four panels of <xref ref="fig-6sampdists"/> below. I used a sample size of 20, and drew random observations for each sample from a normal distribution, with mean = 0, and standard deviation = 1. Let's look at the sampling distributions for each of the statistics. <m>t</m> was computed assuming with the population mean assumed to be 0.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+all_df &lt;- data.frame()
+for (i in 1:10000) {
+  sample &lt;- rnorm(20, 0, 1)
+  sample_mean &lt;- mean(sample)
+  sample_sd &lt;- sd(sample)
+  sample_se &lt;- sd(sample) / sqrt(length(sample))
+  sample_t &lt;- as.numeric(t.test(sample, mu = 0)$statistic)
+  t_df &lt;- data.frame(i, sample_mean, sample_sd, sample_se, sample_t)
+  all_df &lt;- rbind(all_df, t_df)
+}
+
+library(ggpubr)
+a &lt;- ggplot(all_df, aes(x = sample_mean)) +
+  geom_histogram(color = "white") +
+  theme_classic(base_size=20)
+b &lt;- ggplot(all_df, aes(x = sample_sd)) +
+  geom_histogram(color = "white") +
+  theme_classic(base_size=20)
+c &lt;- ggplot(all_df, aes(x = sample_se)) +
+  geom_histogram(color = "white") +
+  theme_classic(base_size=20)
+d &lt;- ggplot(all_df, aes(x = sample_t)) +
+  geom_histogram(color = "white") +
+  theme_classic(base_size=20)
+
+ggarrange(a, b, c, d,
+          ncol = 2, nrow = 2)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6sampdists">
         <caption>Sampling distributions for the mean, standard deviation, standard error of the mean, and <m>t</m>.</caption>
@@ -492,6 +593,79 @@
       <p>
         Remember, if we obtained a single <m>t</m> from one sample we collected, we could consult the chance window in <xref ref="fig-6tdecision"/> below to find out whether the <m>t</m> we obtained from the sample was likely or unlikely to occur by chance.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+sample_t &lt;- all_df$sample_t
+
+ggplot(all_df, aes(x = sample_t)) +
+  annotate(
+    "rect",
+    xmin = min(sample_t),
+    xmax = max(sample_t),
+    ymin = 0,
+    ymax = Inf,
+    alpha = 0.5,
+    fill = "red"
+  ) +
+  annotate(
+    "rect",
+    xmin = min(sample_t),
+    xmax = -1.94,
+    ymin = 0,
+    ymax = Inf,
+    alpha = 0.7,
+    fill = "light grey"
+  ) +
+  annotate(
+    "rect",
+    xmin = 1.94,
+    xmax = max(sample_t),
+    ymin = 0,
+    ymax = Inf,
+    alpha = 0.7,
+    fill = "light grey"
+  ) +
+  geom_rect(aes(
+    xmin = -Inf,
+    xmax = min(sample_t),
+    ymin = 0,
+    ymax = Inf
+  ),
+  alpha = .5,
+  fill = "lightgreen") +
+  geom_rect(aes(
+    xmin = max(sample_t),
+    xmax = Inf,
+    ymin = 0,
+    ymax = Inf
+  ),
+  alpha = .5,
+  fill = "lightgreen") +
+  geom_histogram(bins = 50, color = "white") +
+  theme_classic() +
+  geom_vline(xintercept = min(sample_t)) +
+  geom_vline(xintercept = max(sample_t)) +
+  geom_vline(xintercept = -1.94) +
+  geom_vline(xintercept = 1.94) +
+  xlim(-8, 8) +
+  geom_label(data = data.frame(x = 0, y = 250, label = "CHANCE"), aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(x = -7, y = 250, label = "NOT \n CHANCE"),
+             aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(x = 7, y = 250, label = "NOT \n CHANCE"),
+             aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(x = -4, y = 250,
+                               label = "?"),
+             aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(x = 4, y = 250,
+                               label = "?"),
+             aes(x = x, y = y, label = label)) +
+  xlab("mean sample_t")
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6tdecision">
         <caption>Applying decision criteria to the <m>t</m>-distribution. Histogram of <m>t</m>s from samples (n=20) drawn from the same normal distribution (<m>\mu=0</m>, sd=1)</caption>
@@ -582,6 +756,24 @@
         Here is a table of the data:
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+library(data.table)
+all_data &lt;- fread("data/MehrSongSpelke2016.csv")
+library(dplyr)
+experiment_one &lt;- all_data %&gt;% filter(exp1==1)
+
+paired_sample_df &lt;-  data.frame(infant=1:5, 
+                               Baseline = round(experiment_one$Baseline_Proportion_Gaze_to_Singer[1:5],digits=2), 
+                               Test = round(experiment_one$Test_Proportion_Gaze_to_Singer[1:5], digits=2))
+
+knitr::kable(paired_sample_df)
+          </input>
+        </program>
+      </remark>
+
       <table xml:id="tbl-paired-sample">
         <title>Data for first 5 infants showing proportion looking times</title>
         <tabular>
@@ -649,6 +841,18 @@
         Let's use the first formula. Why? Because it will give us positive differences when the test phase score is higher than the baseline phase score. This makes a positive score meaningful with respect to the study design, we know (because we defined it to be this way), that positive scores will refer to longer proportion looking times (to singer of familiar song) during the test phase compared to the baseline phase.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+paired_sample_df &lt;- cbind(paired_sample_df, 
+                          differences = (paired_sample_df$Test-
+                                           paired_sample_df$Baseline))
+knitr::kable(paired_sample_df)
+          </input>
+        </program>
+      </remark>
+
       <table xml:id="tbl-paired-with-diffs">
         <title>Data with difference scores added</title>
         <tabular>
@@ -702,6 +906,19 @@
       <p>
         As we have been discussing, the effect of interest in this study is the mean difference between the baseline and test phase proportion looking times. We can calculate the <alert>mean difference</alert>, by finding the <alert>mean of the difference scores</alert>. Let's do that, in fact, for fun let's calculate the mean of the baseline scores, the test scores, and the difference scores.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+paired_sample_df &lt;- paired_sample_df %&gt;%
+   rbind(c("Sums",colSums(paired_sample_df[1:5,2:4]))) %&gt;%
+   rbind(c("Means",colMeans(paired_sample_df[1:5,2:4])))
+  
+knitr::kable(paired_sample_df)
+          </input>
+        </program>
+      </remark>
 
       <table xml:id="tbl-paired-with-means">
         <title>Data with sums and means</title>
@@ -784,6 +1001,36 @@
       <p>
         Remember, the whole concept behind <m>t</m>, is that it gives an indication of how confident we should be in our mean. Remember, <m>t</m> involves a measure of the mean in the numerator, divided by a measure of variation (standard error of the sample mean) in the denominator. The resulting <m>t</m> value is small when the mean difference is small, or when the variation is large. So small <m>t</m>-values tell us that we shouldn't be that confident in the estimate of our mean difference. Large <m>t</m>-values occur when the mean difference is large and/or when the measure of variation is small. So, large <m>t</m>-values tell us that we can be more confident in the estimate of our mean difference. Let's find <m>t</m> for the mean difference scores. We use the same formulas as we did last time:
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+paired_sample_df &lt;-  data.frame(infant=1:5, 
+                               Baseline = round(experiment_one$Baseline_Proportion_Gaze_to_Singer[1:5],digits=2), 
+                               Test = round(experiment_one$Test_Proportion_Gaze_to_Singer[1:5], digits=2))
+
+differences &lt;-  paired_sample_df$Test-paired_sample_df$Baseline
+diff_from_mean &lt;- differences-mean(differences)
+Squared_differences &lt;- diff_from_mean^2
+paired_sample_df &lt;- cbind(paired_sample_df, 
+                          differences,
+                          diff_from_mean,
+                          Squared_differences)
+ 
+
+ paired_sample_df &lt;- paired_sample_df %&gt;%
+   rbind(c("Sums",colSums(paired_sample_df[1:5,2:6]))) %&gt;%
+   rbind(c("Means",colMeans(paired_sample_df[1:5,2:6]))) %&gt;%
+   rbind(c(" "," "," "," ","sd ",round(sd(paired_sample_df[1:5,4]),digits=3))) %&gt;%
+   rbind(c(" "," "," "," ","SEM ",round(sd(paired_sample_df[1:5,4])/sqrt(5), digits=3))) %&gt;%
+   rbind(c(" "," "," "," ","t",mean(differences)/round(sd(paired_sample_df[1:5,4])/sqrt(5), digits=3)))
+ paired_sample_df[6,5]&lt;-0
+  paired_sample_df[7,5]&lt;-0
+knitr::kable(paired_sample_df)
+          </input>
+        </program>
+      </remark>
 
       <table xml:id="tbl-paired-t-calculation">
         <title>Computing t for paired samples</title>
@@ -879,6 +1126,15 @@
         </tabular>
       </table>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+t.test(differences,mu=0)
+          </input>
+        </program>
+      </remark>
+
       <p>
         Here is a quick write up of our t-test results, <m>t(4) = 0.72</m>, <m>p = 0.509</m>.
       </p>
@@ -894,6 +1150,29 @@
       <p>
         Remember what it is we are doing here. We are evaluating whether our sample data could have come from a particular kind of distribution. The null distribution of no differences. This is the distribution of <m>t</m>-values that would occur for samples of size 5, with a mean difference of 0, and a standard error of the sample mean of 0.075 (this is the SEM that we calculated from our sample). We can see what this particular null-distribution looks like in <xref ref="fig-6tnull"/>.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+range &lt;- seq(-3, 3, .1)
+null_distribution &lt;- dt(range, 4, log = FALSE)
+plot_df &lt;- data.frame(range, null_distribution)
+
+ggplot(plot_df, aes(x = range, y = null_distribution)) +
+  geom_line() +
+  xlab("t-values") +
+  ylab("Probability") +
+  theme(axis.text.y = element_blank(), axis.ticks = element_blank()) +
+  scale_x_continuous(breaks = (seq(-3, 3, .5))) +
+  geom_label(data = data.frame(x = -.7, y = .1, label = "50% \n (-)"),
+             aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(x = .7, y = .1, label = "50% \n (+)"), aes(x = x, y = y, label = label)) +
+  geom_vline(xintercept = 0)+
+  theme_classic(base_size = 20)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6tnull">
         <caption>A distribution of <m>t</m>-values that can occur by chance alone, when there is no difference between the sample and a population</caption>
@@ -923,6 +1202,32 @@
       <p>
         What if we wanted to take a more fine-grained approach, let's say we were interested in regions of 10%. What kinds of <m>t</m>s occur 10% of the time. We would apply lines like the following. Notice, the likelihood of bigger numbers (positive or negative) gets smaller, so we have to increase the width of the bars for each of the intervals between the bars to contain 10% of the <m>t</m>-values, it looks like <xref ref="fig-6percentregions"/>.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+range &lt;- seq(-3, 3, .1)
+null_distribution &lt;- dt(range, 4, log = FALSE)
+plot_df &lt;- data.frame(range, null_distribution)
+
+t_ps &lt;- qt(seq(.1, .9, .1), 4)
+
+ggplot(plot_df, aes(x = range, y = null_distribution)) +
+  geom_line() +
+  xlab("t-values") +
+  ylab("Probability") +
+  geom_vline(xintercept = t_ps) +
+  theme_classic(base_size = 15) +
+  theme(axis.text.y = element_blank(), axis.ticks = element_blank()) +
+  scale_x_continuous(breaks = round(t_ps, digits = 1)) +
+  geom_label(data = data.frame(x = -2.5, y = .2, label = "10%"), aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(x = -1.3, y = .2, label = "10%"), aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(x = 2.5, y = .2, label = "10%"), aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(x = 1.3, y = .2, label = "10%"), aes(x = x, y = y, label = label))
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6percentregions">
         <caption>Splitting the t distribution up into regions each containing 10% of the <m>t</m>-values. The width between the bars narrows as they approach the center of the distribution, where there are more <m>t</m>-values.</caption>
@@ -978,6 +1283,51 @@
         Typically, a researcher would set an <alert>alpha criterion</alert>. The alpha criterion describes a line in the sand for the researcher. Often, the alpha criterion is set at <m>p = 0.05</m>. What does this mean? <xref ref="fig-6critT"/> shows the <m>t</m>-distribution and the alpha criterion.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+range &lt;- seq(-3, 3, .1)
+null_distribution &lt;- dt(range, 4, log = FALSE)
+plot_df &lt;- data.frame(range, null_distribution)
+
+t_ps &lt;- qt(seq(.1, .9, .1), 4)
+
+ggplot(plot_df, aes(x = range, y = null_distribution)) +
+  geom_line() +
+  xlab("t-values") +
+  ylab("Probability") +
+  geom_vline(xintercept = qt(.95, 4, lower.tail = TRUE)) +
+  ggtitle("Critical t for one-tailed test") +
+  theme_classic(base_size = 10) +
+  theme(axis.text.y = element_blank(), axis.ticks = element_blank()) +
+  annotate(
+    "rect",
+    xmin = qt(.95, 4, lower.tail = TRUE),
+    xmax = 3,
+    ymin = 0,
+    ymax = Inf,
+    alpha = 0.5,
+    fill = "green"
+  ) +
+  geom_label(data = data.frame(x = 2.5, y = .2, label = "5%"), aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(
+    x = qt(.95, 4, lower.tail = TRUE),
+    y = .3,
+    label = "Critical t"
+  ),
+  aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(
+    x = qt(.95, 4, lower.tail = TRUE),
+    y = .25,
+    label = round(qt(.95, 4, lower.tail = TRUE), digits =
+                    2)
+  ),
+  aes(x = x, y = y, label = label))
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-6critT">
         <caption>The critical value of t for an alpha criterion of 0.05. 5% of all ts are at this value or larger</caption>
         <image source="images/06-ttests_files/figure-html/fig-6critT-1.png"/>
@@ -1003,6 +1353,74 @@
       <p>
         <xref ref="fig-6tonedirection"/> shows what the <m>p</m>-value for <m>t(4) = 0.72</m> using a one-directional test would would look like:
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+range &lt;- seq(-3, 3, .1)
+null_distribution &lt;- dt(range, 4, log = FALSE)
+plot_df &lt;- data.frame(range, null_distribution)
+
+t_ps &lt;- qt(seq(.1, .9, .1), 4)
+
+ggplot(plot_df, aes(x = range, y = null_distribution)) +
+  geom_line() +
+  xlab("t-values") +
+  ylab("Probability") +
+  geom_vline(xintercept = .72) +
+  geom_vline(xintercept = qt(.95, 4, lower.tail = TRUE)) +
+  ggtitle("t value and p-range for one-directional test") +
+  theme_classic(base_size = 10) +
+  theme(axis.text.y = element_blank(), axis.ticks = element_blank()) +
+  annotate(
+    "rect",
+    xmin = .72,
+    xmax = 3,
+    ymin = 0,
+    ymax = Inf,
+    alpha = 0.5,
+    fill = "grey"
+  ) +
+  annotate(
+    "rect",
+    xmin = qt(.95, 4, lower.tail = TRUE),
+    xmax = 3,
+    ymin = 0,
+    ymax = .25,
+    alpha = 0.5,
+    fill = "green"
+  ) +
+  geom_label(data = data.frame(x = 2.5, y = .2, label = "5%"), aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(
+    x = qt(.95, 4, lower.tail = TRUE),
+    y = .3,
+    label = "Critical t"
+  ),
+  aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(
+    x = qt(.95, 4, lower.tail = TRUE),
+    y = .25,
+    label = round(qt(.95, 4, lower.tail = TRUE), digits =
+                    2)
+  ),
+  aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(x = .72, y = .1,
+                               label = "Observed t"),
+             aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(x = .72, y = .05,
+                               label = ".72, p="),
+             aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(
+    x = 1.5,
+    y = .05,
+    label = round(pt(.72, 4, lower.tail = FALSE), digits =
+                    3)
+  ),
+  aes(x = x, y = y, label = label))
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6tonedirection">
         <caption>A case where the observed value of t is much less than the critical value for a one-directional t-test.</caption>
@@ -1036,6 +1454,75 @@
       <p>
         <xref ref="fig-6twotailedt"/> shows what the most extreme 5% of the <m>t</m>-values are when we ignore their sign (whether they are positive or negative).
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+range &lt;- seq(-4, 4, .1)
+null_distribution &lt;- dt(range, 4, log = FALSE)
+plot_df &lt;- data.frame(range, null_distribution)
+
+t_ps &lt;- qt(seq(.1, .9, .1), 4)
+
+ggplot(plot_df, aes(x = range, y = null_distribution)) +
+  geom_line() +
+  xlab("t-values") +
+  ylab("Probability") +
+  geom_vline(xintercept = qt(.975, 4, lower.tail = TRUE)) +
+  geom_vline(xintercept = qt(.025, 4, lower.tail = TRUE)) +
+  ggtitle("Critical ts for two-tailed test") +
+  theme_classic(base_size = 10) +
+  theme(axis.text.y = element_blank(), axis.ticks = element_blank()) +
+  annotate(
+    "rect",
+    xmin = qt(.975, 4, lower.tail = TRUE),
+    xmax = 4,
+    ymin = 0,
+    ymax = Inf,
+    alpha = 0.5,
+    fill = "green"
+  ) +
+  geom_label(data = data.frame(x = 3.5, y = .2, label = "2.5%"), aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(
+    x = qt(.975, 4, lower.tail = TRUE),
+    y = .3,
+    label = "Critical t"
+  ),
+  aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(
+    x = qt(.975, 4, lower.tail = TRUE),
+    y = .25,
+    label = round(qt(.975, 4, lower.tail = TRUE), digits =
+                    2)
+  ),
+  aes(x = x, y = y, label = label)) +
+  annotate(
+    "rect",
+    xmin = -4,
+    xmax = qt(.025, 4, lower.tail = TRUE),
+    ymin = 0,
+    ymax = Inf,
+    alpha = 0.5,
+    fill = "green"
+  ) +
+  geom_label(data = data.frame(x = -3.5, y = .2, label = "2.5%"), aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(
+    x = qt(.025, 4, lower.tail = TRUE),
+    y = .3,
+    label = "Critical t"
+  ),
+  aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(
+    x = qt(.025, 4, lower.tail = TRUE),
+    y = .25,
+    label = round(qt(.025, 4, lower.tail = TRUE), digits =
+                    2)
+  ),
+  aes(x = x, y = y, label = label))
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6twotailedt">
         <caption>Critical values for a two-tailed test. Each line represents the location where 2.5% of all <m>t</m>s are larger or smaller than critical value. The total for both tails is 5%</caption>
@@ -1132,6 +1619,25 @@
         If we wanted to simulate the <m>t</m> distribution we could more easily see what influence degrees of freedom has on the shape of the distribution. Remember, <m>t</m> is a sample statistic, it is something we measure from the sample. So, we could simulate the process of measuring <m>t</m> from many different samples, then plot the histogram of <m>t</m> to show us the simulated <m>t</m> distribution.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+ts &lt;- c(rt(10000, 4), rt(10000, 100))
+dfs &lt;- as.factor(rep(c(4, 100), each = 10000))
+
+t_df &lt;- data.frame(dfs, ts)
+t_df &lt;- t_df[abs(t_df$ts) &lt; 5, ]
+
+ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
+  geom_histogram() +
+  theme_classic() +
+  facet_wrap( ~ dfs) +
+  theme_classic(base_size=15)
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-6dft">
         <caption>The width of the t distribution shrinks as sample size and degrees of freedom (from 4 to 100) increases.</caption>
         <image source="images/06-ttests_files/figure-html/fig-6dft-1.png"/>
@@ -1162,7 +1668,25 @@
       </p>
 
       <p>
-        Let's quickly put all of the data in the <m>t</m>-test, and re-run the test using all of the infant subjects. With the full dataset of 32 infants, we get a very different answer. We would summarize the results saying the mean difference was 0.073, <m>t(31) = 2.44</m>, <m>p = 0.020</m>. How many total infants were their? Well the degrees of freedom was 31, so there must have been 32 infants in the study. Now we see a much smaller <m>p</m>-value. This was also a two-tailed test, so we that observing a <m>t</m> value of 2.4 or greater (absolute value) only occurs 2% of the time. In other words, the distribution of no differences will produce the observed t-value very rarely. So, it is unlikely that the observed mean difference of 0.073 was due to chance (it could have been due to chance, but that is very unlikely). As a result, we can be somewhat confident in concluding that something about seeing and hearing a unfamiliar person sing a familiar song, causes an infant to draw their attention toward the singer, and this potentially benefits social learning on the part of the infant.
+        Let's quickly put all of the data in the <m>t</m>-test, and re-run the test using all of the infant subjects.
+      </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+paired_sample_df &lt;-  data.frame(infant=1:32, 
+                               Baseline = round(experiment_one$Baseline_Proportion_Gaze_to_Singer[1:32],digits=2), 
+                               Test = round(experiment_one$Test_Proportion_Gaze_to_Singer[1:32], digits=2))
+
+differences &lt;-  paired_sample_df$Test-paired_sample_df$Baseline
+t.test(differences,mu=0)
+          </input>
+        </program>
+      </remark>
+
+      <p>
+        With the full dataset of 32 infants, we get a very different answer. We would summarize the results saying the mean difference was 0.073, <m>t(31) = 2.44</m>, <m>p = 0.020</m>. How many total infants were their? Well the degrees of freedom was 31, so there must have been 32 infants in the study. Now we see a much smaller <m>p</m>-value. This was also a two-tailed test, so we that observing a <m>t</m> value of 2.4 or greater (absolute value) only occurs 2% of the time. In other words, the distribution of no differences will produce the observed t-value very rarely. So, it is unlikely that the observed mean difference of 0.073 was due to chance (it could have been due to chance, but that is very unlikely). As a result, we can be somewhat confident in concluding that something about seeing and hearing a unfamiliar person sing a familiar song, causes an infant to draw their attention toward the singer, and this potentially benefits social learning on the part of the infant.
       </p>
     </subsection>
   </section>
@@ -1240,6 +1764,39 @@
       </ol>
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+## By "hand" using R r code
+a &lt;- c(1,2,3,4,5)
+b &lt;- c(3,5,4,7,9)
+
+mean_difference &lt;- mean(a)-mean(b) # compute mean difference
+
+variance_a &lt;- var(a) # compute variance for A
+variance_b &lt;- var(b) # compute variance for B
+
+# Compute top part and bottom part of sp formula
+
+sp_numerator &lt;- (4*variance_a + 4* variance_b) 
+sp_denominator &lt;- 5+5-2
+sp &lt;- sqrt(sp_numerator/sp_denominator) # compute sp
+
+
+# compute t following formulat
+
+t &lt;- mean_difference / ( sp * sqrt( (1/5) +(1/5) ) )
+
+t # print results
+
+
+# using the R function t.test
+t.test(a,b, paired=FALSE, var.equal = TRUE)
+        </input>
+      </program>
+    </remark>
+
     <p>
       This gives us <m>t(8) = -1.849</m>, with <m>p = 0.101</m> for a two-tailed test.
     </p>
@@ -1278,10 +1835,46 @@
         Let's do this a couple different times. First, let's simulate samples with N = 30, taken from a normal (mean= 50, sd = 25). We'll do a simulation with 1000 simulations. For each simulation, we will compare the sample mean with a population mean of 50. There should be no difference on average here. <xref ref="fig-6nullt"/> is the null distribution that we are simulating.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+# steps to create fake data from a distribution
+# and conduct t-tests on the simulated data
+save_ps &lt;- length(1000)
+save_ts &lt;- length(1000)
+for (i in 1:1000) {
+  my_sample &lt;- rnorm(n = 30, mean = 50, sd = 25)
+  t_test &lt;- t.test (my_sample, mu = 50)
+  save_ps[i] &lt;- t_test$p.value
+  save_ts[i] &lt;- t_test$statistic
+}
+          </input>
+        </program>
+      </remark>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ts)
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-6nullt">
         <caption>The distribution of <m>t</m>-values under the null. These are the <m>t</m> values that are produced by chance alone.</caption>
         <image source="images/06-ttests_files/figure-html/fig-6nullt-1.png"/>
       </figure>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ps)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6flatp">
         <caption>The distribution of <m>p</m>-values that are observed is flat under the null.</caption>
@@ -1292,10 +1885,32 @@
         Neat. We see both a <m>t</m> distribution, that looks like <m>t</m> distribution as it should. And we see the <m>p</m> distribution. This shows us how often we get <m>t</m> values of particular sizes. You may find it interesting that the <m>p</m>-distribution is flat under the null, which we are simulating here. This means that you have the same chances of a getting a <m>t</m> with a p-value between 0 and 0.05, as you would for getting a <m>t</m> with a p-value between .90 and .95. Those ranges are both ranges of 5%, so there are an equal amount of <m>t</m> values in them by definition.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+simulated_ts &lt;- replicate(1000,
+                          t.test(rnorm(30, 50, 25), mu = 50)$statistic)
+hist(simulated_ts)
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-6simtsRep">
         <caption>Simulating <m>t</m>s in R.</caption>
         <image source="images/06-ttests_files/figure-html/fig-6simtsRep-1.png"/>
       </figure>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+simulated_ps &lt;- replicate(1000,
+                          t.test(rnorm(30, 50, 25), mu = 50)$p.value)
+hist(simulated_ps)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simpsRep">
         <caption>Simulating <m>p</m>s in R.</caption>
@@ -1310,10 +1925,46 @@
         The process is set up to sample 10 scores for condition A and B from the same normal distribution. The simulation is conducted 1000 times, and the <m>t</m>s and <m>p</m>s are saved and plotted for each.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+save_ps &lt;- length(1000)
+save_ts &lt;- length(1000)
+for ( i in 1:1000 ){
+  condition_A &lt;- rnorm(10,10,5)
+  condition_B &lt;- rnorm(10,10,5)
+  differences &lt;- condition_A - condition_B
+  t_test &lt;- t.test(differences, mu=0)
+  save_ps[i] &lt;- t_test$p.value
+  save_ts[i] &lt;- t_test$statistic
+}
+          </input>
+        </program>
+      </remark>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ts)
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-6simts1000">
         <caption>1000 simulated ts from the null distribution</caption>
         <image source="images/06-ttests_files/figure-html/fig-6simts1000-1.png"/>
       </figure>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ps)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simps1000">
         <caption>1000 simulated ps from the null distribution</caption>
@@ -1328,14 +1979,60 @@
         For any of these simulations, if you rejected the null-hypothesis (that your difference was only due to chance), you would be making a type I error. If you set your alpha criteria to <m>\alpha = 0.05</m>, we can ask how many type I errors were made in these 1000 simulations. The expectation over the long run is 5% type I error rates (if your alpha is 0.05).
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+length(save_ps[save_ps&lt;.05])
+length(save_ps[save_ps&lt;.05])/1000
+          </input>
+        </program>
+      </remark>
+
       <p>
         What happens if there actually is a difference in the simulated data, let's set one condition to have a larger mean than the other:
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+save_ps &lt;- length(1000)
+save_ts &lt;- length(1000)
+for ( i in 1:1000 ){
+  condition_A &lt;- rnorm(10,10,5)
+  condition_B &lt;- rnorm(10,13,5)
+  differences &lt;- condition_A - condition_B
+  t_test &lt;- t.test(differences, mu=0)
+  save_ps[i] &lt;- t_test$p.value
+  save_ts[i] &lt;- t_test$statistic
+}
+          </input>
+        </program>
+      </remark>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ts)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simtruets">
         <caption>1000 ts when there is a true difference</caption>
         <image source="images/06-ttests_files/figure-html/fig-6simtruets-1.png"/>
       </figure>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ps)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simtrueps">
         <caption>1000 ps when there is a true difference</caption>
@@ -1350,14 +2047,63 @@
         In this case, we wouldn't be making a type I error if we rejected the null when p was smaller than 0.05. If you were the researcher, would you want to run an experiment that would be successful only some of the time? I wouldn't. I would run a better experiment.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+length(save_ps[save_ps&lt;.05])
+length(save_ps[save_ps&lt;.05])/1000
+          </input>
+        </program>
+      </remark>
+
       <p>
         How would you run a better simulated experiment? Well, you could increase <m>n</m>, the number of subjects in the experiment. Let's increase <m>n</m> from 10 to 100, and see what happens to the number of <q>significant</q> simulated experiments.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+save_ps &lt;- length(1000)
+save_ts &lt;- length(1000)
+for ( i in 1:1000 ){
+  condition_A &lt;- rnorm(100,10,5)
+  condition_B &lt;- rnorm(100,13,5)
+  differences &lt;- condition_A - condition_B
+  t_test &lt;- t.test(differences, mu=0)
+  save_ps[i] &lt;- t_test$p.value
+  save_ts[i] &lt;- t_test$statistic
+}
+          </input>
+        </program>
+      </remark>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ts)
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simtsB">
         <caption>1000 ts for n =100, when there is a true effect</caption>
         <image source="images/06-ttests_files/figure-html/fig-6simtsB-1.png"/>
       </figure>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ps)
+
+length(save_ps[save_ps&lt;.05])
+length(save_ps[save_ps&lt;.05])/1000
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simpsB">
         <caption>1000 ps for n =100, when there is a true effect</caption>
@@ -1376,10 +2122,48 @@
         For the independent samples t-test simulation, we use a similar approach but with separate groups. This is for the null, assuming no difference between groups.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+save_ps &lt;- length(1000)
+save_ts &lt;- length(1000)
+for ( i in 1:1000 ){
+  group_A &lt;- rnorm(10,10,5)
+  group_B &lt;- rnorm(10,10,5)
+  t_test &lt;- t.test(group_A, group_B, paired=FALSE, var.equal=TRUE)
+  save_ps[i] &lt;- t_test$p.value
+  save_ts[i] &lt;- t_test$statistic
+}
+          </input>
+        </program>
+      </remark>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ts)
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-6simtsC">
         <caption>1000 ts for independent samples under the null</caption>
         <image source="images/06-ttests_files/figure-html/fig-6simtsC-1.png"/>
       </figure>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+hist(save_ps)
+
+length(save_ps[save_ps&lt;.05])
+length(save_ps[save_ps&lt;.05])/1000
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-6simpsC">
         <caption>1000 ps for independent samples under the null</caption>

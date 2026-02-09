@@ -6,6 +6,17 @@
   <introduction>
     <p>Author: Matthew J. C. Crump</p>
     
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+library(dplyr)
+library(ggplot2)
+library(xtable)
+        </input>
+      </program>
+    </remark>
+    
     <p>
       This chapter introduces you to <term>repeated measures ANOVA</term>. Repeated measures ANOVAs are very common in Psychology, because psychologists often use repeated measures designs, and repeated measures ANOVAs are the appropriate test for making inferences about repeated measures designs.
     </p>
@@ -37,6 +48,19 @@
     <p>
       Last time, we imagined we had some data in three groups, A, B, and C, such as in <xref ref="tbl-8rmdata1"/>:
     </p>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+scores &lt;- c(20,11,2,6,2,7,2,11,2)
+groups &lt;- as.character(rep(c("A","B","C"), each=3))
+df&lt;-data.frame(groups,scores)
+
+knitr::kable(df)
+        </input>
+      </program>
+    </remark>
 
     <table xml:id="tbl-8rmdata1">
       <title>Example data for three groups.</title>
@@ -91,6 +115,20 @@
     <p>
       Let's change things up a tiny bit, and imagine we only had 3 subjects in total in the experiment. And, that each subject contributed data to the three levels of the independent variable, A, B, and C. Before we called the IV <c>groups</c>, because there were different groups of subjects. Let's change that to <c>conditions</c>, because now the same group of subjects participates in all three conditions. <xref ref="tbl-8rmdata2"/> shows a within-subjects (repeated measures) version of this experiment:
     </p>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+scores &lt;- c(20,11,2,6,2,7,2,11,2)
+conditions &lt;- as.character(rep(c("A","B","C"), each=3))
+subjects &lt;-rep(1:3,3)
+df&lt;-data.frame(subjects,conditions,scores)
+
+knitr::kable(df)
+        </input>
+      </program>
+    </remark>
 
     <table xml:id="tbl-8rmdata2">
       <title>Example data for a repeated measures design with three conditions, where each subject contributes data in each condition.</title>
@@ -216,6 +254,15 @@
       OK. So why did we introduce this new confusing way of talking about things? Why can't we just use <m>SS_\text{Error}</m> to talk about this instead of <m>SS_\text{Within}</m>, which you might (we do) find confusing. We're getting there, but perhaps <xref ref="fig-8splitSS"/> will help out.
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+knitr::include_graphics("imgs/figures/SS_ANOVA.png")
+        </input>
+      </program>
+    </remark>
+
     <figure xml:id="fig-8splitSS">
       <caption>Illustration showing how the total sums of squares are partitioned differently for a between versus repeated-measures design</caption>
       <image source="images/figures/SS_ANOVA.png" width="100%"/>
@@ -241,6 +288,15 @@
       To make this more clear, consider <xref ref="fig-8moresplit"/>:
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+knitr::include_graphics("imgs/figures/SS_RMANOVA.png")
+        </input>
+      </program>
+    </remark>
+
     <figure xml:id="fig-8moresplit">
       <caption>Close-up showing that the Error term is split into two parts in the repeated measures design</caption>
       <image source="images/figures/SS_RMANOVA.png" width="100%"/>
@@ -259,6 +315,15 @@
         Now that you are familiar with the concept of an ANOVA table (remember the table from last chapter where we reported all of the parts to calculate the <m>F</m>-value?), we can take a look at the things we need to find out to make the ANOVA table. <xref ref="fig-8rmtable"/> presents an abstract for the repeated-measures ANOVA table. It shows us all the thing we need to calculate to get the <m>F</m>-value for our data.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+knitr::include_graphics("imgs/figures/RMANOVA_table.png")
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-8rmtable">
         <caption>Equations for computing the ANOVA table for a repeated measures design</caption>
         <image source="images/figures/RMANOVA_table.png" width="100%"/>
@@ -275,6 +340,29 @@
       <p>
         The total sums of squares, or <m>SS_\text{Total}</m> measures the total variation in a set of data. All we do is find the difference between each score and the grand mean, then we square the differences and add them all up.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+scores &lt;- c(20,11,2,6,2,7,2,11,2)
+conditions &lt;- as.character(rep(c("A","B","C"), each=3))
+subjects &lt;-rep(1:3,3)
+
+diff &lt;-scores-mean(scores)
+diff_squared &lt;-diff^2
+df&lt;-data.frame(subjects,conditions,scores,diff, diff_squared)
+df$conditions&lt;-as.character(df$conditions)
+df$subjects&lt;-as.character(df$subjects)
+
+df &lt;- df %&gt;%
+  rbind(c("Sums","", colSums(df[1:9,3:5]))) %&gt;%
+  rbind(c("Means","",colMeans(df[1:9,3:5])))
+
+knitr::kable(df)
+          </input>
+        </program>
+      </remark>
 
       <table xml:id="tbl-8sstotal">
         <title>Calculating SS Total with deviations from the grand mean</title>
@@ -413,6 +501,30 @@
       <p>
         Consider this table, showing the calculations for <m>SS_\text{Effect}</m>.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+scores &lt;- c(20,11,2,6,2,7,2,11,2)
+conditions &lt;- as.character(rep(c("A","B","C"), each=3))
+subjects &lt;-rep(1:3,3)
+means &lt;-c(11,11,11,5,5,5,5,5,5)
+
+diff &lt;-means-mean(scores)
+diff_squared &lt;-diff^2
+df&lt;-data.frame(subjects,conditions,scores,means,diff, diff_squared)
+df$conditions&lt;-as.character(df$conditions)
+df$subjects&lt;-as.character(df$subjects)
+
+df &lt;- df %&gt;%
+  rbind(c("Sums","", colSums(df[1:9,3:6]))) %&gt;%
+  rbind(c("Means","",colMeans(df[1:9,3:6])))
+
+knitr::kable(df)
+          </input>
+        </program>
+      </remark>
 
       <table xml:id="tbl-8sseffect">
         <title>Calculating SS Effect using condition means</title>
@@ -556,6 +668,30 @@
         Or, we could compute <m>SS_\text{Error (within conditions)}</m> directly from the data as we did last time:
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+scores &lt;- c(20,11,2,6,2,7,2,11,2)
+conditions &lt;- as.character(rep(c("A","B","C"), each=3))
+subjects &lt;-rep(1:3,3)
+means &lt;-c(11,11,11,5,5,5,5,5,5)
+
+diff &lt;-means-scores
+diff_squared &lt;-diff^2
+df&lt;-data.frame(subjects,conditions,scores,means,diff, diff_squared)
+df$conditions&lt;-as.character(df$conditions)
+df$subjects&lt;-as.character(df$subjects)
+
+df &lt;- df %&gt;%
+  rbind(c("Sums","", colSums(df[1:9,3:6]))) %&gt;%
+  rbind(c("Means","",colMeans(df[1:9,3:6])))
+
+knitr::kable(df)
+          </input>
+        </program>
+      </remark>
+
       <table xml:id="tbl-8sserror">
         <title>Calculating SS Error (within conditions)</title>
         <tabular>
@@ -673,6 +809,30 @@
       <p>
         The <c>means</c> column now shows all of the subject means. We then find the difference between each subject mean and the grand mean. These deviations are shown in the <c>diff</c> column. Then we square the deviations, and sum them up.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+scores &lt;- c(20,11,2,6,2,7,2,11,2)
+conditions &lt;- as.character(rep(c("A","B","C"), each=3))
+subjects &lt;-rep(1:3,3)
+means &lt;-c(9.33,8,3.66,9.33,8,3.66,9.33,8,3.66)
+
+diff &lt;-means-mean(scores)
+diff_squared &lt;-diff^2
+df&lt;-data.frame(subjects,conditions,scores,means,diff, diff_squared)
+df$conditions&lt;-as.character(df$conditions)
+df$subjects&lt;-as.character(df$subjects)
+
+df &lt;- df %&gt;%
+  rbind(c("Sums","", colSums(df[1:9,3:6]))) %&gt;%
+  rbind(c("Means","",colMeans(df[1:9,3:6])))
+
+knitr::kable(df)
+          </input>
+        </program>
+      </remark>
 
       <table xml:id="tbl-8sssubjects">
         <title>Calculating SS Subjects</title>
@@ -808,6 +968,16 @@
         Before we continue to compute the MSEs and F-value for our data, let's quickly check our work. For example, we could have R compute the repeated measures ANOVA for us, and then we could look at the ANOVA table and see if we are on the right track so far.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+summary_out &lt;- summary(aov(scores~conditions + Error(subjects/conditions),df[1:9,]))
+knitr::kable(xtable(summary_out))
+          </input>
+        </program>
+      </remark>
+
       <table xml:id="tbl-8rmANOVA1">
         <title>Example ANOVA table reporting the degrees of freedom, sums of squares, mean squares, <m>F</m> value and associated <m>p</m> value.</title>
         <tabular>
@@ -905,6 +1075,16 @@
       <p>
         We already conducted the repeated-measures ANOVA using R and reported the ANOVA. Here it is again. The table shows the <m>p</m>-value associated with our <m>F</m>-value.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+summary_out &lt;- summary(aov(scores~conditions + Error(subjects/conditions),df[1:9,]))
+knitr::kable(xtable(summary_out))
+          </input>
+        </program>
+      </remark>
 
       <table xml:id="tbl-8rmANOVA2">
         <title>ANOVA table with p-value</title>
@@ -1013,6 +1193,49 @@
         We run 1000 simulated experiments for each design. We calculate the <m>F</m> for each experiment, for both the between and repeated measures designs. <xref ref="fig-8critcompare"/> has the sampling distributions of <m>F</m> for both designs.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+b_f &lt;- length(1000)
+w_f &lt;- length(1000)
+for (i in 1:1000) {
+  scores &lt;- rnorm(30, 100, 10)
+  conditions &lt;- as.factor(rep(c("A", "B", "C"), each = 10))
+  subjects &lt;- as.factor(rep(1:10, 3))
+  df &lt;- data.frame(scores, conditions, subjects)
+  
+  between_out &lt;- summary(aov(scores ~ conditions, df))
+  b_f[i] &lt;- between_out[[1]]$`F value`[1]
+  
+  within_out &lt;-
+    summary(aov(scores ~ conditions + Error(subjects / conditions), df))
+  w_f[i] &lt;- within_out[[2]][[1]]$`F value`[1]
+  
+}
+
+plot_df &lt;-
+  data.frame(fs = c(b_f, w_f), type = rep(c("between", "repeated"), each =
+                                            1000))
+
+crit_df &lt;- data.frame(type = c("between", "repeated"),
+                      crit = c(qf(.95, 2, 27),
+                               qf(.95, 2, 18)))
+
+ggplot(plot_df, aes(x = fs)) +
+  geom_histogram(color = "white") +
+  geom_vline(data = crit_df, aes(xintercept = crit)) +
+  geom_label(data = crit_df, aes(
+    x = crit,
+    y = 150,
+    label = round(crit, digits = 2)
+  )) +
+  theme_classic() +
+  facet_wrap( ~ type)
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-8critcompare">
         <caption>Comparing critical F values for a between and repeated measures design</caption>
         <image source="images/08-RMANOVA_files/figure-html/fig-8critcompare-1.png" width="100%"/>
@@ -1054,6 +1277,41 @@
         To look at this we conduct 1000 experiments for each design, we conduct the ANOVA, then we save the <m>p</m>-value we obtained for each experiment. This is like asking how many times will we find a <m>p</m>-value less than 0.05, when there is a real difference (in this case an average of 5) between some of the means. <xref ref="fig-8fpvaluedist"/> contains histograms of the <m>p</m>-values:
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+b_p&lt;-length(1000)
+w_p&lt;-length(1000)
+for(i in 1:1000){
+scores &lt;- c(rnorm(10,110,10),rnorm(20,100,10))
+conditions &lt;- as.factor(rep(c("A","B","C"), each=10))
+subjects &lt;-as.factor(rep(1:10,3))
+df&lt;-data.frame(scores,conditions,subjects)
+
+between_out&lt;-summary(aov(scores~conditions,df))
+b_p[i] &lt;- between_out[[1]]$`Pr(&gt;F)`[1]
+
+within_out&lt;-summary(aov(scores~conditions + Error(subjects/conditions),df))
+w_p[i] &lt;- within_out[[2]][[1]]$`Pr(&gt;F)`[1]
+
+}
+
+plot_df&lt;-data.frame(ps=c(b_p,w_p), type=rep(c("between","repeated"),each=1000))
+
+crit_df&lt;-data.frame(type=c("between","repeated"),
+           crit=c(qf(.95, 2, 27),
+                  qf(.95, 2, 18)))
+
+ggplot(plot_df, aes(x=ps))+
+  geom_histogram(color="white")+
+  geom_vline(xintercept=0.05, color="red")+
+  theme_classic()+
+  facet_wrap(~type)
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-8fpvaluedist">
         <caption><m>p</m>-value distributions for a between and within-subjects ANOVA</caption>
         <image source="images/08-RMANOVA_files/figure-html/fig-8fpvaluedist-1.png" width="100%"/>
@@ -1082,6 +1340,33 @@
       <p>
         What do you think would happen if we ran 30 subjects in the repeated measures design? Let's find out. <xref ref="fig-8pdistwithin"/> re-plots the above, but this time only for the repeated measures design. We increase <m>N</m> from 10 to 30.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+b_p&lt;-length(1000)
+w_p&lt;-length(1000)
+for(i in 1:1000){
+scores &lt;- c(rnorm(30,110,10),rnorm(60,100,10))
+conditions &lt;- as.factor(rep(c("A","B","C"), each=30))
+subjects &lt;-as.factor(rep(1:30,3))
+df&lt;-data.frame(scores,conditions,subjects)
+
+within_out&lt;-summary(aov(scores~conditions + Error(subjects/conditions),df))
+w_p[i] &lt;- within_out[[2]][[1]]$`Pr(&gt;F)`[1]
+
+}
+
+plot_df&lt;-data.frame(ps=w_p, type=rep("repeated",1000))
+
+ggplot(plot_df, aes(x=ps))+
+  geom_histogram(color="white")+
+  geom_vline(xintercept=0.05, color="red")+
+  theme_classic()
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-8pdistwithin">
         <caption><m>p</m>-value distribution for within-subjects design with <m>n = 30</m></caption>
@@ -1113,6 +1398,58 @@
       In the study, 38 participants sat in front of a computer and typed 5 letter strings one at a time. Sometimes the 5 letter made a word (Normal condition, TRUCK), sometimes they were completely random (Random Condition, JWYFG), and sometimes they followed patterns like you find in English (Bigram Condition, QUEND), but were not actual words. So, the independent variable for the typing material had three levels. We measured every single keystroke that participants made. This gave us a few different dependent measures. Let's take a look a the reaction times. This is how long it took for participants to start typing the first letter in the string.
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+library(data.table)
+
+exp1_data &lt;- fread("data/exp1_BehmerCrumpAPP.csv")
+
+exp1_data$Block &lt;- as.factor(exp1_data$Block)
+levels(exp1_data$Block) &lt;- c("Visible keyboard", "Covered Keyboard")
+
+## get subject mean RTs
+
+subject_means &lt;- exp1_data %&gt;%
+  filter(Order == 1, Correct == 1, PureRTs &lt; 5000) %&gt;%
+  dplyr::group_by(Subject, Block, Stimulus) %&gt;%
+  dplyr::summarise(mean_rt = mean(PureRTs))
+
+subject_means$Subject &lt;- as.factor(subject_means$Subject)
+subject_means$Block &lt;- as.factor(subject_means$Block)
+subject_means$Stimulus &lt;- as.factor(subject_means$Stimulus)
+
+## get condition mean RTs
+
+plot_means &lt;- subject_means %&gt;%
+  arrange(match(Stimulus, c("Normal", "Bigrams", "Random"))) %&gt;%
+  dplyr::group_by(Block, Stimulus) %&gt;%
+  dplyr::summarise(means = mean(mean_rt),
+                   SEs = sd(mean_rt) / sqrt(length(mean_rt)))
+
+## plot the condition means
+
+# re-order stimulus factor for plotting
+plot_means$Stimulus &lt;-
+  factor(plot_means$Stimulus, levels = c("Normal", "Bigrams", "Random"))
+
+ggplot(plot_means, aes(
+  x = Stimulus,
+  y = means,
+  group = Block,
+  color = Block
+)) +
+  geom_point() +
+  geom_line() +
+  geom_errorbar(aes(ymin = means - SEs, ymax = means + SEs), width = .2) +
+  theme_classic() +
+  ylab("Mean Reaction Time (ms)") +
+  xlab("Typing Material")
+        </input>
+      </program>
+    </remark>
+
     <figure xml:id="fig-8behmcrump">
       <caption>Results from Behmer &amp; Crump (2017)</caption>
       <image source="images/08-RMANOVA_files/figure-html/fig-8behmcrump-1.png" width="100%"/>
@@ -1135,6 +1472,20 @@
     <p>
       Let's focus only on the block of trials where participants were allowed to look at the keyboard while they typed, that's the red line, for the <q>visible keyboard</q> block. We can see the means look different. Let's next ask, what is the likelihood that chance (random sampling error) could have produced these mean differences. To do that we run a repeated-measures ANOVA in R. Here is the ANOVA table.
     </p>
+
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+visible_means&lt;- subject_means %&gt;%
+                 filter(Block=="Visible keyboard")
+
+s_out &lt;- summary(aov(mean_rt~Stimulus + Error (Subject/Stimulus),visible_means))
+
+knitr::kable(xtable(s_out))
+        </input>
+      </program>
+    </remark>
 
     <table xml:id="tbl-8behmcrumpANOVA">
       <title>ANOVA table for Behmer &amp; Crump (2017) data</title>

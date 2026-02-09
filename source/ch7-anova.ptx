@@ -18,6 +18,16 @@
   <section xml:id="sec-anova-is-analysis-of-variance">
     <title>ANOVA is Analysis of Variance</title>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+library(ggplot2)
+library(dplyr)
+        </input>
+      </program>
+    </remark>
+
     <p>
       ANOVA stands for Analysis Of Variance. It is a widely used technique for assessing the likelihood that differences found between means in sample data could be produced by chance. You might be thinking, well don't we have <m>t</m>-tests for that? Why do we need the ANOVA, what do we get that's new that we didn't have before?
     </p>
@@ -112,6 +122,26 @@
       <p>
         Let's imagine we had some data in three groups, A, B, and C. For example, we might have 3 scores in each group. The data could look like this:
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+scores &lt;- c(20, 11, 2, 6, 2, 7, 2, 11, 2)
+groups &lt;- as.character(rep(c("A", "B", "C"), each = 3))
+diff &lt;- scores - mean(scores)
+diff_squared &lt;- diff ^ 2
+df &lt;- data.frame(groups, scores, diff, diff_squared)
+df$groups &lt;- as.character(df$groups)
+
+df &lt;- df %&gt;%
+  rbind(c("Sums", colSums(df[1:9, 2:4]))) %&gt;%
+  rbind(c("Means", colMeans(df[1:9, 2:4])))
+
+knitr::kable(df)
+          </input>
+        </program>
+      </remark>
 
       <table xml:id="tbl-anova-ss-total">
         <title>Example data for computing SS Total</title>
@@ -250,6 +280,27 @@
       <p>
         Consider this table, showing the calculations for <m>SS_\text{Effect}</m>.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+scores &lt;- c(20, 11, 2, 6, 2, 7, 2, 11, 2)
+means &lt;- c(11, 11, 11, 5, 5, 5, 5, 5, 5)
+groups &lt;- as.character(rep(c("A", "B", "C"), each = 3))
+diff &lt;- means - mean(scores)
+diff_squared &lt;- diff ^ 2
+df &lt;- data.frame(groups, scores, means, diff, diff_squared)
+df$groups &lt;- as.character(df$groups)
+
+df &lt;- df %&gt;%
+  rbind(c("Sums", colSums(df[1:9, 2:5]))) %&gt;%
+  rbind(c("Means", colMeans(df[1:9, 2:5])))
+
+knitr::kable(df)
+          </input>
+        </program>
+      </remark>
 
       <table xml:id="tbl-anova-ss-effect">
         <title>Example data for computing SS Effect</title>
@@ -394,6 +445,27 @@
       <p>
         We could stop here and show you the rest of the ANOVA, we're almost there. But, the next step might not make sense unless we show you how to calculate <m>SS_\text{Error}</m> directly from the data, rather than just solving for it. We should do this just to double-check our work anyway.
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+scores &lt;- c(20, 11, 2, 6, 2, 7, 2, 11, 2)
+means &lt;- c(11, 11, 11, 5, 5, 5, 5, 5, 5)
+groups &lt;- as.character(rep(c("A", "B", "C"), each = 3))
+diff &lt;- means - scores
+diff_squared &lt;- diff ^ 2
+df &lt;- data.frame(groups, scores, means, diff, diff_squared)
+df$groups &lt;- as.character(df$groups)
+
+df &lt;- df %&gt;%
+  rbind(c("Sums", colSums(df[1:9, 2:5]))) %&gt;%
+  rbind(c("Means", colMeans(df[1:9, 2:5])))
+
+knitr::kable(df)
+          </input>
+        </program>
+      </remark>
 
       <table xml:id="tbl-anova-ss-error">
         <title>Example data for computing SS Error</title>
@@ -625,6 +697,19 @@
         All of these little pieces are conveniently organized by ANOVA tables. ANOVA tables look like this:
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+library(xtable)
+aov_out &lt;- aov(scores ~ groups, df[1:9, ])
+summary_out &lt;- summary(aov_out)
+
+knitr::kable(xtable(summary_out))
+          </input>
+        </program>
+      </remark>
+
       <table xml:id="tbl-anova-summary">
         <title>ANOVA Summary Table</title>
         <tabular halign="center">
@@ -688,6 +773,30 @@
       Here are some more details for the experiment. Each group will have 10 different subjects, so there will be a total of 30 subjects. We are going to run this experiment 10,000 times. Each time drawing numbers randomly from the very same normal distribution. We are going to calculate <m>F</m> from our sample data every time, and then we are going to draw the histogram of <m>F</m>-values. <xref ref="fig-7fnull"/> shows the sampling distribution of <m>F</m> for our situation.
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+save_F &lt;- length(10000)
+for (i in 1:10000) {
+  smartness   &lt;- rnorm(30, 100, 10)
+  pill_group  &lt;- as.factor(rep(1:3, each = 10))
+  simulations &lt;- rep(i, each = 30)
+  sample_df   &lt;- data.frame(simulations, pill_group, smartness)
+  aov.out &lt;- summary(aov(smartness ~ pill_group, sample_df))
+  save_F[i] &lt;- aov.out[[1]]$`F value`[1]
+}
+
+plot_df &lt;- data.frame(sims = 1:10000, save_F)
+plot_df &lt;- plot_df[plot_df$save_F &lt; 10, ]
+
+ggplot(plot_df, aes(x = save_F)) +
+  geom_histogram(color = "white", bins = 100) +
+  theme_classic()
+        </input>
+      </program>
+    </remark>
+
     <figure xml:id="fig-7fnull">
       <caption>A simulation of 10,000 experiments from a null distribution where there is no differences. The histogram shows 10,000 <m>F</m>-values, one for each simulation. These are values that F can take in this situation. All of these <m>F</m>-values were produced by random sampling error.</caption>
       <image source="images/07-ANOVA/fig-7fnull-1.png" width="100%"/>
@@ -722,6 +831,34 @@
       <p>
         Let's do that. I've drawn the line for the critical value onto the histogram in <xref ref="fig-7criticalF"/>:
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+ggplot(plot_df, aes(x = save_F)) +
+  geom_histogram(color = "white", bins = 100) +
+  theme_classic() +
+  geom_vline(xintercept = qf(.95, 2, 27)) +
+  annotate(
+    "rect",
+    xmin = qf(.95, 2, 27),
+    xmax = Inf,
+    ymin = 0,
+    ymax = Inf,
+    alpha = 0.5,
+    fill = "green"
+  ) +
+  geom_label(data = data.frame(
+    x = qf(.95, 2, 27),
+    y = 500,
+    label = round(qf(.95, 2, 27), digits = 2)
+  ), aes(x = x, y = y, label = label)) +
+  geom_label(data = data.frame(x = 7.5, y = 500, label = "5% of F-values"),
+             aes(x = x, y = y, label = label))
+          </input>
+        </program>
+      </remark>
 
       <figure xml:id="fig-7criticalF">
         <caption>The critical value for <m>F</m> where 5% of all <m>F</m>-values lie beyond this point</caption>
@@ -807,6 +944,38 @@
           We just ran 10,000 experiments and we didn't even once look at the group means for any of the experiments. Different patterns of group means under the null are shown in <xref ref="fig-7manyDiffs"/> for a subset of 10 random simulations.
         </p>
 
+        <remark>
+          <title>R Code</title>
+          <program language="r">
+            <input>
+all_df &lt;- data.frame()
+
+for (i in 1:10) {
+  smartness   &lt;- rnorm(30, 100, 10)
+  pill_group  &lt;- as.factor(rep(1:3, each = 10))
+  simulations &lt;- rep(i, each = 30)
+  sample_df   &lt;- data.frame(simulations, pill_group, smartness)
+  all_df      &lt;- rbind(all_df, sample_df)
+}
+
+all_df$simulations  &lt;- as.factor(all_df$simulations)
+
+plot_df2 &lt;- all_df %&gt;%
+  dplyr::group_by(simulations, pill_group) %&gt;%
+  dplyr::summarise(group_means = mean(smartness),
+                   group_SE = sd(smartness) / sqrt(length(smartness)))
+
+ggplot(data = plot_df2, aes(x = pill_group, y = group_means, color = simulations)) +
+  geom_point() +
+  geom_errorbar(aes(ymin = group_means - group_SE, ymax = group_means +
+                      group_SE)) +
+  theme_classic() +
+  ylab("Mean Smartness") +
+  facet_wrap( ~ simulations, nrow=2)
+            </input>
+          </program>
+        </remark>
+
         <figure xml:id="fig-7manyDiffs">
           <caption>Different patterns of group means under the null (all scores for each group sampled from the same distribution).</caption>
           <image source="images/07-ANOVA/fig-7manyDiffs-1.png" width="100%"/>
@@ -832,6 +1001,39 @@
           Let's look at the exact same graph as above, but this time use bars to visually illustrate the means, instead of dots. We'll re-do our simulation of 10 experiments, so the pattern will be a little bit different:
         </p>
 
+        <remark>
+          <title>R Code</title>
+          <program language="r">
+            <input>
+all_df &lt;- data.frame()
+
+for (i in 1:10) {
+  smartness   &lt;- rnorm(30, 100, 10)
+  pill_group  &lt;- as.factor(rep(1:3, each = 10))
+  simulations &lt;- rep(i, each = 30)
+  sample_df   &lt;- data.frame(simulations, pill_group, smartness)
+  all_df      &lt;- rbind(all_df, sample_df)
+}
+
+all_df$simulations  &lt;- as.factor(all_df$simulations)
+
+plot_df2 &lt;- all_df %&gt;%
+  dplyr::group_by(simulations, pill_group) %&gt;%
+  dplyr::summarize(group_means = mean(smartness),
+                   group_SE = sd(smartness) / sqrt(length(smartness)))
+
+ggplot(plot_df2, aes(x = pill_group, y = group_means, fill = simulations)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  geom_errorbar(aes(ymin = group_means - group_SE, ymax = group_means +
+                      group_SE)) +
+  theme_classic() +
+  ylab("Mean Smartness") +
+  facet_wrap( ~ simulations, nrow=2) +
+  coord_cartesian(ylim = c(90, 110))
+            </input>
+          </program>
+        </remark>
+
         <figure xml:id="fig-7manyDiffsBar">
           <caption>Different patterns of group means under the null (all scores for each group sampled from the same distribution).</caption>
           <image source="images/07-ANOVA/fig-7manyDiffsBar-1.png" width="100%"/>
@@ -853,6 +1055,46 @@
           What we are going to do now is similar to what we did before. Except this time we are going to look at 10 simulated experiments, where all of the <m>F</m>-values were less than 1. All of these <m>F</m>-values would also be associated with fairly large <m>p</m>-values. When F is less than one, we would not reject the hypothesis of no differences. So, when we look at patterns of means when F is less than 1, we should see mostly the same means, and no big differences.
         </p>
 
+        <remark>
+          <title>R Code</title>
+          <program language="r">
+            <input>
+all_df &lt;- data.frame()
+counter &lt;- 0
+for (i in 1:100) {
+  smartness   &lt;- rnorm(30, 100, 10)
+  pill_group  &lt;- as.factor(rep(1:3, each = 10))
+  simulations &lt;- rep(i, each = 30)
+  sample_df   &lt;- data.frame(simulations, pill_group, smartness)
+  aov.out &lt;- summary(aov(smartness ~ pill_group, sample_df))
+  the_f &lt;- aov.out[[1]]$`F value`[1]
+  if (the_f &lt; 1) {
+    all_df &lt;- rbind(all_df, sample_df)
+    counter &lt;- counter + 1
+  }
+  if (counter == 10) {
+    break
+  }
+}
+
+all_df$simulations  &lt;- as.factor(all_df$simulations)
+
+plot_df &lt;- all_df %&gt;%
+  dplyr::group_by(simulations, pill_group) %&gt;%
+  dplyr::summarise(means = mean(smartness),
+                   SEs = sd(smartness) / sqrt(length(smartness)))
+
+ggplot(plot_df, aes(x = pill_group, y = means, fill = simulations)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  geom_errorbar(aes(ymin = means - SEs, ymax = means + SEs)) +
+  theme_classic() +
+  facet_wrap( ~ simulations, nrow=2) +
+  ylab("Mean Smartness") +
+  coord_cartesian(ylim = c(85, 115))
+            </input>
+          </program>
+        </remark>
+
         <figure xml:id="fig-7flesshthanone">
           <caption>Different patterns of group means under the null (sampled from same distribution) when F is less than 1.</caption>
           <image source="images/07-ANOVA/fig-7flesshthanone-1.png" width="100%"/>
@@ -873,6 +1115,46 @@
         <p>
           Earlier we found that the critical value for <m>F</m> in our situation was 3.35, this was the location on the <m>F</m> distribution where only 5% of <m>F</m>s were 3.35 or greater. We would reject the hypothesis of no differences whenever <m>F</m> was greater than 3.35. In this case, whenever we did that, we would be making a type I error. That is because we are simulating the distribution of no differences (remember all of our sample means are coming from the exact same distribution). So, now we can take a look at what type I errors look like. In other words, we can run some simulations and look at the pattern in the means, only when <m>F</m> happens to be 3.35 or greater (this only happens 5% of the time, so we might have to let the computer simulate for a while). Let's see what that looks like:
         </p>
+
+        <remark>
+          <title>R Code</title>
+          <program language="r">
+            <input>
+all_df &lt;- data.frame()
+counter &lt;- 0
+for (i in 1:1000) {
+  smartness   &lt;- rnorm(30, 100, 10)
+  pill_group  &lt;- as.factor(rep(1:3, each = 10))
+  simulations &lt;- rep(i, each = 30)
+  sample_df   &lt;- data.frame(simulations, pill_group, smartness)
+  aov.out &lt;- summary(aov(smartness ~ pill_group, sample_df))
+  the_f &lt;- aov.out[[1]]$`F value`[1]
+  if (the_f &gt; 3.35) {
+    all_df &lt;- rbind(all_df, sample_df)
+    counter &lt;- counter + 1
+  }
+  if (counter == 10) {
+    break
+  }
+}
+
+all_df$simulations  &lt;- as.factor(all_df$simulations)
+
+plot_df &lt;- all_df %&gt;%
+  dplyr::group_by(simulations, pill_group) %&gt;%
+  dplyr::summarise(means = mean(smartness),
+                   SEs = sd(smartness) / sqrt(length(smartness)))
+
+ggplot(plot_df, aes(x = pill_group, y = means, fill = simulations)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  geom_errorbar(aes(ymin = means - SEs, ymax = means + SEs)) +
+  theme_classic() +
+  facet_wrap( ~ simulations, nrow = 2) +
+  ylab("Mean Smartness") +
+  coord_cartesian(ylim = c(85, 115))
+            </input>
+          </program>
+        </remark>
 
         <figure xml:id="fig-7sigdiffs">
           <caption>Different patterns of group means under the null when F is above critical value (these are all type I Errors).</caption>
@@ -933,6 +1215,46 @@
         Let's look at the findings. Note you will learn how to do all of these steps in the lab. For now, we just show the findings and the ANOVA table. Then we walk through how to interpret it.
       </p>
 
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+library(data.table)
+
+all_data &lt;- fread("data/Jamesetal2015Experiment2.csv")
+
+all_data$Condition &lt;- as.factor(all_data$Condition)
+levels(all_data$Condition) &lt;- c("Control",
+                                "Reactivation+Tetris",
+                                "Tetris_only",
+                                "Reactivation_only")
+
+# get means and SEs
+descriptive_df &lt;- all_data %&gt;%
+  dplyr::group_by(Condition) %&gt;%
+  dplyr::summarise(
+    means = mean(Days_One_to_Seven_Number_of_Intrusions),
+    SEs = sd(Days_One_to_Seven_Number_of_Intrusions) /
+      sqrt(length(Days_One_to_Seven_Number_of_Intrusions))
+  )
+
+# Make the plot
+ggplot(descriptive_df, aes(x = Condition, y = means)) +
+  geom_bar(stat = "identity", aes(fill = Condition)) + # add means
+  geom_errorbar(aes(ymin = means - SEs,               # add error bars
+                    ymax = means + SEs), width = .1) +
+  geom_point(
+    data = all_data,
+    aes(x = Condition, y = Days_One_to_Seven_Number_of_Intrusions),
+    alpha = .5
+  ) +
+  geom_point(alpha = .25) +
+  ylab("Intrusive Memories (Mean for Week)")+
+  theme_classic()
+          </input>
+        </program>
+      </remark>
+
       <figure xml:id="fig-7tetrisData">
         <caption>Mean number of intrusive memories per week as a function of experimental treatments.</caption>
         <image source="images/07-ANOVA/fig-7tetrisData-1.png" width="100%"/>
@@ -949,6 +1271,19 @@
       <p>
         We can now conduct the ANOVA on the data to ask the omnibus question. If we get a an <m>F</m>-value with an associated <m>p</m>-value of less than .05 (the alpha criterion set by the authors), then we can reject the hypothesis of no differences. Let's see what happens:
       </p>
+
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+library(xtable)
+aov_out&lt;-aov(Days_One_to_Seven_Number_of_Intrusions ~ Condition, all_data)
+summary_out&lt;-summary(aov_out)
+
+knitr::kable(xtable(summary_out))
+          </input>
+        </program>
+      </remark>
 
       <pre>
              Df Sum Sq Mean Sq F value Pr(&gt;F)
@@ -993,6 +1328,20 @@ Residuals    68  685.4  10.079
           What we really want to know is if Reactivation+Tetris caused fewer intrusive memories...but compared to what? Well, if it did something, the Reactivation+Tetris group should have a smaller mean than the Control group. So, let's do that comparison:
         </p>
 
+        <remark>
+          <title>R Code</title>
+          <program language="r">
+            <input>
+comparison_df &lt;- all_data %&gt;% 
+                  filter(Condition %in% c('Control','Reactivation+Tetris')==TRUE)
+                        
+t.test(Days_One_to_Seven_Number_of_Intrusions ~ Condition, 
+       comparison_df,
+       var.equal=TRUE)
+            </input>
+          </program>
+        </remark>
+
         <pre>
         Two Sample t-test
 
@@ -1025,6 +1374,20 @@ sample estimates:
         <p>
           Now we can really start wondering what caused the difference. Was it just playing Tetris? Does just playing Tetris reduce the number of intrusive memories during the week? Let's compare that to control:
         </p>
+
+        <remark>
+          <title>R Code</title>
+          <program language="r">
+            <input>
+comparison_df &lt;- all_data %&gt;% 
+                  filter(Condition %in% c('Control','Tetris_only')==TRUE)
+                        
+t.test(Days_One_to_Seven_Number_of_Intrusions ~ Condition, 
+       comparison_df,
+       var.equal=TRUE)
+            </input>
+          </program>
+        </remark>
 
         <pre>
         Two Sample t-test

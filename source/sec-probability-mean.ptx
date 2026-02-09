@@ -130,6 +130,15 @@ T, H, H, H, H, T, T, H, H, H, H, T, H, H, T, T, T, T, T, H
       Notice that at the start of the sequence, the <em>proportion</em> of heads fluctuates wildly, starting at .00 and rising as high as .80. Later on, one gets the impression that it dampens out a bit, with more and more of the values actually being pretty close to the "right" answer of .50. This is the frequentist definition of probability in a nutshell: flip a fair coin over and over again, and as <m>N</m> grows large (approaches infinity, denoted <m>N\rightarrow \infty</m>), the proportion of heads will converge to 50%. There are some subtle technicalities that the mathematicians care about, but qualitatively speaking, that's how the frequentists define probability. Unfortunately, I don't have an infinite number of coins, or the infinite patience required to flip a coin an infinite number of times. However, I do have a computer, and computers excel at mindless repetitive tasks. So I asked my computer to simulate flipping a coin 1000 times, and then drew a picture of what happens to the proportion <m>N_H / N</m> as <m>N</m> increases. Actually, I did it four times, just to make sure it wasn't a fluke. The results are shown in <xref ref="fig-4FreqProb"/>. As you can see, the <em>proportion of observed heads</em> eventually stops fluctuating, and settles down; when it does, the number at which it finally settles is the true probability of heads.
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+knitr::include_graphics("imgs/navarro_img/probability/frequentistProb-eps-converted-to.png")
+        </input>
+      </program>
+    </remark>
+
     <figure xml:id="fig-4FreqProb">
       <caption>An illustration of how frequentist probability works. If you flip a fair coin over and over again, the proportion of heads that you've seen eventually settles down, and converges to the true probability of 0.5. Each panel shows four different simulated experiments: in each case, we pretend we flipped a coin 1000 times, and kept track of the proportion of flips that were heads as we went along. Although none of these sequences actually ended up with an exact value of .5, if we'd extended the experiment for an infinite number of coin flips they would have.</caption>
       <image source="images/navarro_img/probability/frequentistProb-eps-converted-to.png"/>

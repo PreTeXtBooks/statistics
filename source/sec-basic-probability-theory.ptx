@@ -62,6 +62,15 @@
       Each of the events has a probability that lies between 0 and 1, and if we add up the probability of all events, they sum to 1. Awesome. We can even draw a nice bar graph to visualize this distribution, as shown in <xref ref="fig-4pantsprob"/>. And at this point, we've all achieved something. You've learned what a probability distribution is, and I've finally managed to find a way to create a graph that focuses entirely on my pants. Everyone wins!
     </p>
 
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+knitr::include_graphics("imgs/navarro_img/probability/pantsDistribution-eps-converted-to.png")
+        </input>
+      </program>
+    </remark>
+
     <figure xml:id="fig-4pantsprob">
       <caption>A visual depiction of the pants probability distribution. There are five elementary events, corresponding to the five pairs of pants that I own. Each event has some probability of occurring: this probability is a number between 0 to 1. The sum of these probabilities is 1.</caption>
       <image source="images/navarro_img/probability/pantsDistribution-eps-converted-to.png"/>
