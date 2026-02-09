@@ -49,16 +49,7 @@
       </preface>
     </frontmatter>
 
-    <chapter xml:id="science-data">
-      <title>Science and Data</title>
-      <introduction>
-        <p>
-          This chapter introduces the relationship between science and data.
-        </p>
-      </introduction>
-      
-      <xi:include href="sec-why-statistics.ptx" />
-    </chapter>
+    <xi:include href="ch1-why-statistics.ptx" />
 
     <xi:include href="correlation.ptx" />
     
