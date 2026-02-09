@@ -132,7 +132,7 @@ T, H, H, H, H, T, T, H, H, H, H, T, H, H, T, T, T, T, T, H
 
     <figure xml:id="fig-4FreqProb">
       <caption>An illustration of how frequentist probability works. If you flip a fair coin over and over again, the proportion of heads that you've seen eventually settles down, and converges to the true probability of 0.5. Each panel shows four different simulated experiments: in each case, we pretend we flipped a coin 1000 times, and kept track of the proportion of flips that were heads as we went along. Although none of these sequences actually ended up with an exact value of .5, if we'd extended the experiment for an infinite number of coin flips they would have.</caption>
-      <image source="imgs/navarro_img/probability/frequentistProb-eps-converted-to.png"/>
+      <image source="images/navarro_img/probability/frequentistProb-eps-converted-to.png"/>
     </figure>
 
     <p>

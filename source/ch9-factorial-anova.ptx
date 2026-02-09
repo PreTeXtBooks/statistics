@@ -46,7 +46,7 @@
       <p>We've just started talking about a <alert>2x2 Factorial design</alert>. We said this means the IVs are crossed. To illustrate this, take a look at <xref ref="fig-9designs"/>. We show an abstract version and a concrete version using time of day and caffeine as the two IVs, each with two levels in the design:</p>
       <figure xml:id="fig-9designs">
         <caption>Structure of 2x2 factorial designs</caption>
-        <image source="imgs/figures/2x2Design.png"/>
+        <image source="images/figures/2x2Design.png"/>
       </figure>
       <p>Let's talk about this crossing business. Here's what it means for the design. For the first level of Time of Day (morning), we measure test performance when some people drank caffeine and some did not. So, in the morning we manipulate whether or not caffeine is taken. Also, in the second level of the Time of Day (afternoon), we also manipulate caffeine. Some people drink or don't drink caffeine in the afternoon as well, and we collect measures of test performance in both conditions.</p>
       <p>We could say the same thing, but talk from the point of view of the second IV. For example, when people drink caffeine, we test those people in the morning, and in the afternoon. So, time of day is manipulated for the people who drank caffeine. Also, when people do not drink caffeine, we test those people in the morning, and in the afternoon, So, time of day is manipulated for the people who did not drink caffeine.</p>
@@ -67,7 +67,7 @@
       <p><xref ref="fig-923design"/> shows the structure of a 2x3 factorial design.</p>
       <figure xml:id="fig-923design">
         <caption>Structure of 2x3 factorial designs</caption>
-        <image source="imgs/figures/2x3Design.png"/>
+        <image source="images/figures/2x3Design.png"/>
       </figure>
       <p>All we did was add another row for the second IV. It's a 2x3 design, so it should have 6 conditions. As you can see there are now 6 cells to measure the DV.</p>
     </subsection>
@@ -96,7 +96,7 @@
       <p>Let's elaborate this with another fake example. First, we pick a task. It's called <alert>spot the difference</alert>. You may have played this game before. You look at two pictures side-by-side in <xref ref="fig-9spotdiff"/>, and then you locate as many differences as you can find.</p>
       <figure xml:id="fig-9spotdiff">
         <caption>Spot the differences between the two images</caption>
-        <image source="imgs/figures/spot_dif.png"/>
+        <image source="images/figures/spot_dif.png"/>
       </figure>
       <p>How many differences can you spot? When you look for the differences, it feels like you are doing something we would call "paying attention". If you pay attention to the clock tower, you will see that the hands on the clock are different. Ya! One difference spotted.</p>
       <p>We could give people 30 seconds to find as many differences as they can. Then we give them another set of pictures and do it again. Every time we will measure how many differences they can spot. So, our measure of performance, our dependent variable, could be the mean number of differences spotted.</p>
@@ -117,7 +117,7 @@
       <p>If our manipulation works, then we should find that people find more differences when they are not distracted, and less differences when they are distracted. <xref ref="fig-9meandiff"/> shows how the data might look.</p>
       <figure xml:id="fig-9meandiff">
         <caption>Example data from pretend experiment showing number of differences spotted in a distraction versus no distraction condition</caption>
-        <image source="09-FactorialANOVA_files/figure-html/fig-9meandiff-1.png"/>
+        <image source="images/09-FactorialANOVA_files/figure-html/fig-9meandiff-1.png"/>
       </figure>
       <p>The figure shows a big difference in the mean number of difference spotted. People found 5 differences on average when they were distracted, and 10 differences when they were not distracted. We labelled the figure, "The distraction effect", because it shows a big effect of distraction. The effect of distraction is a mean of 5 spot the differences. It's the difference between performance in the Distraction and No-Distraction conditions. In general, it is very common to use the word <alert>effect</alert> to refer to the differences caused by the manipulation. We manipulated distraction, it caused a difference, so we call this the "distraction effect".</p>
     </subsection>
@@ -131,12 +131,12 @@
       <p>The question we are now asking is: Will manipulating reward cause a change in the size of the distraction effect. We could predict that people receiving rewards will have a smaller distraction effect than people not receiving rewards. If that happened, the data would look something like <xref ref="fig-9reward"/>.</p>
       <figure xml:id="fig-9reward">
         <caption>Example data showing how the distraction effect could be modulated by a reward manipulation. Distraction condition plotted on the x-axis, makes it more difficult to compare the changes in the distraction effect between reward conditions</caption>
-        <image source="09-FactorialANOVA_files/figure-html/fig-9reward-1.png"/>
+        <image source="images/09-FactorialANOVA_files/figure-html/fig-9reward-1.png"/>
       </figure>
       <p>I've just shown you a new kind of graph. I apologize right now for showing this to you first. It's more unhelpful than the next graph. What I did was keep the x-axis the same as before (to be consistent). So, we have distraction vs. no distraction on the x-axis. In the distraction condition, there are means for spot-the-difference performance in the no-reward (red), and reward (aqua) conditions. The same goes for the no-distraction condition, a red and an aqua bar for the no-reward and reward conditions. We can try to interpret this graph, but <xref ref="fig-9reward"/>B plots the same data in a way that makes it easier to see what we are talking about.</p>
       <figure xml:id="fig-9rewardB">
         <caption>Example data showing how the distraction effect could be modulated by a reward manipulation. Reward condition plotted on the x-axis, makes it easier to compare the changes in the distraction effect between reward conditions</caption>
-        <image source="09-FactorialANOVA_files/figure-html/fig-9rewardB-1.png"/>
+        <image source="images/09-FactorialANOVA_files/figure-html/fig-9rewardB-1.png"/>
       </figure>
       <p>All we did was change the x-axis. Now the left side of the x-axis is for the no-reward condition, and the right side is for the reward condition. The red bar is for the distraction condition, and the aqua bar is for the no distraction condition. It is easier to see the distraction effect in this graph. The distraction effect is the difference in size between the red and aqua bars. For each reward condition, the red and aqua bars are right beside each other, so can see if there is a difference between them more easily, compared to the first graph.</p>
       <p><alert>No-Reward condition</alert>: In the no-reward condition people played spot the difference when they were distracted and when they were not distracted. This is a replication of our first fake study. We should expect to find the same pattern of results, and that's what the graph shows. There was a difference of 5. People found 5 differences when they were distracted and 10 when they were not distracted. So, there was a distraction effect of 5, same as we had last time.</p>
@@ -150,7 +150,7 @@
     <p>In our example above we showed you two bar graphs of the very same means for our 2x2 design. Even though the graphs plot identical means, they look different, so they are more or less easy to interpret by looking at them. Results from 2x2 designs are also often plotted with line graphs. Those look different too. There are four different graphs in <xref ref="fig-9visualdiffs"/>, using bars and lines to plot the very same means from before. We are showing you this so that you realize <alert>how you graph your data matters</alert> because it makes it more or less easy for people to understand the results. Also, how the data is plotted matters for what you need to look at to interpret the results.</p>
     <figure xml:id="fig-9visualdiffs">
       <caption>same example means plotted using bar graphs or line graphs, and with Distraction or Reward on the x-axis</caption>
-      <image source="09-FactorialANOVA_files/figure-html/fig-9visualdiffs-1.png"/>
+      <image source="images/09-FactorialANOVA_files/figure-html/fig-9visualdiffs-1.png"/>
     </figure>
   </section>
   <section xml:id="sec-knowing-what-you-want-to-find-out">
@@ -161,7 +161,7 @@
     <p><xref ref="fig-9alleffects"/> shows multiple ways of looking at the means across four panels.</p>
     <figure xml:id="fig-9alleffects">
       <caption>Each panel shows the mean for different effects in the design</caption>
-      <image source="09-FactorialANOVA_files/figure-html/fig-9alleffects-1.png"/>
+      <image source="images/09-FactorialANOVA_files/figure-html/fig-9alleffects-1.png"/>
     </figure>
     <p>The purpose of showing all of these means is to orient you to your problem. If you conduct a 2x2 design (and this is the most simple factorial that you can conduct), you will get all of these means. You need to know what you want to know from the means. That is, you need to be able to connect the research question to the specific means you are interested in analyzing.</p>
     <p>For example, in our example, the research question was whether reward would change the size of the distraction effect. The top left panel gives us some info about this question. We can see all of the condition means, and we can visually see that the distraction effect was larger in the No-reward compared to the reward condition. But, to "see" this, we need to do some visual subtraction. You need to look at the difference between the red and aqua bars for each of the reward and no-reward conditions.</p>
@@ -313,7 +313,7 @@
       <p>They used a classic test of selective attention, called the Stroop effect. You may already know what the Stroop effect is. In a typical Stroop experiment, subjects name the color of words as fast as they can. The trick is that sometimes the color of the word is the same as the name of the word, and sometimes it is not. <xref ref="fig-9stroop"/> shows some examples:</p>
       <figure xml:id="fig-9stroop">
         <caption>Examples of congruent and incongruent Stroop stimuli. The task is to name the color, not the word.</caption>
-        <image source="imgs/figures/Stroop.png"/>
+        <image source="images/figures/Stroop.png"/>
       </figure>
       <p>Congruent trials occur when the color and word match. So, the correct answers for each of the congruent stimuli shown would be to say, red, green, blue and yellow. Incongruent trials occur when the color and word mismatch. The correct answers for each of the incongruent stimuli would be: blue, yellow, red, green.</p>
       <p>The Stroop effect is an example of a well-known phenomena. What happens is that people are faster to name the color of the congruent items compared to the color of the incongruent items. This difference (incongruent reaction time - congruent reaction time) is called the Stroop effect.</p>
@@ -328,7 +328,7 @@
       <p>They had subjects perform many individual trials responding to single Stroop stimuli, both congruent and incongruent. And they had subjects stand up sometimes and do it, and sit-down sometimes and do it. <xref ref="fig-9strp"/> shows what they found:</p>
       <figure xml:id="fig-9strp">
         <caption>Means from Rosenbaum et al (2017)</caption>
-        <image source="09-FactorialANOVA_files/figure-html/fig-9strp-1.png"/>
+        <image source="images/09-FactorialANOVA_files/figure-html/fig-9strp-1.png"/>
       </figure>
       <p>The figure shows the means. We can see that Stroop effects were observed in both the sitting position and the standing position. In the sitting position, mean congruent RTs were shorter than mean incongruent RTs (the red bar is lower than the aqua bar). The same general pattern is observed for the standing position. However, it does look as if the Stroop effect is slightly smaller in the stand condition: the difference between the red and aqua bars is slightly smaller compared to the difference when people were sitting.</p>
     </subsection>

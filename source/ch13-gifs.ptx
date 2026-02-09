@@ -25,7 +25,7 @@
       
       <figure xml:id="fig-corUnifn10">
         <caption>Correlation between random deviates from uniform distribution with N=10</caption>
-        <image source="imgs/gifs/corUnifn10-1.gif" width="70%"/>
+        <image source="images/gifs/corUnifn10-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -63,7 +63,7 @@ ggplot(all_df,aes(x=North_pole,y=South_pole))+
       
       <figure xml:id="fig-corUnifFourNs">
         <caption>Correlation across four sample sizes (N=10, 50, 100, 1000) from uniform distribution</caption>
-        <image source="imgs/gifs/corUnifFourNs-1.gif" width="70%"/>
+        <image source="images/gifs/corUnifFourNs-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -105,7 +105,7 @@ ggplot(all_df,aes(x=North_pole,y=South_pole))+
       
       <figure xml:id="fig-corNormFourNs">
         <caption>Correlation across four sample sizes (N=10, 50, 100, 1000) from normal distribution</caption>
-        <image source="imgs/gifs/corNormFourNs-1.gif" width="70%"/>
+        <image source="images/gifs/corNormFourNs-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -147,7 +147,7 @@ ggplot(all_df,aes(x=North_pole,y=South_pole))+
       
       <figure xml:id="fig-corRealgif">
         <caption>True correlation (r=.5) across four sample sizes</caption>
-        <image source="imgs/gifs/corRealgif-1.gif" width="70%"/>
+        <image source="images/gifs/corRealgif-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -190,7 +190,7 @@ ggplot(all_df,aes(x=North_pole,y=South_pole))+
       
       <figure xml:id="fig-corNormFourNsTypeI">
         <caption>Type I errors in correlation tests across four sample sizes</caption>
-        <image source="imgs/gifs/corNormFourNsTypeI-1.gif" width="70%"/>
+        <image source="images/gifs/corNormFourNsTypeI-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -240,7 +240,7 @@ ggplot(all_df,aes(x=North_pole,y=South_pole))+
       
       <figure xml:id="fig-cellsizeCor">
         <caption>Cell-size and correlation with N=10, Cell-size = 1, 5, 10, 100</caption>
-        <image source="imgs/gifs/cellsizeCor-1.gif" width="70%"/>
+        <image source="images/gifs/cellsizeCor-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -293,7 +293,7 @@ ggplot(all_df,aes(x=North_pole,y=South_pole))+
       
       <figure xml:id="fig-regression">
         <caption>Regression line and residuals visualization</caption>
-        <image source="imgs/gifs/regression-1.gif" width="70%"/>
+        <image source="images/gifs/regression-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -358,7 +358,7 @@ animate(anim,fps=5)
       
       <figure xml:id="fig-sampleHistUnif">
         <caption>Sampling from uniform distribution (N=20)</caption>
-        <image source="imgs/gifs/sampleHistUnif-1.gif" width="70%"/>
+        <image source="images/gifs/sampleHistUnif-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -389,7 +389,7 @@ ggplot(df,aes(x=a, group=sample,frame=sample)) +
       
       <figure xml:id="fig-sampleUnifExpected">
         <caption>Sampling from uniform distribution with expected value line</caption>
-        <image source="imgs/gifs/sampleUnifExpected-1.gif" width="70%"/>
+        <image source="images/gifs/sampleUnifExpected-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -435,7 +435,7 @@ ggplot(df,aes(x=a))+
       
       <figure xml:id="fig-sampleDistNormal">
         <caption>Population (red), Samples (grey), and Sampling distribution of the mean (blue)</caption>
-        <image source="imgs/gifs/sampleDistNormal-1.gif" width="70%"/>
+        <image source="images/gifs/sampleDistNormal-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -495,7 +495,7 @@ ggplot(all_df, aes(x=sample))+
       
       <figure xml:id="fig-sampleNullTrue">
         <caption>Null and True effect samples with shifting mean</caption>
-        <image source="imgs/gifs/sampleNullTrue-1.gif" width="70%"/>
+        <image source="images/gifs/sampleNullTrue-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -549,7 +549,7 @@ ggplot(all_df,aes(y=values,x=samples))+
       
       <figure xml:id="fig-randomizationTest">
         <caption>Randomization test visualization</caption>
-        <image source="imgs/gifs/randomizationTest-1.gif" width="70%"/>
+        <image source="images/gifs/randomizationTest-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -621,7 +621,7 @@ animate(a,nframes=100,fps=5)
       
       <figure xml:id="fig-indTtest">
         <caption>Independent t-test simulation under the null hypothesis</caption>
-        <image source="imgs/gifs/indTtest.gif" width="70%"/>
+        <image source="images/gifs/indTtest.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -717,7 +717,7 @@ new_gif
       
       <figure xml:id="fig-indTtestTrue">
         <caption>Independent t-test simulation with true effect</caption>
-        <image source="imgs/gifs/indTtestTrue.gif" width="70%"/>
+        <image source="images/gifs/indTtestTrue.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -814,7 +814,7 @@ new_gif
       
       <figure xml:id="fig-indTtestN">
         <caption>Independent t-test comparing sample sizes N=10 and N=50</caption>
-        <image source="imgs/gifs/indTtestN.gif" width="70%"/>
+        <image source="images/gifs/indTtestN.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -969,7 +969,7 @@ final_gif
       
       <figure xml:id="fig-OneWayNull">
         <caption>One-way ANOVA simulation under the null hypothesis</caption>
-        <image source="imgs/gifs/OneWayNull.gif" width="70%"/>
+        <image source="images/gifs/OneWayNull.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -1051,7 +1051,7 @@ new_gif
       
       <figure xml:id="fig-FactorialNull">
         <caption>Factorial ANOVA simulation under the null hypothesis</caption>
-        <image source="imgs/gifs/FactorialNull.gif" width="70%"/>
+        <image source="images/gifs/FactorialNull.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -1140,7 +1140,7 @@ image_animate(new_gif, fps = 10,dispose="none")
       
       <figure xml:id="fig-normalMovingMean">
         <caption>Normal distribution with changing mean</caption>
-        <image source="imgs/gifs/normalMovingMean-1.gif" width="70%"/>
+        <image source="images/gifs/normalMovingMean-1.gif" width="70%"/>
       </figure>
       
       <pre>
@@ -1174,7 +1174,7 @@ ggplot(all_df, aes(x=x_range,y=dnorm_vec))+
       
       <figure xml:id="fig-normalMovingSD">
         <caption>Normal distribution with changing standard deviation</caption>
-        <image source="imgs/gifs/normalMovingSD-1.gif" width="70%"/>
+        <image source="images/gifs/normalMovingSD-1.gif" width="70%"/>
       </figure>
       
       <pre>

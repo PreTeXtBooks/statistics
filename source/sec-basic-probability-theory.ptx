@@ -64,7 +64,7 @@
 
     <figure xml:id="fig-4pantsprob">
       <caption>A visual depiction of the pants probability distribution. There are five elementary events, corresponding to the five pairs of pants that I own. Each event has some probability of occurring: this probability is a number between 0 to 1. The sum of these probabilities is 1.</caption>
-      <image source="imgs/navarro_img/probability/pantsDistribution-eps-converted-to.png"/>
+      <image source="images/navarro_img/probability/pantsDistribution-eps-converted-to.png"/>
     </figure>
 
     <p>

@@ -9,7 +9,7 @@
 
   <figure xml:id="fig-4normal">
     <caption>The normal distribution with mean = 0 and standard deviation = 1. The x-axis corresponds to the value of some variable, and the y-axis tells us something about how likely we are to observe that value. However, notice that the y-axis is labelled Probability Density and not Probability. There is a subtle and somewhat frustrating characteristic of continuous distributions that makes the y axis behave a bit oddly: the height of the curve here isn't actually the probability of observing a particular x value. On the other hand, it is true that the heights of the curve tells you which x values are more likely (the higher ones!).</caption>
-    <image source="imgs/navarro_img/probability/standardNormal-eps-converted-to.png"/>
+    <image source="images/navarro_img/probability/standardNormal-eps-converted-to.png"/>
   </figure>
 
   <p>
@@ -24,7 +24,7 @@
 
   <figure xml:id="fig-4normalformula">
     <caption>Formula for the normal distribution</caption>
-    <image source="imgs/navarro_img/probability/Normal_formula.png"/>
+    <image source="images/navarro_img/probability/Normal_formula.png"/>
   </figure>
 
   <p>
@@ -41,7 +41,7 @@
 
   <figure xml:id="fig-4normalMeanShift">
     <caption>A normal distribution with a moving mean</caption>
-    <image source="imgs/gifs/normalMovingMean-1.gif" width="50%"/>
+    <image source="images/gifs/normalMovingMean-1.gif" width="50%"/>
   </figure>
 
   <p>
@@ -50,7 +50,7 @@
 
   <figure xml:id="fig-4normalSDShift">
     <caption>A normal distribution with a shifting sd.</caption>
-    <image source="imgs/gifs/normalMovingSD-1.gif" width="50%"/>
+    <image source="images/gifs/normalMovingSD-1.gif" width="50%"/>
   </figure>
 
   <p>

@@ -21,7 +21,7 @@
 
   <figure xml:id="fig-4samplingmean">
     <caption>Animation of samples (grey histogram shows frequency counts of data in each sample), and the sampling distribution of the mean (histogram of the sampling means for many samples). Each sample is taken from the normal distribution shown in red. The moving red line is the mean of an individual sample. The blue line is the mean of the blue histogram, which represents the sampling distribution of the mean for many samples</caption>
-    <image source="imgs/gifs/sampleDistNormal-1.gif"/>
+    <image source="images/gifs/sampleDistNormal-1.gif"/>
   </figure>
 
   <p>
@@ -46,7 +46,7 @@
 
   <figure xml:id="fig-4sampledistmeannorm">
     <caption>Comparison of two normal distributions, and histograms for the sampling distribution of the mean for different samples-sizes. The range  of sampling distribution of the mean shrinks as sample-size increases</caption>
-    <image source="imgs/generated/fig-4sampledistmeannorm.png"/>
+    <image source="images/generated/fig-4sampledistmeannorm.png"/>
   </figure>
 
   <p>
@@ -55,7 +55,7 @@
 
   <figure xml:id="fig-4samplemeanunif">
     <caption>Illustration that the shape of the sampling distribution of the mean is normal, even when the samples come from a non-normal (uniform in this case) distribution</caption>
-    <image source="imgs/generated/fig-4samplemeanunif.png" width="100%"/>
+    <image source="images/generated/fig-4samplemeanunif.png" width="100%"/>
   </figure>
 
   <p>
@@ -64,7 +64,7 @@
 
   <figure xml:id="fig-4samplemeanExp">
     <caption>Illustration that the shape of the sampling distribution of the mean is normal, even when the samples come from an exponential distribution</caption>
-    <image source="imgs/generated/fig-4samplemeanExp.png"/>
+    <image source="images/generated/fig-4samplemeanExp.png"/>
   </figure>
 
   <p>
