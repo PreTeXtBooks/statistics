@@ -1824,7 +1824,7 @@ mean of a mean of b
     </pre>
 
     <p>
-      This gives us <m>t(8) = -1.849</m>, with <m>p = 0.101</m> for a two-tailed test.
+      This gives us <m>t(8) = -2.018</m>, with <m>p = 0.078</m> for a two-tailed test.
     </p>
   </section>
 
