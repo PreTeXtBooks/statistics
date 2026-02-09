@@ -4,6 +4,8 @@
   <title>Repeated Measures ANOVA</title>
   
   <introduction>
+    <p>Author: Matthew J. C. Crump</p>
+    
     <p>
       This chapter introduces you to <term>repeated measures ANOVA</term>. Repeated measures ANOVAs are very common in Psychology, because psychologists often use repeated measures designs, and repeated measures ANOVAs are the appropriate test for making inferences about repeated measures designs.
     </p>

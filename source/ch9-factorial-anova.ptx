@@ -4,6 +4,8 @@
   <title>Factorial ANOVA</title>
 
   <introduction>
+    <p>Author: Matthew J. C. Crump</p>
+    
     <p>Factorial designs may be the most complicated topic discussed in this class. What's so complicated? Up until now we have been talking about experiments with two important bits: the independent variable (the manipulation) and the dependent variable (what we measure). In most cases, our independent variable has had two levels, or three or four; but, there has only been one independent variable.</p>
     <p>What if you wanted to manipulate more than one independent variable? If you did that you would have at least two independent variables, each with their own levels. The rest of the book is about factorial designs with more than one independent variable, and the statistical tests we use to analyze those designs.</p>
     <p>Let's go through some examples of designs. We will be imagining experiments that are trying to improve students' grades. So, the dependent variable will always be grade on a test.</p>

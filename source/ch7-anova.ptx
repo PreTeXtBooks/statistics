@@ -3,6 +3,10 @@
 <chapter xml:id="ch-anova">
   <title>ANOVA</title>
 
+  <introduction>
+    <p>Author: Matthew J. C. Crump</p>
+  </introduction>
+
   <p>
     A fun bit of stats history. Sir Ronald Fisher invented the ANOVA, which we learn about in this section. He wanted to publish his new test in the journal Biometrika. The editor at the time was Karl Pearson (remember Pearson's <m>r</m> for correlation?). Pearson and Fisher were apparently not on good terms, they didn't like each other. Pearson refused to publish Fisher's new test. So, Fisher eventually published his work in the Journal of Agricultural Science. Funnily enough, the feud continued onto the next generation. Years after Fisher published his ANOVA, Karl Pearson's son Egon Pearson, and Jersey Neyman revamped Fisher's ideas, and re-cast them into what is commonly known as null vs. alternative hypothesis testing. Fisher didn't like this very much.
   </p>

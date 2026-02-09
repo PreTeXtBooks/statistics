@@ -4,6 +4,8 @@
   <title>More On Factorial Designs</title>
 
   <introduction>
+    <p>Author: Matthew J. C. Crump</p>
+    
     <p>We are going to do a couple things in this chapter. The most important thing is more exposure to factorial designs. The second thing we do is show that you can mix it up with ANOVA. You already know that you can have more than one IV. And, you know that research designs can be between-subjects or within-subjects (repeated-measures). When you have more than one IV, they can all be between-subjects variables, they can all be within-subject repeated measures, or they can be a mix: say one between-subject variable and one within-subject variable. You can use ANOVA to analyze all of these kinds of designs. You always get one main effect for each IV, and a number of interactions, or just one, depending on the number of IVs.</p>
   </introduction>
 

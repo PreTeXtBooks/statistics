@@ -4,6 +4,8 @@
   <title>Simulating Data</title>
   
   <introduction>
+    <p>Author: Matthew J. C. Crump</p>
+    
     <p>
       You may have noticed that throughout this book so far we have analyzed a lot of fake data. We used R to simulate pretend numbers, and then we analyzed those numbers. We also, from time to time, loaded in some <q>real</q> data, and analyzed that. In your labs each week, you have been analyzing a lot of real data. You might be thinking that the simulations we ran were just for educational purposes, to show you how things work. That's partly true, that's one reason we ran so many simulations. At the same time, conducting simulations to understand how data behaves is a legitimate branch of statistics. There are some problems out there where we don't have really good analytic math formulas to tell us the correct answer, so we create and run simulations to approximate the answer.
     </p>
