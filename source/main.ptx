@@ -50,33 +50,18 @@
     </frontmatter>
 
     <xi:include href="ch1-why-statistics.ptx" />
-
-    <xi:include href="correlation.ptx" />
+    <xi:include href="ch2-describing-data.ptx" />
+    <xi:include href="ch3-correlation.ptx" />
+    <xi:include href="ch4-probability-sampling-estimation.ptx" />
+    <xi:include href="ch5-foundations-inference.ptx" />
+    <xi:include href="ch6-ttests.ptx" />
+    <xi:include href="ch7-anova.ptx" />
+    <xi:include href="ch8-rmanova.ptx" />
+    <xi:include href="ch9-factorial-anova.ptx" />
+    <xi:include href="ch10-more-factorial-designs.ptx" />
+    <xi:include href="ch11-simulating-data.ptx" />
     
-    <chapter xml:id="ch-foundations-inference-1">
-      <title>Science and Data</title>
-      <xi:include href="ch-foundations-inference.ptx" />
-    </chapter>
-
-    <chapter xml:id="ch-probability-sampling-1">
-      <title>Science and Data</title>
-      <xi:include href="ch-probability-sampling-estimation.ptx" />
-    </chapter>
-
-    <xi:include href="ch-ttests.ptx" />
-    
-    <xi:include href="ch-factorial-anova.ptx" />
-    
-    <xi:include href="ch-08-rmanova.ptx" />
-    
-    <xi:include href="ch-10-more-factorial-designs.ptx" />
-    
-
-    <xi:include href="ch-anova.ptx" />
-    
-    <xi:include href="ch-simulating-data.ptx" />
-    
-<backmatter xml:id="backmatter">
+    <backmatter xml:id="backmatter">
       <title>Back Matter</title>
       
       <index>
