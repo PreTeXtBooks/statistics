@@ -78,6 +78,8 @@
     
     <xi:include href="ch-08-rmanova.ptx" />
     
+    <xi:include href="ch-10-more-factorial-designs.ptx" />
+    
 
     <xi:include href="ch-anova.ptx" />
     
