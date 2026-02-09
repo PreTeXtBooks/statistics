@@ -76,6 +76,8 @@
     
     <xi:include href="ch-factorial-anova.ptx" />
     
+    <xi:include href="ch-08-rmanova.ptx" />
+    
 <backmatter xml:id="backmatter">
       <title>Back Matter</title>
       
