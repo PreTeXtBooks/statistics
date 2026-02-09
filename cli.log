@@ -14,7 +14,7 @@ INFO    : verifying and expanding input directory: /home/runner/work/statistics/
 INFO    : input directory expanded to absolute path: /home/runner/work/statistics/statistics/generated-assets
 INFO    : verifying and expanding input directory: /home/runner/work/statistics/statistics/source/../imgs
 INFO    : input directory expanded to absolute path: /home/runner/work/statistics/statistics/imgs
-INFO    : converting /home/runner/work/statistics/statistics/source/main.ptx to HTML in /tmp/tmpsnk4eavo
+INFO    : converting /home/runner/work/statistics/statistics/source/main.ptx to HTML in /tmp/tmpl5y2u23t
 INFO    : XSL conversion of /home/runner/work/statistics/statistics/source/main.ptx by /home/runner/.ptx/xsl/pretext-html.xsl
 INFO    : comprehensive messages, warnings, and errors:
 INFO    :     * PTX:ERROR: the @xml:id value "subsec-difference-scores" should be unique, but is authored 2 times.

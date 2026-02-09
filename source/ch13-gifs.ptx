@@ -5,7 +5,7 @@
   
   <introduction>
     <p>
-      This is the place where I put the stats gifs as I make them. The gifs can downloaded from this page, or they can be downloaded from this folder on the github repo for this book <url href="https://github.com/CrumpLab/statistics/tree/master/gifs">https://github.com/CrumpLab/statistics/tree/master/gifs</url>. Please feel free to use them however you wish. The source code for compiling the gifs in R is shown alongside each gif. The animations are made possible by the <c>gganimate</c> package.
+      This is the place where I put the stats GIFs as I make them. The GIFs can be downloaded from this page, or they can be downloaded from this folder on the GitHub repo for this book <url href="https://github.com/CrumpLab/statistics/tree/master/gifs">https://github.com/CrumpLab/statistics/tree/master/gifs</url>. Please feel free to use them however you wish. The source code for compiling the GIFs in R is shown alongside each GIF. The animations are made possible by the <c>gganimate</c> package.
     </p>
     
     <p>
