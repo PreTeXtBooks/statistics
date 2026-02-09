@@ -1195,7 +1195,7 @@ knitr::kable(the_df)
       <title>Anscombe's Quartet</title>
       
       <p>
-        To hit this point home, and to get you thinking about the issues we discuss in the next chapter, check this out. It's called Anscombe's Quartet, because these interesting graphs and numbers and numbers were produced by Anscombe (1973). In <xref ref="fig-anscombe"/> you are looking at pairs of measurements. Each graph has an X and Y axis, and each point represents two measurements. Each of the graphs looks very different, right?
+        To hit this point home, and to get you thinking about the issues we discuss in the next chapter, check this out. It's called Anscombe's Quartet, because these interesting graphs and numbers and numbers were produced by <xref ref="biblio-Anscombe1973" text="custom">Anscombe (1973)</xref>. In <xref ref="fig-anscombe"/> you are looking at pairs of measurements. Each graph has an X and Y axis, and each point represents two measurements. Each of the graphs looks very different, right?
       </p>
 
       <remark>

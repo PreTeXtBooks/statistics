@@ -719,10 +719,10 @@ ggplot(all_df, aes(x = sample_t)) +
     </p>
 
     <subsection xml:id="subsec-mehr-song-spelke">
-      <title>Mehr, Song, and Spelke (2016)</title>
+      <title><xref ref="biblio-mehr20165" text="custom">Mehr, Song, and Spelke (2016)</xref></title>
       
       <p>
-        We will introduce the paired-samples t-test with an example using real data, from a real study. Mehr, Song, and Spelke (2016) were interested in whether singing songs to infants helps infants become more sensitive to social cues. For example, infants might need to learn to direct their attention toward people as a part of learning how to interact socially with people. Perhaps singing songs to infants aids this process of directing attention. When an infant hears a familiar song, they might start to pay more attention to the person singing that song, even after they are done singing the song. The person who sang the song might become more socially important to the infant. You will learn more about this study in the lab for this week. This example, prepares you for the lab activities. Here is a brief summary of what they did.
+        We will introduce the paired-samples t-test with an example using real data, from a real study. <xref ref="biblio-mehr20165" text="custom">Mehr, Song, and Spelke (2016)</xref> were interested in whether singing songs to infants helps infants become more sensitive to social cues. For example, infants might need to learn to direct their attention toward people as a part of learning how to interact socially with people. Perhaps singing songs to infants aids this process of directing attention. When an infant hears a familiar song, they might start to pay more attention to the person singing that song, even after they are done singing the song. The person who sang the song might become more socially important to the infant. You will learn more about this study in the lab for this week. This example, prepares you for the lab activities. Here is a brief summary of what they did.
       </p>
 
       <p>
