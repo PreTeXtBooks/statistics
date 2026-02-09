@@ -6,7 +6,7 @@
   <introduction>
     <p>Factorial designs may be the most complicated topic discussed in this class. What's so complicated? Up until now we have been talking about experiments with two important bits: the independent variable (the manipulation) and the dependent variable (what we measure). In most cases, our independent variable has had two levels, or three or four; but, there has only been one independent variable.</p>
     <p>What if you wanted to manipulate more than one independent variable? If you did that you would have at least two independent variables, each with their own levels. The rest of the book is about factorial designs with more than one independent variable, and the statistical tests we use to analyze those designs.</p>
-    <p>Let's go through some examples of designs. We will be imagining experiments that are trying to improve students grades. So, the dependent variable will always be grade on a test.</p>
+    <p>Let's go through some examples of designs. We will be imagining experiments that are trying to improve students' grades. So, the dependent variable will always be grade on a test.</p>
     <p>
       <ol>
         <li>
@@ -75,11 +75,11 @@
     <p>Factorial designs let researchers manipulate more than one thing at once. This immediately makes things more complicated, because as you will see, there are many more details to keep track of. Why would researchers want to make things more complicated? Why would they want to manipulate more than one IV at a time.</p>
     <p>Before we go on, let's clarify what we mean by manipulating more than one thing at once. When you have one IV in your design, by definition, you are manipulating only <alert>one</alert> thing. This might seem confusing at first, because the IV has more than one level, so it seems to have more than one manipulation. Consider manipulating the number of coffees that people drink before they do a test. We could have one IV (coffee), with three levels (1, 2, or 3 coffees). You might want to say we have three manipulations here, drinking 1, 2, or 3 coffees. But, the way we define manipulation is terms of the IV. There is only one coffee IV. It does have three levels. Nevertheless, we say you are only doing one coffee manipulation. The only thing you are manipulating is the amount of coffee. That's just one thing, so it's called one manipulation. To do another, second manipulation, you need to additionally manipulate something that is not coffee (like time of day in our previous example).</p>
     <p>Returning to our question: why would researchers want to manipulate more than one thing in their experiment. The answer might be kind of obvious. They want to know if more than one thing causes change in the thing they are measuring! For example, if you are measuring people's happiness, you might assume that more than one thing causes happiness to change. If you wanted to track down how two things caused changes in happiness, then you might want to have two manipulations of two different IVs. This is not a wrong way to think about the reasons why researchers use factorial designs. They are often interested in questions like this. However, we think this is an unhelpful way to first learn about factorial designs.</p>
-    <p>We present a slightly different way of thinking about the usefulness of factorial designs, and we think it is so important, it get's its own section.</p>
+    <p>We present a slightly different way of thinking about the usefulness of factorial designs, and we think it is so important, it gets its own section.</p>
     <subsection xml:id="subsec-factorials-manipulate-an-effect-of-interest">
       <title>Factorials manipulate an effect of interest</title>
       <p>Here is how researchers often use factorial designs to understand the causal influences behind the effects they are interested in measuring. Notice we didn't say the dependent variables they are measuring, we are now talking about something called effects. Effects are the change in a measure caused by a manipulation. You get an effect, any time one IV causes a change in a DV.</p>
-      <p>Here is an example. We will stick with this one example for a while, so pay attention... In fact, the example is about paying attention. Let's say you wanted to measure something like paying attention. You could something like this:</p>
+      <p>Here is an example. We will stick with this one example for a while, so pay attention... In fact, the example is about paying attention. Let's say you wanted to measure something like paying attention. You could do something like this:</p>
       <p>
         <ol>
           <li><p>Pick a task for people to do that you can measure. For example, you can measure how well they perform the task. That will be the dependent measure</p></li>
@@ -202,9 +202,9 @@
     </subsection>
     <subsection xml:id="subsec-main-effect-of-reward">
       <title>Main effect of Reward</title>
-      <p>The main effect of reward compares the overall means for all scores in the no-reward and reward conditions, collapsing over the reward conditions.</p>
+      <p>The main effect of reward compares the overall means for all scores in the no-reward and reward conditions, collapsing over the distraction conditions.</p>
       <p>The yellow columns show the no-reward scores for each subject. The blue columns show the reward scores for each subject.</p>
-      <p>The overall means for for each subject, for the two reward conditions are shown to the right. For example, subject 1 had a 10 and 5 in the no-reward condition, so their mean is 7.5.</p>
+      <p>The overall means for each subject, for the two reward conditions are shown to the right. For example, subject 1 had a 10 and 5 in the no-reward condition, so their mean is 7.5.</p>
       <p>We are interested in the main effect of reward. This is the difference between the AB column (average of subject scores in the no-reward condition) and the CD column (average of the subject scores in the reward condition). These differences for each subject are shown in the last green column. The overall means, averaging over subjects are in the bottom green row.</p>
       <p>Just looking at the means, we can see there was a main effect of reward. The mean number of differences spotted was 11.3 in the reward condition, and 6.6 in the no-reward condition. So, the size of the main effect of reward was 4.7.</p>
       <p>Is a difference of this size likely or unlikely due to chance? We could conduct a paired-samples <m>t</m>-test on the AB vs. CD means, or a one-sample <m>t</m>-test on the difference scores. They both give the same answer:</p>
@@ -224,17 +224,17 @@
       <p>How can we test whether the interaction effect was likely or unlikely due to chance? We could run another paired-sample <m>t</m>-test between the two distraction effect measures for each subject, or a one sample <m>t</m>-test on the green column (representing the difference between the differences). Both of these <m>t</m>-tests will give the same results:</p>
       <p>Here's the paired samples version:</p>
       <p>Here's the one sample version:</p>
-      <p>Oh look, the interaction was not significant. At least, if we had set our alpha criterion to 0.05, it would not have met that criteria. We could write up the results like this. The two-way interaction between between distraction and reward was not significant, <m>t</m>(4) = 2.493, <m>p</m> = 0.067.</p>
+      <p>Oh look, the interaction was not significant. At least, if we had set our alpha criterion to 0.05, it would not have met that criteria. We could write up the results like this. The two-way interaction between distraction and reward was not significant, <m>t</m>(4) = 2.493, <m>p</m> = 0.067.</p>
       <p>Often times when a result is "not significant" according to the alpha criteria, the pattern among the means is not described further. One reason for this practice is that the researcher is treating the means as if they are not different (because there was an above alpha probability that the observed differences were due to chance). If they are not different, then there is no pattern to report.</p>
       <p>There are differences in opinion among reasonable and expert statisticians on what should or should not be reported. Let's say we wanted to report the observed mean differences, we would write something like this:</p>
-      <p>The two-way interaction between between distraction and reward was not significant, t(4) = 2.493, p = 0.067. The mean distraction effect in the no-reward condition was 6 and the mean distraction effect in the reward condition was 2.6.</p>
+      <p>The two-way interaction between distraction and reward was not significant, t(4) = 2.493, p = 0.067. The mean distraction effect in the no-reward condition was 6 and the mean distraction effect in the reward condition was 2.6.</p>
     </subsection>
     <subsection xml:id="subsec-writing-it-all-up">
       <title>Writing it all up</title>
       <p>We have completed an analysis of a 2x2 repeated measures design using paired-samples <m>t</m>-tests. Here is what a full write-up of the results could look like.</p>
       <p>The main effect of distraction was significant, <m>t</m>(4) = 7.66, <m>p</m> = 0.001. The mean number of differences spotted was higher in the no-distraction condition (M = 11.1) than the distraction condition (M = 6.8).</p>
       <p>The main effect of reward was significant, <m>t</m>(4) = 8.37, <m>p</m> = 0.001. The mean number of differences spotted was higher in the reward condition (M = 11.3) than the no-reward condition (M = 6.6).</p>
-      <p>The two-way interaction between between distraction and reward was not significant, <m>t</m>(4) = 2.493, <m>p</m> = 0.067. The mean distraction effect in the no-reward condition was 6 and the mean distraction effect in the reward condition was 2.6.</p>
+      <p>The two-way interaction between distraction and reward was not significant, <m>t</m>(4) = 2.493, <m>p</m> = 0.067. The mean distraction effect in the no-reward condition was 6 and the mean distraction effect in the reward condition was 2.6.</p>
       <p><alert>Interim Summary</alert>. We went through this exercise to show you how to break up the data into individual comparisons of interest. Generally speaking, a 2x2 repeated measures design would not be analyzed with three paired-samples <m>t</m>-test. This is because it is more convenient to use the repeated measures ANOVA for this task. We will do this in a moment to show you that they give the same results. And, by the same results, what we will show is that the <m>p</m>-values for each main effect, and the interaction, are the same. The ANOVA will give us <m>F</m>-values rather than <m>t</m> values. It turns out that in this situation, the <m>F</m>-values are related to the <m>t</m> values. In fact, <m>t^2 = F</m>.</p>
     </subsection>
     <subsection xml:id="subsec-2x2-repeated-measures-anova">
