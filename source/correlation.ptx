@@ -173,7 +173,7 @@
       </p>
 
       <p>
-        <term>Co-variance</term> is <term>very, very, very ,very</term> important. We suspect that the word co-variance is initially confusing, especially if you are not yet fully comfortable with the meaning of variance for a single measure. Nevertheless, we must proceed and use the idea of co-variance over and over again to firmly implant it into your statistical mind (we already said, but redundancy works, it's a thing).
+        <term>Co-variance</term> is <term>very, very, very, very</term> important. We suspect that the word co-variance is initially confusing, especially if you are not yet fully comfortable with the meaning of variance for a single measure. Nevertheless, we must proceed and use the idea of co-variance over and over again to firmly implant it into your statistical mind (we already said, but redundancy works, it's a thing).
       </p>
 
       <blockquote>
@@ -264,7 +264,7 @@
       </p>
 
       <p>
-        Now, we can get a little bit more formal. In statistics, <term>co-variance</term> is not just the straight multiplication of values in X and Y. Instead, it's the multiplication of the deviations in X from the mean of X, and the deviation in Y from the mean of Y. Remember those difference scores from the mean we talked about last chapter? They're coming back to haunt you know, but in a good way like Casper the friendly ghost.
+        Now, we can get a little bit more formal. In statistics, <term>co-variance</term> is not just the straight multiplication of values in X and Y. Instead, it's the multiplication of the deviations in X from the mean of X, and the deviation in Y from the mean of Y. Remember those difference scores from the mean we talked about last chapter? They're coming back to haunt you now, but in a good way like Casper the friendly ghost.
       </p>
 
       <p>
@@ -333,7 +333,7 @@
       </p>
 
       <figure xml:id="fig-3onethousandr">
-        <caption>A simulation of of correlations. Each dot represents the r-value for the correlation between an X and Y variable that each contain the numbers 1 to 10 in random orders. The figure ilustrates that many r-values can be obtained by this random process</caption>
+        <caption>A simulation of correlations. Each dot represents the r-value for the correlation between an X and Y variable that each contain the numbers 1 to 10 in random orders. The figure illustrates that many r-values can be obtained by this random process</caption>
         <image source="placeholder.png" width="70%"/>
       </figure>
 
@@ -411,7 +411,7 @@
       </p>
 
       <figure xml:id="fig-3regressionResiduals">
-        <caption>Black dots represent data points. The blue line is the best fit regression line. The white dots are repesent the predicted location of each black dot. The red lines show the error between each black dot and the regression line. The blue line is the best fit line because it minimizes the error shown by the red lines.</caption>
+        <caption>Black dots represent data points. The blue line is the best fit regression line. The white dots are represent the predicted location of each black dot. The red lines show the error between each black dot and the regression line. The blue line is the best fit line because it minimizes the error shown by the red lines.</caption>
         <image source="placeholder.png" width="70%"/>
       </figure>
 
@@ -445,7 +445,7 @@
       </p>
 
       <figure xml:id="fig-3minimizeSS">
-        <caption>A plot of the sum of the squared deviations for different lines moving up and down, through the best fit line. The best fit line occurs at the position that minimizes the sum of the sqaured deviations.</caption>
+        <caption>A plot of the sum of the squared deviations for different lines moving up and down, through the best fit line. The best fit line occurs at the position that minimizes the sum of the squared deviations.</caption>
         <image source="placeholder.png" width="70%"/>
       </figure>
 
@@ -707,7 +707,7 @@
         </p>
 
         <figure xml:id="fig-3randcor10gif">
-          <caption>Completely random data points drawn from a uniform distribution with a small sampl-size of 10. The blue line twirls around sometimes showing large correlations that are produced by chance</caption>
+          <caption>Completely random data points drawn from a uniform distribution with a small sample-size of 10. The blue line twirls around sometimes showing large correlations that are produced by chance</caption>
           <image source="placeholder.png" width="70%"/>
         </figure>
 
@@ -720,7 +720,7 @@
         </p>
 
         <figure xml:id="fig-3histrandcor">
-          <caption>A histogram showing the frequency distribution of r-values for completely random values between an X and Y variable (sample-size=10). A rull range of r-values can be obtained by chance alone. Larger r-values are less common than smaller r-values</caption>
+          <caption>A histogram showing the frequency distribution of r-values for completely random values between an X and Y variable (sample-size=10). A full range of r-values can be obtained by chance alone. Larger r-values are less common than smaller r-values</caption>
           <image source="placeholder.png" width="70%"/>
         </figure>
 
