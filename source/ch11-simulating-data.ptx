@@ -6,6 +6,16 @@
   <introduction>
     <p>Author: Matthew J. C. Crump</p>
     
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+library(ggplot2)
+library(dplyr)
+        </input>
+      </program>
+    </remark>
+    
     <p>
       You may have noticed that throughout this book so far we have analyzed a lot of fake data. We used R to simulate pretend numbers, and then we analyzed those numbers. We also, from time to time, loaded in some <q>real</q> data, and analyzed that. In your labs each week, you have been analyzing a lot of real data. You might be thinking that the simulations we ran were just for educational purposes, to show you how things work. That's partly true, that's one reason we ran so many simulations. At the same time, conducting simulations to understand how data behaves is a legitimate branch of statistics. There are some problems out there where we don't have really good analytic math formulas to tell us the correct answer, so we create and run simulations to approximate the answer.
     </p>
@@ -82,11 +92,16 @@
       Before we go into more simulation details, let's just run a quick one. We'll do an independent samples <m>t</m>-test. Imagine we have a study with N=10 in each group. There are two groups. We are measuring heart rate. Let's say we know that heart rate is on average 100 beats per minute with a standard deviation of 7. We are going to measure heart rate in condition A where nothing happens, and we are going to measure heart rate in condition B while they watch a scary movie. We think the scary movie might increase heart rate by 5 beats per minute. Let's run a simulation of this:
     </p>
     
-    <pre>
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
 group_A &lt;- rnorm(10,100,7)
 group_B &lt;- rnorm(10,105, 7)
 t.test(group_A,group_B,var.equal = TRUE)
-    </pre>
+        </input>
+      </program>
+    </remark>
     
     <p>
       We sampled 10 scores from a normal distribution for each group. We changed the mean for group_b to 105, because we were thinking their heart rate would be 5 more than group A. We ran one <m>t</m>-test, and we got a result. This result tells us what happens for this one simulation.
@@ -96,7 +111,10 @@ t.test(group_A,group_B,var.equal = TRUE)
       We could learn more by repeating the simulation 1000 times, saving the <m>p</m>-values from each replication, and then finding out how many of our 1000 simulated experiments give us a significant result:
     </p>
     
-    <pre>
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
 save_ps&lt;-length(1000)
 for(i in 1:1000){
   group_A &lt;- rnorm(10,100,7)
@@ -107,7 +125,9 @@ for(i in 1:1000){
 
 prop_p&lt;-length(save_ps[save_ps&lt;0.05])/1000
 print(prop_p)
-    </pre>
+        </input>
+      </program>
+    </remark>
     
     <p>
       Now this is more interesting. We found that a certain percentage of simulated experiments had a <m>p</m>-value less than 0.05. That's not very good. If you were going to collect data in this kind of experiment, and you made the correct assumptions about the mean and standard deviation of the distribution, and you made the correct assumption about the size of difference between the groups, you would be planning to run an experiment that would not work-out most of the time.
@@ -117,7 +137,10 @@ print(prop_p)
       What happens if we increase the number of subject to 50 in each group?
     </p>
     
-    <pre>
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
 save_ps&lt;-length(1000)
 for(i in 1:1000){
   group_A &lt;- rnorm(50,100,7)
@@ -128,7 +151,9 @@ for(i in 1:1000){
 
 prop_p&lt;-length(save_ps[save_ps&lt;0.05])/1000
 print(prop_p)
-    </pre>
+        </input>
+      </program>
+    </remark>
     
     <p>
       Ooh, look, almost all of the experiments are significant now. So, it would be better to use 50 subjects per group than 10 per group according to this simulation.
@@ -146,7 +171,10 @@ print(prop_p)
       We've already seen some code for simulating a <m>t</m>-test 1000 times, saving the <m>p</m>-values, and then calculating the proportion of simulations that are significant (p&lt;0.05). It looked like this:
     </p>
     
-    <pre>
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
 save_ps&lt;-length(1000)
 for(i in 1:1000){
   group_A &lt;- rnorm(50,100,7)
@@ -157,13 +185,18 @@ for(i in 1:1000){
 
 prop_p&lt;-length(save_ps[save_ps&lt;0.05])/1000
 print(prop_p)
-    </pre>
+        </input>
+      </program>
+    </remark>
     
     <p>
       You could play around with that, and it would be very useful I think. Is there anything else that we can do that would be more useful? Sure there is. With the above simulation, you have to change N or the mean difference each time to see how proportion of significant experiments turns out. It would be nice to look at a graph where we could vary the number of subjects, and the size of the mean difference. That's what the next simulation does. This kind of simulation can make your computer do some hard work depending on how many simulations you run. To make my computer do less work, we will only run 100 simulations for each parameter. But, what we will do is vary the number of subjects from 10 to 50 (steps of 10), and vary the size of the effect from 0 to 20 in steps of 4.
     </p>
     
-    <pre>
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
 num_sims        &lt;-500
 N               &lt;-c(10,20,30,40,50)
 mean_difference &lt;-c(0,4,8,12,16,20)
@@ -197,7 +230,9 @@ ggplot(plot_df, aes(x=mean_diff,
   geom_point()+
   geom_line()+
   theme_classic()
-    </pre>
+        </input>
+      </program>
+    </remark>
     
     <figure xml:id="fig-11simt">
       <caption>A simulation showing the proportion of significant <m>t</m> tests as a function of the programmed mean difference and number of subjects.</caption>
@@ -228,7 +263,10 @@ ggplot(plot_df, aes(x=mean_diff,
       The following builds simulated data for a one-factor ANOVA, appropriate for a between subjects design. We build the data frame containing a column for the group factor levels, and a column for the DV. Then, we run the ANOVA and print it out.
     </p>
     
-    <pre>
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
 N &lt;- 10
 groups &lt;- rep(c("A","B","C"), each=10)
 DV &lt;- c(rnorm(100,10,15),   # means for group A
@@ -241,13 +279,18 @@ aov_results &lt;- summary(aov(DV~groups, sim_df))
 
 library(xtable)
 knitr::kable(xtable(aov_results))
-    </pre>
+        </input>
+      </program>
+    </remark>
     
     <p>
       In this next example, we simulate the same design 100 times, save the <m>p</m>-values, and then determine the proportion of significant simulations.
     </p>
     
-    <pre>
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
 N &lt;- 10
 
 save_p&lt;-length(100)
@@ -264,7 +307,9 @@ for(i in 1:100){
 }
 
 length(save_p[save_p&lt;0.05])/100
-    </pre>
+        </input>
+      </program>
+    </remark>
   </section>
 
   <section xml:id="sec-other-resources">
