@@ -1055,7 +1055,7 @@ knitr::kable(the_df)
     <title>Using Descriptive Statistics with data</title>
     
     <p>
-      Remember, you will be learning how to compute descriptive statistics using software in the labs. Check out the lab manual exercises for descriptives to see some examples of working with real data.
+      Remember, you will be learning how to compute descriptive statistics using software in the labs. Check out the <url href="https://crumplab.github.io/statisticsLab/lab-2-descriptive-statistics.html" visual="crumplab.github.io/statisticsLab/lab-2-descriptive-statistics.html">lab manual exercises for descriptives</url> to see some examples of working with real data.
     </p>
   </section>
 
@@ -1295,7 +1295,7 @@ knitr::kable(ac_long_summary)
       <title>Datasaurus Dozen</title>
       
       <p>
-        If you thought that Anscombe's quartet was neat, you should take a look at the Datasaurus Dozen. Scroll down to see the examples. You will be looking at dot plots. The dot plots show many different patterns, including dinosaurs! What's amazing is that all of the dots have very nearly the same descriptive statistics. Just another reminder to look at your data, it might look like a dinosaur!
+        If you thought that Anscombe's quartet was neat, you should take a look at the <url href="https://www.autodeskresearch.com/publications/samestats" visual="autodeskresearch.com/publications/samestats">Datasaurus Dozen</url> <xref ref="biblio-Matejka2017" text="custom">(Matejka and Fitzmaurice 2017)</xref>. Scroll down to see the examples. You will be looking at dot plots. The dot plots show many different patterns, including dinosaurs! What's amazing is that all of the dots have very nearly the same descriptive statistics. Just another reminder to look at your data, it might look like a dinosaur!
       </p>
     </subsection>
   </section>
