@@ -244,7 +244,7 @@
 
       <figure xml:id="fig-6sampleMSEM">
         <caption>A scatter plot with sample mean on the x-axis, and standard error of the mean on the y-axis</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6sampleMSEM-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6sampleMSEM-1.png"/>
       </figure>
 
       <p>
@@ -257,7 +257,7 @@
 
       <figure xml:id="fig-6thisexample">
         <caption>A histogram of the sample means divided by the sample standard errors, this is a t-distribution.</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6thisexample-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6thisexample-1.png"/>
       </figure>
 
       <p>
@@ -448,7 +448,7 @@
 
       <figure xml:id="fig-6sampdists">
         <caption>Sampling distributions for the mean, standard deviation, standard error of the mean, and <m>t</m>.</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6sampdists-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6sampdists-1.png"/>
       </figure>
 
       <p>
@@ -495,7 +495,7 @@
 
       <figure xml:id="fig-6tdecision">
         <caption>Applying decision criteria to the <m>t</m>-distribution. Histogram of <m>t</m>s from samples (n=20) drawn from the same normal distribution (<m>\mu=0</m>, sd=1)</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6tdecision-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6tdecision-1.png"/>
       </figure>
     </subsection>
 
@@ -897,7 +897,7 @@
 
       <figure xml:id="fig-6tnull">
         <caption>A distribution of <m>t</m>-values that can occur by chance alone, when there is no difference between the sample and a population</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6tnull-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6tnull-1.png"/>
       </figure>
 
       <p>
@@ -926,7 +926,7 @@
 
       <figure xml:id="fig-6percentregions">
         <caption>Splitting the t distribution up into regions each containing 10% of the <m>t</m>-values. The width between the bars narrows as they approach the center of the distribution, where there are more <m>t</m>-values.</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6percentregions-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6percentregions-1.png"/>
       </figure>
 
       <p>
@@ -980,7 +980,7 @@
 
       <figure xml:id="fig-6critT">
         <caption>The critical value of t for an alpha criterion of 0.05. 5% of all ts are at this value or larger</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6critT-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6critT-1.png"/>
       </figure>
 
       <p>
@@ -1006,7 +1006,7 @@
 
       <figure xml:id="fig-6tonedirection">
         <caption>A case where the observed value of t is much less than the critical value for a one-directional t-test.</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6tonedirection-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6tonedirection-1.png"/>
       </figure>
 
       <p>
@@ -1039,7 +1039,7 @@
 
       <figure xml:id="fig-6twotailedt">
         <caption>Critical values for a two-tailed test. Each line represents the location where 2.5% of all <m>t</m>s are larger or smaller than critical value. The total for both tails is 5%</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6twotailedt-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6twotailedt-1.png"/>
       </figure>
 
       <p>
@@ -1134,7 +1134,7 @@
 
       <figure xml:id="fig-6dft">
         <caption>The width of the t distribution shrinks as sample size and degrees of freedom (from 4 to 100) increases.</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6dft-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6dft-1.png"/>
       </figure>
 
       <p>
@@ -1280,12 +1280,12 @@
 
       <figure xml:id="fig-6nullt">
         <caption>The distribution of <m>t</m>-values under the null. These are the <m>t</m> values that are produced by chance alone.</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6nullt-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6nullt-1.png"/>
       </figure>
 
       <figure xml:id="fig-6flatp">
         <caption>The distribution of <m>p</m>-values that are observed is flat under the null.</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6flatp-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6flatp-1.png"/>
       </figure>
 
       <p>
@@ -1294,12 +1294,12 @@
 
       <figure xml:id="fig-6simtsRep">
         <caption>Simulating <m>t</m>s in R.</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6simtsRep-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6simtsRep-1.png"/>
       </figure>
 
       <figure xml:id="fig-6simpsRep">
         <caption>Simulating <m>p</m>s in R.</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6simpsRep-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6simpsRep-1.png"/>
       </figure>
     </subsection>
 
@@ -1312,12 +1312,12 @@
 
       <figure xml:id="fig-6simts1000">
         <caption>1000 simulated ts from the null distribution</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6simts1000-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6simts1000-1.png"/>
       </figure>
 
       <figure xml:id="fig-6simps1000">
         <caption>1000 simulated ps from the null distribution</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6simps1000-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6simps1000-1.png"/>
       </figure>
 
       <p>
@@ -1334,12 +1334,12 @@
 
       <figure xml:id="fig-6simtruets">
         <caption>1000 ts when there is a true difference</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6simtruets-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6simtruets-1.png"/>
       </figure>
 
       <figure xml:id="fig-6simtrueps">
         <caption>1000 ps when there is a true difference</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6simtrueps-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6simtrueps-1.png"/>
       </figure>
 
       <p>
@@ -1356,12 +1356,12 @@
 
       <figure xml:id="fig-6simtsB">
         <caption>1000 ts for n =100, when there is a true effect</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6simtsB-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6simtsB-1.png"/>
       </figure>
 
       <figure xml:id="fig-6simpsB">
         <caption>1000 ps for n =100, when there is a true effect</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6simpsB-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6simpsB-1.png"/>
       </figure>
 
       <p>
@@ -1378,12 +1378,12 @@
 
       <figure xml:id="fig-6simtsC">
         <caption>1000 ts for independent samples under the null</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6simtsC-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6simtsC-1.png"/>
       </figure>
 
       <figure xml:id="fig-6simpsC">
         <caption>1000 ps for independent samples under the null</caption>
-        <image source="imgs/06-ttests_files/figure-html/fig-6simpsC-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6simpsC-1.png"/>
       </figure>
 
       <p>

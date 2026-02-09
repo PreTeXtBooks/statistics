@@ -218,7 +218,7 @@
 
     <figure xml:id="fig-8splitSS">
       <caption>Illustration showing how the total sums of squares are partitioned differently for a between versus repeated-measures design</caption>
-      <image source="imgs/figures/SS_ANOVA.png" width="100%"/>
+      <image source="images/figures/SS_ANOVA.png" width="100%"/>
     </figure>
 
     <p>
@@ -243,7 +243,7 @@
 
     <figure xml:id="fig-8moresplit">
       <caption>Close-up showing that the Error term is split into two parts in the repeated measures design</caption>
-      <image source="imgs/figures/SS_RMANOVA.png" width="100%"/>
+      <image source="images/figures/SS_RMANOVA.png" width="100%"/>
     </figure>
 
     <p>
@@ -261,7 +261,7 @@
 
       <figure xml:id="fig-8rmtable">
         <caption>Equations for computing the ANOVA table for a repeated measures design</caption>
-        <image source="imgs/figures/RMANOVA_table.png" width="100%"/>
+        <image source="images/figures/RMANOVA_table.png" width="100%"/>
       </figure>
 
       <p>
@@ -1015,7 +1015,7 @@
 
       <figure xml:id="fig-8critcompare">
         <caption>Comparing critical F values for a between and repeated measures design</caption>
-        <image source="imgs/08-RMANOVA_files/figure-html/fig-8critcompare-1.png" width="100%"/>
+        <image source="images/08-RMANOVA_files/figure-html/fig-8critcompare-1.png" width="100%"/>
       </figure>
 
       <p>
@@ -1056,7 +1056,7 @@
 
       <figure xml:id="fig-8fpvaluedist">
         <caption><m>p</m>-value distributions for a between and within-subjects ANOVA</caption>
-        <image source="imgs/08-RMANOVA_files/figure-html/fig-8fpvaluedist-1.png" width="100%"/>
+        <image source="images/08-RMANOVA_files/figure-html/fig-8fpvaluedist-1.png" width="100%"/>
       </figure>
 
       <p>
@@ -1085,7 +1085,7 @@
 
       <figure xml:id="fig-8pdistwithin">
         <caption><m>p</m>-value distribution for within-subjects design with <m>n = 30</m></caption>
-        <image source="imgs/08-RMANOVA_files/figure-html/fig-8pdistwithin-1.png" width="100%"/>
+        <image source="images/08-RMANOVA_files/figure-html/fig-8pdistwithin-1.png" width="100%"/>
       </figure>
 
       <p>
@@ -1115,7 +1115,7 @@
 
     <figure xml:id="fig-8behmcrump">
       <caption>Results from Behmer &amp; Crump (2017)</caption>
-      <image source="imgs/08-RMANOVA_files/figure-html/fig-8behmcrump-1.png" width="100%"/>
+      <image source="images/08-RMANOVA_files/figure-html/fig-8behmcrump-1.png" width="100%"/>
     </figure>
 
     <p>

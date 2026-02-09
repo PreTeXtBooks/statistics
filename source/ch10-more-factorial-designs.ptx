@@ -49,14 +49,14 @@
       
       <figure xml:id="fig-10bar22">
         <caption>8 Example patterns for means for each of the possible kinds of general outcomes in a 2x2 design.</caption>
-        <image source="imgs/10-MixedANOVA_files/figure-html/fig-10bar22-1.png" width="100%"/>
+        <image source="images/10-MixedANOVA_files/figure-html/fig-10bar22-1.png" width="100%"/>
       </figure>
       
       <p><xref ref="fig-10lines22"/> shows the same eight patterns in line graph form:</p>
       
       <figure xml:id="fig-10lines22">
         <caption>Line graphs showing 8 possible general outcomes for a 2x2 design.</caption>
-        <image source="imgs/10-MixedANOVA_files/figure-html/fig-10lines22-1.png" width="100%"/>
+        <image source="images/10-MixedANOVA_files/figure-html/fig-10lines22-1.png" width="100%"/>
       </figure>
       
       <p>The line graphs accentuates the presence of interaction effects. Whenever the lines cross, or would cross if they kept going, you have a possibility of an interaction. Whenever the lines are parallel, there can't be an interaction. When both of the points on the A side are higher or lower than both of the points on the B side, then you have a main effect for IV1 (A vs B). Whenever the green line is above or below the red line, then you have a main effect for IV2 (1 vs. 2). We know this is complicated. You should see what all the possibilities look like when we start adding more levels or more IVs. It gets nuts. Because of this nuttiness, it is often good practice to make your research designs simple (as few IVs and levels as possible to test your question). That way it will be easier to interpret your data. Whenever you see that someone ran a 4x3x7x2 design, your head should spin. It's just too complicated.</p>
@@ -85,7 +85,7 @@
       
       <figure xml:id="fig-10mainint">
         <caption>Example means showing a generally consistent main effect along with an interaction</caption>
-        <image source="imgs/10-MixedANOVA_files/figure-html/fig-10mainint-1.png" width="100%"/>
+        <image source="images/10-MixedANOVA_files/figure-html/fig-10mainint-1.png" width="100%"/>
       </figure>
       
       <p><xref ref="fig-10mainint"/> shows a main effect and interaction. There is a main effect of IV2: the level 1 means (red points and line) are both lower than the level 2 means (aqua points and line). There is also an interaction. The size of the difference between the red and aqua points in the A condition (left) is bigger than the size of the difference in the B condition.</p>
@@ -102,7 +102,7 @@
       
       <figure xml:id="fig-10mainintInc">
         <caption>Example data showing how an interaction exists, and a main effect does not, even though the means for the main effect may show a difference</caption>
-        <image source="imgs/10-MixedANOVA_files/figure-html/fig-10mainintInc-1.png" width="100%"/>
+        <image source="images/10-MixedANOVA_files/figure-html/fig-10mainintInc-1.png" width="100%"/>
       </figure>
       
       <p><xref ref="fig-10mainintInc"/> shows another 2x2 design. You should see an interaction here straight away. The difference between the aqua and red points in condition A (left two dots) is huge, and there is 0 difference between them in condition B. Is there an interaction? Yes!</p>
@@ -151,7 +151,7 @@
       
       <figure xml:id="fig-1023design">
         <caption>Example means for a 2x3 factorial design</caption>
-        <image source="imgs/10-MixedANOVA_files/figure-html/fig-1023design-1.png" width="100%"/>
+        <image source="images/10-MixedANOVA_files/figure-html/fig-1023design-1.png" width="100%"/>
       </figure>
       
       <p>The figure shows some pretend means in all conditions. Let's talk about the main effects and interaction.</p>
@@ -166,14 +166,14 @@
       
       <figure xml:id="fig-1023one">
         <caption>Example means for a 2x3 design when there is only one main effect</caption>
-        <image source="imgs/10-MixedANOVA_files/figure-html/fig-1023one-1.png" width="100%"/>
+        <image source="images/10-MixedANOVA_files/figure-html/fig-1023one-1.png" width="100%"/>
       </figure>
       
       <p>What would you say about the interaction if you saw the pattern in <xref ref="fig-1023int"/>?</p>
       
       <figure xml:id="fig-1023int">
         <caption>Example means for a 2x3 design showing another pattern that produces an interaction</caption>
-        <image source="imgs/10-MixedANOVA_files/figure-html/fig-1023int-1.png" width="100%"/>
+        <image source="images/10-MixedANOVA_files/figure-html/fig-1023int-1.png" width="100%"/>
       </figure>
       
       <p>The correct answer is that there is evidence in the means for an interaction. Remember, we are measuring the forgetting effect (effect of delay) three times. The forgetting effect is the same for repetition condition 1 and 2, but it is much smaller for repetition condition 3. The size of the forgetting effect depends on the levels of the repetition IV, so here again there is an interaction.</p>
@@ -188,7 +188,7 @@
       
       <figure xml:id="fig-10222">
         <caption>Example means from a 2x2x2 design with no three-way interaction.</caption>
-        <image source="imgs/10-MixedANOVA_files/figure-html/fig-10222-1.png" width="100%"/>
+        <image source="images/10-MixedANOVA_files/figure-html/fig-10222-1.png" width="100%"/>
       </figure>
       
       <p><xref ref="fig-10222"/> has two panels one for auditory and one for visual. You can think of the 2x2x2, as two 2x2s, one for auditory and one for visual. What's the take home from this example data? We can see that the graphs for auditory and visual are the same. They both show a 2x2 interaction between delay and repetition. People forgot more things across the week when they studied the material once, compared to when they studied the material twice. There is a main effect of delay, there is a main effect of repetition, there is no main effect of modality, and there is no three-way interaction.</p>
@@ -197,7 +197,7 @@
       
       <figure xml:id="fig-10222int">
         <caption>Example means from a 2x2x2 design with a three-way interaction.</caption>
-        <image source="imgs/10-MixedANOVA_files/figure-html/fig-10222int-1.png" width="100%"/>
+        <image source="images/10-MixedANOVA_files/figure-html/fig-10222int-1.png" width="100%"/>
       </figure>
       
       <p>We are looking at a 3-way interaction between modality, repetition and delay. What is going on here? These results would be very strange, here is an interpretation.</p>

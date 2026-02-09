@@ -61,7 +61,7 @@
 
     <figure xml:id="fig-4Unif">
       <caption>A uniform distribution illustrating the probabilites of sampling the numbers 1 to 10. In a uniform distribution, all numbers have an equal probability of being sampled, so the line is flat indicating all numbers have the same probability</caption>
-      <image source="imgs/generated/fig-4Unif.png"/>
+      <image source="images/generated/fig-4Unif.png"/>
     </figure>
 
     <p>
@@ -70,7 +70,7 @@
 
     <figure xml:id="fig-4sample20unif">
       <caption>Animation showing histograms for different samples of size 20 from the uniform distribution. The red line shows the mean of each sample.</caption>
-      <image source="imgs/gifs/sampleHistUnif-1.gif"/>
+      <image source="images/gifs/sampleHistUnif-1.gif"/>
     </figure>
 
     <p>
@@ -87,7 +87,7 @@
 
     <figure xml:id="fig-4unifmany">
       <caption>A histogram showing the sample means for 10,000 samples, each size 20, from the uniform distribution of numbers from 1 to 10. The expected mean is 5.5, and the histogram is centered on 5.5. The mean of each sample is not always 5.5 because of sampling error or chance</caption>
-      <image source="imgs/generated/fig-4unifmany.png"/>
+      <image source="images/generated/fig-4unifmany.png"/>
     </figure>
 
     <p>
@@ -124,7 +124,7 @@
 
     <figure xml:id="fig-4samplestats">
       <caption>Each panel shows a histogram of a different sampling statistic</caption>
-      <image source="imgs/generated/fig-4samplestats.png" width="100%"/>
+      <image source="images/generated/fig-4samplestats.png" width="100%"/>
     </figure>
 
     <p>

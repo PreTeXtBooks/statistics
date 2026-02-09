@@ -32,7 +32,7 @@
 
     <figure xml:id="fig-4binomial1">
       <caption>The binomial distribution with size parameter of N =20 and an underlying success probability of 1/6. Each vertical bar depicts the probability of one specific outcome (i.e., one possible value of X). Because this is a probability distribution, each of the probabilities must be a number between 0 and 1, and the heights of the bars must sum to 1 as well.</caption>
-      <image source="imgs/navarro_img/probability/binomSkulls20-eps-converted-to.png"/>
+      <image source="images/navarro_img/probability/binomSkulls20-eps-converted-to.png"/>
     </figure>
   </subsection>
 
@@ -68,7 +68,7 @@ dbinom( x = 4, size = 20, prob = 1/6 )
 
     <figure xml:id="fig-4binomial2">
       <caption>Two binomial distributions, involving a scenario in which I'm flipping a fair coin, so the underlying success probability is 1/2. In panel (a), we assume I'm flipping the coin N = 20 times. In panel (b) we assume that the coin is flipped N = 100 times.</caption>
-      <image source="imgs/navarro_img/probability/Binomial2.png"/>
+      <image source="images/navarro_img/probability/Binomial2.png"/>
     </figure>
 
     <p>

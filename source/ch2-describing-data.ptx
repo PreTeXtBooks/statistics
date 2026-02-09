@@ -80,7 +80,7 @@ plot(happiness)
 
       <figure xml:id="fig-happyPlot">
         <caption>Pretend happiness ratings from 500 people</caption>
-        <image source="imgs/02-Describing_Data_files/figure-html/fig-happyPlot-1.png" width="75%"/>
+        <image source="images/02-Describing_Data_files/figure-html/fig-happyPlot-1.png" width="75%"/>
       </figure>
 
       <p>
@@ -120,7 +120,7 @@ hist(happiness)
 
       <figure xml:id="fig-happyHist">
         <caption>A histogram of the happiness ratings</caption>
-        <image source="imgs/02-Describing_Data_files/figure-html/fig-happyHist-1.png" width="75%"/>
+        <image source="images/02-Describing_Data_files/figure-html/fig-happyHist-1.png" width="75%"/>
       </figure>
 
       <p>
@@ -169,7 +169,7 @@ ggarrange(g1, g2, g3, g4, ncol=2, nrow=2)
 
       <figure xml:id="fig-manyhistbin">
         <caption>Four histograms of the same data using different bin widths</caption>
-        <image source="imgs/02-Describing_Data_files/figure-html/fig-manyhistbin-1.png" width="75%"/>
+        <image source="images/02-Describing_Data_files/figure-html/fig-manyhistbin-1.png" width="75%"/>
       </figure>
 
       <p>
@@ -483,7 +483,7 @@ qplot(exp_num, col=I("grey"), fill=I("white")) +
 
       <figure xml:id="fig-meanmodemed">
         <caption>A histogram with the mean (red), the median (green), and the mode (blue)</caption>
-        <image source="imgs/02-Describing_Data_files/figure-html/fig-meanmodemed-1.png" width="75%"/>
+        <image source="images/02-Describing_Data_files/figure-html/fig-meanmodemed-1.png" width="75%"/>
       </figure>
     </subsection>
   </section>
@@ -953,7 +953,7 @@ ggplot(ac_long, aes(x=x, y=y, color=quartet)) +
 
       <figure xml:id="fig-anscombe">
         <caption>Anscombe's Quartet</caption>
-        <image source="imgs/02-Describing_Data_files/figure-html/fig-anscombe-1.png" width="75%"/>
+        <image source="images/02-Describing_Data_files/figure-html/fig-anscombe-1.png" width="75%"/>
       </figure>
 
       <p>

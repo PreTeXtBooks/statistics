@@ -68,7 +68,7 @@
 
       <figure xml:id="fig-5unifagain">
         <caption>Uniform distribution showing that the numbers from 1 to 10 have an equal probability of being sampled</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5unifagain-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5unifagain-1.png"/>
       </figure>
 
       <p>
@@ -100,7 +100,7 @@
 
       <figure xml:id="fig-5histunif">
         <caption>Histogram of 100 numbers randomly sampled from the uniform distribution containing the integers from 1 to 10</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5histunif-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5histunif-1.png"/>
       </figure>
 
       <p>
@@ -117,7 +117,7 @@
 
       <figure xml:id="fig-5manysamples">
         <caption>Histograms for 10 different samples from the uniform distribution. Each sample contains 20 numbers. The histograms all look quite different. The differences between the samples are due to sampling error or random chance.</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5manysamples-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5manysamples-1.png"/>
       </figure>
 
       <p>
@@ -130,7 +130,7 @@
 
       <figure xml:id="fig-5expectedUnif">
         <caption>Animation of histograms for different samples of 20 from Uniform distribution (numbers 1 to 10). The black lines shows the expected number of times each number from 1 to 10 should occur. The fact that each number does not occur 2 times each illustrates the error associated with sampling</caption>
-        <image source="imgs/gifs/sampleUnifExpected-1.gif"/>
+        <image source="images/gifs/sampleUnifExpected-1.gif"/>
       </figure>
 
       <p>
@@ -147,7 +147,7 @@
 
       <figure xml:id="fig-5whichone">
         <caption>Which of these two samples came from a uniform distribution?</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5whichone-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5whichone-1.png"/>
       </figure>
 
       <p>
@@ -164,7 +164,7 @@
 
       <figure xml:id="fig-5unifsamp100">
         <caption>Histograms for different samples from a uniform distribution. N = 100 for each sample.</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5unifsamp100-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5unifsamp100-1.png"/>
       </figure>
 
       <p>
@@ -177,7 +177,7 @@
 
       <figure xml:id="fig-5unifsamp1000">
         <caption>Histograms for different samples from a uniform distribution. N = 1000 for each sample.</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5unifsamp1000-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5unifsamp1000-1.png"/>
       </figure>
 
       <p>
@@ -190,7 +190,7 @@
 
       <figure xml:id="fig-5sampunifALOT">
         <caption>Histograms for different samples from a uniform distribution. N = 100,000 for each sample.</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5sampunifALOT-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5sampunifALOT-1.png"/>
       </figure>
 
       <p>
@@ -210,7 +210,7 @@
 
       <figure xml:id="fig-5whichoneB">
         <caption>Which of these samples came from a uniform distribution?</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5whichoneB-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5whichoneB-1.png"/>
       </figure>
 
       <p>
@@ -223,7 +223,7 @@
 
       <figure xml:id="fig-5whichoneC">
         <caption>Which of these samples came from a uniform distribution?</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5whichoneC-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5whichoneC-1.png"/>
       </figure>
 
       <p>
@@ -305,7 +305,7 @@
 
       <figure xml:id="fig-5gumballA">
         <caption>Counts of green gumballs picked randomly by each hand.</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5gumballA-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5gumballA-1.png"/>
       </figure>
 
       <p>
@@ -326,7 +326,7 @@
 
       <figure xml:id="fig-5gumballsims">
         <caption>10 simulated replications of picking gumballs. Each replication gives a slightly different answer. Any difference between the bars is due to chance, or sampling error. This shows that chance alone can produce differences, just by the act of sampling.</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5gumballsims-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5gumballsims-1.png"/>
       </figure>
 
       <p>
@@ -348,7 +348,7 @@
 
     <figure xml:id="fig-5gumballdiffs">
       <caption>A look at the differences between number of each kind of gumball for the different replications. The difference should be zero, but sampling error produces non-zero differences.</caption>
-      <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5gumballdiffs-1.png"/>
+      <image source="images/05-Foundation_Inference_files/figure-html/fig-5gumballdiffs-1.png"/>
     </figure>
 
     <p>
@@ -361,7 +361,7 @@
 
     <figure xml:id="fig-5manydiffs">
       <caption>Replicating the experiment 100 times, and looking at the differences each time. There are many kinds of differences that chance alone can produce.</caption>
-      <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5manydiffs-1.png"/>
+      <image source="images/05-Foundation_Inference_files/figure-html/fig-5manydiffs-1.png"/>
     </figure>
 
     <p>
@@ -374,7 +374,7 @@
 
     <figure xml:id="fig-5histdiffgumball">
       <caption>A histogram of the differences obtained by chance over 10,000 replications. The most frequency difference is 0, which is what we expect by chance. But the differences can be as large as -10 or +10. Larger differences occur less often by chance. Chance can't do everything.</caption>
-      <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5histdiffgumball-1.png"/>
+      <image source="images/05-Foundation_Inference_files/figure-html/fig-5histdiffgumball-1.png"/>
     </figure>
 
     <p>
@@ -481,7 +481,7 @@
 
       <figure xml:id="fig-5crumptestdiff">
         <caption>Histogram of mean differences arising by chance.</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5crumptestdiff-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5crumptestdiff-1.png"/>
       </figure>
 
       <remark>
@@ -573,7 +573,7 @@
 
       <figure xml:id="fig-5crumpdecision">
         <caption>Applying decision boundaries to the histogrm of mean differences. The boundaries identify what differences chance did or did not produce in the simulation.</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5crumpdecision-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5crumpdecision-1.png"/>
       </figure>
 
       <p>
@@ -601,7 +601,7 @@
 
         <figure xml:id="fig-5crumpuncertainty">
           <caption>The question marks refer to an area where you have some uncertainty. Differences inside the question mark region do not happen very often by chance. When you find differences of these sizes, should you reject the idea that chance caused your difference? You will always have some uncertainty associated with this decision because it is clear that chance could have caused the difference. But, chance usually does not produce differences of these sizes.</caption>
-          <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5crumpuncertainty-1.png"/>
+          <image source="images/05-Foundation_Inference_files/figure-html/fig-5crumpuncertainty-1.png"/>
         </figure>
 
         <p>
@@ -626,7 +626,7 @@
 
         <figure xml:id="fig-5crumpshade">
           <caption>The shading of the blue bars indicates levels of confidence in whether a difference could have been produced by chance. Darker bars represent increased confidence that the difference was not produced by chance. Bars get darker as the mean difference increases in absolute value.</caption>
-          <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5crumpshade-1.png"/>
+          <image source="images/05-Foundation_Inference_files/figure-html/fig-5crumpshade-1.png"/>
         </figure>
 
         <p>
@@ -676,7 +676,7 @@
 
       <figure xml:id="fig-5sampleDistNormal">
         <caption>The range or width of the differences produced by chance shrinks as sample-size increases.</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5sampleDistNormal-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5sampleDistNormal-1.png"/>
       </figure>
 
       <p>
@@ -735,7 +735,7 @@
 
       <figure xml:id="fig-5crumpminmax">
         <caption>A graph of the maximum and minimum mean differences produced by chance as a function of sample-size. The range narrows as sample-size increases showing that chance alone produces a smaller range of mean differences as sample-size increases.</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5crumpminmax-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5crumpminmax-1.png"/>
       </figure>
 
       <p>
@@ -748,7 +748,7 @@
 
       <figure xml:id="fig-5crumpredline">
         <caption>The red line represents the size of a mean difference that a researcher may be interested in detecting. All of the dots outside (above or below) the red line represent designs with small sample-sizes. When a difference of 10 occurs for these designs, we can rule out chance with confidence. The dots between the red lines represent designs with larger sample-sizes. These designs never produce differences as large as 10, so when those differences occur, we can be confident chance did not produce them.</caption>
-        <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5crumpredline-1.png"/>
+        <image source="images/05-Foundation_Inference_files/figure-html/fig-5crumpredline-1.png"/>
       </figure>
 
       <p>
@@ -876,7 +876,7 @@
 
         <figure xml:id="fig-5randtest">
           <caption>Animation of a randomization test. The purple dots represent the location of the original sample means in each condition. The yellow dots represent the means of each randomized sample. The blue and red dots show how the original scores are shuffled across each randomization.</caption>
-          <image source="imgs/gifs/randomizationTest-1.gif"/>
+          <image source="images/gifs/randomizationTest-1.gif"/>
         </figure>
 
         <p>
@@ -897,7 +897,7 @@
 
         <figure xml:id="fig-5randhist">
           <caption>A histogram of simulated mean differences for a randomization test</caption>
-          <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5randhist-1.png"/>
+          <image source="images/05-Foundation_Inference_files/figure-html/fig-5randhist-1.png"/>
         </figure>
 
         <p>
@@ -918,7 +918,7 @@
 
         <figure xml:id="fig-5randquestion">
           <caption>Would you expect a mean difference represented by the blue line to occur more or less often by chance compared to the mean difference represented by the red line?</caption>
-          <image source="imgs/05-Foundation_Inference_files/figure-html/fig-5randquestion-1.png"/>
+          <image source="images/05-Foundation_Inference_files/figure-html/fig-5randquestion-1.png"/>
         </figure>
 
         <p>

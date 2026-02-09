@@ -13,7 +13,7 @@
 
   <figure xml:id="fig-4normalSDspercents">
     <caption>A normal distribution. Each line represents a standard deviation from the mean. The labels show the proportions of scores that fall between each bar.</caption>
-    <image source="imgs/generated/fig-4normalSDspercents.png"/>
+    <image source="images/generated/fig-4normalSDspercents.png"/>
   </figure>
 
   <p>
@@ -26,7 +26,7 @@
 
   <figure xml:id="fig-4normalSDspercentsB">
     <caption>A normal distribution. Each line represents a standard deviation from the mean. The labels show the proportions of scores that fall between each bar.</caption>
-    <image source="imgs/generated/fig-4normalSDspercentsB.png"/>
+    <image source="images/generated/fig-4normalSDspercentsB.png"/>
   </figure>
 
   <p>
