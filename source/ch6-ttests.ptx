@@ -1402,9 +1402,7 @@
         Watch this video for additional explanation of one-tailed and two-tailed tests:
       </p>
 
-      <p>
-        <url href="https://www.youtube.com/embed/PuoGsguuY30" visual="https://www.youtube.com/embed/PuoGsguuY30">One or Two Tailed Tests Video</url>
-      </p>
+      <video youtube="PuoGsguuY30" width="75%"/>
     </subsection>
   </section>
 
