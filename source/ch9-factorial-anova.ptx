@@ -593,6 +593,77 @@ knitr::kable(xtable(aov_summary))
           </input>
         </program>
       </remark>
+
+      <table xml:id="table-2x2-rmanova-results">
+        <title>2x2 Repeated-Measures ANOVA Results</title>
+        <tabular>
+          <row header="yes">
+            <cell></cell>
+            <cell>Df</cell>
+            <cell>Sum Sq</cell>
+            <cell>Mean Sq</cell>
+            <cell>F value</cell>
+            <cell>Pr(&gt;F)</cell>
+          </row>
+          <row>
+            <cell>Residuals</cell>
+            <cell>4</cell>
+            <cell>3.70</cell>
+            <cell>0.925</cell>
+            <cell>NA</cell>
+            <cell>NA</cell>
+          </row>
+          <row>
+            <cell>Distraction</cell>
+            <cell>1</cell>
+            <cell>92.45</cell>
+            <cell>92.450</cell>
+            <cell>58.698413</cell>
+            <cell>0.0015600</cell>
+          </row>
+          <row>
+            <cell>Residuals</cell>
+            <cell>4</cell>
+            <cell>6.30</cell>
+            <cell>1.575</cell>
+            <cell>NA</cell>
+            <cell>NA</cell>
+          </row>
+          <row>
+            <cell>Reward</cell>
+            <cell>1</cell>
+            <cell>110.45</cell>
+            <cell>110.450</cell>
+            <cell>70.126984</cell>
+            <cell>0.0011122</cell>
+          </row>
+          <row>
+            <cell>Residuals1</cell>
+            <cell>4</cell>
+            <cell>6.30</cell>
+            <cell>1.575</cell>
+            <cell>NA</cell>
+            <cell>NA</cell>
+          </row>
+          <row>
+            <cell>Distraction:Reward</cell>
+            <cell>1</cell>
+            <cell>14.45</cell>
+            <cell>14.450</cell>
+            <cell>6.215054</cell>
+            <cell>0.0672681</cell>
+          </row>
+          <row>
+            <cell>Residuals</cell>
+            <cell>4</cell>
+            <cell>9.30</cell>
+            <cell>2.325</cell>
+            <cell>NA</cell>
+            <cell>NA</cell>
+          </row>
+        </tabular>
+      </table>
+
       <p>Let's compare these results with the paired-samples <m>t</m>-tests.</p>
       <p><alert>Main effect of Distraction</alert>: Using the paired samples <m>t</m>-test, we found <m>t</m>(4) =7.6615, <m>p</m>=0.00156. Using the ANOVA we found, <m>F</m>(1,4) = 58.69, <m>p</m>=0.00156. See, the <m>p</m>-values are the same, and <m>t^2 = 7.6615^2 = 58.69 = F</m>.</p>
       <p><alert>Main effect of Reward</alert>: Using the paired samples <m>t</m>-test, we found <m>t</m>(4) =8.3742, <m>p</m>=0.001112. Using the ANOVA we found, <m>F</m>(1,4) = 70.126, <m>p</m>=0.001112. See, the <m>p</m>-values are the same, and <m>t^2 = 8.3742^2 = 70.12 = F</m>.</p>
@@ -955,6 +1026,53 @@ knitr::kable(xtable(aov_summary))
           </input>
         </program>
       </remark>
+
+      <table xml:id="table-check-work-anova">
+        <title>2x2 Between-Subjects ANOVA Results</title>
+        <tabular>
+          <row header="yes">
+            <cell></cell>
+            <cell>Df</cell>
+            <cell>Sum Sq</cell>
+            <cell>Mean Sq</cell>
+            <cell>F value</cell>
+            <cell>Pr(&gt;F)</cell>
+          </row>
+          <row>
+            <cell>Distraction</cell>
+            <cell>1</cell>
+            <cell>92.45</cell>
+            <cell>92.45</cell>
+            <cell>57.78125</cell>
+            <cell>0.0000011</cell>
+          </row>
+          <row>
+            <cell>Reward</cell>
+            <cell>1</cell>
+            <cell>110.45</cell>
+            <cell>110.45</cell>
+            <cell>69.03125</cell>
+            <cell>0.0000003</cell>
+          </row>
+          <row>
+            <cell>Distraction:Reward</cell>
+            <cell>1</cell>
+            <cell>14.45</cell>
+            <cell>14.45</cell>
+            <cell>9.03125</cell>
+            <cell>0.0083879</cell>
+          </row>
+          <row>
+            <cell>Residuals</cell>
+            <cell>16</cell>
+            <cell>25.60</cell>
+            <cell>1.60</cell>
+            <cell>NA</cell>
+            <cell>NA</cell>
+          </row>
+        </tabular>
+      </table>
+
       <p>A quick look through the column <c>Sum Sq</c> shows that we did our work by hand correctly. Congratulations to us! Note, this is not the same results as we had before with the repeated measures ANOVA. We conducted a between-subjects design, so we did not get to further partition the SS error into a part due to subject variation and a left-over part. We also gained degrees of freedom in the error term. It turns out with this specific set of data, we find p-values of less than 0.05 for all effects (main effects and the interaction, which was not less than 0.05 using the same data, but treating it as a repeated-measures design)</p>
     </subsection>
   </section>
@@ -1056,6 +1174,77 @@ knitr::kable(xtable(aov_summary))
           </input>
         </program>
       </remark>
+
+      <table xml:id="table-stroop-anova">
+        <title>Conduct the ANOVA</title>
+        <tabular>
+          <row header="yes">
+            <cell></cell>
+            <cell>Df</cell>
+            <cell>Sum Sq</cell>
+            <cell>Mean Sq</cell>
+            <cell>F value</cell>
+            <cell>Pr(&gt;F)</cell>
+          </row>
+          <row>
+            <cell>Residuals</cell>
+            <cell>49</cell>
+            <cell>2250738.636</cell>
+            <cell>45933.4416</cell>
+            <cell>NA</cell>
+            <cell>NA</cell>
+          </row>
+          <row>
+            <cell>Congruency</cell>
+            <cell>1</cell>
+            <cell>576821.635</cell>
+            <cell>576821.6349</cell>
+            <cell>342.452244</cell>
+            <cell>0.0000000</cell>
+          </row>
+          <row>
+            <cell>Residuals</cell>
+            <cell>49</cell>
+            <cell>82534.895</cell>
+            <cell>1684.3856</cell>
+            <cell>NA</cell>
+            <cell>NA</cell>
+          </row>
+          <row>
+            <cell>Posture</cell>
+            <cell>1</cell>
+            <cell>32303.453</cell>
+            <cell>32303.4534</cell>
+            <cell>7.329876</cell>
+            <cell>0.0093104</cell>
+          </row>
+          <row>
+            <cell>Residuals1</cell>
+            <cell>49</cell>
+            <cell>215947.614</cell>
+            <cell>4407.0942</cell>
+            <cell>NA</cell>
+            <cell>NA</cell>
+          </row>
+          <row>
+            <cell>Congruency:Posture</cell>
+            <cell>1</cell>
+            <cell>6560.339</cell>
+            <cell>6560.3389</cell>
+            <cell>8.964444</cell>
+            <cell>0.0043060</cell>
+          </row>
+          <row>
+            <cell>Residuals</cell>
+            <cell>49</cell>
+            <cell>35859.069</cell>
+            <cell>731.8177</cell>
+            <cell>NA</cell>
+            <cell>NA</cell>
+          </row>
+        </tabular>
+      </table>
+
     </subsection>
     <subsection xml:id="subsec-main-effect-of-congruency">
       <title>Main effect of Congruency</title>
@@ -1074,6 +1263,31 @@ knitr::kable(congruency_means)
           </input>
         </program>
       </remark>
+
+      <table xml:id="table-congruency-means">
+        <title>Congruency Mean Reaction Times</title>
+        <tabular>
+          <row header="yes">
+            <cell>Congruency</cell>
+            <cell>mean_rt</cell>
+            <cell>sd</cell>
+            <cell>SEM</cell>
+          </row>
+          <row>
+            <cell>Congruent</cell>
+            <cell>814.9415</cell>
+            <cell>111.3193</cell>
+            <cell>11.13193</cell>
+          </row>
+          <row>
+            <cell>Incongruent</cell>
+            <cell>922.3493</cell>
+            <cell>118.7960</cell>
+            <cell>11.87960</cell>
+          </row>
+        </tabular>
+      </table>
+
       <p>The table shows the mean RTs, standard deviation (sd), and standard error of the mean for each condition. These means show that there was a Stroop effect. Mean incongruent RTs were slower (larger number in milliseconds) than mean congruent RTs. The main effect of congruency is important for establishing that the researchers were able to measure the Stroop effect. However, the main effect of congruency does not say whether the size of the Stroop effect changed between the levels of the posture variable. So, this main effect was not particularly important for answering the specific question posed by the study.</p>
     </subsection>
     <subsection xml:id="subsec-main-effect-of-posture">
@@ -1093,6 +1307,31 @@ knitr::kable(posture_means)
           </input>
         </program>
       </remark>
+
+      <table xml:id="table-posture-means">
+        <title>Posture Mean Reaction Times</title>
+        <tabular>
+          <row header="yes">
+            <cell>Posture</cell>
+            <cell>mean_rt</cell>
+            <cell>sd</cell>
+            <cell>SEM</cell>
+          </row>
+          <row>
+            <cell>Sit</cell>
+            <cell>881.3544</cell>
+            <cell>135.3842</cell>
+            <cell>13.53842</cell>
+          </row>
+          <row>
+            <cell>Stand</cell>
+            <cell>855.9365</cell>
+            <cell>116.9436</cell>
+            <cell>11.69436</cell>
+          </row>
+        </tabular>
+      </table>
+
       <p>Remember, the posture main effect collapses over the means in the congruency condition. We are not measuring a Stroop effect here. We are measuring a general effect of sitting vs standing on overall reaction time. The table shows that people were a little faster overall when they were standing, compared to when they were sitting.</p>
       <p>Again, the main effect of posture was not the primary effect of interest. The authors weren't interested if people are in general faster when they stand. They wanted to know if their selective attention would improve when they stand vs when they sit. They were most interested in whether the size of the Stroop effect (difference between incongruent and congruent performance) would be smaller when people stand, compared to when they sit. To answer this question, we need to look at the interaction effect.</p>
     </subsection>
@@ -1114,6 +1353,48 @@ knitr::kable(int_means)
           </input>
         </program>
       </remark>
+
+      <table xml:id="table-posture-congruency-interaction">
+        <title>Posture x Congruency Interaction Means</title>
+        <tabular>
+          <row header="yes">
+            <cell>Posture</cell>
+            <cell>Congruency</cell>
+            <cell>mean_rt</cell>
+            <cell>sd</cell>
+            <cell>SEM</cell>
+          </row>
+          <row>
+            <cell>Sit</cell>
+            <cell>Congruent</cell>
+            <cell>821.9232</cell>
+            <cell>117.4069</cell>
+            <cell>16.60384</cell>
+          </row>
+          <row>
+            <cell>Sit</cell>
+            <cell>Incongruent</cell>
+            <cell>940.7855</cell>
+            <cell>126.6457</cell>
+            <cell>17.91041</cell>
+          </row>
+          <row>
+            <cell>Stand</cell>
+            <cell>Congruent</cell>
+            <cell>807.9599</cell>
+            <cell>105.6079</cell>
+            <cell>14.93521</cell>
+          </row>
+          <row>
+            <cell>Stand</cell>
+            <cell>Incongruent</cell>
+            <cell>903.9131</cell>
+            <cell>108.5366</cell>
+            <cell>15.34939</cell>
+          </row>
+        </tabular>
+      </table>
+
       <p>In the sitting condition the Stroop effect was roughly 941-822 = 119 ms.</p>
       <p>In the standing condition the Stroop effect was roughly 904-808 = 96 ms.</p>
       <p>So, the Stroop effect was 119-96 = 23 ms smaller when people were standing. This is a pretty small effect in terms of the amount of time reduced, but even though it is small, a difference even this big was not very likely to be due to chance.</p>

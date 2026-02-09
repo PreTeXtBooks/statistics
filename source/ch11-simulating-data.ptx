@@ -282,6 +282,36 @@ knitr::kable(xtable(aov_results))
         </input>
       </program>
     </remark>
+
+    <table xml:id="table-simulated-anova">
+      <title>Simulated One-Factor ANOVA Results</title>
+      <tabular>
+        <row header="yes">
+          <cell></cell>
+          <cell>Df</cell>
+          <cell>Sum Sq</cell>
+          <cell>Mean Sq</cell>
+          <cell>F value</cell>
+          <cell>Pr(&gt;F)</cell>
+        </row>
+        <row>
+          <cell>groups</cell>
+          <cell>2</cell>
+          <cell>111.2747</cell>
+          <cell>55.63735</cell>
+          <cell>0.1989719</cell>
+          <cell>0.8196821</cell>
+        </row>
+        <row>
+          <cell>Residuals</cell>
+          <cell>297</cell>
+          <cell>83048.3738</cell>
+          <cell>279.62415</cell>
+          <cell>NA</cell>
+          <cell>NA</cell>
+        </row>
+      </tabular>
+    </table>
     
     <p>
       In this next example, we simulate the same design 100 times, save the <m>p</m>-values, and then determine the proportion of significant simulations.
