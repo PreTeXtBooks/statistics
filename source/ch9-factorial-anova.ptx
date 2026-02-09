@@ -390,6 +390,67 @@ kable(fake_data) %&gt;%
           </input>
         </program>
       </remark>
+
+      <table xml:id="table-2x2-data">
+        <title>2x2 Repeated Measures Data: Number of Differences Spotted</title>
+        <tabular halign="center">
+          <row header="yes">
+            <cell></cell>
+            <cell colspan="2">No Reward</cell>
+            <cell colspan="2">Reward</cell>
+          </row>
+          <row header="yes">
+            <cell>subject</cell>
+            <cell>No Distraction</cell>
+            <cell>Distraction</cell>
+            <cell>No Distraction</cell>
+            <cell>Distraction</cell>
+          </row>
+          <row header="yes">
+            <cell></cell>
+            <cell>A</cell>
+            <cell>B</cell>
+            <cell>C</cell>
+            <cell>D</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>10</cell>
+            <cell>5</cell>
+            <cell>12</cell>
+            <cell>9</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>8</cell>
+            <cell>4</cell>
+            <cell>13</cell>
+            <cell>8</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>11</cell>
+            <cell>3</cell>
+            <cell>14</cell>
+            <cell>10</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>9</cell>
+            <cell>4</cell>
+            <cell>11</cell>
+            <cell>11</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>10</cell>
+            <cell>2</cell>
+            <cell>13</cell>
+            <cell>12</cell>
+          </row>
+        </tabular>
+      </table>
+
     </subsection>
     <subsection xml:id="subsec-main-effect-of-distraction">
       <title>Main effect of Distraction</title>
