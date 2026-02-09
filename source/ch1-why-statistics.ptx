@@ -749,4 +749,144 @@
     </subsection>
   </section>
 
+  <section xml:id="subsec-reliability-measurement">
+    <title>Assessing the reliability of a measurement</title>
+    
+    <p>
+      At this point we've thought a little bit about how to operationalize a theoretical construct and thereby create a psychological measure; and we've seen that by applying psychological measures we end up with variables, which can come in many different types. At this point, we should start discussing the obvious question: is the measurement any good? We'll do this in terms of two related ideas: <em>reliability</em> and <em>validity</em>. Put simply, the <term>reliability</term> of a measure tells you how <em>precisely</em> you are measuring something, whereas the validity of a measure tells you how <em>accurate</em> the measure is.
+    </p>
+
+    <p>
+      Reliability is actually a very simple concept: it refers to the repeatability or consistency of your measurement. The measurement of my weight by means of a "bathroom scale" is very reliable: if I step on and off the scales over and over again, it'll keep giving me the same answer. Measuring my intelligence by means of "asking my mom" is very unreliable: some days she tells me I'm a bit thick, and other days she tells me I'm a complete moron. Notice that this concept of reliability is different to the question of whether the measurements are correct (the correctness of a measurement relates to it's validity). If I'm holding a sack of potatoes when I step on and off of the bathroom scales, the measurement will still be reliable: it will always give me the same answer. However, this highly reliable answer doesn't match up to my true weight at all, therefore it's wrong. In technical terms, this is a <em>reliable but invalid</em> measurement. Similarly, while my mom's estimate of my intelligence is a bit unreliable, she might be right. Maybe I'm just not too bright, and so while her estimate of my intelligence fluctuates pretty wildly from day to day, it's basically right. So that would be an <em>unreliable but valid</em> measure. Of course, to some extent, notice that if my mum's estimates are too unreliable, it's going to be very hard to figure out which one of her many claims about my intelligence is actually the right one. To some extent, then, a very unreliable measure tends to end up being invalid for practical purposes; so much so that many people would say that reliability is necessary (but not sufficient) to ensure validity.
+    </p>
+
+    <p>
+      Okay, now that we're clear on the distinction between reliability and validity, let's have a think about the different ways in which we might measure reliability:
+    </p>
+
+    <ul>
+      <li>
+        <p><term>Test-retest reliability</term>. This relates to consistency over time: if we repeat the measurement at a later date, do we get the same answer?</p>
+      </li>
+
+      <li>
+        <p><term>Inter-rater reliability</term>. This relates to consistency across people: if someone else repeats the measurement (e.g., someone else rates my intelligence) will they produce the same answer?</p>
+      </li>
+
+      <li>
+        <p><term>Parallel forms reliability</term>. This relates to consistency across theoretically-equivalent measurements: if I use a different set of bathroom scales to measure my weight, does it give the same answer?</p>
+      </li>
+
+      <li>
+        <p><term>Internal consistency reliability</term>. If a measurement is constructed from lots of different parts that perform similar functions (e.g., a personality questionnaire result is added up across several questions) do the individual parts tend to give similar answers.</p>
+      </li>
+    </ul>
+
+    <p>
+      Not all measurements need to possess all forms of reliability. For instance, educational assessment can be thought of as a form of measurement. One of the subjects that I teach, <em>Computational Cognitive Science</em>, has an assessment structure that has a research component and an exam component (plus other things). The exam component is <em>intended</em> to measure something different from the research component, so the assessment as a whole has low internal consistency. However, within the exam there are several questions that are intended to (approximately) measure the same things, and those tend to produce similar outcomes; so the exam on its own has a fairly high internal consistency. Which is as it should be. You should only demand reliability in those situations where you want to be measure the same thing!
+    </p>
+  </section>
+
+  <section xml:id="subsec-role-variables">
+    <title>The role of variables: predictors and outcomes</title>
+    
+    <p>
+      Okay, I've got one last piece of terminology that I need to explain to you before moving away from variables. Normally, when we do some research we end up with lots of different variables. Then, when we analyse our data we usually try to explain some of the variables in terms of some of the other variables. It's important to keep the two roles "thing doing the explaining" and "thing being explained" distinct. So let's be clear about this now. Firstly, we might as well get used to the idea of using mathematical symbols to describe variables, since it's going to happen over and over again. Let's denote the "to be explained" variable <m>Y</m>, and denote the variables "doing the explaining" as <m>X_1</m>, <m>X_2</m>, etc.
+    </p>
+
+    <p>
+      Now, when we doing an analysis, we have different names for <m>X</m> and <m>Y</m>, since they play different roles in the analysis. The classical names for these roles are <term>independent variable</term> (IV) and <term>dependent variable</term> (DV). The IV is the variable that you use to do the explaining (i.e., <m>X</m>) and the DV is the variable being explained (i.e., <m>Y</m>). The logic behind these names goes like this: if there really is a relationship between <m>X</m> and <m>Y</m> then we can say that <m>Y</m> depends on <m>X</m>, and if we have designed our study "properly" then <m>X</m> isn't dependent on anything else. However, I personally find those names horrible: they're hard to remember and they're highly misleading, because (a) the IV is never actually "independent of everything else" and (b) if there's no relationship, then the DV doesn't actually depend on the IV. And in fact, because I'm not the only person who thinks that IV and DV are just awful names, there are a number of alternatives that I find more appealing.
+    </p>
+
+    <p>
+      For example, in an experiment the IV refers to the <term>manipulation</term>, and the DV refers to the <term>measurement</term>. So, we could use <term>manipulated variable</term> (independent variable) and <term>measured variable</term> (dependent variable).
+    </p>
+
+    <table xml:id="table-variable-terminology-1">
+      <title>The terminology used to distinguish between different roles that a variable can play when analyzing a data set.</title>
+      <tabular>
+        <row header="yes">
+          <cell>role of the variable</cell>
+          <cell>classical name</cell>
+          <cell>modern name</cell>
+        </row>
+        <row>
+          <cell>"to be explained"</cell>
+          <cell>dependent variable (DV)</cell>
+          <cell>Measurement</cell>
+        </row>
+        <row>
+          <cell>"to do the explaining"</cell>
+          <cell>independent variable (IV)</cell>
+          <cell>Manipulation</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      We could also use <term>predictors</term> and <term>outcomes</term>. The idea here is that what you're trying to do is use <m>X</m> (the predictors) to make guesses about <m>Y</m> (the outcomes). This is summarized in the table:
+    </p>
+
+    <table xml:id="table-variable-terminology-2">
+      <title>The terminology used to distinguish between different roles that a variable can play when analyzing a data set.</title>
+      <tabular>
+        <row header="yes">
+          <cell>role of the variable</cell>
+          <cell>classical name</cell>
+          <cell>modern name</cell>
+        </row>
+        <row>
+          <cell>"to be explained"</cell>
+          <cell>dependent variable (DV)</cell>
+          <cell>outcome</cell>
+        </row>
+        <row>
+          <cell>"to do the explaining"</cell>
+          <cell>independent variable (IV)</cell>
+          <cell>predictor</cell>
+        </row>
+      </tabular>
+    </table>
+  </section>
+
+  <section xml:id="subsec-experimental-nonexperimental">
+    <title>Experimental and non-experimental research</title>
+    
+    <p>
+      One of the big distinctions that you should be aware of is the distinction between "experimental research" and "non-experimental research". When we make this distinction, what we're really talking about is the degree of control that the researcher exercises over the people and events in the study.
+    </p>
+
+    <subsection xml:id="subsubsec-experimental-research">
+      <title>Experimental research</title>
+      
+      <p>
+        The key features of <term>experimental research</term> is that the researcher controls all aspects of the study, especially what participants experience during the study. In particular, the researcher manipulates or varies something (IVs), and then allows the outcome variable (DV) to vary naturally. The idea here is to deliberately vary the something in the world (IVs) to see if it has any causal effects on the outcomes. Moreover, in order to ensure that there's no chance that something other than the manipulated variable is causing the outcomes, everything else is kept constant or is in some other way "balanced" to ensure that they have no effect on the results. In practice, it's almost impossible to <em>think</em> of everything else that might have an influence on the outcome of an experiment, much less keep it constant. The standard solution to this is <term>randomization</term>: that is, we randomly assign people to different groups, and then give each group a different treatment (i.e., assign them different values of the predictor variables). We'll talk more about randomization later in this course, but for now, it's enough to say that what randomization does is minimize (but not eliminate) the chances that there are any systematic difference between groups.
+      </p>
+
+      <p>
+        Let's consider a very simple, completely unrealistic and grossly unethical example. Suppose you wanted to find out if smoking causes lung cancer. One way to do this would be to find people who smoke and people who don't smoke, and look to see if smokers have a higher rate of lung cancer. This is <em>not</em> a proper experiment, since the researcher doesn't have a lot of control over who is and isn't a smoker. And this really matters: for instance, it might be that people who choose to smoke cigarettes also tend to have poor diets, or maybe they tend to work in asbestos mines, or whatever. The point here is that the groups (smokers and non-smokers) actually differ on lots of things, not <em>just</em> smoking. So it might be that the higher incidence of lung cancer among smokers is caused by something else, not by smoking per se. In technical terms, these other things (e.g. diet) are called "confounds", and we'll talk about those in just a moment.
+      </p>
+
+      <p>
+        In the meantime, let's now consider what a proper experiment might look like. Recall that our concern was that smokers and non-smokers might differ in lots of ways. The solution, as long as you have no ethics, is to <em>control</em> who smokes and who doesn't. Specifically, if we randomly divide participants into two groups, and force half of them to become smokers, then it's very unlikely that the groups will differ in any respect other than the fact that half of them smoke. That way, if our smoking group gets cancer at a higher rate than the non-smoking group, then we can feel pretty confident that (a) smoking does cause cancer and (b) we're murderers.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsubsec-nonexperimental-research">
+      <title>Non-experimental research</title>
+      
+      <p>
+        <term>Non-experimental research</term> is a broad term that covers "any study in which the researcher doesn't have quite as much control as they do in an experiment". Obviously, control is something that scientists like to have, but as the previous example illustrates, there are lots of situations in which you can't or shouldn't try to obtain that control. Since it's grossly unethical (and almost certainly criminal) to force people to smoke in order to find out if they get cancer, this is a good example of a situation in which you really shouldn't try to obtain experimental control. But there are other reasons too. Even leaving aside the ethical issues, our "smoking experiment" does have a few other issues. For instance, when I suggested that we "force" half of the people to become smokers, I must have been talking about <em>starting</em> with a sample of non-smokers, and then forcing them to become smokers. While this sounds like the kind of solid, evil experimental design that a mad scientist would love, it might not be a very sound way of investigating the effect in the real world. For instance, suppose that smoking only causes lung cancer when people have poor diets, and suppose also that people who normally smoke do tend to have poor diets. However, since the "smokers" in our experiment aren't "natural" smokers (i.e., we forced non-smokers to become smokers; they didn't take on all of the other normal, real life characteristics that smokers might tend to possess) they probably have better diets. As such, in this silly example they wouldn't get lung cancer, and our experiment will fail, because it violates the structure of the "natural" world (the technical name for this is an "artifactual" result; see later).
+      </p>
+
+      <p>
+        One distinction worth making between two types of non-experimental research is the difference between <term>quasi-experimental research</term> and <term>case studies</term>. The example I discussed earlier <mdash /> in which we wanted to examine incidence of lung cancer among smokers and non-smokers, without trying to control who smokes and who doesn't <mdash /> is a quasi-experimental design. That is, it's the same as an experiment, but we don't control the predictors (IVs). We can still use statistics to analyse the results, it's just that we have to be a lot more careful.
+      </p>
+
+      <p>
+        The alternative approach, case studies, aims to provide a very detailed description of one or a few instances. In general, you can't use statistics to analyse the results of case studies, and it's usually very hard to draw any general conclusions about "people in general" from a few isolated examples. However, case studies are very useful in some situations. Firstly, there are situations where you don't have any alternative: neuropsychology has this issue a lot. Sometimes, you just can't find a lot of people with brain damage in a specific area, so the only thing you can do is describe those cases that you do have in as much detail and with as much care as you can. However, there's also some genuine advantages to case studies: because you don't have as many people to study, you have the ability to invest lots of time and effort trying to understand the specific factors at play in each case. This is a very valuable thing to do. As a consequence, case studies can complement the more statistically-oriented approaches that you see in experimental and quasi-experimental designs. We won't talk much about case studies in these lectures, but they are nevertheless very valuable tools!
+      </p>
+    </subsection>
+  </section>
+
 </chapter>
