@@ -76,6 +76,8 @@
     
     <xi:include href="ch-simulating-data.ptx" />
     
+    <xi:include href="ch12-thinking.ptx" />
+    
 <backmatter xml:id="backmatter">
       <title>Back Matter</title>
       
