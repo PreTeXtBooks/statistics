@@ -98,7 +98,7 @@
       </me>
     </subsection>
 
-    <subsection xml:id="subsec-ss-total">
+    <subsection xml:id="subsec-ch-anova-ss-total">
       <title>SS Total</title>
 
       <p>
@@ -228,7 +228,7 @@
       </p>
     </subsection>
 
-    <subsection xml:id="subsec-ss-effect">
+    <subsection xml:id="subsec-ch-anova-ss-effect">
       <title>SS Effect</title>
 
       <p>
@@ -364,7 +364,7 @@
       </p>
     </subsection>
 
-    <subsection xml:id="subsec-ss-error">
+    <subsection xml:id="subsec-ch-anova-ss-error">
       <title>SS Error</title>
 
       <p>
