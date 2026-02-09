@@ -773,8 +773,6 @@ knitr::kable(xtable(summary_out))
       <title>R Code</title>
       <program language="r">
         <input>
-library(ggplot2)
-
 save_F &lt;- length(10000)
 for (i in 1:10000) {
   smartness   &lt;- rnorm(30, 100, 10)
