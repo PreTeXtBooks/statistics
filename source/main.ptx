@@ -46,7 +46,7 @@
           <url href="https://doi.org/10.17605/OSF.IO/JZE52" visual="doi.org/10.17605/OSF.IO/JZE52"/>
         </p>
         
-        <subsection xml:id="important-notes">
+        <paragraphs xml:id="important-notes">
           <title>Important notes</title>
           
           <p>
@@ -58,50 +58,50 @@
             <url href="https://osf.io/3s68c/" visual="osf.io/3s68c"/>.
           </p>
           
-          <subsubsection xml:id="textbook-links">
-            <title>Textbook</title>
-            <p>
-              <ul>
-                <li>website: <url href="https://crumplab.github.io/statistics/" visual="crumplab.github.io/statistics"/></li>
-                <li>OSF: <url href="https://osf.io/jze52/" visual="osf.io/jze52"/></li>
-                <li>Github: <url href="https://github.com/CrumpLab/statistics" visual="github.com/CrumpLab/statistics"/></li>
-                <li>DOI: <url href="https://doi.org/10.17605/OSF.IO/JZE52" visual="10.17605/OSF.IO/JZE52">10.17605/OSF.IO/JZE52</url></li>
-              </ul>
-            </p>
-          </subsubsection>
+          <p>
+            <em>Textbook</em>
+          </p>
+          <p>
+            <ul>
+              <li>website: <url href="https://crumplab.github.io/statistics/" visual="crumplab.github.io/statistics"/></li>
+              <li>OSF: <url href="https://osf.io/jze52/" visual="osf.io/jze52"/></li>
+              <li>Github: <url href="https://github.com/CrumpLab/statistics" visual="github.com/CrumpLab/statistics"/></li>
+              <li>DOI: <url href="https://doi.org/10.17605/OSF.IO/JZE52" visual="10.17605/OSF.IO/JZE52">10.17605/OSF.IO/JZE52</url></li>
+            </ul>
+          </p>
           
-          <subsubsection xml:id="lab-manual-links">
-            <title>Lab Manual</title>
-            <p>
-              <ul>
-                <li>website: <url href="https://crumplab.github.io/statisticsLab/" visual="crumplab.github.io/statisticsLab"/></li>
-                <li>OSF: <url href="https://osf.io/m2npj/" visual="osf.io/m2npj"/></li>
-                <li>Github: <url href="https://github.com/CrumpLab/statisticsLab" visual="github.com/CrumpLab/statisticsLab"/></li>
-                <li>DOI: <url href="https://doi.org/10.17605/OSF.IO/M2NPJ" visual="10.17605/OSF.IO/M2NPJ">10.17605/OSF.IO/M2NPJ</url></li>
-              </ul>
-            </p>
-          </subsubsection>
+          <p>
+            <em>Lab Manual</em>
+          </p>
+          <p>
+            <ul>
+              <li>website: <url href="https://crumplab.github.io/statisticsLab/" visual="crumplab.github.io/statisticsLab"/></li>
+              <li>OSF: <url href="https://osf.io/m2npj/" visual="osf.io/m2npj"/></li>
+              <li>Github: <url href="https://github.com/CrumpLab/statisticsLab" visual="github.com/CrumpLab/statisticsLab"/></li>
+              <li>DOI: <url href="https://doi.org/10.17605/OSF.IO/M2NPJ" visual="10.17605/OSF.IO/M2NPJ">10.17605/OSF.IO/M2NPJ</url></li>
+            </ul>
+          </p>
           
-          <subsubsection xml:id="course-website-links">
-            <title>Course website</title>
-            <p>
-              <ul>
-                <li>website: <url href="https://crumplab.github.io/psyc3400/" visual="crumplab.github.io/psyc3400"/></li>
-                <li>OSF: <url href="https://osf.io/awxu9/" visual="osf.io/awxu9"/></li>
-                <li>Github: <url href="https://github.com/CrumpLab/psyc3400" visual="github.com/CrumpLab/psyc3400"/></li>
-                <li>DOI: <url href="https://doi.org/10.17605/OSF.IO/AWXU9" visual="10.17605/OSF.IO/AWXU9">10.17605/OSF.IO/AWXU9</url></li>
-              </ul>
-            </p>
-          </subsubsection>
+          <p>
+            <em>Course website</em>
+          </p>
+          <p>
+            <ul>
+              <li>website: <url href="https://crumplab.github.io/psyc3400/" visual="crumplab.github.io/psyc3400"/></li>
+              <li>OSF: <url href="https://osf.io/awxu9/" visual="osf.io/awxu9"/></li>
+              <li>Github: <url href="https://github.com/CrumpLab/psyc3400" visual="github.com/CrumpLab/psyc3400"/></li>
+              <li>DOI: <url href="https://doi.org/10.17605/OSF.IO/AWXU9" visual="10.17605/OSF.IO/AWXU9">10.17605/OSF.IO/AWXU9</url></li>
+            </ul>
+          </p>
           
           <p>
             All resources are released under a creative commons licence 
             <url href="https://creativecommons.org/licenses/by-sa/4.0/" visual="CC BY-SA 4.0">CC BY-SA 4.0</url>. 
             Click the link to read more about the license, or read more below in the license section.
           </p>
-        </subsection>
+        </paragraphs>
         
-        <subsection xml:id="contributors">
+        <paragraphs xml:id="contributors">
           <title>Contributors</title>
           
           <p>
@@ -122,9 +122,9 @@
             <url href="https://crumplab.github.io/psyc3400/" visual="crumplab.github.io/psyc3400">course website</url>, 
             in R Markdown. The course website also contains slide decks for the lectures.
           </p>
-        </subsection>
+        </paragraphs>
         
-        <subsection xml:id="attributions">
+        <paragraphs xml:id="attributions">
           <title>Attributions</title>
           
           <p>
@@ -149,9 +149,9 @@
             <alert>Chapter 4: Probability, Sampling, and Estimation</alert>, Adapted and expanded from 
             Chapters 9 and 10, Navarro D.
           </p>
-        </subsection>
+        </paragraphs>
         
-        <subsection xml:id="cc-by-sa-license">
+        <paragraphs xml:id="cc-by-sa-license">
           <title>CC BY-SA 4.0 license</title>
           
           <p>
@@ -184,9 +184,9 @@
               legally restrict others from doing anything the license permits.</li>
             </ul>
           </p>
-        </subsection>
+        </paragraphs>
         
-        <subsection xml:id="copying-textbook">
+        <paragraphs xml:id="copying-textbook">
           <title>Copying the textbook</title>
           
           <p>
@@ -213,9 +213,9 @@
             If you want to contribute to this version of the textbook, you could make pull requests on 
             GitHub, or discuss issues and request on the issues tab.
           </p>
-        </subsection>
+        </paragraphs>
         
-        <subsection xml:id="acknowledgments">
+        <paragraphs xml:id="acknowledgments">
           <title>Acknowledgments</title>
           
           <p>
@@ -224,9 +224,9 @@
             the grant we received to develop this work. Thanks to Jenn Richler for letting me talk about 
             statistics all summer long.
           </p>
-        </subsection>
+        </paragraphs>
         
-        <subsection xml:id="why-we-did-this">
+        <paragraphs xml:id="why-we-did-this">
           <title>Why we did this</title>
           
           <p>
@@ -248,9 +248,9 @@
             many things missing that should probably be added. We will do our best to add necessary things 
             as we update the textbook.
           </p>
-        </subsection>
+        </paragraphs>
         
-        <subsection xml:id="pretext-version">
+        <paragraphs xml:id="pretext-version">
           <title>About This PreTeXt Version</title>
           
           <p>
@@ -265,7 +265,7 @@
             If you encounter any issues with this version, please report them at 
             <url href="https://github.com/PreTeXtBooks/statistics/issues" visual="github.com/PreTeXtBooks/statistics/issues">the issues page</url>.
           </p>
-        </subsection>
+        </paragraphs>
       </preface>
     </frontmatter>
 

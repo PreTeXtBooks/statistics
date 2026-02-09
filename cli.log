@@ -12,29 +12,21 @@ Now building HTML into /home/runner/work/statistics/statistics/output/html
 INFO    : discovering source file's directory name: /home/runner/work/statistics/statistics/source
 INFO    : verifying and expanding input directory: /home/runner/work/statistics/statistics/source/../generated-assets
 INFO    : input directory expanded to absolute path: /home/runner/work/statistics/statistics/generated-assets
-INFO    : verifying and expanding input directory: /home/runner/work/statistics/statistics/source/../imgs
-INFO    : input directory expanded to absolute path: /home/runner/work/statistics/statistics/imgs
-INFO    : converting /home/runner/work/statistics/statistics/source/main.ptx to HTML in /tmp/tmpl5y2u23t
+INFO    : verifying and expanding input directory: /home/runner/work/statistics/statistics/source/../source/images
+INFO    : input directory expanded to absolute path: /home/runner/work/statistics/statistics/source/images
+INFO    : converting /home/runner/work/statistics/statistics/source/main.ptx to HTML in /tmp/tmpqyo8fxdm
 INFO    : XSL conversion of /home/runner/work/statistics/statistics/source/main.ptx by /home/runner/.ptx/xsl/pretext-html.xsl
 INFO    : comprehensive messages, warnings, and errors:
-INFO    :     * PTX:ERROR: the @xml:id value "subsec-difference-scores" should be unique, but is authored 2 times.
-INFO    :     *            Results will be unpredictable, and likely incorrect.  Information on the locations follows:
-INFO    :     *              located within: "subsec-difference-scores" (xml:id), "The Difference Scores" (title)
-INFO    :     *              located within: "subsec-difference-scores" (xml:id), "The difference scores" (title)
-INFO    :     * PTX:ERROR: the @xml:id value "sec-videos" should be unique, but is authored 2 times.
-INFO    :     *            Results will be unpredictable, and likely incorrect.  Information on the locations follows:
-INFO    :     *              located within: "sec-videos" (xml:id), "Videos" (title)
-INFO    :     *              located within: "sec-videos" (xml:id), "Videos" (title)
-INFO    :     * PTX:ERROR: the @label value "subsec-difference-scores" should be unique, but is authored 2 times.
-INFO    :     *            Results will be unpredictable, and likely incorrect.  Information on the locations follows:
-INFO    :     *              located within: "subsec-difference-scores" (xml:id), "The Difference Scores" (title)
-INFO    :     *              located within: "subsec-difference-scores" (xml:id), "The difference scores" (title)
-INFO    :     * PTX:ERROR: the @label value "sec-videos" should be unique, but is authored 2 times.
-INFO    :     *            Results will be unpredictable, and likely incorrect.  Information on the locations follows:
-INFO    :     *              located within: "sec-videos" (xml:id), "Videos" (title)
-INFO    :     *              located within: "sec-videos" (xml:id), "Videos" (title)
 INFO    :     * PTX:WARNING: A chapter containing sections needs to have other content inside an <introduction> and/or  <conclusion>.
 INFO    :     *              located within: "ch-anova" (xml:id), "ANOVA" (title)
+INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
+INFO    :     *              located within: "subsec-scales-of-measurement" (xml:id), "Scales of measurement" (title)
+INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
+INFO    :     *              located within: "subsec-experimental-nonexperimental" (xml:id), "Experimental and non-experimental research" (title)
+INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
+INFO    :     *              located within: "subsec-validity-study" (xml:id), "Assessing the validity of a study" (title)
+INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
+INFO    :     *              located within: "subsec-confounds-artifacts" (xml:id), "Confounds, artifacts and other threats to validity" (title)
 INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
 INFO    :     *              located within: "sec-look-at-data" (xml:id), "Look at the data" (title)
 INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
@@ -108,6 +100,10 @@ INFO    :     *              located within: "sec-10-interpreting-main-effects" 
 INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
 INFO    :     *              located within: "sec-10-complicated-designs" (xml:id), "More complicated designs" (title)
 INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
+INFO    :     *              located within: "sec-effect-size-and-power" (xml:id), "Effect-size and power" (title)
+INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
+INFO    :     *              located within: "sec-power" (xml:id), "Power" (title)
+INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
 INFO    :     *              located within: "sec-correlation-gifs" (xml:id), "Correlation GIFs" (title)
 INFO    :     * PTX:WARNING: A subsection containing subsubsections needs to have other content inside an <introduction> and/or  <conclusion>.
 INFO    :     *              located within: "subsec-variance" (xml:id), "The Variance" (title)
@@ -127,6 +123,25 @@ INFO    :     * PTX:WARNING: A subsection containing subsubsections needs to hav
 INFO    :     *              located within: "subsec-fs-and-means" (xml:id), "Fs and means" (title)
 INFO    :     * PTX:WARNING: A subsection containing subsubsections needs to have other content inside an <introduction> and/or  <conclusion>.
 INFO    :     *              located within: "subsec-comparing-means-after-the-anova" (xml:id), "Comparing means after the ANOVA" (title)
+INFO    :     * PTX:DEPRECATE: (2016-05-23) <br> can no longer be used to create multiline output; you may use <line> elements in select situations (14 times)
+INFO    :     *              located within: "subsubsec-ordinal-scale" (xml:id), "Ordinal scale" (title)
+INFO    :     *              located within: "subsubsec-ordinal-scale" (xml:id), "Ordinal scale" (title)
+INFO    :     *              located within: "subsubsec-ordinal-scale" (xml:id), "Ordinal scale" (title)
+INFO    :     *              located within: "subsubsec-ordinal-scale" (xml:id), "Ordinal scale" (title)
+INFO    :     *              located within: "subsubsec-ordinal-scale" (xml:id), "Ordinal scale" (title)
+INFO    :     *              located within: "subsubsec-ordinal-scale" (xml:id), "Ordinal scale" (title)
+INFO    :     *              located within: "subsubsec-scale-complexities" (xml:id), "Some complexities" (title)
+INFO    :     *              located within: "subsubsec-scale-complexities" (xml:id), "Some complexities" (title)
+INFO    :     *              located within: "subsubsec-scale-complexities" (xml:id), "Some complexities" (title)
+INFO    :     *              located within: "subsubsec-scale-complexities" (xml:id), "Some complexities" (title)
+INFO    :     *              located within: "subsubsec-scale-complexities" (xml:id), "Some complexities" (title)
+INFO    :     *              located within: "subsubsec-scale-complexities" (xml:id), "Some complexities" (title)
+INFO    :     *              located within: "subsubsec-scale-complexities" (xml:id), "Some complexities" (title)
+INFO    :     *              located within: "subsubsec-scale-complexities" (xml:id), "Some complexities" (title)
+INFO    :     * --------------
+INFO    :     * PTX:DEPRECATE: (2019-02-06) the "ampersand" element is no longer necessary, simply replace with a bare "&" character (properly escaped, i.e. "&amp;") (1 time)
+INFO    :     *              located within: "preface" (xml:id), "Preface" (title)
+INFO    :     * --------------
 INFO    : successful application of /home/runner/.ptx/xsl/pretext-html.xsl
 INFO    : 
 Success! Run `pretext view html` to see the results.
