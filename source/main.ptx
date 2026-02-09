@@ -81,6 +81,8 @@
 
     <xi:include href="ch-anova.ptx" />
     
+    <xi:include href="ch-simulating-data.ptx" />
+    
 <backmatter xml:id="backmatter">
       <title>Back Matter</title>
       
