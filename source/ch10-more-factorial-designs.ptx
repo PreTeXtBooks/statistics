@@ -6,6 +6,15 @@
   <introduction>
     <p>Author: Matthew J. C. Crump</p>
     
+    <remark>
+      <title>R Code</title>
+      <program language="r">
+        <input>
+library(ggplot2)
+        </input>
+      </program>
+    </remark>
+    
     <p>We are going to do a couple things in this chapter. The most important thing is more exposure to factorial designs. The second thing we do is show that you can mix it up with ANOVA. You already know that you can have more than one IV. And, you know that research designs can be between-subjects or within-subjects (repeated-measures). When you have more than one IV, they can all be between-subjects variables, they can all be within-subject repeated measures, or they can be a mix: say one between-subject variable and one within-subject variable. You can use ANOVA to analyze all of these kinds of designs. You always get one main effect for each IV, and a number of interactions, or just one, depending on the number of IVs.</p>
   </introduction>
 
@@ -47,12 +56,109 @@
         </ul>
       </p>
       
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+p1 &lt;- data.frame(
+  IV1 = c("A", "A", "B", "B"),
+  IV2 = c("1", "2", "1", "2"),
+  means = c(5, 5, 5, 5)
+)
+
+p2 &lt;- data.frame(
+  IV1 = c("A", "A", "B", "B"),
+  IV2 = c("1", "2", "1", "2"),
+  means = c(10, 10, 5, 5)
+)
+
+p3 &lt;- data.frame(
+  IV1 = c("A", "A", "B", "B"),
+  IV2 = c("1", "2", "1", "2"),
+  means = c(10, 13, 5, 2)
+)
+
+p4 &lt;- data.frame(
+  IV1 = c("A", "A", "B", "B"),
+  IV2 = c("1", "2", "1", "2"),
+  means = c(5, 10, 10, 15)
+)
+
+p5 &lt;- data.frame(
+  IV1 = c("A", "A", "B", "B"),
+  IV2 = c("1", "2", "1", "2"),
+  means = c(10, 18, 5, 7)
+)
+
+p6 &lt;- data.frame(
+  IV1 = c("A", "A", "B", "B"),
+  IV2 = c("1", "2", "1", "2"),
+  means = c(5, 10, 5, 10)
+)
+
+p7 &lt;- data.frame(
+  IV1 = c("A", "A", "B", "B"),
+  IV2 = c("1", "2", "1", "2"),
+  means = c(2, 12, 5, 9)
+)
+
+p8 &lt;- data.frame(
+  IV1 = c("A", "A", "B", "B"),
+  IV2 = c("1", "2", "1", "2"),
+  means = c(5, 10, 10, 5)
+)
+
+all_22s &lt;- rbind(p1, p2, p3, p4, p5, p6, p7, p8)
+
+type &lt;- c(
+  rep("~1, ~2, ~1x2", 4),
+  rep("1, ~2, ~1x2", 4),
+  rep("1, ~2, 1x2", 4),
+  rep("1, 2, ~1x2", 4),
+  rep("1, 2, 1x2", 4),
+  rep("~1, 2, ~1x2", 4),
+  rep("~1, 2, 1x2", 4),
+  rep("~1, ~2, 1x2", 4)
+)
+
+type &lt;- as.factor(type)
+
+all_22s &lt;- cbind(all_22s, type)
+
+ggplot(all_22s, aes(
+  x = IV1,
+  y = means,
+  group = IV2,
+  fill = IV2
+)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  theme_classic() +
+  facet_wrap( ~ type, nrow = 2) +
+  theme(legend.position = "top")
+          </input>
+        </program>
+      </remark>
+      
       <figure xml:id="fig-10bar22">
         <caption>8 Example patterns for means for each of the possible kinds of general outcomes in a 2x2 design.</caption>
         <image source="imgs/10-MixedANOVA_files/figure-html/fig-10bar22-1.png" width="100%"/>
       </figure>
       
       <p><xref ref="fig-10lines22"/> shows the same eight patterns in line graph form:</p>
+      
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+ggplot(all_22s, aes(x=IV1, y=means, group=IV2, color=IV2))+
+  geom_point()+
+  geom_line()+
+  theme_classic()+
+  facet_wrap(~type, nrow=2)+
+  theme(legend.position = "top")
+          </input>
+        </program>
+      </remark>
       
       <figure xml:id="fig-10lines22">
         <caption>Line graphs showing 8 possible general outcomes for a 2x2 design.</caption>
@@ -83,6 +189,30 @@
     <subsection xml:id="subsec-10-consistent-main-effect">
       <title>A consistent main effect and an interaction</title>
       
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+p7 &lt;- data.frame(
+  IV1 = c("A", "A", "B", "B"),
+  IV2 = c("1", "2", "1", "2"),
+  means = c(2, 12, 5, 9)
+)
+
+ggplot(p7, aes(
+  x = IV1,
+  y = means,
+  group = IV2,
+  color = IV2
+)) +
+  geom_point() +
+  geom_line() +
+  theme_classic() +
+  theme(legend.position = "top")
+          </input>
+        </program>
+      </remark>
+      
       <figure xml:id="fig-10mainint">
         <caption>Example means showing a generally consistent main effect along with an interaction</caption>
         <image source="imgs/10-MixedANOVA_files/figure-html/fig-10mainint-1.png" width="100%"/>
@@ -99,6 +229,30 @@
 
     <subsection xml:id="subsec-10-inconsistent-main-effect">
       <title>An inconsistent main effect and an interaction</title>
+      
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+p7 &lt;- data.frame(
+  IV1 = c("A", "A", "B", "B"),
+  IV2 = c("1", "2", "1", "2"),
+  means = c(5, 10, 5, 5)
+)
+
+ggplot(p7, aes(
+  x = IV1,
+  y = means,
+  group = IV2,
+  color = IV2
+)) +
+  geom_point() +
+  geom_line() +
+  theme_classic() +
+  theme(legend.position = "top")
+          </input>
+        </program>
+      </remark>
       
       <figure xml:id="fig-10mainintInc">
         <caption>Example data showing how an interaction exists, and a main effect does not, even though the means for the main effect may show a difference</caption>
@@ -149,6 +303,29 @@
       
       <p>We might expect data like shown in <xref ref="fig-1023design"/>:</p>
       
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+proportion_correct &lt;- c(.9, .6, .95, .7, .99, .8)
+delay &lt;- rep(c("Immediate", "One week"), 3)
+repetition &lt;- as.factor(rep(c(1, 2, 3), each = 2))
+df &lt;- data.frame(proportion_correct, delay, repetition)
+
+ggplot(df,
+       aes(
+         x = repetition,
+         y = proportion_correct,
+         color = delay,
+         group = delay
+       )) +
+  geom_point() +
+  geom_line() +
+  theme_classic()
+          </input>
+        </program>
+      </remark>
+      
       <figure xml:id="fig-1023design">
         <caption>Example means for a 2x3 factorial design</caption>
         <image source="imgs/10-MixedANOVA_files/figure-html/fig-1023design-1.png" width="100%"/>
@@ -164,12 +341,58 @@
       
       <p>If there was no interaction and no main effect of repetition, we would see something like the pattern in <xref ref="fig-1023one"/>.</p>
       
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+proportion_correct &lt;- c(.9, .6, .9, .6, .9, .6)
+delay &lt;- rep(c("Immediate", "One week"), 3)
+repetition &lt;- as.factor(rep(c(1, 2, 3), each = 2))
+df &lt;- data.frame(proportion_correct, delay, repetition)
+
+ggplot(df,
+       aes(
+         x = repetition,
+         y = proportion_correct,
+         color = delay,
+         group = delay
+       )) +
+  geom_point() +
+  geom_line() +
+  theme_classic()
+          </input>
+        </program>
+      </remark>
+      
       <figure xml:id="fig-1023one">
         <caption>Example means for a 2x3 design when there is only one main effect</caption>
         <image source="imgs/10-MixedANOVA_files/figure-html/fig-1023one-1.png" width="100%"/>
       </figure>
       
       <p>What would you say about the interaction if you saw the pattern in <xref ref="fig-1023int"/>?</p>
+      
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+proportion_correct &lt;- c(.9, .6, .9, .6, .9, .8)
+delay &lt;- rep(c("Immediate", "One week"), 3)
+repetition &lt;- as.factor(rep(c(1, 2, 3), each = 2))
+df &lt;- data.frame(proportion_correct, delay, repetition)
+
+ggplot(df,
+       aes(
+         x = repetition,
+         y = proportion_correct,
+         color = delay,
+         group = delay
+       )) +
+  geom_point() +
+  geom_line() +
+  theme_classic()
+          </input>
+        </program>
+      </remark>
       
       <figure xml:id="fig-1023int">
         <caption>Example means for a 2x3 design showing another pattern that produces an interaction</caption>
@@ -186,6 +409,32 @@
       
       <p>We will use the same example as before but add an additional manipulation of the kind of material that is to be remembered. For example, we could present words during an encoding phase either visually or spoken (auditory) over headphones.</p>
       
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+proportion_correct &lt;- c(.9, .6, .9, .8,
+                        .9, .6, .9, .8)
+delay &lt;- as.factor(rep(c("Immediate", "One week"), 4))
+repetition &lt;- as.factor(rep(rep(c(1, 2), each = 2), 2))
+modality &lt;- as.factor(rep(c("visual", "auditory"), each = 4))
+df &lt;- data.frame(proportion_correct, delay, repetition, modality)
+
+ggplot(df,
+       aes(
+         x = repetition,
+         y = proportion_correct,
+         color = delay,
+         group = delay
+       )) +
+  geom_point() +
+  geom_line() +
+  theme_classic() +
+  facet_wrap( ~ modality)
+          </input>
+        </program>
+      </remark>
+      
       <figure xml:id="fig-10222">
         <caption>Example means from a 2x2x2 design with no three-way interaction.</caption>
         <image source="imgs/10-MixedANOVA_files/figure-html/fig-10222-1.png" width="100%"/>
@@ -194,6 +443,32 @@
       <p><xref ref="fig-10222"/> has two panels one for auditory and one for visual. You can think of the 2x2x2, as two 2x2s, one for auditory and one for visual. What's the take home from this example data? We can see that the graphs for auditory and visual are the same. They both show a 2x2 interaction between delay and repetition. People forgot more things across the week when they studied the material once, compared to when they studied the material twice. There is a main effect of delay, there is a main effect of repetition, there is no main effect of modality, and there is no three-way interaction.</p>
       
       <p>What is a three-way interaction anyway? That would occur if there was a difference between the 2x2 interactions. For example, consider the pattern of results in <xref ref="fig-10222int"/>.</p>
+      
+      <remark>
+        <title>R Code</title>
+        <program language="r">
+          <input>
+proportion_correct &lt;- c(.9, .6, .9, .8,
+                        .9, .8, .9, .5)
+delay &lt;- as.factor(rep(c("Immediate", "One week"), 4))
+repetition &lt;- as.factor(rep(rep(c(1, 2), each = 2), 2))
+modality &lt;- as.factor(rep(c("visual", "auditory"), each = 4))
+df &lt;- data.frame(proportion_correct, delay, repetition, modality)
+
+ggplot(df,
+       aes(
+         x = repetition,
+         y = proportion_correct,
+         color = delay,
+         group = delay
+       )) +
+  geom_point() +
+  geom_line() +
+  theme_classic() +
+  facet_wrap( ~ modality)
+          </input>
+        </program>
+      </remark>
       
       <figure xml:id="fig-10222int">
         <caption>Example means from a 2x2x2 design with a three-way interaction.</caption>
