@@ -3,13 +3,14 @@
 <chapter xml:id="ch-foundations-inference">
   <title>Foundations for inference</title>
   
-  <blockquote>
-    <p>
-      Data and data sets are not objective; they are creations of human design. We give numbers their voice, draw inferences from them, and define their meaning through our interpretations. <mdash />Katie Crawford
-    </p>
-  </blockquote>
-
   <introduction>
+    <p>Author: Matthew J. C. Crump</p>
+    <blockquote>
+      <p>
+        Data and data sets are not objective; they are creations of human design. We give numbers their voice, draw inferences from them, and define their meaning through our interpretations. <mdash />Katie Crawford
+      </p>
+    </blockquote>
+
     <p>
       So far we have been talking about describing data and looking for possible relationships between things we measure. We began with the problem of having too many numbers and discussed how they could be summarized with descriptive statistics, and communicated in graphs. We also looked at the idea of relationships between things. If one thing causes change in another thing, then if we measure how one thing goes up and down we should find that other thing goes up and down, or does something systematically following the first thing. At the end of the chapter on correlation, we showed how correlations, which imply a relationship between two things, are very difficult to interpret. Why? Because an observed correlation can be caused by a hidden third variable, or could be a spurious finding <q>caused</q> by random chance. In the last chapter, we talked about sampling from distributions, and we saw how samples can be different because of random error introduced by the sampling process.
     </p>

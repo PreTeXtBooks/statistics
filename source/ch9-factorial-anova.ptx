@@ -4,6 +4,8 @@
   <title>Factorial ANOVA</title>
 
   <introduction>
+    <p>Author: Matthew J. C. Crump</p>
+    
     <p>Factorial designs may be the most complicated topic discussed in this class. What's so complicated? Up until now we have been talking about experiments with two important bits: the independent variable (the manipulation) and the dependent variable (what we measure). In most cases, our independent variable has had two levels, or three or four; but, there has only been one independent variable.</p>
     <p>What if you wanted to manipulate more than one independent variable? If you did that you would have at least two independent variables, each with their own levels. The rest of the book is about factorial designs with more than one independent variable, and the statistical tests we use to analyze those designs.</p>
     <p>Let's go through some examples of designs. We will be imagining experiments that are trying to improve students' grades. So, the dependent variable will always be grade on a test.</p>
@@ -293,6 +295,13 @@
       <p>We are going to skip the part where we divide the SSes by their dfs to find the MSEs so that we can compute the three <m>F</m>-values. Instead, if we have done the calculations of the <m>SS</m>es correctly, they should be same as what we would get if we used R to calculate the <m>SS</m>es. Let's make R do the work, and then compare to check our work.</p>
       <p>A quick look through the column <c>Sum Sq</c> shows that we did our work by hand correctly. Congratulations to us! Note, this is not the same results as we had before with the repeated measures ANOVA. We conducted a between-subjects design, so we did not get to further partition the SS error into a part due to subject variation and a left-over part. We also gained degrees of freedom in the error term. It turns out with this specific set of data, we find p-values of less than 0.05 for all effects (main effects and the interaction, which was not less than 0.05 using the same data, but treating it as a repeated-measures design)</p>
     </subsection>
+  </section>
+  <section xml:id="sec-fireside-chat">
+    <title>Fireside chat</title>
+    <p>Sometimes it's good to get together around a fire and have a chat. Let's pretend we're sitting around a fire.</p>
+    <p>It's been a long day. A long couple of weeks and months since we started this course on statistics. We just went through the most complicated things we have done so far. This is a long chapter. What should we do next?</p>
+    <p>Here's a couple of options. We could work through, by hand, more and more ANOVAs. Do you want to do that? I don't, making these tables isn't too bad, but it takes a lot of time. It's really good to see everything that we do laid bare in the table form a few times. We've done that already. It's really good for you to attempt to calculate an ANOVA by hand at least once in your life. It builds character. It helps you know that you know what you are doing, and what the ANOVA is doing. We can't make you do this, we can only make the suggestion. If we keep doing these by hand, it is not good for us, and it is not you doing them by hand. So, what are the other options.</p>
+    <p>The other options are to work at a slightly higher level. We will discuss some research designs, and the ANOVAs that are appropriate for their analysis. We will conduct the ANOVAs using R, and print out the ANOVA tables. This is what you do in the lab, and what most researchers do. They use software most of the time to make the computer do the work. Because of this, it is most important that you know what the software is doing. You can make mistakes when telling software what to do, so you need to be able to check the software's work so you know when the software is giving you wrong answers. All of these skills are built up over time through the process of analyzing different data sets. So, for the remainder of our discussion on ANOVAs we stick to that higher level. No more monster tables of SSes. You are welcome.</p>
   </section>
   <section xml:id="sec-real-data">
     <title>Real Data</title>

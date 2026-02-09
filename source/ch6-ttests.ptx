@@ -4,15 +4,8 @@
   <title>t-tests</title>
   
   <introduction>
-    <remark>
-      <title>R Code</title>
-      <program language="r">
-        <input>
-library(ggplot2)
-        </input>
-      </program>
-    </remark>
-
+    <p>Author: Matthew J. C. Crump</p>
+    
     <p>
       Back in the day, William Sealy Gosset got a job working for Guinness Breweries. They make the famous Irish stout called Guinness. What happens next went something like this (total fabrication, but mostly on point).
     </p>

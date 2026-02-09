@@ -3,13 +3,14 @@
 <chapter xml:id="ch-describing-data">
   <title>Describing Data</title>
   
-  <blockquote>
-    <p>
-      Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise. <mdash />John W. Tukey
-    </p>
-  </blockquote>
-
   <introduction>
+    <p>Author: Matthew J. C. Crump</p>
+    <blockquote>
+      <p>
+        Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise. <mdash />John W. Tukey
+      </p>
+    </blockquote>
+
     <p>
       This chapter is about <term>descriptive statistics</term>. These are tools for describing data. Some things to keep in mind as we go along are:
     </p>
