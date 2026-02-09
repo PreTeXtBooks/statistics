@@ -12,3 +12,4 @@
 /generated-assets/
 /logs/
 .error_schema.log
+cli.log
