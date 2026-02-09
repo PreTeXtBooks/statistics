@@ -216,7 +216,7 @@ ggplot(all_data,aes(x=chocolate_x,y=happiness_x))+
     </p>
 
     <p>
-      The stories about the invention of various statistics are very interesting, you can read more about them in the book, "The Lady Tasting Tea" [@salsburg2001lady]
+      The stories about the invention of various statistics are very interesting, you can read more about them in the book, "The Lady Tasting Tea" <xref ref="biblio-salsburg2001lady" text="custom">(Salsburg, 2001)</xref>
     </p>
 
     <p>

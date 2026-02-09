@@ -286,6 +286,8 @@
     <backmatter xml:id="backmatter">
       <title>Back Matter</title>
       
+      <xi:include href="references.ptx" />
+      
       <index>
         <title>Index</title>
         <index-list />

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<references xml:id="bibliography" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>References</title>
+
+  <biblio type="raw" xml:id="biblio-Evans1983">
+    Evans, J. St. B. T., Barston, J. L., &amp; Pollard, P. (1983). On the Conflict between Logic and Belief in Syllogistic Reasoning. <em>Memory and Cognition</em>, 11, 295–306. <url href="https://doi.org/10.3758/BF03196976" visual="doi.org/10.3758/BF03196976">doi:10.3758/BF03196976</url>
+  </biblio>
+
+  <biblio type="raw" xml:id="biblio-Bickel1975">
+    Bickel, P. J., Hammel, E. A., &amp; O'Connell, J. W. (1975). Sex Bias in Graduate Admissions: Data from Berkeley. <em>Science</em>, 187, 398–404. <url href="https://doi.org/10.1126/science.187.4175.398" visual="doi.org/10.1126/science.187.4175.398">doi:10.1126/science.187.4175.398</url>
+  </biblio>
+
+  <biblio type="raw" xml:id="biblio-salsburg2001lady">
+    Salsburg, D. (2001). <em>The Lady Tasting Tea: How Statistics Revolutionized Science in the Twentieth Century</em>. Macmillan.
+  </biblio>
+
+</references>
