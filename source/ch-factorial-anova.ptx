@@ -53,12 +53,12 @@
     <subsection xml:id="subsec-factorial-notation">
       <title>Factorial Notation</title>
       <p>Anytime <alert>all of the levels</alert> of each IV in a design are fully crossed, so that they all occur for each level of every other IV, we can say the design is a <alert>fully factorial</alert> design.</p>
-      <p>We use a notation system to refer to these designs. The rules for notation are as follows. Each IV get's it's own number. The number of levels in the IV is the number we use for the IV. Let's look at some examples:</p>
+      <p>We use a notation system to refer to these designs. The rules for notation are as follows. Each IV gets its own number. The number of levels in the IV is the number we use for the IV. Let's look at some examples:</p>
       <p>2x2 = There are two IVS, the first IV has two levels, the second IV has 2 levels. There are a total of 4 conditions, 2x2 = 4.</p>
       <p>2x3 = There are two IVs, the first IV has two levels, the second IV has three levels. There are a total of 6 conditions, 2x3 = 6</p>
       <p>3x2 = There are two IVs, the first IV has three levels, the second IV has two levels. There are a total of 6 conditions, 3x2=6.</p>
-      <p>4x4 = There are two IVs, the first IV has 4 levels, the second IV has 4 levels. There are a total of 16 condition, 4x4=16</p>
-      <p>2x3x2 = There are a total of three IVs. The first IV has 2 levels. The second IV has 3 levels. The third IV has 2 levels. There are a total of 12 condition. 2x3x2 = 12.</p>
+      <p>4x4 = There are two IVs, the first IV has 4 levels, the second IV has 4 levels. There are a total of 16 conditions, 4x4=16</p>
+      <p>2x3x2 = There are a total of three IVs. The first IV has 2 levels. The second IV has 3 levels. The third IV has 2 levels. There are a total of 12 conditions. 2x3x2 = 12.</p>
     </subsection>
     <subsection xml:id="subsec-2-x-3-designs">
       <title>2 x 3 designs</title>
@@ -207,7 +207,7 @@
       <p>The overall means for for each subject, for the two reward conditions are shown to the right. For example, subject 1 had a 10 and 5 in the no-reward condition, so their mean is 7.5.</p>
       <p>We are interested in the main effect of reward. This is the difference between the AB column (average of subject scores in the no-reward condition) and the CD column (average of the subject scores in the reward condition). These differences for each subject are shown in the last green column. The overall means, averaging over subjects are in the bottom green row.</p>
       <p>Just looking at the means, we can see there was a main effect of reward. The mean number of differences spotted was 11.3 in the reward condition, and 6.6 in the no-reward condition. So, the size of the main effect of reward was 4.7.</p>
-      <p>Is a difference of this size likely o unlikely due to chance? We could conduct a paired-samples <m>t</m>-test on the AB vs. CD means, or a one-sample <m>t</m>-test on the difference scores. They both give the same answer:</p>
+      <p>Is a difference of this size likely or unlikely due to chance? We could conduct a paired-samples <m>t</m>-test on the AB vs. CD means, or a one-sample <m>t</m>-test on the difference scores. They both give the same answer:</p>
       <p>Here's the paired samples version:</p>
       <p>Here's the one sample version:</p>
       <p>If we were to write-up our results for the main effect of reward we could say something like this:</p>
@@ -285,8 +285,8 @@
       <p>The last thing we need to find is the SS Error. We can solve for that because we found everything else in this formula:</p>
       <p><m>SS_\text{Total} = SS_\text{Effect IV1} + SS_\text{Effect IV2} + SS_\text{Effect IV1xIV2} + SS_\text{Error}</m></p>
       <p>Even though this textbook meant to explain things in a step by step way, we guess you are tired from watching us work out the 2x2 ANOVA by hand. You and me both, making these tables was a lot of work. We have already shown you how to compute the SS for error before, so we will not do the full example here. Instead, we solve for SS Error using the numbers we have already obtained.</p>
-      <p>\<m>SS\_\text{Error} = SS\_\text{Total}- SS\_\text{Effect IV1} - SS\_\text{Effect IV2} - SS\_\text{Effect IV1xIV2} \</m></p>
-      <p>\<m>SS\_\text{Error} = 242.95 - 92.45 - 110.45 - 14.45 = 25.6 \</m></p>
+      <p><m>SS_\text{Error} = SS_\text{Total}- SS_\text{Effect IV1} - SS_\text{Effect IV2} - SS_\text{Effect IV1xIV2}</m></p>
+      <p><m>SS_\text{Error} = 242.95 - 92.45 - 110.45 - 14.45 = 25.6</m></p>
     </subsection>
     <subsection xml:id="subsec-check-your-work">
       <title>Check your work</title>
