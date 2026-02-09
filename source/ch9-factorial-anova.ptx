@@ -494,6 +494,20 @@ t.test(AC,BD, paired=TRUE,var.equal=TRUE)
           </input>
         </program>
       </remark>
+
+      <pre>
+	Paired t-test
+
+data:  AC and BD
+t = 7.6614, df = 4, p-value = 0.001627
+alternative hypothesis: true mean difference is not equal to 0
+95 percent confidence interval:
+ 2.741724 5.858276
+sample estimates:
+mean difference 
+            4.3
+      </pre>
+
       <p>Here's the one sample version:</p>
       <remark>
         <title>R Code</title>
@@ -503,6 +517,20 @@ t.test(AC-BD, mu=0)
           </input>
         </program>
       </remark>
+
+      <pre>
+	One Sample t-test
+
+data:  AC - BD
+t = 7.6614, df = 4, p-value = 0.001627
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ 2.741724 5.858276
+sample estimates:
+mean of x 
+      4.3
+      </pre>
+
       <p>If we were to write-up our results for the main effect of distraction we could say something like this:</p>
       <p>The main effect of distraction was significant, <m>t</m>(4) = 7.66, <m>p</m> = 0.001. The mean number of differences spotted was higher in the no-distraction condition (M = 11.1) than the distraction condition (M = 6.8).</p>
     </subsection>
@@ -548,6 +576,20 @@ t.test(CD,AB, paired=TRUE,var.equal=TRUE)
           </input>
         </program>
       </remark>
+
+      <pre>
+	Paired t-test
+
+data:  CD and AB
+t = 8.3666, df = 4, p-value = 0.001123
+alternative hypothesis: true mean difference is not equal to 0
+95 percent confidence interval:
+ 3.141724 6.258276
+sample estimates:
+mean difference 
+            4.7
+      </pre>
+
       <p>Here's the one sample version:</p>
       <remark>
         <title>R Code</title>
@@ -557,6 +599,20 @@ t.test(CD-AB, mu=0)
           </input>
         </program>
       </remark>
+
+      <pre>
+	One Sample t-test
+
+data:  CD - AB
+t = 8.3666, df = 4, p-value = 0.001123
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ 3.141724 6.258276
+sample estimates:
+mean of x 
+      4.7
+      </pre>
+
       <p>If we were to write-up our results for the main effect of reward we could say something like this:</p>
       <p>The main effect of reward was significant, t(4) = 8.37, p = 0.001. The mean number of differences spotted was higher in the reward condition (M = 11.3) than the no-reward condition (M = 6.6).</p>
     </subsection>
@@ -607,6 +663,20 @@ t.test(A_B,C_D, paired=TRUE,var.equal=TRUE)
           </input>
         </program>
       </remark>
+
+      <pre>
+	Paired t-test
+
+data:  A_B and C_D
+t = 2.4932, df = 4, p-value = 0.06732
+alternative hypothesis: true mean difference is not equal to 0
+95 percent confidence interval:
+ -0.3865663  7.1865663
+sample estimates:
+mean difference 
+            3.4
+      </pre>
+
       <p>Here's the one sample version:</p>
       <remark>
         <title>R Code</title>
@@ -616,6 +686,20 @@ t.test(A_B-C_D, mu=0)
           </input>
         </program>
       </remark>
+
+      <pre>
+	One Sample t-test
+
+data:  A_B - C_D
+t = 2.4932, df = 4, p-value = 0.06732
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -0.3865663  7.1865663
+sample estimates:
+mean of x 
+      3.4
+      </pre>
+
       <p>Oh look, the interaction was not significant. At least, if we had set our alpha criterion to 0.05, it would not have met that criteria. We could write up the results like this. The two-way interaction between distraction and reward was not significant, <m>t</m>(4) = 2.493, <m>p</m> = 0.067.</p>
       <p>Often times when a result is "not significant" according to the alpha criteria, the pattern among the means is not described further. One reason for this practice is that the researcher is treating the means as if they are not different (because there was an above alpha probability that the observed differences were due to chance). If they are not different, then there is no pattern to report.</p>
       <p>There are differences in opinion among reasonable and expert statisticians on what should or should not be reported. Let's say we wanted to report the observed mean differences, we would write something like this:</p>
