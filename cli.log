@@ -14,7 +14,7 @@ INFO    : verifying and expanding input directory: /home/runner/work/statistics/
 INFO    : input directory expanded to absolute path: /home/runner/work/statistics/statistics/generated-assets
 INFO    : verifying and expanding input directory: /home/runner/work/statistics/statistics/source/../source/images
 INFO    : input directory expanded to absolute path: /home/runner/work/statistics/statistics/source/images
-INFO    : converting /home/runner/work/statistics/statistics/source/main.ptx to HTML in /tmp/tmpqyo8fxdm
+INFO    : converting /home/runner/work/statistics/statistics/source/main.ptx to HTML in /tmp/tmpqbwx__c6
 INFO    : XSL conversion of /home/runner/work/statistics/statistics/source/main.ptx by /home/runner/.ptx/xsl/pretext-html.xsl
 INFO    : comprehensive messages, warnings, and errors:
 INFO    :     * PTX:WARNING: A chapter containing sections needs to have other content inside an <introduction> and/or  <conclusion>.
