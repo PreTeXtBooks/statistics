@@ -46,6 +46,29 @@
         <p>
           All resources are released under a creative commons license CC BY-SA 4.0.
         </p>
+        
+        <p>
+          <alert>About This PreTeXt Version:</alert> This book has been converted to PreTeXt format 
+          to make it more accessible and easier to use across different platforms. The original textbook 
+          was written in R Markdown by Matthew J. C. Crump, Danielle J. Navarro, and Jeffrey Suzuki. 
+          The full citation for the original work is: Crump, M. J. C., Navarro, D. J., <ampersand/> Suzuki, J. (2019, June 5). 
+          Answering Questions with Data (Textbook): Introductory Statistics for Psychology Students. 
+          <url href="https://doi.org/10.17605/OSF.IO/JZE52" visual="doi.org/10.17605/OSF.IO/JZE52">https://doi.org/10.17605/OSF.IO/JZE52</url>
+        </p>
+        
+        <p>
+          The original source code is available at 
+          <url href="https://github.com/CrumpLab/statistics" visual="github.com/CrumpLab/statistics">github.com/CrumpLab/statistics</url>, 
+          and the original online textbook can be found at 
+          <url href="https://crumplab.github.io/statistics/" visual="crumplab.github.io/statistics">crumplab.github.io/statistics</url>.
+        </p>
+        
+        <p>
+          The source code for this PreTeXt version is maintained at 
+          <url href="https://github.com/PreTeXtBooks/statistics" visual="github.com/PreTeXtBooks/statistics">github.com/PreTeXtBooks/statistics</url>. 
+          If you encounter any issues with this version, please report them at 
+          <url href="https://github.com/PreTeXtBooks/statistics/issues" visual="github.com/PreTeXtBooks/statistics/issues">the issues page</url>.
+        </p>
       </preface>
     </frontmatter>
 
