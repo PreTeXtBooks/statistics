@@ -991,7 +991,7 @@ knitr::kable(ac_long_summary)
     </subsection>
   </section>
 
-  <section xml:id="sec-videos">
+  <section xml:id="ch2-sec-videos">
     <title>Videos</title>
     
     <subsection xml:id="subsec-video-mode">
