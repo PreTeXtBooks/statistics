@@ -690,7 +690,7 @@
     </figure>
 
     <p>
-      Let's note a couple things about the <m>F</m> distribution. 1) The smallest value is 0, and there are no negative values. Does this make sense? <m>F</m> can never be negative because it is the ratio of two variances, and variances are always positive because of the squaring operation. So, yes, it makes sense that the sampling distribution of <m>F</m> is always 0 or greater. 2) it does not look normal. No it does not. <m>F</m> can have many different looking shapes, depending on the degrees of freedom in the numerator and denominator. However, these aspects are too important for now.
+      Let's note a couple things about the <m>F</m> distribution. 1) The smallest value is 0, and there are no negative values. Does this make sense? <m>F</m> can never be negative because it is the ratio of two variances, and variances are always positive because of the squaring operation. So, yes, it makes sense that the sampling distribution of <m>F</m> is always 0 or greater. 2) it does not look normal. No it does not. <m>F</m> can have many different looking shapes, depending on the degrees of freedom in the numerator and denominator. However, these aspects are not too important for now.
     </p>
 
     <p>
@@ -1036,7 +1036,7 @@ sample estimates:
         </pre>
 
         <p>
-          Here we did not find a significant difference. We found that no significant difference between the control group (M=5.11) and Tetris Only group (M=3.89), t(34) = 2.99, p=0.318.
+          Here we did not find a significant difference. We found no significant difference between the control group (M=5.11) and Tetris Only group (M=3.89), t(34) = 2.99, p=0.318.
         </p>
 
         <p>
