@@ -60,6 +60,7 @@
     <xi:include href="ch9-factorial-anova.ptx" />
     <xi:include href="ch10-more-factorial-designs.ptx" />
     <xi:include href="ch11-simulating-data.ptx" />
+    <xi:include href="ch13-gifs.ptx" />
     
     <backmatter xml:id="backmatter">
       <title>Back Matter</title>
