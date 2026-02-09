@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="sec-videos-ch4">
+  <title>Videos</title>
+  
+  <subsection xml:id="subsec-video-intro-prob">
+    <title>Introduction to Probability</title>
+    
+    <p>
+      Jeff has several more videos on probability that you can view on his <url href="https://www.youtube.com/playlist?list=PLKXdxQAT3tCvuex_E1ZnQYaw897ELUSaI">statistics playlist</url>.
+    </p>
+
+    <p>
+      <url href="https://www.youtube.com/embed/RoalMn9VHZg">Video: Introduction to Probability</url>
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-video-chebychev">
+    <title>Chebychev's Theorem</title>
+    
+    <p>
+      <url href="https://www.youtube.com/embed/4RtwqCFt1IU">Video: Chebychev's Theorem</url>
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-video-zscores">
+    <title>Z-scores</title>
+    
+    <p>
+      <url href="https://www.youtube.com/embed/dQVO0KAxFaU">Video: Z-scores</url>
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-video-normal1">
+    <title>Normal Distribution I</title>
+    
+    <p>
+      <url href="https://www.youtube.com/embed/FPJDF9fGwwE">Video: Normal Distribution I</url>
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-video-normal2">
+    <title>Normal Distribution II</title>
+    
+    <p>
+      <url href="https://www.youtube.com/embed/mPdnF-GVuCo">Video: Normal Distribution II</url>
+    </p>
+  </subsection>
+
+</section>

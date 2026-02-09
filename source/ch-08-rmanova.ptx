@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="ch-08-rmanova">
+  <title>Repeated Measures ANOVA</title>
+  
+  <introduction>
+    <p>
+      This chapter introduces you to <term>repeated measures ANOVA</term>. Repeated measures ANOVAs are very common in Psychology, because psychologists often use repeated measures designs, and repeated measures ANOVAs are the appropriate test for making inferences about repeated measures designs.
+    </p>
+
+    <p>
+      Remember the paired sample <m>t</m>-test? We used that test to compare two means from a repeated measures design. Remember what a repeated measures design is? It's also called a within-subjects design. These designs involve measuring the same subject more than once. Specifically, at least once for every experimental condition. In the paired <m>t</m>-test example, we discussed a simple experiment with only two experimental conditions. There, each subject would contribute a measurement to level one and level two of the design.
+    </p>
+
+    <p>
+      However, paired-samples <m>t</m>-tests are limited to comparing two means. What if you had a design that had more than two experimental conditions? For example, perhaps your experiment had 3 levels for the independent variable, and each subject contributed data to each of the three levels?
+    </p>
+
+    <p>
+      This is starting to sounds like an ANOVA problem. ANOVAs are capable of evaluating whether there is a difference between any number of means, two or greater. So, we can use an ANOVA for our repeated measures design with three levels for the independent variable.
+    </p>
+
+    <p>
+      Great! So, what makes a repeated measures ANOVA different from the ANOVA we just talked about?
+    </p>
+  </introduction>
+
+  <section xml:id="sec-08-repeated-measures-design">
+    <title>Repeated measures design</title>
+    
+    <p>
+      Let's use the exact same toy example from the previous chapter, but let's convert it to a repeated measures design.
+    </p>
+
+    <p>
+      Last time, we imagined we had some data in three groups, A, B, and C, such as in <xref ref="tbl-8rmdata1"/>:
+    </p>
+
+    <table xml:id="tbl-8rmdata1">
+      <title>Example data for three groups.</title>
+      <tabular>
+        <row header="yes">
+          <cell>groups</cell>
+          <cell>scores</cell>
+        </row>
+        <row>
+          <cell>A</cell>
+          <cell>20</cell>
+        </row>
+        <row>
+          <cell>A</cell>
+          <cell>11</cell>
+        </row>
+        <row>
+          <cell>A</cell>
+          <cell>2</cell>
+        </row>
+        <row>
+          <cell>B</cell>
+          <cell>6</cell>
+        </row>
+        <row>
+          <cell>B</cell>
+          <cell>2</cell>
+        </row>
+        <row>
+          <cell>B</cell>
+          <cell>7</cell>
+        </row>
+        <row>
+          <cell>C</cell>
+          <cell>2</cell>
+        </row>
+        <row>
+          <cell>C</cell>
+          <cell>11</cell>
+        </row>
+        <row>
+          <cell>C</cell>
+          <cell>2</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      The above table represents a between-subject design where each score involves a unique subject.
+    </p>
+
+    <p>
+      Let's change things up a tiny bit, and imagine we only had 3 subjects in total in the experiment. And, that each subject contributed data to the three levels of the independent variable, A, B, and C. Before we called the IV <c>groups</c>, because there were different groups of subjects. Let's change that to <c>conditions</c>, because now the same group of subjects participates in all three conditions. <xref ref="tbl-8rmdata2"/> shows a within-subjects (repeated measures) version of this experiment:
+    </p>
+
+    <table xml:id="tbl-8rmdata2">
+      <title>Example data for a repeated measures design with three conditions, where each subject contributes data in each condition.</title>
+      <tabular>
+        <row header="yes">
+          <cell>subjects</cell>
+          <cell>conditions</cell>
+          <cell>scores</cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell>A</cell>
+          <cell>20</cell>
+        </row>
+        <row>
+          <cell>2</cell>
+          <cell>A</cell>
+          <cell>11</cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell>A</cell>
+          <cell>2</cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell>B</cell>
+          <cell>6</cell>
+        </row>
+        <row>
+          <cell>2</cell>
+          <cell>B</cell>
+          <cell>2</cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell>B</cell>
+          <cell>7</cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell>C</cell>
+          <cell>2</cell>
+        </row>
+        <row>
+          <cell>2</cell>
+          <cell>C</cell>
+          <cell>11</cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell>C</cell>
+          <cell>2</cell>
+        </row>
+      </tabular>
+    </table>
+  </section>
+
+  <section xml:id="sec-08-partitioning-sums-squares">
+    <title>Partitioning the Sums of Squares</title>
+    
+    <p>
+      Time to introduce a new name for an idea you learned about last chapter, it's called <term>partitioning the sums of squares</term>. Sometimes an obscure new name can be helpful for your understanding of what is going on. ANOVAs are all about partitioning the sums of squares. We already did some partitioning in the last chapter. What do we mean by partitioning?
+    </p>
+
+    <p>
+      Imagine you had a big empty house with no rooms in it. What would happen if you partitioned the house? What would you be doing? One way to partition the house is to split it up into different rooms. You can do this by adding new walls and making little rooms everywhere. That's what partitioning means, to split up.
+    </p>
+
+    <p>
+      The act of partitioning, or splitting up, is the core idea of ANOVA. To use the house analogy. Our total sums of squares (SS Total) is our big empty house. We want to split it up into little rooms. Before we partitioned SS Total using this formula:
+    </p>
+
+    <p>
+      <m>SS_\text{TOTAL} = SS_\text{Effect} + SS_\text{Error}</m>
+    </p>
+
+    <p>
+      Remember, the <m>SS_\text{Effect}</m> was the variance we could attribute to the means of the different groups, and <m>SS_\text{Error}</m> was the leftover variance that we couldn't explain. <m>SS_\text{Effect}</m> and <m>SS_\text{Error}</m> are the partitions of <m>SS_\text{TOTAL}</m>, they are the little rooms.
+    </p>
+
+    <p>
+      In the between-subjects case above, we got to split <m>SS_\text{TOTAL}</m> into two parts. What is most interesting about the repeated-measures design, is that we get to split <m>SS_\text{TOTAL}</m> into three parts, there's one more partition. Can you guess what the new partition is? Hint: whenever we have a new way to calculate means in our design, we can always create a partition for those new means. What are the new means in the repeated measures design?
+    </p>
+
+    <p>
+      Here is the new idea for partitioning <m>SS_\text{TOTAL}</m> in a repeated-measures design:
+    </p>
+
+    <p>
+      <m>SS_\text{TOTAL} = SS_\text{Effect} + SS_\text{Subjects} +SS_\text{Error}</m>
+    </p>
+
+    <p>
+      We've added <m>SS_\text{Subjects}</m> as the new idea in the formula. What's the idea here? Well, because each subject was measured in each condition, we have a new set of means. These are the means for each subject, collapsed across the conditions. For example, subject 1 has a mean (mean of their scores in conditions A, B, and C); subject 2 has a mean (mean of their scores in conditions A, B, and C); and subject 3 has a mean (mean of their scores in conditions A, B, and C). There are three subject means, one for each subject, collapsed across the conditions. And, we can now estimate the portion of the total variance that is explained by these subject means.
+    </p>
+
+    <p>
+      We just showed you a <q>formula</q> to split up <m>SS_\text{TOTAL}</m> into three parts, but we called the formula an idea. We did that because the way we wrote the formula is a little bit misleading, and we need to clear something up. Before we clear the thing up, we will confuse you just a little bit. Be prepared to be confused a little bit.
+    </p>
+
+    <p>
+      First, we need to introduce you to some more terms. It turns out that different authors use different words to describe parts of the ANOVA. This can be really confusing. For example, we described the SS formula for a between subjects design like this:
+    </p>
+
+    <p>
+      <m>SS_\text{TOTAL} = SS_\text{Effect} + SS_\text{Error}</m>
+    </p>
+
+    <p>
+      However, the very same formula is often written differently, using the words between and within in place of effect and error, it looks like this:
+    </p>
+
+    <p>
+      <m>SS_\text{TOTAL} = SS_\text{Between} + SS_\text{Within}</m>
+    </p>
+
+    <p>
+      Whoa, hold on a minute. Haven't we switched back to talking about a <term>between-subjects</term> ANOVA. YES! Then why are we using the word <term>within</term>, what does that mean? YES! We think this is very confusing for people. Here the word <term>within</term> has a special meaning. It <term>does not</term> refer to a within-subjects design. Let's explain. First, <m>SS_\text{Between}</m> (which we have been calling <m>SS_\text{Effect}</m>) refers to variation <term>between</term> the group means, that's why it is called <m>SS_\text{Between}</m>. Second, and most important, <m>SS_\text{Within}</m> (which we have been calling <m>SS_\text{Error}</m>), refers to the leftover variation within each group mean. Specifically, it is the variation between each group mean and each score in the group. <q>AAGGH, you've just used the word between to describe within group variation!</q>. Yes! We feel your pain. Remember, for each group mean, every score is probably off a little bit from the mean. So, the scores within each group have some variation. This is the within group variation, and it is why the leftover error that we can't explain is often called <m>SS_\text{Within}</m>.
+    </p>
+
+    <p>
+      OK. So why did we introduce this new confusing way of talking about things? Why can't we just use <m>SS_\text{Error}</m> to talk about this instead of <m>SS_\text{Within}</m>, which you might (we do) find confusing. We're getting there, but perhaps <xref ref="fig-8splitSS"/> will help out.
+    </p>
+
+    <figure xml:id="fig-8splitSS">
+      <caption>Illustration showing how the total sums of squares are partitioned differently for a between versus repeated-measures design</caption>
+      <image source="imgs/figures/SS_ANOVA.png" width="100%"/>
+    </figure>
+
+    <p>
+      The figure lines up the partitioning of the Sums of Squares for both between-subjects and repeated-measures designs. In both designs, <m>SS_\text{Total}</m> is first split up into two pieces <m>SS_\text{Effect (between-groups)}</m> and <m>SS_\text{Error (within-groups)}</m>. At this point, both ANOVAs are the same. In the repeated measures case we split the <m>SS_\text{Error (within-groups)}</m> into two more littler parts, which we call <m>SS_\text{Subjects (error variation about the subject mean)}</m> and <m>SS_\text{Error (left-over variation we can't explain)}</m>.
+    </p>
+
+    <p>
+      So, when we earlier wrote the formula to split up SS in the repeated-measures design, we were kind of careless in defining what we actually meant by <m>SS_\text{Error}</m>, this was a little too vague:
+    </p>
+
+    <p>
+      <m>SS_\text{TOTAL} = SS_\text{Effect} + SS_\text{Subjects} +SS_\text{Error}</m>
+    </p>
+
+    <p>
+      The critical feature of the repeated-measures ANOVA, is that the <m>SS_\text{Error}</m> that we will later use to compute the MSE in the denominator for the <m>F</m>-value, is smaller in a repeated-measures design, compared to a between subjects design. This is because the <m>SS_\text{Error (within-groups)}</m> is split into two parts, <m>SS_\text{Subjects (error variation about the subject mean)}</m> and <m>SS_\text{Error (left-over variation we can't explain)}</m>.
+    </p>
+
+    <p>
+      To make this more clear, consider <xref ref="fig-8moresplit"/>:
+    </p>
+
+    <figure xml:id="fig-8moresplit">
+      <caption>Close-up showing that the Error term is split into two parts in the repeated measures design</caption>
+      <image source="imgs/figures/SS_RMANOVA.png" width="100%"/>
+    </figure>
+
+    <p>
+      As we point out, the <m>SS_\text{Error (left-over)}</m> in the green circle will be a smaller number than the <m>SS_\text{Error (within-group)}</m>. That's because we are able to subtract out the <m>SS_\text{Subjects}</m> part of the <m>SS_\text{Error (within-group)}</m>. As we will see shortly, this can have the effect of producing larger F-values when using a repeated-measures design compared to a between-subjects design.
+    </p>
+  </section>
+
+  <section xml:id="sec-08-calculating-rm-anova">
+    <title>Calculating the RM ANOVA</title>
+    
+    <introduction>
+      <p>
+        Now that you are familiar with the concept of an ANOVA table (remember the table from last chapter where we reported all of the parts to calculate the <m>F</m>-value?), we can take a look at the things we need to find out to make the ANOVA table. <xref ref="fig-8rmtable"/> presents an abstract for the repeated-measures ANOVA table. It shows us all the thing we need to calculate to get the <m>F</m>-value for our data.
+      </p>
+
+      <figure xml:id="fig-8rmtable">
+        <caption>Equations for computing the ANOVA table for a repeated measures design</caption>
+        <image source="imgs/figures/RMANOVA_table.png" width="100%"/>
+      </figure>
+
+      <p>
+        So, what we need to do is calculate all the <m>SS</m>es that we did before for the between-subjects ANOVA. That means the next three steps are identical to the ones you did before. In fact, I will just basically copy the next three steps to find <m>SS_\text{TOTAL}</m>, <m>SS_\text{Effect}</m>, and <m>SS_\text{Error (within-conditions)}</m>. After that we will talk about splitting up <m>SS_\text{Error (within-conditions)}</m> into two parts, this is the new thing for this chapter. Here we go!
+      </p>
+    </introduction>
+
+    <subsection xml:id="subsec-08-ss-total">
+      <title>SS Total</title>
+      
+      <p>
+        The total sums of squares, or <m>SS_\text{Total}</m> measures the total variation in a set of data. All we do is find the difference between each score and the grand mean, then we square the differences and add them all up.
+      </p>
+
+      <table xml:id="tbl-8sstotal">
+        <title>Calculating SS Total with deviations from the grand mean</title>
+        <tabular>
+          <row header="yes">
+            <cell>subjects</cell>
+            <cell>conditions</cell>
+            <cell>scores</cell>
+            <cell>diff</cell>
+            <cell>diff_squared</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>A</cell>
+            <cell>20</cell>
+            <cell>13</cell>
+            <cell>169</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>A</cell>
+            <cell>11</cell>
+            <cell>4</cell>
+            <cell>16</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>A</cell>
+            <cell>2</cell>
+            <cell>-5</cell>
+            <cell>25</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>B</cell>
+            <cell>6</cell>
+            <cell>-1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>B</cell>
+            <cell>2</cell>
+            <cell>-5</cell>
+            <cell>25</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>B</cell>
+            <cell>7</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>C</cell>
+            <cell>2</cell>
+            <cell>-5</cell>
+            <cell>25</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>C</cell>
+            <cell>11</cell>
+            <cell>4</cell>
+            <cell>16</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>C</cell>
+            <cell>2</cell>
+            <cell>-5</cell>
+            <cell>25</cell>
+          </row>
+          <row>
+            <cell>Sums</cell>
+            <cell></cell>
+            <cell>63</cell>
+            <cell>0</cell>
+            <cell>302</cell>
+          </row>
+          <row>
+            <cell>Means</cell>
+            <cell></cell>
+            <cell>7</cell>
+            <cell>0</cell>
+            <cell>33.56</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        The mean of all of the scores is called the <term>Grand Mean</term>. It's calculated in the table, the Grand Mean = 7.
+      </p>
+
+      <p>
+        We also calculated all of the difference scores <term>from the Grand Mean</term>. The difference scores are in the column titled <c>diff</c>. Next, we squared the difference scores, and those are in the next column called <c>diff_squared</c>.
+      </p>
+
+      <p>
+        When you add up all of the individual squared deviations (difference scores) you get the sums of squares. That's why it's called the sums of squares (SS).
+      </p>
+
+      <p>
+        Now, we have the first part of our answer:
+      </p>
+
+      <p>
+        <m>SS_\text{total} = SS_\text{Effect} + SS_\text{Error}</m>
+      </p>
+
+      <p>
+        <m>SS_\text{total} = 302</m> and
+      </p>
+
+      <p>
+        <m>302 = SS_\text{Effect} + SS_\text{Error}</m>
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-08-ss-effect">
+      <title>SS Effect</title>
+      
+      <p>
+        <m>SS_\text{Total}</m> gave us a number representing all of the change in our data, how they all are different from the grand mean.
+      </p>
+
+      <p>
+        What we want to do next is estimate how much of the total change in the data might be due to the experimental manipulation. For example, if we ran an experiment that causes causes change in the measurement, then the means for each group will be different from other, and the scores in each group will be different from each. As a result, the manipulation forces change onto the numbers, and this will naturally mean that some part of the total variation in the numbers is caused by the manipulation.
+      </p>
+
+      <p>
+        The way to isolate the variation due to the manipulation (also called effect) is to look at the means in each group, and the calculate the difference scores between each group mean and the grand mean, and then the squared deviations to find the sum for <m>SS_\text{Effect}</m>.
+      </p>
+
+      <p>
+        Consider this table, showing the calculations for <m>SS_\text{Effect}</m>.
+      </p>
+
+      <table xml:id="tbl-8sseffect">
+        <title>Calculating SS Effect using condition means</title>
+        <tabular>
+          <row header="yes">
+            <cell>subjects</cell>
+            <cell>conditions</cell>
+            <cell>scores</cell>
+            <cell>means</cell>
+            <cell>diff</cell>
+            <cell>diff_squared</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>A</cell>
+            <cell>20</cell>
+            <cell>11</cell>
+            <cell>4</cell>
+            <cell>16</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>A</cell>
+            <cell>11</cell>
+            <cell>11</cell>
+            <cell>4</cell>
+            <cell>16</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>A</cell>
+            <cell>2</cell>
+            <cell>11</cell>
+            <cell>4</cell>
+            <cell>16</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>B</cell>
+            <cell>6</cell>
+            <cell>5</cell>
+            <cell>-2</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>B</cell>
+            <cell>2</cell>
+            <cell>5</cell>
+            <cell>-2</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>B</cell>
+            <cell>7</cell>
+            <cell>5</cell>
+            <cell>-2</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>C</cell>
+            <cell>2</cell>
+            <cell>5</cell>
+            <cell>-2</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>C</cell>
+            <cell>11</cell>
+            <cell>5</cell>
+            <cell>-2</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>C</cell>
+            <cell>2</cell>
+            <cell>5</cell>
+            <cell>-2</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>Sums</cell>
+            <cell></cell>
+            <cell>63</cell>
+            <cell>63</cell>
+            <cell>0</cell>
+            <cell>72</cell>
+          </row>
+          <row>
+            <cell>Means</cell>
+            <cell></cell>
+            <cell>7</cell>
+            <cell>7</cell>
+            <cell>0</cell>
+            <cell>8</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        Notice we created a new column called <c>means</c>, these are the means for each condition, A, B, and C.
+      </p>
+
+      <p>
+        <m>SS_\text{Effect}</m> represents the amount of variation that is caused by differences between the means. The <c>diff</c> column is the difference between each condition mean and the grand mean, so for the first row, we have 11-7 = 4, and so on.
+      </p>
+
+      <p>
+        We found that <m>SS_\text{Effect} = 72</m>, this is the same as the ANOVA from the previous chapter
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-08-ss-error-within">
+      <title>SS Error (within-conditions)</title>
+      
+      <p>
+        Great, we made it to SS Error. We already found SS Total, and SS Effect, so now we can solve for SS Error just like this:
+      </p>
+
+      <p>
+        <m>SS_\text{total} = SS_\text{Effect} + SS_\text{Error (within-conditions)}</m>
+      </p>
+
+      <p>
+        switching around:
+      </p>
+
+      <p>
+        <m>SS_\text{Error} = SS_\text{total} - SS_\text{Effect}</m>
+      </p>
+
+      <p>
+        <m>SS_\text{Error (within conditions)} = 302 - 72 = 230</m>
+      </p>
+
+      <p>
+        Or, we could compute <m>SS_\text{Error (within conditions)}</m> directly from the data as we did last time:
+      </p>
+
+      <table xml:id="tbl-8sserror">
+        <title>Calculating SS Error (within conditions)</title>
+        <tabular>
+          <row header="yes">
+            <cell>subjects</cell>
+            <cell>conditions</cell>
+            <cell>scores</cell>
+            <cell>means</cell>
+            <cell>diff</cell>
+            <cell>diff_squared</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>A</cell>
+            <cell>20</cell>
+            <cell>11</cell>
+            <cell>-9</cell>
+            <cell>81</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>A</cell>
+            <cell>11</cell>
+            <cell>11</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>A</cell>
+            <cell>2</cell>
+            <cell>11</cell>
+            <cell>9</cell>
+            <cell>81</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>B</cell>
+            <cell>6</cell>
+            <cell>5</cell>
+            <cell>-1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>B</cell>
+            <cell>2</cell>
+            <cell>5</cell>
+            <cell>3</cell>
+            <cell>9</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>B</cell>
+            <cell>7</cell>
+            <cell>5</cell>
+            <cell>-2</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>C</cell>
+            <cell>2</cell>
+            <cell>5</cell>
+            <cell>3</cell>
+            <cell>9</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>C</cell>
+            <cell>11</cell>
+            <cell>5</cell>
+            <cell>-6</cell>
+            <cell>36</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>C</cell>
+            <cell>2</cell>
+            <cell>5</cell>
+            <cell>3</cell>
+            <cell>9</cell>
+          </row>
+          <row>
+            <cell>Sums</cell>
+            <cell></cell>
+            <cell>63</cell>
+            <cell>63</cell>
+            <cell>0</cell>
+            <cell>230</cell>
+          </row>
+          <row>
+            <cell>Means</cell>
+            <cell></cell>
+            <cell>7</cell>
+            <cell>7</cell>
+            <cell>0</cell>
+            <cell>25.56</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        When we compute <m>SS_\text{Error (within conditions)}</m> directly, we find the difference between each score and the condition mean for that score. This gives us the remaining error variation around the condition mean, that the condition mean does not explain.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-08-ss-subjects">
+      <title>SS Subjects</title>
+      
+      <p>
+        Now we are ready to calculate new partition, called <m>SS_\text{Subjects}</m>. We first find the means for each subject. For subject 1, this is the mean of their scores across Conditions A, B, and C. The mean for subject 1 is 9.33 (repeating). Notice there is going to be some rounding error here, that's OK for now.
+      </p>
+
+      <p>
+        The <c>means</c> column now shows all of the subject means. We then find the difference between each subject mean and the grand mean. These deviations are shown in the <c>diff</c> column. Then we square the deviations, and sum them up.
+      </p>
+
+      <table xml:id="tbl-8sssubjects">
+        <title>Calculating SS Subjects</title>
+        <tabular>
+          <row header="yes">
+            <cell>subjects</cell>
+            <cell>conditions</cell>
+            <cell>scores</cell>
+            <cell>means</cell>
+            <cell>diff</cell>
+            <cell>diff_squared</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>A</cell>
+            <cell>20</cell>
+            <cell>9.33</cell>
+            <cell>2.33</cell>
+            <cell>5.43</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>A</cell>
+            <cell>11</cell>
+            <cell>8</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>A</cell>
+            <cell>2</cell>
+            <cell>3.66</cell>
+            <cell>-3.34</cell>
+            <cell>11.16</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>B</cell>
+            <cell>6</cell>
+            <cell>9.33</cell>
+            <cell>2.33</cell>
+            <cell>5.43</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>B</cell>
+            <cell>2</cell>
+            <cell>8</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>B</cell>
+            <cell>7</cell>
+            <cell>3.66</cell>
+            <cell>-3.34</cell>
+            <cell>11.16</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>C</cell>
+            <cell>2</cell>
+            <cell>9.33</cell>
+            <cell>2.33</cell>
+            <cell>5.43</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>C</cell>
+            <cell>11</cell>
+            <cell>8</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>C</cell>
+            <cell>2</cell>
+            <cell>3.66</cell>
+            <cell>-3.34</cell>
+            <cell>11.16</cell>
+          </row>
+          <row>
+            <cell>Sums</cell>
+            <cell></cell>
+            <cell>63</cell>
+            <cell>63</cell>
+            <cell>-0.04</cell>
+            <cell>52.75</cell>
+          </row>
+          <row>
+            <cell>Means</cell>
+            <cell></cell>
+            <cell>7</cell>
+            <cell>7</cell>
+            <cell>0</cell>
+            <cell>5.86</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        We found that the sum of the squared deviations <m>SS_\text{Subjects}</m> = 52.75. Note again, this has some small rounding error because some of the subject means had repeating decimal places, and did not divide evenly.
+      </p>
+
+      <p>
+        We can see the effect of the rounding error if we look at the sum and mean in the <c>diff</c> column. We know these should be both zero, because the Grand mean is the balancing point in the data. The sum and mean are both very close to zero, but they are not zero because of rounding error.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-08-ss-error-leftover">
+      <title>SS Error (left-over)</title>
+      
+      <p>
+        Now we can do the last thing. Remember we wanted to split up the <m>SS_\text{Error (within conditions)}</m> into two parts, <m>SS_\text{Subjects}</m> and <m>SS_\text{Error (left-over)}</m>. Because we have already calculate <m>SS_\text{Error (within conditions)}</m> and <m>SS_\text{Subjects}</m>, we can solve for <m>SS_\text{Error (left-over)}</m>:
+      </p>
+
+      <p>
+        <m>SS_\text{Error (left-over)} = SS_\text{Error (within conditions)} - SS_\text{Subjects}</m>
+      </p>
+
+      <p>
+        <m>SS_\text{Error (left-over)} = SS_\text{Error (within conditions)} - SS_\text{Subjects} = 230 - 52.75 = 177.25</m>
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-08-check-work">
+      <title>Check our work</title>
+      
+      <p>
+        Before we continue to compute the MSEs and F-value for our data, let's quickly check our work. For example, we could have R compute the repeated measures ANOVA for us, and then we could look at the ANOVA table and see if we are on the right track so far.
+      </p>
+
+      <table xml:id="tbl-8rmANOVA1">
+        <title>Example ANOVA table reporting the degrees of freedom, sums of squares, mean squares, <m>F</m> value and associated <m>p</m> value.</title>
+        <tabular>
+          <row header="yes">
+            <cell></cell>
+            <cell>Df</cell>
+            <cell>Sum Sq</cell>
+            <cell>Mean Sq</cell>
+            <cell>F value</cell>
+            <cell>Pr(&gt;F)</cell>
+          </row>
+          <row>
+            <cell>subjects</cell>
+            <cell>2</cell>
+            <cell>53.66</cell>
+            <cell>26.83</cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>conditions</cell>
+            <cell>2</cell>
+            <cell>72.00</cell>
+            <cell>36.00</cell>
+            <cell>0.812</cell>
+            <cell>0.505</cell>
+          </row>
+          <row>
+            <cell>Residuals</cell>
+            <cell>4</cell>
+            <cell>177.33</cell>
+            <cell>44.33</cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        <xref ref="tbl-8rmANOVA1"/> looks good. We found the <m>SS_\text{Effect}</m> to be 72, and the SS for the conditions (same thing) in the table is also 72. We found the <m>SS_\text{Subjects}</m> to be 52.75, and the SS for the first residual (same thing) in the table is also 53.66 repeating. That's close, and our number is off because of rounding error. Finally, we found the <m>SS_\text{Error (left-over)}</m> to be 177.25, and the SS for the bottom residuals in the table (same thing) in the table is 177.33 repeating, again close but slightly off due to rounding error.
+      </p>
+
+      <p>
+        We have finished our job of computing the sums of squares that we need in order to do the next steps, which include computing the MSEs for the effect and the error term. Once we do that, we can find the F-value, which is the ratio of the two MSEs.
+      </p>
+
+      <p>
+        Before we do that, you may have noticed that we solved for <m>SS_\text{Error (left-over)}</m>, rather than directly computing it from the data. In this chapter we are not going to show you the steps for doing this. We are not trying to hide anything from, instead it turns out these steps are related to another important idea in ANOVA. We discuss this idea, which is called an <term>interaction</term> in the next chapter, when we discuss <term>factorial</term> designs (designs with more than one independent variable).
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-08-compute-mses">
+      <title>Compute the MSEs</title>
+      
+      <p>
+        Calculating the MSEs (mean squared error) that we need for the <m>F</m>-value involves the same general steps as last time. We divide each SS by the degrees of freedom for the SS.
+      </p>
+
+      <p>
+        The degrees of freedom for <m>SS_\text{Effect}</m> are the same as before, the number of conditions - 1. We have three conditions, so the df is 2. Now we can compute the <m>MSE_\text{Effect}</m>.
+      </p>
+
+      <p>
+        <m>MSE_\text{Effect} = \frac{SS_\text{Effect}}{df} = \frac{72}{2} = 36</m>
+      </p>
+
+      <p>
+        The degrees of freedom for <m>SS_\text{Error (left-over)}</m> are different than before, they are the (number of subjects - 1) multiplied by the (number of conditions -1). We have 3 subjects and three conditions, so <m>(3-1) * (3-1) = 2*2 =4</m>. You might be wondering why we are multiplying these numbers. Hold that thought for now and wait until the next chapter. Regardless, now we can compute the <m>MSE_\text{Error (left-over)}</m>.
+      </p>
+
+      <p>
+        <m>MSE_\text{Error (left-over)} = \frac{SS_\text{Error (left-over)}}{df} = \frac{177.33}{4}= 44.33</m>
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-08-compute-f">
+      <title>Compute F</title>
+      
+      <p>
+        We just found the two MSEs that we need to compute <m>F</m>. We went through all of this to compute <m>F</m> for our data, so let's do it:
+      </p>
+
+      <p>
+        <m>F = \frac{MSE_\text{Effect}}{MSE_\text{Error (left-over)}} = \frac{36}{44.33}= 0.812</m>
+      </p>
+
+      <p>
+        And, there we have it!
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-08-p-value">
+      <title>p-value</title>
+      
+      <p>
+        We already conducted the repeated-measures ANOVA using R and reported the ANOVA. Here it is again. The table shows the <m>p</m>-value associated with our <m>F</m>-value.
+      </p>
+
+      <table xml:id="tbl-8rmANOVA2">
+        <title>ANOVA table with p-value</title>
+        <tabular>
+          <row header="yes">
+            <cell></cell>
+            <cell>Df</cell>
+            <cell>Sum Sq</cell>
+            <cell>Mean Sq</cell>
+            <cell>F value</cell>
+            <cell>Pr(&gt;F)</cell>
+          </row>
+          <row>
+            <cell>subjects</cell>
+            <cell>2</cell>
+            <cell>53.66</cell>
+            <cell>26.83</cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>conditions</cell>
+            <cell>2</cell>
+            <cell>72.00</cell>
+            <cell>36.00</cell>
+            <cell>0.812</cell>
+            <cell>0.505</cell>
+          </row>
+          <row>
+            <cell>Residuals</cell>
+            <cell>4</cell>
+            <cell>177.33</cell>
+            <cell>44.33</cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        We might write up the results of our experiment and say that the main effect condition was not significant, F(2,4) = 0.812, MSE = 44.33, p = 0.505.
+      </p>
+
+      <p>
+        What does this statement mean? Remember, that the <m>p</m>-value represents the probability of getting the <m>F</m> value we observed or larger under the null (assuming that the samples come from the same distribution, the assumption of no differences). So, we know that an <m>F</m>-value of 0.812 or larger happens fairly often by chance (when there are no real differences), in fact it happens 50.5% of the time. As a result, we do not reject the idea that any differences in the means we have observed could have been produced by chance.
+      </p>
+    </subsection>
+  </section>
+
+  <section xml:id="sec-08-things-worth-knowing">
+    <title>Things worth knowing</title>
+    
+    <introduction>
+      <p>
+        Repeated Measures ANOVAs have some special properties that are worth knowing about. The main special property is that the error term used to for the <m>F</m>-value (the MSE in the denominator) will always be smaller than the error term used for the <m>F</m>-value the ANOVA for a between-subjects design. We discussed this earlier. It is smaller, because we subtract out the error associated with the subject means.
+      </p>
+
+      <p>
+        This can have the consequence of generally making <m>F</m>-values in repeated measures designs larger than <m>F</m>-values in between-subjects designs. When the number in the bottom of the <m>F</m> formula is generally smaller, it will generally make the resulting ratio a larger number. That's what happens when you make the number in the bottom smaller.
+      </p>
+
+      <p>
+        Because big <m>F</m> values usually let us reject the idea that differences in our means are due to chance, the repeated-measures ANOVA becomes a more sensitive test of the differences (its <m>F</m>-values are usually larger).
+      </p>
+
+      <p>
+        At the same time, there is a trade-off here. The repeated measures ANOVA uses different degrees of freedom for the error term, and these are typically a smaller number of degrees of freedom. So, the <m>F</m>-distributions for the repeated measures and between-subjects designs are actually different <m>F</m>-distributions, because they have different degrees of freedom.
+      </p>
+    </introduction>
+
+    <subsection xml:id="subsec-08-repeated-vs-between">
+      <title>Repeated vs between-subjects ANOVA</title>
+      
+      <p>
+        Let's do a couple simulations to see some the differences between the ANOVA for a repeated measures design, and the ANOVA for a between-subjects design.
+      </p>
+
+      <p>
+        We will do the following.
+      </p>
+
+      <ol>
+        <li>
+          <p>
+            Simulate a design with three conditions, A, B, and C
+          </p>
+        </li>
+        <li>
+          <p>
+            sample 10 scores into each condition from the same normal distribution (mean = 100, SD = 10)
+          </p>
+        </li>
+        <li>
+          <p>
+            We will include a subject factor for the repeated-measures version. Here there are 10 subjects, each contributing three scores, one each condition
+          </p>
+        </li>
+        <li>
+          <p>
+            For the between-subjects design there are 30 different subjects, each contributing one score in the condition they were assigned to (really the group).
+          </p>
+        </li>
+      </ol>
+
+      <p>
+        We run 1000 simulated experiments for each design. We calculate the <m>F</m> for each experiment, for both the between and repeated measures designs. <xref ref="fig-8critcompare"/> has the sampling distributions of <m>F</m> for both designs.
+      </p>
+
+      <figure xml:id="fig-8critcompare">
+        <caption>Comparing critical F values for a between and repeated measures design</caption>
+        <image source="imgs/08-RMANOVA_files/figure-html/fig-8critcompare-1.png" width="100%"/>
+      </figure>
+
+      <p>
+        These two <m>F</m> sampling distributions look pretty similar. However, they are subtly different. The between <m>F</m> distribution has degrees of freedom 2, and 27, for the numerator and denominator. There are 3 conditions, so <m>df_1 = 3-1 = 2</m>. There are 30 subjects, so <m>df_2 = 30-3 =27</m>. The critical value, assuming an alpha of 0.05 is 3.35. This means <m>F</m> is 3.35 or larger 5% of the time under the null.
+      </p>
+
+      <p>
+        The repeated-measures <m>F</m> distribution has degrees of freedom 2, and 18, for the numerator and denominator. There are 3 conditions, so <m>df_1 = 3-1 = 2</m>. There are 10 subjects, so <m>df_2 = (10-1)*(3-1) = 9*2 = 18</m>. The critical value, assuming an alpha of 0.05 is 3.55. This means <m>F</m> is 3.55 or larger 5% of the time under the null.
+      </p>
+
+      <p>
+        The critical value for the repeated measures version is slightly higher. This is because when <m>df_2</m> (the denominator) is smaller, the <m>F</m>-distribution spreads out to the right a little bit. When it is skewed like this, we get some bigger <m>F</m>s a greater proportion of the time.
+      </p>
+
+      <p>
+        So, in order to detect a real difference, you need an <m>F</m> of 3.35 or greater in a between-subjects design, or an <m>F</m> of 3.55 or greater for a repeated-measures design. The catch here is that when there is a real difference between the means, you will detect it more often with the repeated-measures design, even though you need a larger <m>F</m> (to pass the higher critical <m>F</m>-value for the repeated measures design).
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-08-rm-more-sensitive">
+      <title>repeated measures designs are more sensitive</title>
+      
+      <p>
+        To illustrate why repeated-measures designs are more sensitive, we will conduct another set of simulations.
+      </p>
+
+      <p>
+        We will do something slightly different this time. We will make sure that the scores for condition A, are always a little bit higher than the other scores. In other words, we will program in a real true difference. Specifically, the scores for condition will be sampled from a normal distribution with mean = 105, and SD = 10. This mean is 5 larger than the means for the other two conditions (still set to 100).
+      </p>
+
+      <p>
+        With a real difference in the means, we should now reject the hypothesis of no differences more often. We should find <m>F</m> values larger than the critical value more often. And, we should find <m>p</m>-values for each experiment that are smaller than .05 more often, those should occur more than 5% of the time.
+      </p>
+
+      <p>
+        To look at this we conduct 1000 experiments for each design, we conduct the ANOVA, then we save the <m>p</m>-value we obtained for each experiment. This is like asking how many times will we find a <m>p</m>-value less than 0.05, when there is a real difference (in this case an average of 5) between some of the means. <xref ref="fig-8fpvaluedist"/> contains histograms of the <m>p</m>-values:
+      </p>
+
+      <figure xml:id="fig-8fpvaluedist">
+        <caption><m>p</m>-value distributions for a between and within-subjects ANOVA</caption>
+        <image source="imgs/08-RMANOVA_files/figure-html/fig-8fpvaluedist-1.png" width="100%"/>
+      </figure>
+
+      <p>
+        Here we have two distributions of observed p-values for the simulations. The red line shows the location of 0.05. Overall, we can see that for both designs, we got a full range of <m>p</m>-values from 0 to 1. This means that many times we would not have rejected the hypothesis of no differences (even though we know there is a small difference). We would have rejected the null every time the <m>p</m>-value was less than 0.05.
+      </p>
+
+      <p>
+        For the between subject design, there were roughly 550 experiments with a <m>p</m> less than 0.05, or approximately 0.55 of experiments were <q>significant</q>, with alpha=.05.
+      </p>
+
+      <p>
+        For the within subject design, there were roughly 550 experiments with a <m>p</m> less than 0.05, or approximately 0.55 of experiments were <q>significant</q>, with alpha=.05.
+      </p>
+
+      <p>
+        OK, well, you still might not be impressed. In this case, the between-subjects design detected the true effect slightly more often than the repeated measures design. Both them were right around 55% of the time. Based on this, we could say the two designs are pretty comparable in their sensitivity, or ability to detect a true difference when there is one.
+      </p>
+
+      <p>
+        However, remember that the between-subjects design uses 30 subjects, and the repeated measures design only uses 10. We had to make a big investment to get our 30 subjects. And, we're kind of unfairly comparing the between design (which is more sensitive because it has more subjects) with the repeated measures design that has fewer subjects.
+      </p>
+
+      <p>
+        What do you think would happen if we ran 30 subjects in the repeated measures design? Let's find out. <xref ref="fig-8pdistwithin"/> re-plots the above, but this time only for the repeated measures design. We increase <m>N</m> from 10 to 30.
+      </p>
+
+      <figure xml:id="fig-8pdistwithin">
+        <caption><m>p</m>-value distribution for within-subjects design with <m>n = 30</m></caption>
+        <image source="imgs/08-RMANOVA_files/figure-html/fig-8pdistwithin-1.png" width="100%"/>
+      </figure>
+
+      <p>
+        Wowsers! Look at that. When we ran 30 subjects in the repeated measures design almost all of the <m>p</m>-values were less than .05. There were roughly 975 experiments with a <m>p</m> less than 0.05, or approximately 0.975 of experiments were <q>significant</q>, with alpha=.05. That's huge! If we ran the repeated measures design, we would almost always detect the true difference when it is there. This is why the repeated measures design can be more sensitive than the between-subjects design.
+      </p>
+    </subsection>
+  </section>
+
+  <section xml:id="sec-08-real-data">
+    <title>Real Data</title>
+    
+    <p>
+      Let's look at some real data from a published experiment that uses a repeated measures design. This is the same example that you will be using in the lab for repeated measures ANOVA. The data happen to be taken from a recent study conducted by Lawrence Behmer and myself, at Brooklyn College [Behmer &amp; Crump, 2017].
+    </p>
+
+    <p>
+      We were interested in how people perform sequences of actions. One question is whether people learn individual parts of actions, or the whole larger pattern of a sequence of actions. We looked at these issues in a computer keyboard typing task. One of our questions was whether we would replicate some well known findings about how people type words and letters.
+    </p>
+
+    <p>
+      From prior work we knew that people type words way faster than than random letters, but if you made the random letters a little bit more English-like, then people type those letter strings a little bit faster, but not as slow as random string.
+    </p>
+
+    <p>
+      In the study, 38 participants sat in front of a computer and typed 5 letter strings one at a time. Sometimes the 5 letter made a word (Normal condition, TRUCK), sometimes they were completely random (Random Condition, JWYFG), and sometimes they followed patterns like you find in English (Bigram Condition, QUEND), but were not actual words. So, the independent variable for the typing material had three levels. We measured every single keystroke that participants made. This gave us a few different dependent measures. Let's take a look a the reaction times. This is how long it took for participants to start typing the first letter in the string.
+    </p>
+
+    <figure xml:id="fig-8behmcrump">
+      <caption>Results from Behmer &amp; Crump (2017)</caption>
+      <image source="imgs/08-RMANOVA_files/figure-html/fig-8behmcrump-1.png" width="100%"/>
+    </figure>
+
+    <p>
+      OK, I made a figure showing the mean reaction times for the different typing material conditions. You will notice that there are two sets of lines. That's because there was another manipulation I didn't tell you about. In one block of trials participants got to look at the keyboard while they typed, but in the other condition we covered up the keyboard so people had to type without looking. Finally, the error bars are standard error of the means.
+    </p>
+
+    <note>
+      <p>
+        Note, the use of error bars for repeated-measures designs is not very straightforward. In fact the standard error of the means that we have added here are not very meaningful for judging whether the differences between the means are likely not due to chance. They would be if this was a between-subjects design. We will update this textbook with a longer discussion of this issue, for now we will just live with these error bars.
+      </p>
+    </note>
+
+    <p>
+      For the purpose of this example, we will say, it sure looks like the previous finding replicated. For example, people started typing Normal words faster than Bigram strings (English-like), and they started typing random letters the most slowly of all. Just like prior research had found.
+    </p>
+
+    <p>
+      Let's focus only on the block of trials where participants were allowed to look at the keyboard while they typed, that's the red line, for the <q>visible keyboard</q> block. We can see the means look different. Let's next ask, what is the likelihood that chance (random sampling error) could have produced these mean differences. To do that we run a repeated-measures ANOVA in R. Here is the ANOVA table.
+    </p>
+
+    <table xml:id="tbl-8behmcrumpANOVA">
+      <title>ANOVA table for Behmer &amp; Crump (2017) data</title>
+      <tabular>
+        <row header="yes">
+          <cell></cell>
+          <cell>Df</cell>
+          <cell>Sum Sq</cell>
+          <cell>Mean Sq</cell>
+          <cell>F value</cell>
+          <cell>Pr(&gt;F)</cell>
+        </row>
+        <row>
+          <cell>Stimulus</cell>
+          <cell>2</cell>
+          <cell>1423289</cell>
+          <cell>711645</cell>
+          <cell>235.73</cell>
+          <cell>&lt; 0.001</cell>
+        </row>
+        <row>
+          <cell>Residuals</cell>
+          <cell>74</cell>
+          <cell>223650</cell>
+          <cell>3022</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Alright, we might report the results like this. There was a significant main effect of Stimulus type, F(2, 74) = 235.73, MSE = 3022.289, p &lt; 0.001.
+    </p>
+
+    <p>
+      Notice a couple things. First, this is a huge <m>F</m>-value. It's 253! Notice also that the p-value is listed as 0. That doesn't mean there is zero chance of getting an F-value this big under the null. This is a rounding error. The true p-value is 0.00000000000000... The zeros keep going for a while. This means there is only a vanishingly small probability that these differences could have been produced by sampling error. So, we reject the idea that the differences between our means could be explained by chance. Instead, we are pretty confident, based on this evidence and and previous work showing the same thing, that our experimental manipulation caused the difference. In other words, people really do type normal words faster than random letters, and they type English-like strings somewhere in the middle in terms of speed.
+    </p>
+  </section>
+
+  <section xml:id="sec-08-summary">
+    <title>Summary</title>
+    
+    <p>
+      In this chapter you were introduced to the repeated-measures ANOVA. This analysis is appropriate for within-subjects or repeated measures designs. The main difference between the independent factor ANOVA and the repeated measures ANOVA, is the ability to partial out variance due to the individual subject means. This can often result in the repeated-measures ANOVA being more sensitive to true effects than the between-subjects ANOVA.
+    </p>
+  </section>
+</chapter>

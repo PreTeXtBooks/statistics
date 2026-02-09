@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="sec-basic-probability-theory">
+  <title>Basic probability theory</title>
+  
+  <p>
+    Ideological arguments between Bayesians and frequentists notwithstanding, it turns out that people mostly agree on the rules that probabilities should obey. There are lots of different ways of arriving at these rules. The most commonly used approach is based on the work of Andrey Kolmogorov, one of the great Soviet mathematicians of the 20th century. I won't go into a lot of detail, but I'll try to give you a bit of a sense of how it works. And in order to do so, I'm going to have to talk about my pants.
+  </p>
+
+  <subsection xml:id="subsec-probability-distributions">
+    <title>Introducing probability distributions</title>
+    
+    <p>
+      One of the disturbing truths about my life is that I only own 5 pairs of pants: three pairs of jeans, the bottom half of a suit, and a pair of tracksuit pants. Even sadder, I've given them names: I call them <m>X_1</m>, <m>X_2</m>, <m>X_3</m>, <m>X_4</m> and <m>X_5</m>. I really do: that's why they call me Mister Imaginative. Now, on any given day, I pick out exactly one of pair of pants to wear. Not even I'm so stupid as to try to wear two pairs of pants, and thanks to years of training I never go outside without wearing pants anymore. If I were to describe this situation using the language of probability theory, I would refer to each pair of pants (i.e., each <m>X</m>) as an <term>elementary event</term>. The key characteristic of elementary events is that every time we make an observation (e.g., every time I put on a pair of pants), then the outcome will be one and only one of these events. Like I said, these days I always wear exactly one pair of pants, so my pants satisfy this constraint. Similarly, the set of all possible events is called a <term>sample space</term>. Granted, some people would call it a "wardrobe", but that's because they're refusing to think about my pants in probabilistic terms. Sad.
+    </p>
+
+    <p>
+      Okay, now that we have a sample space (a wardrobe), which is built from lots of possible elementary events (pants), what we want to do is assign a <term>probability</term> of one of these elementary events. For an event <m>X</m>, the probability of that event <m>P(X)</m> is a number that lies between 0 and 1. The bigger the value of <m>P(X)</m>, the more likely the event is to occur. So, for example, if <m>P(X) = 0</m>, it means the event <m>X</m> is impossible (i.e., I never wear those pants). On the other hand, if <m>P(X) = 1</m> it means that event <m>X</m> is certain to occur (i.e., I always wear those pants). For probability values in the middle, it means that I sometimes wear those pants. For instance, if <m>P(X) = 0.5</m> it means that I wear those pants half of the time.
+    </p>
+
+    <p>
+      At this point, we're almost done. The last thing we need to recognize is that "something always happens". Every time I put on pants, I really do end up wearing pants (crazy, right?). What this somewhat trite statement means, in probabilistic terms, is that the probabilities of the elementary events need to add up to 1. This is known as the <term>law of total probability</term>, not that any of us really care. More importantly, if these requirements are satisfied, then what we have is a <term>probability distribution</term>. For example, this is an example of a probability distribution
+    </p>
+
+    <table xml:id="table-pants-probability">
+      <title>The pants probability distribution</title>
+      <tabular>
+        <row bottom="minor">
+          <cell>Which pants?</cell>
+          <cell>Label</cell>
+          <cell>Probability</cell>
+        </row>
+        <row>
+          <cell>Blue jeans</cell>
+          <cell><m>X_1</m></cell>
+          <cell><m>P(X_1) = .5</m></cell>
+        </row>
+        <row>
+          <cell>Grey jeans</cell>
+          <cell><m>X_2</m></cell>
+          <cell><m>P(X_2) = .3</m></cell>
+        </row>
+        <row>
+          <cell>Black jeans</cell>
+          <cell><m>X_3</m></cell>
+          <cell><m>P(X_3) = .1</m></cell>
+        </row>
+        <row>
+          <cell>Black suit</cell>
+          <cell><m>X_4</m></cell>
+          <cell><m>P(X_4) = 0</m></cell>
+        </row>
+        <row>
+          <cell>Blue tracksuit</cell>
+          <cell><m>X_5</m></cell>
+          <cell><m>P(X_5) = .1</m></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Each of the events has a probability that lies between 0 and 1, and if we add up the probability of all events, they sum to 1. Awesome. We can even draw a nice bar graph to visualize this distribution, as shown in <xref ref="fig-4pantsprob"/>. And at this point, we've all achieved something. You've learned what a probability distribution is, and I've finally managed to find a way to create a graph that focuses entirely on my pants. Everyone wins!
+    </p>
+
+    <figure xml:id="fig-4pantsprob">
+      <caption>A visual depiction of the pants probability distribution. There are five elementary events, corresponding to the five pairs of pants that I own. Each event has some probability of occurring: this probability is a number between 0 to 1. The sum of these probabilities is 1.</caption>
+      <image source="imgs/navarro_img/probability/pantsDistribution-eps-converted-to.png"/>
+    </figure>
+
+    <p>
+      The only other thing that I need to point out is that probability theory allows you to talk about <term>non elementary events</term> as well as elementary ones. The easiest way to illustrate the concept is with an example. In the pants example, it's perfectly legitimate to refer to the probability that I wear jeans. In this scenario, the "Dan wears jeans" event said to have happened as long as the elementary event that actually did occur is one of the appropriate ones; in this case "blue jeans", "black jeans" or "grey jeans". In mathematical terms, we defined the "jeans" event <m>E</m> to correspond to the set of elementary events <m>(X_1, X_2, X_3)</m>. If any of these elementary events occurs, then <m>E</m> is also said to have occurred. Having decided to write down the definition of the <m>E</m> this way, it's pretty straightforward to state what the probability <m>P(E)</m> is: we just add everything up. In this particular case
+    </p>
+
+    <me>P(E) = P(X_1) + P(X_2) + P(X_3)</me>
+
+    <p>
+      and, since the probabilities of blue, grey and black jeans respectively are .5, .3 and .1, the probability that I wear jeans is equal to .9.
+    </p>
+
+    <p>
+      At this point you might be thinking that this is all terribly obvious and simple and you'd be right. All we've really done is wrap some basic mathematics around a few common sense intuitions. However, from these simple beginnings it's possible to construct some extremely powerful mathematical tools. I'm definitely not going to go into the details in this book, but what I will do is list some of the other rules that probabilities satisfy. These rules can be derived from the simple assumptions that I've outlined above, but since we don't actually use these rules for anything in this book, I won't do so here.
+    </p>
+
+    <table xml:id="table-probability-rules">
+      <title>Some basic rules that probabilities must satisfy</title>
+      <tabular>
+        <row bottom="minor">
+          <cell>English</cell>
+          <cell>Notation</cell>
+          <cell></cell>
+          <cell>Formula</cell>
+        </row>
+        <row>
+          <cell>not <m>A</m></cell>
+          <cell><m>P(\neg A)</m></cell>
+          <cell><m>=</m></cell>
+          <cell><m>1-P(A)</m></cell>
+        </row>
+        <row>
+          <cell><m>A</m> or <m>B</m></cell>
+          <cell><m>P(A \cup B)</m></cell>
+          <cell><m>=</m></cell>
+          <cell><m>P(A) + P(B) - P(A \cap B)</m></cell>
+        </row>
+        <row>
+          <cell><m>A</m> and <m>B</m></cell>
+          <cell><m>P(A \cap B)</m></cell>
+          <cell><m>=</m></cell>
+          <cell><m>P(A|B) P(B)</m></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      You don't really need to know these rules in order to understand the analyses that we'll talk about later in the book, but they are important if you want to understand probability theory a bit more deeply.
+    </p>
+
+    <p>
+      Now that we have the ability to "define" non-elementary events in terms of elementary ones, we can actually use this to construct (or, if you want to be all mathematicallish, "derive") some of the other rules of probability. These rules are listed above, and while I'm pretty confident that very few of my readers actually care about how these rules are constructed, I'm going to show you anyway: even though it's boring and you'll probably never have a lot of use for these derivations, if you read through it once or twice and try to see how it works, you'll find that probability starts to feel a bit less mysterious, and with any luck a lot less daunting. So here goes. Firstly, in order to construct the rules I'm going to need a sample space <m>X</m> that consists of a bunch of elementary events <m>x</m>, and two non-elementary events, which I'll call <m>A</m> and <m>B</m>. Let's say:
+    </p>
+
+    <md>
+      <mrow>X &amp;=&amp; (x_1, x_2, x_3, x_4, x_5)</mrow>
+      <mrow>A &amp;=&amp; (x_1, x_2, x_3)</mrow>
+      <mrow>B &amp;=&amp; (x_3, x_4)</mrow>
+    </md>
+
+    <p>
+      To make this a bit more concrete, let's suppose that we're still talking about the pants distribution. If so, <m>A</m> corresponds to the event "jeans", and <m>B</m> corresponds to the event "black":
+    </p>
+
+    <md>
+      <mrow>\mbox{``jeans''} &amp;=&amp; (\mbox{``blue jeans''}, \mbox{``grey jeans''}, \mbox{``black jeans''})</mrow>
+      <mrow>\mbox{``black''} &amp;=&amp; (\mbox{``black jeans''}, \mbox{``black suit''})</mrow>
+    </md>
+
+    <p>
+      So now let's start checking the rules that I've listed in the table.
+    </p>
+
+    <p>
+      In the first line, the table says that
+    </p>
+
+    <me>P(\neg A) = 1- P(A)</me>
+
+    <p>
+      and what it <em>means</em> is that the probability of "not <m>A</m>" is equal to 1 minus the probability of <m>A</m>. A moment's thought (and a tedious example) make it obvious why this must be true. If <m>A</m> corresponds to the even that I wear jeans (i.e., one of <m>x_1</m> or <m>x_2</m> or <m>x_3</m> happens), then the only meaningful definition of "not <m>A</m>" (which is mathematically denoted as <m>\neg A</m>) is to say that <m>\neg A</m> consists of <em>all</em> elementary events that don't belong to <m>A</m>. In the case of the pants distribution it means that <m>\neg A = (x_4, x_5)</m>, or, to say it in English: "not jeans" consists of all pairs of pants that aren't jeans (i.e., the black suit and the blue tracksuit). Consequently, every single elementary event belongs to either <m>A</m> or <m>\neg A</m>, but not both. Okay, so now let's rearrange our statement above:
+    </p>
+
+    <me>P(\neg A) + P(A) = 1</me>
+
+    <p>
+      which is a trite way of saying either I do wear jeans or I don't wear jeans: the probability of "not jeans" plus the probability of "jeans" is 1. Mathematically:
+    </p>
+
+    <md>
+      <mrow>P(\neg A) &amp;=&amp;  P(x_4) + P(x_5)</mrow>
+      <mrow>P(A) &amp;=&amp; P(x_1) + P(x_2) + P(x_3)</mrow>
+    </md>
+
+    <p>
+      so therefore
+    </p>
+
+    <md>
+      <mrow>P(\neg A) + P(A) &amp;=&amp; P(x_1) + P(x_2) + P(x_3) + P(x_4) + P(x_5)</mrow>
+      <mrow>&amp;=&amp; \sum_{x \in X} P(x)</mrow>
+      <mrow>&amp;=&amp; 1</mrow>
+    </md>
+
+    <p>
+      Excellent. It all seems to work.
+    </p>
+
+    <p>
+      Wow, I can hear you saying. That's a lot of <m>x</m>s to tell me the freaking obvious. And you're right: this <em>is</em> freaking obvious. The whole <em>point</em> of probability theory to to formalize and mathematize a few very basic common sense intuitions. So let's carry this line of thought forward a bit further. In the last section I defined an event corresponding to <em>not</em> A, which I denoted <m>\neg A</m>. Let's now define two new events that correspond to important everyday concepts: <m>A</m> <em>and</em> <m>B</m>, and <m>A</m> <em>or</em> <m>B</m>. To be precise:
+    </p>
+
+    <table xml:id="table-and-or-notation">
+      <title>Notation for "and" and "or" events</title>
+      <tabular>
+        <row bottom="minor">
+          <cell>English statement:</cell>
+          <cell>Mathematical notation:</cell>
+        </row>
+        <row>
+          <cell>"<m>A</m> and <m>B</m>" both happen</cell>
+          <cell><m>A \cap B</m></cell>
+        </row>
+        <row>
+          <cell>at least one of "<m>A</m> or <m>B</m>" happens</cell>
+          <cell><m>A \cup B</m></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Since <m>A</m> and <m>B</m> are both defined in terms of our elementary events (the <m>x</m>s) we're going to need to try to describe <m>A \cap B</m> and <m>A \cup B</m> in terms of our elementary events too. Can we do this? Yes we can The only way that both <m>A</m> and <m>B</m> can occur is if the elementary event that we observe turns out to belong to both <m>A</m> and <m>B</m>. Thus "<m>A \cap B</m>" includes only those elementary events that belong to both <m>A</m> and <m>B</m>...
+    </p>
+
+    <md>
+      <mrow>A &amp;=&amp; (x_1, x_2, x_3)</mrow>
+      <mrow>B &amp;=&amp; (x_3, x_4)</mrow>
+      <mrow>A \cap B &amp; = &amp; (x_3)</mrow>
+    </md>
+
+    <p>
+      So, um, the only way that I can wear "jeans" <m>(x_1, x_2, x_3)</m> and "black pants" <m>(x_3, x_4)</m> is if I wear "black jeans" <m>(x_3)</m>. Another victory for the bloody obvious.
+    </p>
+
+    <p>
+      At this point, you're not going to be at all shocked by the definition of <m>A \cup B</m>, though you're probably going to be extremely bored by it. The only way that I can wear "jeans" or "black pants" is if the elementary pants that I actually do wear belongs to <m>A</m> or to <m>B</m>, or to both. So...
+    </p>
+
+    <md>
+      <mrow>A &amp;=&amp; (x_1, x_2, x_3)</mrow>
+      <mrow>B &amp;=&amp; (x_3, x_4)</mrow>
+      <mrow>A \cup B &amp; = &amp; (x_1, x_2, x_3, x_4)</mrow>
+    </md>
+
+    <p>
+      Oh yeah baby. Mathematics at its finest.
+    </p>
+
+    <p>
+      So, we've defined what we mean by <m>A \cap B</m> and <m>A \cup B</m>. Now let's assign probabilities to these events. More specifically, let's start by verifying the rule that claims that:
+    </p>
+
+    <me>P(A \cup B) = P(A) + P(B) - P(A \cap B)</me>
+
+    <p>
+      Using our definitions earlier, we know that <m>A \cup B = (x_1, x_2, x_3, x_4)</m>, so
+    </p>
+
+    <me>P(A \cup B) = P(x_1) + P(x_2) + P(x_3) + P(x_4)</me>
+
+    <p>
+      and making similar use of the fact that we know what elementary events belong to <m>A</m>, <m>B</m> and <m>A \cap B</m>....
+    </p>
+
+    <md>
+      <mrow>P(A)  &amp;=&amp;   P(x_1) + P(x_2) + P(x_3)</mrow>
+      <mrow>P(B) &amp;=&amp;  P(x_3) + P(x_4)</mrow>
+      <mrow>P(A \cap B) &amp;=&amp;  P(x_3)</mrow>
+    </md>
+
+    <p>
+      and therefore
+    </p>
+
+    <md>
+      <mrow>P(A) + P(B) - P(A \cap B) &amp;=&amp;  P(x_1) + P(x_2) + P(x_3) +  P(x_3) + P(x_4) -  P(x_3)</mrow>
+      <mrow>&amp;=&amp; P(x_1) + P(x_2) + P(x_3) + P(x_4)</mrow>
+      <mrow>&amp;=&amp; P(A \cup B)</mrow>
+    </md>
+
+    <p>
+      Done.
+    </p>
+
+    <p>
+      The next concept we need to define is the notion of "<m>B</m> given <m>A</m>", which is typically written <m>B | A</m>. Here's what I mean: suppose that I get up one morning, and put on a pair of pants. An elementary event <m>x</m> has occurred. Suppose further I yell out to my wife (who is in the other room, and so cannot see my pants) "I'm wearing jeans today!". Assuming that she believes that I'm telling the truth, she knows that <m>A</m> is true. <em>Given</em> that she knows that <m>A</m> has happened, what is the <term>conditional probability</term> that <m>B</m> is also true? Well, let's think about what she knows. Here are the facts:
+    </p>
+
+    <ul>
+      <li><p><em>The non-jeans events are impossible</em>. If <m>A</m> is true, then we know that the only possible elementary events that could have occurred are <m>x_1</m>, <m>x_2</m> and <m>x_3</m> (i.e.,the jeans). The non-jeans events <m>x_4</m> and <m>x_5</m> are now impossible, and must be assigned probability zero. In other words, our <em>sample space</em> has been restricted to the jeans events. But it's still the case that the probabilities of these these events <em>must</em> sum to 1: we know for sure that I'm wearing jeans.</p></li>
+      <li><p><em>She's learned nothing about which jeans I'm wearing</em>. Before I made my announcement that I was wearing jeans, she already knew that I was five times as likely to be wearing blue jeans (<m>P(x_1) = 0.5</m>) than to be wearing black jeans (<m>P(x_3) = 0.1</m>). My announcement doesn't change this... I said <em>nothing</em> about what color my jeans were, so it must remain the case that <m>P(x_1) / P(x_3)</m> stays the same, at a value of 5.</p></li>
+    </ul>
+
+    <p>
+      There's only one way to satisfy these constraints: set the impossible events to have zero probability (i.e., <m>P(x | A) = 0</m> if <m>x</m> is not in <m>A</m>), and then divide the probabilities of all the others by <m>P(A)</m>. In this case, since <m>P(A) = 0.9</m>, we divide by 0.9. This gives:
+    </p>
+
+    <table xml:id="table-conditional-probability">
+      <title>Conditional probabilities</title>
+      <tabular>
+        <row bottom="minor">
+          <cell>which pants?</cell>
+          <cell>elementary event</cell>
+          <cell>old prob, <m>P(x)</m></cell>
+          <cell>new prob, <m>P(x | A)</m></cell>
+        </row>
+        <row>
+          <cell>blue jeans</cell>
+          <cell><m>x_1</m></cell>
+          <cell>0.5</cell>
+          <cell>0.556</cell>
+        </row>
+        <row>
+          <cell>grey jeans</cell>
+          <cell><m>x_2</m></cell>
+          <cell>0.3</cell>
+          <cell>0.333</cell>
+        </row>
+        <row>
+          <cell>black jeans</cell>
+          <cell><m>x_3</m></cell>
+          <cell>0.1</cell>
+          <cell>0.111</cell>
+        </row>
+        <row>
+          <cell>black suit</cell>
+          <cell><m>x_4</m></cell>
+          <cell>0</cell>
+          <cell>0</cell>
+        </row>
+        <row>
+          <cell>blue tracksuit</cell>
+          <cell><m>x_5</m></cell>
+          <cell>0.1</cell>
+          <cell>0</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      In mathematical terms, we say that
+    </p>
+
+    <me>P(x | A) = \frac{P(x)}{P(A)}</me>
+
+    <p>
+      if <m>x \in A</m>, and <m>P(x|A) = 0</m> otherwise. And therefore...
+    </p>
+
+    <md>
+      <mrow>P(B | A) &amp;=&amp; P(x_3 | A)  + P(x_4 | A)</mrow>
+      <mrow></mrow>
+      <mrow>&amp;=&amp;  \displaystyle\frac{P(x_3)}{P(A)} + 0</mrow>
+      <mrow></mrow>
+      <mrow>&amp;=&amp; \displaystyle\frac{P(x_3)}{P(A)}</mrow>
+    </md>
+
+    <p>
+      Now, recalling that <m>A \cap B = (x_3)</m>, we can write this as
+    </p>
+
+    <me>P(B | A) = \frac{P(A \cap B)}{P(A)}</me>
+
+    <p>
+      and if we multiply both sides by <m>P(A)</m> we obtain:
+    </p>
+
+    <me>P(A \cap B) = P(B| A) P(A)</me>
+
+    <p>
+      which is the third rule that we had listed in the table.
+    </p>
+  </subsection>
+
+</section>
