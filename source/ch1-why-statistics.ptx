@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<section xml:id="sec-why-statistics">
+<chapter xml:id="ch1-why-statistics">
   <title>Why Statistics?</title>
-  
+        <introduction>
+<p>Author: Danielle J. Navarro</p>
+<p>Chapter notes: Adapted nearly verbatim from Chapters 1 and 2 in Navarro, D. J. "Learning Statistics with R." https://compcogscisydney.org/learning-statistics-with-r/</p>
   <blockquote>
     <p>
       To call in statisticians after the experiment is done may be no more than asking them to perform a post-mortem examination: They may be able to say what the experiment died of. <mdash />Sir Ronald Fisher
     </p>
   </blockquote>
 
-  <subsection xml:id="subsec-psychology-of-statistics">
+      </introduction>
+  <section xml:id="subsec-psychology-of-statistics">
     <title>On the psychology of statistics</title>
     
     <introduction>
@@ -36,7 +39,7 @@
       </p>
     </introduction>
 
-    <subsubsection xml:id="subsubsec-belief-bias">
+    <subsection xml:id="subsubsec-belief-bias">
       <title>The curse of belief bias</title>
       
       <p>
@@ -169,10 +172,10 @@
       <p>
         If you think about it, it's not as if these data are horribly damning. Overall, people did do better than chance at compensating for their prior biases, since about 60% of people's judgement were correct (you'd expect 50% by chance). Even so, if you were a professional "evaluator of evidence", and someone came along and offered you a magic tool that improves your chances of making the right decision from 60% to (say) 95%, you'd probably jump at it, right? Of course you would. Thankfully, we actually do have a tool that can do this. But it's not magic, it's statistics. So that's reason #1 why scientists love statistics. It's just <em>too easy</em> for us to "believe what we want to believe"; so if we want to "believe in the data" instead, we're going to need a bit of help to keep our personal biases under control. That's what statistics does: it helps keep us honest.
       </p>
-    </subsubsection>
-  </subsection>
+    </subsection>
+  </section>
 
-  <subsection xml:id="subsec-simpsons-paradox">
+  <section xml:id="subsec-simpsons-paradox">
     <title>The cautionary tale of Simpson's paradox</title>
     
     <p>
@@ -296,9 +299,9 @@
     <p>
       In short there are a lot of critical questions that you can't answer with statistics, but the answers to those questions will have a huge impact on how you analyse and interpret data. And this is the reason why you should always think of statistics as a <em>tool</em> to help you learn about your data, no more and no less. It's a powerful tool to that end, but there's no substitute for careful thought.
     </p>
-  </subsection>
+  </section>
 
-  <subsection xml:id="subsec-statistics-in-psychology">
+  <section xml:id="subsec-statistics-in-psychology">
     <title>Statistics in psychology</title>
     
     <p>
@@ -338,9 +341,9 @@
         </p>
       </li>
     </ul>
-  </subsection>
+  </section>
 
-  <subsection xml:id="subsec-statistics-in-everyday-life">
+  <section xml:id="subsec-statistics-in-everyday-life">
     <title>Statistics in everyday life</title>
     
     <blockquote>
@@ -355,9 +358,9 @@
     <p>
       When I started writing up my lecture notes I took the 20 most recent news articles posted to the ABC news website. Of those 20 articles, it turned out that 8 of them involved a discussion of something that I would call a statistical topic; 6 of those made a mistake. The most common error, if you're curious, was failing to report baseline data (e.g., the article mentions that 5% of people in situation X have some characteristic Y, but doesn't say how common the characteristic is for everyone else!) The point I'm trying to make here isn't that journalists are bad at statistics (though they almost always are), it's that a basic knowledge of statistics is very helpful for trying to figure out when someone else is either making a mistake or even lying to you. Perhaps, one of the biggest things that a knowledge of statistics does to you is cause you to get angry at the newspaper or the internet on a far more frequent basis :).
     </p>
-  </subsection>
+  </section>
 
-  <subsection xml:id="subsec-more-than-statistics">
+  <section xml:id="subsec-more-than-statistics">
     <title>There's more to research methods than statistics</title>
     
     <p>
@@ -367,6 +370,6 @@
     <p>
       But note that "urgent" is different from "important" <mdash /> they both matter. I really do want to stress that research design is just as important as data analysis, and this book does spend a fair amount of time on it. However, while statistics has a kind of universality, and provides a set of core tools that are useful for most types of psychological research, the research methods side isn't quite so universal. There are some general principles that everyone should think about, but a lot of research design is very idiosyncratic, and is specific to the area of research that you want to engage in. To the extent that it's the details that matter, those details don't usually show up in an introductory stats and research methods class.
     </p>
-  </subsection>
+  </section>
 
-</section>
+</chapter>
