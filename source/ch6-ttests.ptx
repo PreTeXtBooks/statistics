@@ -1291,7 +1291,7 @@ ggplot(plot_df, aes(x = range, y = null_distribution)) +
       </p>
 
       <p>
-        So, where do these values come from, how can you figure out what they are? The complicated answer is that we are not going to explain the math behind finding these values because, 1) the authors (some of us) admittedly don't know the math well enough to explain it, and 2) it would sidetrack us to much, 3) you will learn how to get these numbers in the lab with software, 4) you will learn how to get these numbers in lab without the math, just by doing a simulation, and 5) you can do it in R, or excel, or you can use an online calculator.
+        So, where do these values come from, how can you figure out what they are? The complicated answer is that we are not going to explain the math behind finding these values because, 1) the authors (some of us) admittedly don't know the math well enough to explain it, and 2) it would sidetrack us too much, 3) you will learn how to get these numbers in the lab with software, 4) you will learn how to get these numbers in lab without the math, just by doing a simulation, and 5) you can do it in R, or excel, or you can use an <url href="https://www.socscistatistics.com/pvalues/tdistribution/calculator/" visual="https://www.socscistatistics.com/pvalues/tdistribution/calculator/">online calculator</url>.
       </p>
 
       <p>
