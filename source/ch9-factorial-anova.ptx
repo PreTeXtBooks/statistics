@@ -1234,7 +1234,7 @@ knitr::kable(xtable(aov_summary))
     <subsection xml:id="subsec-stand-at-attention">
       <title>Stand at attention</title>
       <p>Do you pay more attention when you are sitting or standing? This was the kind of research question the researchers were asking in the study we will look at. In fact, the general question and design is very similar to our fake study idea that we used to explain factorial designs in this chapter.</p>
-      <p>The paper we look at is called "Stand by your Stroop: Standing up enhances selective attention and cognitive control" <xref ref="biblio-Rosenbaum2017" text="custom">(Rosenbaum, Mama, &amp; Algom, 2017)</xref>. This paper asked whether sitting versus standing would influence a measure of selective attention, the ability to ignore distracting information.</p>
+      <p>The paper we look at is called "Stand by your Stroop: Standing up enhances selective attention and cognitive control" <xref ref="biblio-Rosenbaum2017">(Rosenbaum, Mama, &amp; Algom, 2017)</xref>. This paper asked whether sitting versus standing would influence a measure of selective attention, the ability to ignore distracting information.</p>
       <p>They used a classic test of selective attention, called the Stroop effect. You may already know what the Stroop effect is. In a typical Stroop experiment, subjects name the color of words as fast as they can. The trick is that sometimes the color of the word is the same as the name of the word, and sometimes it is not. <xref ref="fig-9stroop"/> shows some examples:</p>
       <remark>
         <title>R Code</title>
