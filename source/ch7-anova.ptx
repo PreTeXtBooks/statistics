@@ -5,28 +5,18 @@
 
   <introduction>
     <p>Author: Matthew J. C. Crump</p>
-  </introduction>
 
   <p>
-    A fun bit of stats history. Sir Ronald Fisher invented the ANOVA, which we learn about in this section. He wanted to publish his new test in the journal Biometrika. The editor at the time was Karl Pearson (remember Pearson's <m>r</m> for correlation?). Pearson and Fisher were apparently not on good terms, they didn't like each other. Pearson refused to publish Fisher's new test. So, Fisher eventually published his work in the Journal of Agricultural Science. Funnily enough, the feud continued onto the next generation. Years after Fisher published his ANOVA, Karl Pearson's son Egon Pearson, and Jersey Neyman revamped Fisher's ideas, and re-cast them into what is commonly known as null vs. alternative hypothesis testing. Fisher didn't like this very much.
+    A fun bit of stats history <xref ref="biblio-Salsburg2001">(Salsburg, 2001)</xref>. Sir Ronald Fisher invented the ANOVA, which we learn about in this section. He wanted to publish his new test in the journal Biometrika. The editor at the time was Karl Pearson (remember Pearson's <m>r</m> for correlation?). Pearson and Fisher were apparently not on good terms, they didn't like each other. Pearson refused to publish Fisher's new test. So, Fisher eventually published his work in the Journal of Agricultural Science. Funnily enough, the feud continued onto the next generation. Years after Fisher published his ANOVA, Karl Pearson's son Egon Pearson, and Jersey Neyman revamped Fisher's ideas, and re-cast them into what is commonly known as null vs. alternative hypothesis testing. Fisher didn't like this very much.
   </p>
 
   <p>
     We present the ANOVA in the Fisherian sense, and at the end describe the Neyman-Pearson approach that invokes the concept of null vs. alternative hypotheses.
   </p>
+  </introduction>
 
   <section xml:id="sec-anova-is-analysis-of-variance">
     <title>ANOVA is Analysis of Variance</title>
-
-    <remark>
-      <title>R Code</title>
-      <program language="r">
-        <input>
-library(ggplot2)
-library(dplyr)
-        </input>
-      </program>
-    </remark>
 
     <p>
       ANOVA stands for Analysis Of Variance. It is a widely used technique for assessing the likelihood that differences found between means in sample data could be produced by chance. You might be thinking, well don't we have <m>t</m>-tests for that? Why do we need the ANOVA, what do we get that's new that we didn't have before?
@@ -1191,7 +1181,7 @@ ggplot(plot_df, aes(x = pill_group, y = means, fill = simulations)) +
       <title>Tetris and bad memories</title>
 
       <p>
-        Yup, you read that right. The research you will learn about tests whether playing Tetris after watching a scary movie can help prevent you from having bad memories from the movie <xref ref="biblio-James2015" text="custom">(James et al., 2015)</xref>. Sometimes in life people have intrusive memories, and they think about things they'd rather not have to think about. This research looks at one method that could reduce the frequency of intrusive memories.
+        Yup, you read that right. The research you will learn about tests whether playing Tetris after watching a scary movie can help prevent you from having bad memories from the movie <xref ref="biblio-James2015">(James et al., 2015)</xref>. Sometimes in life people have intrusive memories, and they think about things they'd rather not have to think about. This research looks at one method that could reduce the frequency of intrusive memories.
       </p>
 
       <p>
