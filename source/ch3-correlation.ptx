@@ -128,7 +128,7 @@ ggplot(the_df_CC,aes(x=chocolate,y=happiness))+
 
       <figure xml:id="fig-3scatter1">
         <caption>Imaginary data showing a positive correlation between amount of chocolate and amount happiness</caption>
-        <image source="placeholder.png" width="70%"/>
+        <image source = "images/02-Describing_Data_files/fig-3scatter1.png" width="70%"/>
       </figure>
 
       <p>
@@ -189,7 +189,7 @@ ggplot(all_data,aes(x=chocolate_x,y=happiness_x))+
 
       <figure xml:id="fig-3posnegrand">
         <caption>Three scatterplots showing negative, positive, and zero correlation</caption>
-        <image source="placeholder.png" width="70%"/>
+        <image source = "images/02-Describing_Data_files/fig-3posnegrand.png" width="70%"/>
       </figure>
 
       <p>
@@ -645,7 +645,7 @@ ggplot(sim_df,aes(x=sims,y=simulated_sums))+
 
     <figure xml:id="fig-3simsum">
       <caption>Simulated sums of products showing the kinds of values than can be produced by randomly ordering the numbers in X and Y.</caption>
-      <image source="placeholder.png" width="70%"/>
+      <image source = "images/02-Describing_Data_files/fig-3simsum.png" width="70%"/>
     </figure>
 
     <p>
@@ -897,7 +897,7 @@ ggplot(sim_df, aes(x = sims, y = simulated_sums))+
 
       <figure xml:id="fig-3onethousandr">
         <caption>A simulation of correlations. Each dot represents the r-value for the correlation between an X and Y variable that each contain the numbers 1 to 10 in random orders. The figure illustrates that many r-values can be obtained by this random process</caption>
-        <image source="placeholder.png" width="70%"/>
+        <image source = "images/02-Describing_Data_files/fig-3onethousandr.png" width="70%"/>
       </figure>
 
     </subsection>
@@ -945,7 +945,7 @@ ggplot(smaller_df, aes(x=`Freedom to make life choices`,
 
     <figure xml:id="fig-3hsrdata">
       <caption>Relationship between freedom to make life choices and confidence in national government. Data from the world happiness report for 2018</caption>
-      <image source="placeholder.png" width="70%"/>
+      <image source = "images/02-Describing_Data_files/fig-3hsrdata.png" width="70%"/>
     </figure>
 
     <p>
@@ -1023,7 +1023,7 @@ ggplot(all_data,aes(x=chocolate_x,y=happiness_x))+
 
     <figure xml:id="fig-3regression">
       <caption>Three scatterplots showing negative, positive, and a random correlation (where the r-value is expected to be 0), along with the best fit regression line</caption>
-      <image source="placeholder.png" width="70%"/>
+      <image source = "images/02-Describing_Data_files/fig-3regression.png" width="70%"/>
     </figure>
 
       <subsection xml:id="the-best-fit-line">
@@ -1076,7 +1076,7 @@ ggplot(d, aes(x = hp, y = mpg)) +
 
       <figure xml:id="fig-3regressionResiduals">
         <caption>Black dots represent data points. The blue line is the best fit regression line. The white dots are represent the predicted location of each black dot. The red lines show the error between each black dot and the regression line. The blue line is the best fit line because it minimizes the error shown by the red lines.</caption>
-        <image source="placeholder.png" width="70%"/>
+        <image source = "images/02-Describing_Data_files/fig-3regressionResiduals.png" width="70%"/>
       </figure>
 
       <p>
@@ -1102,7 +1102,7 @@ knitr::include_graphics(path="imgs/gifs/regression-1.gif")
 
       <figure xml:id="fig-3regressionGIF">
         <caption>The blue line is the best fit regression line explaining the co-variation among the black dots. The black line moves up and down showing alternative lines that could be drawn. The red lines show the amount of error between each data point and the black line. The total amount of error is depicted by the shaded grey area. The size of the grey area expands as the black line moves away from the best fit line, and shrinks to a minimum as the black line moves toward the best fit line.</caption>
-        <image source="placeholder.png" width="70%"/>
+        <image source = "images/02-Describing_Data_files/fig-3regressionGIF.gif" width="70%"/>
       </figure>
 
       <p>
@@ -1148,7 +1148,7 @@ ggplot(df,aes(x=move_line,y=total_error))+
 
       <figure xml:id="fig-3minimizeSS">
         <caption>A plot of the sum of the squared deviations for different lines moving up and down, through the best fit line. The best fit line occurs at the position that minimizes the sum of the squared deviations.</caption>
-        <image source="placeholder.png" width="70%"/>
+        <image source = "images/02-Describing_Data_files/fig-3minimizeSS.png" width="70%"/>
       </figure>
 
       <p>
@@ -1199,7 +1199,7 @@ ggplot()+
 
       <figure xml:id="fig-3twolines">
         <caption>Two different lines with different y-intercepts (where the line crosses the y-axis), and different slopes. A positive slope makes the line go up from left to right. A negative slope makes the line go down from left to right.</caption>
-        <image source="placeholder.png" width="70%"/>
+        <image source = "images/02-Describing_Data_files/fig-3twolines.png" width="70%"/>
       </figure>
 
       <p>
@@ -1387,7 +1387,7 @@ ggplot(plot_df,aes(x=x,y=y))+
 
       <figure xml:id="fig-3corwithLine">
         <caption>An example regression line with confidence bands going through a few data points in a scatterplot</caption>
-        <image source="placeholder.png" width="70%"/>
+        <image source = "images/02-Describing_Data_files/fig-3corwithLine.png" width="70%"/>
       </figure>
 
     </subsection>
@@ -1444,7 +1444,7 @@ ggplot(snake_df, aes(x=water,y=growth))+
 
         <figure xml:id="fig-3snakeplant">
           <caption>Illustration of a possible relationship between amount of water and snake plant growth. Growth goes up with water, but eventually goes back down as too much water makes snake plants die.</caption>
-          <image source="placeholder.png" width="70%"/>
+          <image source = "images/02-Describing_Data_files/placeholder.png" width="70%"/>
         </figure>
 
         <p>
@@ -1641,7 +1641,7 @@ ggplot(sim_df, aes(x = sims, y = simulated_correlations))+
 
         <figure xml:id="fig-3anotherthousand">
           <caption>Another figure showing a range of r-values that can be obtained by chance.</caption>
-          <image source="placeholder.png" width="70%"/>
+          <image source = "images/02-Describing_Data_files/fig-3anotherthousand.png" width="70%"/>
         </figure>
 
         <p>
@@ -1694,7 +1694,7 @@ ggplot(all_data,aes(x=chocolate_x,y=happiness_x))+
 
         <figure xml:id="fig-3reminder">
           <caption>A reminder of what positive, negative, and zero correlation looks like</caption>
-          <image source="placeholder.png" width="70%"/>
+          <image source = "images/02-Describing_Data_files/fig-3reminder.png" width="70%"/>
         </figure>
 
         <p>
@@ -1712,7 +1712,7 @@ knitr::include_graphics(path="imgs/gifs/corUnifn10-1.gif")
 
         <figure xml:id="fig-3randcor10gif">
           <caption>Completely random data points drawn from a uniform distribution with a small sample-size of 10. The blue line twirls around sometimes showing large correlations that are produced by chance</caption>
-          <image source="placeholder.png" width="70%"/>
+          <image source = "images/02-Describing_Data_files/fig-3randcor10gif.png" width="70%"/>
         </figure>
 
         <p>
@@ -1734,7 +1734,7 @@ hist(simulated_correlations,breaks=seq(-1,1,.1))
 
         <figure xml:id="fig-3histrandcor">
           <caption>A histogram showing the frequency distribution of r-values for completely random values between an X and Y variable (sample-size=10). A full range of r-values can be obtained by chance alone. Larger r-values are less common than smaller r-values</caption>
-          <image source="placeholder.png" width="70%"/>
+          <image source = "images/02-Describing_Data_files/fig-3histrandcor.png" width="70%"/>
         </figure>
 
         <p>
@@ -1797,7 +1797,7 @@ ggplot(all_df,aes(x=simulated_correlations))+
 
         <figure xml:id="fig-3corrandN">
           <caption>Four histograms showing the frequency distributions of r-values between completely random X and Y variables as a function of sample-size. The width of the distributions shrink as sample-size increases. Smaller sample-sizes are more likely to produce a wider range of r-values by chance. Larger sample-sizes always produce a narrow range of small r-values</caption>
-          <image source="placeholder.png" width="70%"/>
+          <image source = "images/02-Describing_Data_files/fig-3corrandN.png" width="70%"/>
         </figure>
 
         <p>
@@ -1849,7 +1849,7 @@ knitr::include_graphics(path="imgs/gifs/corUnifFourNs-1.gif")
 
         <figure xml:id="fig-3corRandfour">
           <caption>Animation of how correlation behaves for completely random X and Y variables as a function of sample size. The best fit line is not very stable for small sample-sizes, but becomes more reliably flat as sample-size increases.</caption>
-          <image source="placeholder.png" width="70%"/>
+          <image source = "images/02-Describing_Data_files/corUnifFourNs.gif" width="70%"/>
         </figure>
 
         <p>
@@ -1871,7 +1871,7 @@ knitr::include_graphics(path="imgs/gifs/corNormFourNs-1.gif")
 
         <figure xml:id="fig-3normCorfour">
           <caption>Animation of correlation for random values sampled from a normal distribution, rather than a uniform distribution.</caption>
-          <image source="placeholder.png" width="70%"/>
+          <image source = "images/02-Describing_Data_files/corNormFourNs.gif" width="70%"/>
         </figure>
 
         <p>
@@ -1902,7 +1902,7 @@ knitr::include_graphics(path="imgs/gifs/corRealgif-1.gif")
 
         <figure xml:id="fig-3realcorFour">
           <caption>How correlation behaves as a function of sample-size when there is a true correlation between X and Y variables.</caption>
-          <image source="placeholder.png" width="70%"/>
+          <image source = "images/02-Describing_Data_files/fig-3realcorFour.gif" width="70%"/>
         </figure>
 
         <p>
