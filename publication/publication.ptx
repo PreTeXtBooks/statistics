@@ -12,5 +12,7 @@
     <index-page ref="frontmatter"/>
     <video privacy="yes"/>
     <baseurl href="https://pretextbooks.github.io/statistics/"/>
+    <!-- Make remark elements (R Code blocks) toggleable -->
+    <knowl remark="yes"/>
   </html>
 </publication>
