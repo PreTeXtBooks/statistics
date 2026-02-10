@@ -7,6 +7,10 @@
     Anscombe, F. J. (1973). Graphs in Statistical Analysis. <em>American Statistician</em>, 27, 17–21.
   </biblio>
 
+  <biblio type="raw" xml:id="biblio-Matejka2017">
+    Matejka, J., &amp; Fitzmaurice, G. (2017). Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics through Simulated Annealing. In <em>Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems</em> (pp. 1290–1294). ACM. <url href="https://doi.org/10.1145/3025453.3025912" visual="doi.org/10.1145/3025453.3025912">doi:10.1145/3025453.3025912</url>
+  </biblio>
+
   <biblio type="raw" xml:id="biblio-Bickel1975">
     Bickel, P. J., Hammel, E. A., &amp; O'Connell, J. W. (1975). Sex Bias in Graduate Admissions: Data from Berkeley. <em>Science</em>, 187, 398–404. <url href="https://doi.org/10.1126/science.187.4175.398" visual="doi.org/10.1126/science.187.4175.398">doi:10.1126/science.187.4175.398</url>
   </biblio>
