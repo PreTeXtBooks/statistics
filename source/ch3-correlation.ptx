@@ -101,6 +101,67 @@ knitr::kable(the_df_short)
         </program>
       </remark>
 
+      <table xml:id="table-chocolate-happiness-sample">
+        <title>Sample Data: Chocolate and Happiness</title>
+        <tabular>
+          <row header="yes">
+            <cell>subject</cell>
+            <cell>chocolate</cell>
+            <cell>happiness</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>2</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>3</cell>
+            <cell>3</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>3</cell>
+            <cell>3</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>5</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>3</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>4</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>8</cell>
+            <cell>4</cell>
+            <cell>6</cell>
+          </row>
+          <row>
+            <cell>9</cell>
+            <cell>8</cell>
+            <cell>9</cell>
+          </row>
+          <row>
+            <cell>10</cell>
+            <cell>7</cell>
+            <cell>9</cell>
+          </row>
+        </tabular>
+      </table>
+
       <p>
         We asked each subject two questions so there are two scores for each subject, one for their chocolate supply, and one for their level of happiness. You might already notice some relationships between amount of chocolate and level of happiness in the table. To make those relationships even more clear, let's plot all of the data in a graph.
       </p>
@@ -908,7 +969,7 @@ ggplot(sim_df, aes(x = sims, y = simulated_sums))+
       <title>Examples with Data</title>
 
     <p>
-      In the lab for correlation you will be shown how to compute correlations in real data-sets using software. To give you a brief preview, let's look at some data from the [world happiness report](http://worldhappiness.report) (2018).
+      In the lab for correlation you will be shown how to compute correlations in real data-sets using software. To give you a brief preview, let's look at some data from the <url href="http://worldhappiness.report" visual="worldhappiness.report">world happiness report</url> (2018).
     </p>
 
     <p>
