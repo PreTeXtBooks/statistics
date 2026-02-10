@@ -328,7 +328,7 @@ for(i in 1:1000){
   p[i]&lt;-t.test(A,B,var.equal = TRUE)$p.value
 }
 
-length(p[p<.05])
+length(p[p&lt;.05])
         </input>
       </program>
     </remark>
@@ -360,7 +360,7 @@ for(i in 1:1000){
   p[i]&lt;-t.test(A,B,var.equal = TRUE)$p.value
 }
 
-length(p[p<.05])
+length(p[p&lt;.05])
         </input>
       </program>
     </remark>
@@ -388,7 +388,7 @@ for(i in 1:1000){
   p[i]&lt;-t.test(A,B,var.equal = TRUE)$p.value
 }
 
-length(p[p<.01])
+length(p[p&lt;.01])
         </input>
       </program>
     </remark>
@@ -416,7 +416,7 @@ for(i in 1:1000){
   p[i]&lt;-t.test(A,B,var.equal = TRUE)$p.value
 }
 
-length(p[p<.01])
+length(p[p&lt;.01])
         </input>
       </program>
     </remark>
