@@ -835,6 +835,10 @@ ggplot(plot_df, aes(x = difference)) +
         </input>
       </program>
 
+      <pre> 
+       > [1] -17.12294
+      </pre>
+
       <p>
         OK, so what was the biggest positive number that occurred? Let's use the <c>max</c> function to find out. It finds the biggest (maximum) value in the variable. FYI, we've just computed the range, the minimum and maximum numbers in the data. Remember we learned that before. Anyway, here's the max.
       </p>
@@ -844,6 +848,9 @@ ggplot(plot_df, aes(x = difference)) +
           max(difference)
         </input>
       </program>
+
+      <pre> > [1] 18.45391 
+      </pre>
 
       <p>
         Both of these extreme values only occurred once. Those values were so rare we couldn't even see them on the histogram, the bar was so small. Also, these biggest negative and positive numbers are pretty much the same size if you ignore their sign, which makes sense because the distribution looks roughly symmetrical.
