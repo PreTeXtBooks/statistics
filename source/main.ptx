@@ -29,6 +29,13 @@
         <date>September 1, 2018</date>
       </titlepage>
 
+      <abstract>
+        <p>
+          A free textbook teaching introductory statistics for undergraduates in psychology, 
+          including a lab manual, and course website. Licensed on CC BY SA 4.0.
+        </p>
+      </abstract>
+
       <preface xml:id="preface">
         <title>Preface</title>
         
@@ -254,9 +261,16 @@
           <title>About This PreTeXt Version</title>
           
           <p>
-            This book has been converted to PreTeXt format to make it more accessible and easier to use 
-            across different platforms. The original textbook was written in R Markdown by Matthew J. C. Crump, 
-            Danielle J. Navarro, and Jeffrey Suzuki.
+            This is a PreTeXt version of the textbook, converted from the original R Markdown format 
+            to make it more accessible and easier to use across different platforms.
+          </p>
+          
+          <p>
+            <alert>Full Credit to Original Authors:</alert> The original textbook 
+            <url href="https://crumplab.github.io/statistics/" visual="Answering Questions with Data">"Answering Questions with Data"</url> 
+            was authored by Matthew J. C. Crump, Danielle J. Navarro, and Jeffrey Suzuki. 
+            All content and intellectual property belong to the original authors. 
+            This PreTeXt conversion maintains the same CC BY-SA 4.0 license as the original work.
           </p>
           
           <p>
