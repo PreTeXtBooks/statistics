@@ -719,7 +719,7 @@ ggplot(all_df, aes(x = sample_t)) +
     </p>
 
     <subsection xml:id="subsec-mehr-song-spelke">
-      <title><xref ref="biblio-Mehr2016" text="custom">Mehr, Song, and Spelke (2016)</xref></title>
+      <title>Mehr, Song, and Spelke (2016)</title>
       
       <p>
         We will introduce the paired-samples t-test with an example using real data, from a real study. <xref ref="biblio-Mehr2016" text="custom">Mehr, Song, and Spelke (2016)</xref> were interested in whether singing songs to infants helps infants become more sensitive to social cues. For example, infants might need to learn to direct their attention toward people as a part of learning how to interact socially with people. Perhaps singing songs to infants aids this process of directing attention. When an infant hears a familiar song, they might start to pay more attention to the person singing that song, even after they are done singing the song. The person who sang the song might become more socially important to the infant. You will learn more about this study in the lab for this week. This example, prepares you for the lab activities. Here is a brief summary of what they did.
@@ -944,44 +944,44 @@ knitr::kable(paired_sample_df)
           </row>
           <row>
             <cell>1</cell>
-            <cell>0.49</cell>
-            <cell>0.49</cell>
-            <cell>0.00</cell>
+            <cell>0.44</cell>
+            <cell>0.60</cell>
+            <cell>0.16</cell>
           </row>
           <row>
             <cell>2</cell>
             <cell>0.41</cell>
-            <cell>0.52</cell>
-            <cell>0.11</cell>
+            <cell>0.68</cell>
+            <cell>0.27</cell>
           </row>
           <row>
             <cell>3</cell>
-            <cell>0.54</cell>
-            <cell>0.62</cell>
-            <cell>0.08</cell>
+            <cell>0.75</cell>
+            <cell>0.72</cell>
+            <cell>-0.03</cell>
           </row>
           <row>
             <cell>4</cell>
-            <cell>0.56</cell>
-            <cell>0.54</cell>
-            <cell>-0.02</cell>
+            <cell>0.44</cell>
+            <cell>0.28</cell>
+            <cell>-0.16</cell>
           </row>
           <row>
             <cell>5</cell>
-            <cell>0.58</cell>
-            <cell>0.56</cell>
-            <cell>-0.02</cell>
+            <cell>0.47</cell>
+            <cell>0.50</cell>
+            <cell>0.03</cell>
           </row>
           <row>
             <cell>Sums</cell>
-            <cell>2.58</cell>
-            <cell>2.85</cell>
+            <cell>2.51</cell>
+            <cell>2.78</cell>
             <cell>0.27</cell>
           </row>
           <row>
             <cell>Means</cell>
-            <cell>0.516</cell>
-            <cell>0.570</cell>
+            <cell>0.502</cell>
+            <cell>0.556</cell>
             <cell>0.054</cell>
           </row>
         </tabular>
@@ -1058,59 +1058,59 @@ knitr::kable(paired_sample_df)
           </row>
           <row>
             <cell>1</cell>
-            <cell>0.49</cell>
-            <cell>0.49</cell>
-            <cell>0.00</cell>
-            <cell>-0.030</cell>
-            <cell>0.0009</cell>
+            <cell>0.44</cell>
+            <cell>0.60</cell>
+            <cell>0.16</cell>
+            <cell>0.106</cell>
+            <cell>0.011236</cell>
           </row>
           <row>
             <cell>2</cell>
             <cell>0.41</cell>
-            <cell>0.52</cell>
-            <cell>0.11</cell>
-            <cell>0.080</cell>
-            <cell>0.0064</cell>
+            <cell>0.68</cell>
+            <cell>0.27</cell>
+            <cell>0.216</cell>
+            <cell>0.046656</cell>
           </row>
           <row>
             <cell>3</cell>
-            <cell>0.54</cell>
-            <cell>0.62</cell>
-            <cell>0.08</cell>
-            <cell>0.050</cell>
-            <cell>0.0025</cell>
+            <cell>0.75</cell>
+            <cell>0.72</cell>
+            <cell>-0.03</cell>
+            <cell>-0.084</cell>
+            <cell>0.00705600</cell>
           </row>
           <row>
             <cell>4</cell>
-            <cell>0.56</cell>
-            <cell>0.54</cell>
-            <cell>-0.02</cell>
-            <cell>-0.050</cell>
-            <cell>0.0025</cell>
+            <cell>0.44</cell>
+            <cell>0.28</cell>
+            <cell>-0.16</cell>
+            <cell>-0.214</cell>
+            <cell>0.045796</cell>
           </row>
           <row>
             <cell>5</cell>
-            <cell>0.58</cell>
-            <cell>0.56</cell>
-            <cell>-0.02</cell>
-            <cell>-0.050</cell>
-            <cell>0.0025</cell>
+            <cell>0.47</cell>
+            <cell>0.50</cell>
+            <cell>0.03</cell>
+            <cell>-0.024</cell>
+            <cell>0.0005759999</cell>
           </row>
           <row>
             <cell>Sums</cell>
-            <cell>2.58</cell>
-            <cell>2.73</cell>
-            <cell>0.15</cell>
+            <cell>2.51</cell>
+            <cell>2.78</cell>
+            <cell>0.27</cell>
             <cell>0</cell>
-            <cell>0.0148</cell>
+            <cell>0.11132</cell>
           </row>
           <row>
             <cell>Means</cell>
-            <cell>0.516</cell>
-            <cell>0.546</cell>
-            <cell>0.03</cell>
+            <cell>0.502</cell>
+            <cell>0.556</cell>
+            <cell>0.054</cell>
             <cell>0</cell>
-            <cell>0.0030</cell>
+            <cell>0.022264</cell>
           </row>
           <row>
             <cell></cell>
@@ -1118,7 +1118,7 @@ knitr::kable(paired_sample_df)
             <cell></cell>
             <cell></cell>
             <cell>sd</cell>
-            <cell>0.061</cell>
+            <cell>0.167</cell>
           </row>
           <row>
             <cell></cell>
@@ -1126,7 +1126,7 @@ knitr::kable(paired_sample_df)
             <cell></cell>
             <cell></cell>
             <cell>SEM</cell>
-            <cell>0.027</cell>
+            <cell>0.075</cell>
           </row>
           <row>
             <cell></cell>
@@ -1134,11 +1134,11 @@ knitr::kable(paired_sample_df)
             <cell></cell>
             <cell></cell>
             <cell>t</cell>
-            <cell>1.11</cell>
+            <cell>0.72</cell>
           </row>
         </tabular>
       </table>
-
+     <p> If we did this test using R, we would obtain almost the same numbers (there is a little bit of rounding in the table).</p>
       <remark>
         <title>R Code</title>
         <program language="r">
@@ -1147,6 +1147,20 @@ t.test(differences,mu=0)
           </input>
         </program>
       </remark>
+
+<pre>
+#> 
+#>  One Sample t-test
+#> 
+#> data:  differences
+#> t = 0.72381, df = 4, p-value = 0.5092
+#> alternative hypothesis: true mean is not equal to 0
+#> 95 percent confidence interval:
+#>  -0.1531384  0.2611384
+#> sample estimates:
+#> mean of x 
+#>     0.054
+</pre>
 
       <p>
         Here is a quick write up of our t-test results, <m>t(4) = 0.72</m>, <m>p = 0.509</m>.
@@ -1665,7 +1679,7 @@ ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
       </p>
     </subsection>
 
-    <subsection xml:id="subsec-paired-complete-example">
+    <section xml:id="subsec-paired-complete-example">
       <title>The paired samples t-test strikes back</title>
       
       <p>
@@ -1673,8 +1687,117 @@ ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
       </p>
 
       <p>
-        Remember, we were wondering if the infants would look longer toward the singer who sang the familiar song during the test phase compared to the baseline phase. We showed you data from 5 infants, and walked through the computations for the <m>t</m>-test. Let's write down the finding one more time: The mean difference was 0.054, <m>t(4) = 0.72</m>, <m>p = 0.509</m>. We can also now confirm, that the <m>p</m>-value was from a two-tailed test. So, what does this all really mean.
+        Remember, we were wondering if the infants would look longer toward the singer who sang the familiar song during the test phase compared to the baseline phase. We showed you data from 5 infants, and walked through the computations for the <m>t</m>-test. As a reminder, it looked like this:
       </p>
+
+      <table xml:id="tbl-paired-t-calculation">
+        <title>Computing t for paired samples</title>
+        <tabular>
+          <row header="yes">
+            <cell>infant</cell>
+            <cell>Baseline</cell>
+            <cell>Test</cell>
+            <cell>differences</cell>
+            <cell>diff_from_mean</cell>
+            <cell>Squared_differences</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>0.44</cell>
+            <cell>0.60</cell>
+            <cell>0.16</cell>
+            <cell>0.106</cell>
+            <cell>0.011236</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>0.41</cell>
+            <cell>0.68</cell>
+            <cell>0.27</cell>
+            <cell>0.216</cell>
+            <cell>0.046656</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>0.75</cell>
+            <cell>0.72</cell>
+            <cell>-0.03</cell>
+            <cell>-0.084</cell>
+            <cell>0.00705600</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>0.44</cell>
+            <cell>0.28</cell>
+            <cell>-0.16</cell>
+            <cell>-0.214</cell>
+            <cell>0.045796</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>0.47</cell>
+            <cell>0.50</cell>
+            <cell>0.03</cell>
+            <cell>-0.024</cell>
+            <cell>0.0005759999</cell>
+          </row>
+          <row>
+            <cell>Sums</cell>
+            <cell>2.51</cell>
+            <cell>2.78</cell>
+            <cell>0.27</cell>
+            <cell>0</cell>
+            <cell>0.11132</cell>
+          </row>
+          <row>
+            <cell>Means</cell>
+            <cell>0.502</cell>
+            <cell>0.556</cell>
+            <cell>0.054</cell>
+            <cell>0</cell>
+            <cell>0.022264</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell>sd</cell>
+            <cell>0.167</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell>SEM</cell>
+            <cell>0.075</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell>t</cell>
+            <cell>0.72</cell>
+          </row>
+        </tabular>
+      </table>
+<pre>
+#> 
+#>  One Sample t-test
+#> 
+#> data:  differences
+#> t = 0.72381, df = 4, p-value = 0.5092
+#> alternative hypothesis: true mean is not equal to 0
+#> 95 percent confidence interval:
+#>  -0.1531384  0.2611384
+#> sample estimates:
+#> mean of x 
+#>     0.054
+</pre>
+
+     <p>Let's write down the finding one more time: The mean difference was 0.054, <m>t(4) = 0.72</m>, <m>p = 0.509</m>. We can also now confirm, that the <m>p</m>-value was from a two-tailed test. So, what does this all really mean</p
 
       <p>
         We can say that a <m>t</m> value with an absolute of 0.72 or larger occurs 50.9% of the time. More precisely, the distribution of no differences (the null), will produce a <m>t</m> value this large or larger 50.9% of the time. In other words, chance alone good have easily produced the <m>t</m> value from our sample, and the mean difference we observed or 0.054, could easily have been a result of chance.
@@ -1698,10 +1821,24 @@ t.test(differences,mu=0)
         </program>
       </remark>
 
+<pre>
+#> 
+#>  One Sample t-test
+#> 
+#> data:  differences
+#> t = 2.4388, df = 31, p-value = 0.02066
+#> alternative hypothesis: true mean is not equal to 0
+#> 95 percent confidence interval:
+#>  0.01192088 0.13370412
+#> sample estimates:
+#> mean of x 
+#> 0.0728125
+</pre>
+
       <p>
-        With the full dataset of 32 infants, we get a very different answer. We would summarize the results saying the mean difference was 0.073, <m>t(31) = 2.44</m>, <m>p = 0.020</m>. How many total infants were their? Well the degrees of freedom was 31, so there must have been 32 infants in the study. Now we see a much smaller <m>p</m>-value. This was also a two-tailed test, so we that observing a <m>t</m> value of 2.4 or greater (absolute value) only occurs 2% of the time. In other words, the distribution of no differences will produce the observed t-value very rarely. So, it is unlikely that the observed mean difference of 0.073 was due to chance (it could have been due to chance, but that is very unlikely). As a result, we can be somewhat confident in concluding that something about seeing and hearing a unfamiliar person sing a familiar song, causes an infant to draw their attention toward the singer, and this potentially benefits social learning on the part of the infant.
+        Now we get a very different answer. We would summarize the results saying the mean difference was 0.073, <m>t(31) = 2.44</m>, <m>p = 0.020</m>. How many total infants were their? Well the degrees of freedom was 31, so there must have been 32 infants in the study. Now we see a much smaller <m>p</m>-value. This was also a two-tailed test, so we that observing a <m>t</m> value of 2.4 or greater (absolute value) only occurs 2% of the time. In other words, the distribution of no differences will produce the observed t-value very rarely. So, it is unlikely that the observed mean difference of 0.073 was due to chance (it could have been due to chance, but that is very unlikely). As a result, we can be somewhat confident in concluding that something about seeing and hearing a unfamiliar person sing a familiar song, causes an infant to draw their attention toward the singer, and this potentially benefits social learning on the part of the infant.
       </p>
-    </subsection>
+    </section>
   </section>
 
   <section xml:id="sec-independent-samples-ttest">
@@ -1980,7 +2117,7 @@ hist(save_ts)
 
       <figure xml:id="fig-6simts1000">
         <caption>1000 simulated ts from the null distribution</caption>
-        <image source="images/06-ttests_files/figure-html/fig-6simts1000-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6simps1000-1.png"/>
       </figure>
 
       <remark>
@@ -1994,7 +2131,7 @@ hist(save_ps)
 
       <figure xml:id="fig-6simps1000">
         <caption>1000 simulated ps from the null distribution</caption>
-        <image source="images/06-ttests_files/figure-html/fig-6simps1000-1.png"/>
+        <image source="images/06-ttests_files/figure-html/fig-6simts1000-1.png"/>
       </figure>
 
       <p>
@@ -2014,6 +2151,11 @@ length(save_ps[save_ps&lt;.05])/1000
           </input>
         </program>
       </remark>
+
+<pre>
+#> [1] 49
+#> [1] 0.049
+</pre>
 
       <p>
         What happens if there actually is a difference in the simulated data, let's set one condition to have a larger mean than the other:
@@ -2036,6 +2178,11 @@ for ( i in 1:1000 ){
           </input>
         </program>
       </remark>
+
+<pre>
+#> [1] 225
+#> [1] 0.225
+</pre>
 
       <remark>
         <title>R Code</title>
@@ -2131,6 +2278,11 @@ length(save_ps[save_ps&lt;.05])/1000
         </program>
       </remark>
 
+<pre>
+#> [1] 988
+#> [1] 0.988
+</pre>
+
       <figure xml:id="fig-6simpsB">
         <caption>1000 ps for n =100, when there is a true effect</caption>
         <image source="images/06-ttests_files/figure-html/fig-6simpsB-1.png"/>
@@ -2190,6 +2342,11 @@ length(save_ps[save_ps&lt;.05])/1000
           </input>
         </program>
       </remark>
+
+<pre>
+#> [1] 48
+#> [1] 0.048
+</pre>
 
       <figure xml:id="fig-6simpsC">
         <caption>1000 ps for independent samples under the null</caption>
