@@ -639,7 +639,7 @@ for(i in 1:1000){
   }
 }
 
-type_I_error &lt;-all_df[all_df$p_value<.05,]
+type_I_error &lt;-all_df[all_df$p_value&lt;.05,]
 type_I_error$sample_size&lt;-as.factor(type_I_error$sample_size)
 
 ggplot(type_I_error,aes(x=p_value,y=effect_size, group=sample_size,color=sample_size))+
