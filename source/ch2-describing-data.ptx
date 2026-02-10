@@ -1225,7 +1225,7 @@ knitr::kable(the_df)
       <title>Anscombe's Quartet</title>
       
       <p>
-        To hit this point home, and to get you thinking about the issues we discuss in the next chapter, check this out. It's called Anscombe's Quartet, because these interesting graphs and numbers and numbers were produced by <xref ref="biblio-Anscombe1973" text="custom">Anscombe (1973)</xref>. In <xref ref="fig-anscombe"/> you are looking at pairs of measurements. Each graph has an X and Y axis, and each point represents two measurements. Each of the graphs looks very different, right?
+        To hit this point home, and to get you thinking about the issues we discuss in the next chapter, check this out. It's called Anscombe's Quartet, because these interesting graphs and numbers and numbers were produced by <xref ref="biblio-Anscombe1973">Anscombe (1973)</xref>. In <xref ref="fig-anscombe"/> you are looking at pairs of measurements. Each graph has an X and Y axis, and each point represents two measurements. Each of the graphs looks very different, right?
       </p>
 
       <remark>
@@ -1325,7 +1325,7 @@ knitr::kable(ac_long_summary)
       <title>Datasaurus Dozen</title>
       
       <p>
-        If you thought that Anscombe's quartet was neat, you should take a look at the <url href="https://www.autodeskresearch.com/publications/samestats" visual="autodeskresearch.com/publications/samestats">Datasaurus Dozen</url> <xref ref="biblio-Matejka2017" text="custom">(Matejka and Fitzmaurice 2017)</xref>. Scroll down to see the examples. You will be looking at dot plots. The dot plots show many different patterns, including dinosaurs! What's amazing is that all of the dots have very nearly the same descriptive statistics. Just another reminder to look at your data, it might look like a dinosaur!
+        If you thought that Anscombe's quartet was neat, you should take a look at the <url href="https://www.autodeskresearch.com/publications/samestats" visual="autodeskresearch.com/publications/samestats">Datasaurus Dozen</url> <xref ref="biblio-Matejka2017">(Matejka and Fitzmaurice 2017)</xref>. Scroll down to see the examples. You will be looking at dot plots. The dot plots show many different patterns, including dinosaurs! What's amazing is that all of the dots have very nearly the same descriptive statistics. Just another reminder to look at your data, it might look like a dinosaur!
       </p>
     </subsection>
   </section>
