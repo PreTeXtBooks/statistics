@@ -6,20 +6,6 @@
   <introduction>
     <p>Author: Matthew J. C. Crump</p>
     
-    <remark>
-      <title>R Code</title>
-      <program language="r">
-        <input>
-library(dplyr)
-library(ggplot2)
-library(xtable)
-library(ggpubr)
-library(kableExtra)
-#library(data.table)
-        </input>
-      </program>
-    </remark>
-    
     <p>Factorial designs may be the most complicated topic discussed in this class. What's so complicated? Up until now we have been talking about experiments with two important bits: the independent variable (the manipulation) and the dependent variable (what we measure). In most cases, our independent variable has had two levels, or three or four; but, there has only been one independent variable.</p>
     <p>What if you wanted to manipulate more than one independent variable? If you did that you would have at least two independent variables, each with their own levels. The rest of the book is about factorial designs with more than one independent variable, and the statistical tests we use to analyze those designs.</p>
     <p>Let's go through some examples of designs. We will be imagining experiments that are trying to improve students' grades. So, the dependent variable will always be grade on a test.</p>
@@ -58,14 +44,6 @@ library(kableExtra)
     <subsection xml:id="subsec-2x2-designs">
       <title>2x2 Designs</title>
       <p>We've just started talking about a <alert>2x2 Factorial design</alert>. We said this means the IVs are crossed. To illustrate this, take a look at <xref ref="fig-9designs"/>. We show an abstract version and a concrete version using time of day and caffeine as the two IVs, each with two levels in the design:</p>
-      <remark>
-        <title>R Code</title>
-        <program language="r">
-          <input>
-knitr::include_graphics("imgs/figures/2x2Design.png")
-          </input>
-        </program>
-      </remark>
       <figure xml:id="fig-9designs">
         <caption>Structure of 2x2 factorial designs</caption>
         <image source="images/figures/2x2Design.png"/>
@@ -87,14 +65,7 @@ knitr::include_graphics("imgs/figures/2x2Design.png")
     <subsection xml:id="subsec-2-x-3-designs">
       <title>2 x 3 designs</title>
       <p><xref ref="fig-923design"/> shows the structure of a 2x3 factorial design.</p>
-      <remark>
-        <title>R Code</title>
-        <program language="r">
-          <input>
-knitr::include_graphics("imgs/figures/2x3Design.png")
-          </input>
-        </program>
-      </remark>
+
       <figure xml:id="fig-923design">
         <caption>Structure of 2x3 factorial designs</caption>
         <image source="images/figures/2x3Design.png"/>
@@ -124,14 +95,7 @@ knitr::include_graphics("imgs/figures/2x3Design.png")
     <subsection xml:id="subsec-spot-the-difference">
       <title>Spot the difference</title>
       <p>Let's elaborate this with another fake example. First, we pick a task. It's called <alert>spot the difference</alert>. You may have played this game before. You look at two pictures side-by-side in <xref ref="fig-9spotdiff"/>, and then you locate as many differences as you can find.</p>
-      <remark>
-        <title>R Code</title>
-        <program language="r">
-          <input>
-knitr::include_graphics("imgs/figures/spot_dif.png")
-          </input>
-        </program>
-      </remark>
+
       <figure xml:id="fig-9spotdiff">
         <caption>Spot the differences between the two images</caption>
         <image source="images/figures/spot_dif.png"/>
@@ -351,7 +315,11 @@ ggarrange(df1gg,df2gg,df3gg,df4gg, ncol=2, nrow=2)
     <p>Does the top right panel tell us about whether reward changed the size of the distraction effect? NO, it just shows that there was an overall distraction effect (this is called the <alert>main effect</alert> of distraction). <alert>Main effects</alert> are any differences between the levels of one independent variable.</p>
     <p>Does the bottom left panel tell us about whether reward changed the size of the distraction effect? NO! it just shows that there was an overall reward effect, called the main effect of reward. People who were rewarded spotted a few more differences than the people who weren't, but this doesn't tell us if they were any less distracted.</p>
     <p>Finally, how about the bottom left panel. Does this tell us about whether the reward changed the size of the distraction effect? YES! Notice, the y-axis is different for this panel. The y-axis here is labelled "Distraction Effect". You are looking at two difference scores. The distraction effect in the no-reward condition (10-5 = 5), and the distraction effect in the Reward condition (11-9 = 2). These two bars are different as a function of reward. So, it looks like reward did produce a difference between the distraction effects! This was the whole point of the fake study. It is these means that were most important for answering the question of the study. As a very last point, this panel contains what we call an <alert>interaction</alert>. We explain this in the next section.</p>
-  </section>
+  
+<note>
+Make sure you know what you want to know from your means before you run the study, otherwise you will just have way too many means, and you won’t know what they mean.
+</note>
+</section>
   <section xml:id="sec-simple-analysis-of-2x2-repeated-measures-design">
     <title>Simple analysis of 2x2 repeated measures design</title>
     <p>Normally in a chapter about factorial designs we would introduce you to Factorial ANOVAs, which are totally a thing. We will introduce you to them soon. But, before we do that, we are going to show you how to analyze a 2x2 repeated measures ANOVA design with paired-samples t-tests. This is probably something you won't do very often. However, it turns out the answers you get from this method are the same ones you would get from an ANOVA.</p>
@@ -1236,14 +1204,6 @@ knitr::kable(xtable(aov_summary))
       <p>Do you pay more attention when you are sitting or standing? This was the kind of research question the researchers were asking in the study we will look at. In fact, the general question and design is very similar to our fake study idea that we used to explain factorial designs in this chapter.</p>
       <p>The paper we look at is called "Stand by your Stroop: Standing up enhances selective attention and cognitive control" <xref ref="biblio-Rosenbaum2017">(Rosenbaum, Mama, &amp; Algom, 2017)</xref>. This paper asked whether sitting versus standing would influence a measure of selective attention, the ability to ignore distracting information.</p>
       <p>They used a classic test of selective attention, called the Stroop effect. You may already know what the Stroop effect is. In a typical Stroop experiment, subjects name the color of words as fast as they can. The trick is that sometimes the color of the word is the same as the name of the word, and sometimes it is not. <xref ref="fig-9stroop"/> shows some examples:</p>
-      <remark>
-        <title>R Code</title>
-        <program language="r">
-          <input>
-knitr::include_graphics("imgs/figures/Stroop.png")
-          </input>
-        </program>
-      </remark>
       <figure xml:id="fig-9stroop">
         <caption>Examples of congruent and incongruent Stroop stimuli. The task is to name the color, not the word.</caption>
         <image source="images/figures/Stroop.png"/>
