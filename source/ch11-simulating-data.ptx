@@ -6,16 +6,6 @@
   <introduction>
     <p>Author: Matthew J. C. Crump</p>
     
-    <remark>
-      <title>R Code</title>
-      <program language="r">
-        <input>
-library(ggplot2)
-library(dplyr)
-        </input>
-      </program>
-    </remark>
-    
     <p>
       You may have noticed that throughout this book so far we have analyzed a lot of fake data. We used R to simulate pretend numbers, and then we analyzed those numbers. We also, from time to time, loaded in some <q>real</q> data, and analyzed that. In your labs each week, you have been analyzing a lot of real data. You might be thinking that the simulations we ran were just for educational purposes, to show you how things work. That's partly true, that's one reason we ran so many simulations. At the same time, conducting simulations to understand how data behaves is a legitimate branch of statistics. There are some problems out there where we don't have really good analytic math formulas to tell us the correct answer, so we create and run simulations to approximate the answer.
     </p>
@@ -102,6 +92,19 @@ t.test(group_A,group_B,var.equal = TRUE)
         </input>
       </program>
     </remark>
+
+<pre>
+#>  Two Sample t-test
+#> 
+#> data:  group_A and group_B
+#> t = -0.62985, df = 18, p-value = 0.5367
+#> alternative hypothesis: true difference in means is not equal to 0
+#> 95 percent confidence interval:
+#>  -10.052224   5.415151
+#> sample estimates:
+#> mean of x mean of y 
+#>  102.9900  105.3086
+</pre>
     
     <p>
       We sampled 10 scores from a normal distribution for each group. We changed the mean for group_b to 105, because we were thinking their heart rate would be 5 more than group A. We ran one <m>t</m>-test, and we got a result. This result tells us what happens for this one simulation.
@@ -128,7 +131,10 @@ print(prop_p)
         </input>
       </program>
     </remark>
-    
+
+<pre>
+#> [1] 0.339
+</pre>
     <p>
       Now this is more interesting. We found that a certain percentage of simulated experiments had a <m>p</m>-value less than 0.05. That's not very good. If you were going to collect data in this kind of experiment, and you made the correct assumptions about the mean and standard deviation of the distribution, and you made the correct assumption about the size of difference between the groups, you would be planning to run an experiment that would not work-out most of the time.
     </p>
@@ -154,7 +160,9 @@ print(prop_p)
         </input>
       </program>
     </remark>
-    
+    <pre>
+#> [1] 0.954
+</pre>
     <p>
       Ooh, look, almost all of the experiments are significant now. So, it would be better to use 50 subjects per group than 10 per group according to this simulation.
     </p>
@@ -188,7 +196,10 @@ print(prop_p)
         </input>
       </program>
     </remark>
-    
+
+<pre>
+#> [1] 0.939
+</pre>
     <p>
       You could play around with that, and it would be very useful I think. Is there anything else that we can do that would be more useful? Sure there is. With the above simulation, you have to change N or the mean difference each time to see how proportion of significant experiments turns out. It would be nice to look at a graph where we could vary the number of subjects, and the size of the mean difference. That's what the next simulation does. This kind of simulation can make your computer do some hard work depending on how many simulations you run. To make my computer do less work, we will only run 100 simulations for each parameter. But, what we will do is vary the number of subjects from 10 to 50 (steps of 10), and vary the size of the effect from 0 to 20 in steps of 4.
     </p>
