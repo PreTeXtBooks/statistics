@@ -3,7 +3,7 @@
 <publication>
   <!-- Set source directory for images, etc. -->
   <source>
-    <directories external="../source/images" generated="../generated-assets"/>
+    <directories external="../assets" generated="../generated-assets"/>
   </source>
 
   <!-- HTML-Specific Options -->
