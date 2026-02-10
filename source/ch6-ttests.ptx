@@ -1690,7 +1690,7 @@ ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
         Remember, we were wondering if the infants would look longer toward the singer who sang the familiar song during the test phase compared to the baseline phase. We showed you data from 5 infants, and walked through the computations for the <m>t</m>-test. As a reminder, it looked like this:
       </p>
 
-      <table xml:id="tbl-paired-t-calculation">
+      <table xml:id="tbl-paired-t-calculation-2">
         <title>Computing t for paired samples</title>
         <tabular>
           <row header="yes">
