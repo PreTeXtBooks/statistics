@@ -1528,7 +1528,18 @@ knitr::kable(gum_df)
         <table xml:id="tbl-gum-small">
           <title>First 5 scores from each group</title>
           <tabular>
-            <row><cell>Small sample showing first 5 students from each condition</cell></row>
+            <row header="yes">
+              <cell>student</cell>
+              <cell>gum</cell>
+              <cell>no_gum</cell>
+            </row>
+            <row><cell>1</cell><cell>86</cell><cell>64</cell></row>
+            <row><cell>2</cell><cell>81</cell><cell>65</cell></row>
+            <row><cell>3</cell><cell>71</cell><cell>79</cell></row>
+            <row><cell>4</cell><cell>70</cell><cell>68</cell></row>
+            <row><cell>5</cell><cell>87</cell><cell>52</cell></row>
+            <row><cell>Sums</cell><cell>395</cell><cell>328</cell></row>
+            <row><cell>Means</cell><cell>79</cell><cell>65.6</cell></row>
           </tabular>
         </table>
 
@@ -1588,7 +1599,22 @@ knitr::kable(gum_df_small)
         <table xml:id="tbl-gum-randomized">
           <title>Example of multiple randomizations</title>
           <tabular>
-            <row><cell>Table showing original and randomized groupings</cell></row>
+            <row header="yes">
+              <cell>student</cell>
+              <cell>gum</cell>
+              <cell>no_gum</cell>
+              <cell>gum2</cell>
+              <cell>no_gum2</cell>
+              <cell>gum3</cell>
+              <cell>no_gum3</cell>
+            </row>
+            <row><cell>1</cell><cell>86</cell><cell>64</cell><cell>65</cell><cell>71</cell><cell>52</cell><cell>79</cell></row>
+            <row><cell>2</cell><cell>81</cell><cell>65</cell><cell>64</cell><cell>79</cell><cell>81</cell><cell>65</cell></row>
+            <row><cell>3</cell><cell>71</cell><cell>79</cell><cell>87</cell><cell>86</cell><cell>87</cell><cell>64</cell></row>
+            <row><cell>4</cell><cell>70</cell><cell>68</cell><cell>70</cell><cell>52</cell><cell>86</cell><cell>70</cell></row>
+            <row><cell>5</cell><cell>87</cell><cell>52</cell><cell>81</cell><cell>68</cell><cell>71</cell><cell>68</cell></row>
+            <row><cell>Sums</cell><cell>395</cell><cell>328</cell><cell>367</cell><cell>356</cell><cell>377</cell><cell>346</cell></row>
+            <row><cell>Means</cell><cell>79</cell><cell>65.6</cell><cell>73.4</cell><cell>71.2</cell><cell>75.4</cell><cell>69.2</cell></row>
           </tabular>
         </table>
       </subsubsection>
