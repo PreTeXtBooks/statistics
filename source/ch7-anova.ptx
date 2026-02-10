@@ -1191,7 +1191,7 @@ ggplot(plot_df, aes(x = pill_group, y = means, fill = simulations)) +
       <title>Tetris and bad memories</title>
 
       <p>
-        Yup, you read that right. The research you will learn about tests whether playing Tetris after watching a scary movie can help prevent you from having bad memories from the movie. Sometimes in life people have intrusive memories, and they think about things they'd rather not have to think about. This research looks at one method that could reduce the frequency of intrusive memories.
+        Yup, you read that right. The research you will learn about tests whether playing Tetris after watching a scary movie can help prevent you from having bad memories from the movie <xref ref="biblio-James2015" text="custom">(James et al., 2015)</xref>. Sometimes in life people have intrusive memories, and they think about things they'd rather not have to think about. This research looks at one method that could reduce the frequency of intrusive memories.
       </p>
 
       <p>
