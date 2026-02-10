@@ -139,8 +139,8 @@ knitr::include_graphics("imgs/navarro_img/probability/pantsDistribution-eps-conv
     </p>
 
     <md>
-      <mrow>\mbox{``jeans''} &amp;=&amp; (\mbox{``blue jeans''}, \mbox{``grey jeans''}, \mbox{``black jeans''})</mrow>
-      <mrow>\mbox{``black''} &amp;=&amp; (\mbox{``black jeans''}, \mbox{``black suit''})</mrow>
+      <mrow>\text{"jeans"} \amp =\amp (\text{"blue jeans"}, \text{"grey jeans"}, \text{"black jeans"})</mrow>
+      <mrow>\text{"black"} \amp =\amp (\text{"black jeans"}, \text{"black suit"})</mrow>
     </md>
 
     <p>
