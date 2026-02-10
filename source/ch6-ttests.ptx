@@ -1797,7 +1797,7 @@ ggplot(t_df, aes(x = ts, group = dfs, color = dfs)) +
 #>     0.054
 </pre>
 
-     <p>Let's write down the finding one more time: The mean difference was 0.054, <m>t(4) = 0.72</m>, <m>p = 0.509</m>. We can also now confirm, that the <m>p</m>-value was from a two-tailed test. So, what does this all really mean</p
+     <p>Let's write down the finding one more time: The mean difference was 0.054, <m>t(4) = 0.72</m>, <m>p = 0.509</m>. We can also now confirm, that the <m>p</m>-value was from a two-tailed test. So, what does this all really mean</p>
 
       <p>
         We can say that a <m>t</m> value with an absolute of 0.72 or larger occurs 50.9% of the time. More precisely, the distribution of no differences (the null), will produce a <m>t</m> value this large or larger 50.9% of the time. In other words, chance alone good have easily produced the <m>t</m> value from our sample, and the mean difference we observed or 0.054, could easily have been a result of chance.
