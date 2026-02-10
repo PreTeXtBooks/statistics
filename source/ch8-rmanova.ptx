@@ -6,17 +6,6 @@
   <introduction>
     <p>Author: Matthew J. C. Crump</p>
     
-    <remark>
-      <title>R Code</title>
-      <program language="r">
-        <input>
-library(dplyr)
-library(ggplot2)
-library(xtable)
-        </input>
-      </program>
-    </remark>
-    
     <p>
       This chapter introduces you to <term>repeated measures ANOVA</term>. Repeated measures ANOVAs are very common in Psychology, because psychologists often use repeated measures designs, and repeated measures ANOVAs are the appropriate test for making inferences about repeated measures designs.
     </p>
@@ -254,15 +243,6 @@ knitr::kable(df)
       OK. So why did we introduce this new confusing way of talking about things? Why can't we just use <m>SS_\text{Error}</m> to talk about this instead of <m>SS_\text{Within}</m>, which you might (we do) find confusing. We're getting there, but perhaps <xref ref="fig-8splitSS"/> will help out.
     </p>
 
-    <remark>
-      <title>R Code</title>
-      <program language="r">
-        <input>
-knitr::include_graphics("imgs/figures/SS_ANOVA.png")
-        </input>
-      </program>
-    </remark>
-
     <figure xml:id="fig-8splitSS">
       <caption>Illustration showing how the total sums of squares are partitioned differently for a between versus repeated-measures design</caption>
       <image source="images/figures/SS_ANOVA.png" width="100%"/>
@@ -314,15 +294,6 @@ knitr::include_graphics("imgs/figures/SS_RMANOVA.png")
       <p>
         Now that you are familiar with the concept of an ANOVA table (remember the table from last chapter where we reported all of the parts to calculate the <m>F</m>-value?), we can take a look at the things we need to find out to make the ANOVA table. <xref ref="fig-8rmtable"/> presents an abstract for the repeated-measures ANOVA table. It shows us all the thing we need to calculate to get the <m>F</m>-value for our data.
       </p>
-
-      <remark>
-        <title>R Code</title>
-        <program language="r">
-          <input>
-knitr::include_graphics("imgs/figures/RMANOVA_table.png")
-          </input>
-        </program>
-      </remark>
 
       <figure xml:id="fig-8rmtable">
         <caption>Equations for computing the ANOVA table for a repeated measures design</caption>
@@ -1383,7 +1354,7 @@ ggplot(plot_df, aes(x=ps))+
     <title>Real Data</title>
     
     <p>
-      Let's look at some real data from a published experiment that uses a repeated measures design. This is the same example that you will be using in the lab for repeated measures ANOVA. The data happen to be taken from a recent study conducted by Lawrence Behmer and myself, at Brooklyn College <xref ref="biblio-Behmer2017" text="custom">(Behmer &amp; Crump, 2017)</xref>.
+      Let's look at some real data from a published experiment that uses a repeated measures design. This is the same example that you will be using in the lab for repeated measures ANOVA. The data happen to be taken from a recent study conducted by Lawrence Behmer and myself, at Brooklyn College <xref ref="biblio-Behmer2017">(Behmer &amp; Crump, 2017)</xref>.
     </p>
 
     <p>
