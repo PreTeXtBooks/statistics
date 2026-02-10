@@ -1383,7 +1383,7 @@ ggplot(plot_df, aes(x=ps))+
     <title>Real Data</title>
     
     <p>
-      Let's look at some real data from a published experiment that uses a repeated measures design. This is the same example that you will be using in the lab for repeated measures ANOVA. The data happen to be taken from a recent study conducted by Lawrence Behmer and myself, at Brooklyn College [Behmer &amp; Crump, 2017].
+      Let's look at some real data from a published experiment that uses a repeated measures design. This is the same example that you will be using in the lab for repeated measures ANOVA. The data happen to be taken from a recent study conducted by Lawrence Behmer and myself, at Brooklyn College <xref ref="biblio-Behmer2017" text="custom">(Behmer &amp; Crump, 2017)</xref>.
     </p>
 
     <p>
