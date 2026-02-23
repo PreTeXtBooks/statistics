@@ -231,7 +231,7 @@ So, we know the answer is 4. But, what is really going on here is that we are sl
 
 ### All together now
 
-Just to remind ourselves of the mode, median, and mean, take a look at the next histogram in \@fig-meanmodemed. We have overlaid the location of the mean (red), median (green), and mode (blue). For this dataset, the three measures of central tendency all give different answers. The mean is the largest because it is influenced by large numbers, even if they occur rarely. The mode and median are insensitive to large numbers that occur infrequently, so they have smaller values.
+Just to remind ourselves of the mode, median, and mean, take a look at the next histogram in @fig-meanmodemed. We have overlaid the location of the mean (red), median (green), and mode (blue). For this dataset, the three measures of central tendency all give different answers. The mean is the largest because it is influenced by large numbers, even if they occur rarely. The mode and median are insensitive to large numbers that occur infrequently, so they have smaller values.
 
 ```{r}
 #| label: fig-meanmodemed
