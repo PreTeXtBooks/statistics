@@ -178,7 +178,7 @@ ggplot(df, aes(
       </p>
       
       <p>
-        You might have noticed that the letter <m>d</m> appears in the above figure. Why is that? Jacob Cohen (Cohen, 1988) used the letter <m>d</m> in defining the effect-size for this situation, and now everyone calls it Cohen's <m>d</m>. The formula for Cohen's <m>d</m> is:
+        You might have noticed that the letter <m>d</m> appears in the above figure. Why is that? Jacob Cohen <xref ref="biblio-Cohen1988">(Cohen, 1988)</xref> used the letter <m>d</m> in defining the effect-size for this situation, and now everyone calls it Cohen's <m>d</m>. The formula for Cohen's <m>d</m> is:
       </p>
       
       <p>

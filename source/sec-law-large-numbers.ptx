@@ -45,7 +45,7 @@ print(IQ[1:100])
 
   <blockquote>
     <p>
-      <em>For even the most stupid of men, by some instinct of nature, by himself and without any instruction (which is a remarkable thing), is convinced that the more observations have been made, the less danger there is of wandering from one's goal</em> (see Stigler, 1986, p65).
+      <em>For even the most stupid of men, by some instinct of nature, by himself and without any instruction (which is a remarkable thing), is convinced that the more observations have been made, the less danger there is of wandering from one's goal</em> <xref ref="biblio-Stigler1986" text="custom">(Stigler, 1986, p. 65)</xref>.
     </p>
   </blockquote>
 
