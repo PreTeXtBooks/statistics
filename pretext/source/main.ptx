@@ -2,13 +2,9 @@
 
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
   <docinfo>
-    <brandlogo url="https://pretextbook.org" source="imgs/TextbookCover.png" />
-    
     <macros>
     \newcommand{\R}{\mathbb{R}}
     </macros>
-    
-    <covers front="imgs/TextbookCover.png"/>
   </docinfo>
 
   <book xml:id="statistics-textbook">
@@ -28,13 +24,6 @@
         </author>
         <date>September 1, 2018</date>
       </titlepage>
-
-      <abstract>
-        <p>
-          A free textbook teaching introductory statistics for undergraduates in psychology, 
-          including a lab manual, and course website. Licensed on CC BY SA 4.0.
-        </p>
-      </abstract>
 
       <preface xml:id="preface">
         <title>Preface</title>
@@ -256,30 +245,35 @@
             as we update the textbook.
           </p>
         </paragraphs>
-        
-        <paragraphs xml:id="pretext-version">
-          <title>About This PreTeXt Version</title>
-          
-          <p>
-            This is a PreTeXt version of the textbook, converted from the original R Markdown format 
-            to make it more accessible and easier to use across different platforms.
-          </p>
-          
-          <p>
-            <alert>Full Credit to Original Authors:</alert> The original textbook 
-            <url href="https://crumplab.github.io/statistics/" visual="Answering Questions with Data">"Answering Questions with Data"</url> 
-            was authored by Matthew J. C. Crump, Danielle J. Navarro, and Jeffrey Suzuki. 
-            All content and intellectual property belong to the original authors. 
-            This PreTeXt conversion maintains the same CC BY-SA 4.0 license as the original work.
-          </p>
-          
-          <p>
-            The source code for this PreTeXt version is maintained at 
-            <url href="https://github.com/PreTeXtBooks/statistics" visual="github.com/PreTeXtBooks/statistics"/>. 
-            If you encounter any issues with this version, please report them at 
-            <url href="https://github.com/PreTeXtBooks/statistics/issues" visual="github.com/PreTeXtBooks/statistics/issues">the issues page</url>.
-          </p>
-        </paragraphs>
+
+  <preface xml:id="preface-ptx-version">
+    <title>Note on This PreTeXt Edition</title>
+
+    <p>
+      This is a <url href="https://pretextbook.org/" visual="pretextbook.org">PreTeXt</url>
+      conversion of <em>Answering Questions with Data Introductory Statistics for Psychology Students</em>, originally written by
+      <url href = "https://www.crumplab.com/people/matt_crump.html">Matthew J. C. Crump</url>, Danielle J. Navarro, Jeffrey Suzuki.
+      The original work is available online at
+      <url href="https://crumplab.github.io/statistics/">crumplab.github.io/statistics/</url>.
+      The original GitHub repository for the book source is at
+      <url href="https://github.com/CrumpLab/statistics">github.com/CrumpLab/statistics</url>.
+    </p>
+
+    <p>
+      This PreTeXt edition was prepared by
+      <url href="https://github.com/PreTeXtBooks/statistics">the PreTeXtBooks project</url>
+      to make the content available in the PreTeXt format, enabling accessible and structured
+      output in HTML, PDF, Braille, and other formats. All prose, code examples, figures, and mathematical content are intended to be
+  faithful reproductions of the original work, though occasional typographical errors
+  may have been introduced in the conversion process. Report any issues to our
+  <url href = "https://github.com/PreTeXtBooks/statistics/issues">GitHub Issues Page.</url>
+    </p>
+
+    <p>
+      The original work by Matthew J. C. Crump, Danielle J. Navarro, Jeffrey Suzuki is licensed under a
+      <url href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+      Attribution-ShareAlike 4.0 License</url>.
+    </p>
       </preface>
     </frontmatter>
 
