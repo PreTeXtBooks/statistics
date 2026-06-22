@@ -74,7 +74,8 @@
     <css theme="default-modern"
       primary-color="#44575E"
       secondary-color="#F37021"
-      primary-color-dark="#649BA3" />
+      primary-color-dark="#649BA3"
+      extra="custom.css"/>
     <!-- Enable interactive code blocks and code highlighting -->
     <calculator model="none"/>
   </html>
