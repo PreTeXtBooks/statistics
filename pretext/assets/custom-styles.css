@@ -77,3 +77,30 @@ pre,
   --link-text-color: #C1FDE8;
   --link-active-text-color: #7DB1B8;
 }
+
+/* ── Definition boxes ─────────────────────────────────────────────────── */
+.definition-like {
+  border: 2px solid var(--brand-teal);
+  border-left: 5px solid var(--brand-orange);
+  border-radius: 4px;
+  background-color: #f4fafb;
+  padding: 1em 1.5em;
+  margin: 1.25em 0;
+}
+
+.definition-like .heading {
+  color: var(--brand-slate);
+  font-family: var(--font-headings);
+  font-weight: 700;
+}
+
+/* Dark mode */
+:root.dark-mode .definition-like {
+  background-color: #1a2426;
+  border-color: var(--brand-teal);
+  border-left-color: var(--brand-orange);
+}
+
+:root.dark-mode .definition-like .heading {
+  color: var(--brand-mint);
+}
